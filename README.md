@@ -1,2 +1,24 @@
 # DAW-2017
-Proyecto de la asignatura DAW impartida en la URJC
+Proyecto de la asignatura DAW (Diseño de Aplicaciones Web) impartida en la URJC.
+
+### Nombre de la Aplicación Web
+
+### Descripción de la Tematica
+
+### Entidades Principales
+
+### Integrantes
+* *Guillermo Urbano Azagra*
+  * Correo: guilleurbano95@gmail.com
+  * Github: https://github.com/urbanz
+* *Jorge Galindo Peña*
+  * Correo: jorgape225@gmail.com
+  * Github: https://github.com/JorgeGalingP
+* *Daniel Camacho* 
+  * Correo: danicamacho95@gmail.com
+  * Github: -
+* *Ilia*
+  * Correo: -
+  * Github: -
+  
+### [Tablero Trello](URL "https://trello.com/daw2017/")
