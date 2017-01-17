@@ -21,4 +21,5 @@ Proyecto de la asignatura DAW (Diseño de Aplicaciones Web) impartida en la URJC
   * Correo: iliarz@gmail.com
   * Github: https://github.com/iliarz
   
-### [Tablero Trello](URL "https://trello.com/daw2017")
+### Tablero Trello
+*https://trello.com/daw2017*
