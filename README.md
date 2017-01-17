@@ -2,13 +2,10 @@
 Proyecto de la asignatura DAW (Diseño de Aplicaciones Web) impartida en la URJC.
 
 ### Nombre de la Aplicación Web
--
 
 ### Descripción de la Tematica
--
 
 ### Entidades Principales
--
 
 ### Integrantes
 * *Guillermo Urbano Azagra*
@@ -17,10 +14,10 @@ Proyecto de la asignatura DAW (Diseño de Aplicaciones Web) impartida en la URJC
 * *Jorge Galindo Peña*
   * Correo: jorgape225@gmail.com
   * Github: https://github.com/JorgeGalingP
-* *Daniel Camacho* 
+* *Daniel Camacho Jiménez* 
   * Correo: danicamacho95@gmail.com
   * Github: -
-* *Ilia*
+* *Ilia Ramírez Zarich*
   * Correo: iliarz@gmail.com
   * Github: https://github.com/iliarz
   
