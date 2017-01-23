@@ -1,4 +1,4 @@
-# DAW-2017
+# Virtual Vinilo VV
 Proyecto de la asignatura DAW (Diseño de Aplicaciones Web) impartida en la URJC.
 
 ### Nombre de la Aplicación Web
