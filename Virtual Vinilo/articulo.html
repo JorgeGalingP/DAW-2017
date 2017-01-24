@@ -17,7 +17,7 @@
     <div class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <a href="index.html" class="navbar-brand">Virtual Vinilo VV</a>
+                <a id="logo-container" href="index.html" class="brand-logo" style="width: 180px; height: 64px"><img src="imagenes/VirtualViniloLogo.png" style="width: 180px; height: 58px; padding: 5px"></a>
                 <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -27,16 +27,7 @@
             <div class="navbar-collapse collapse" id="navbar-main">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="noticias.html">Noticias</a>
-                    </li>
-                    <li>
-                        <a href="adopta.html">Comprar</a>
-                    </li>
-                    <li>
-                        <a href="foro.html">Foro</a>
-                    </li>
-                    <li>
-                        <a href="contacta.html">Contacta</a>
+                        <a href="noticias.html">Ofertas</a>
                     </li>
                 </ul>
 
@@ -55,7 +46,7 @@
 
             </div>
         </div>
-    </div>
+</div>
 
     <br>
     <br>
@@ -97,23 +88,45 @@
 
                 <div class="user-wrapper">
                     <br>
-                    <img src="imagenes/beagle.jpg" class="img-responsive" />
-                    <div class="description">
-                        <br>
-                        <h4> Nombre del album del vinilo</h4>
+                    <img src="https://http2.mlstatic.com/disco-vinilo-the-beatles-D_NQ_NP_13626-MLA3209892061_092012-F.jpg" class="img-responsive" />
+                    <br>
+                    <div class="description well">
+                        <h3> Nombre del album</h3>
                         <div class="ratings">
-                        <p class="pull-right">3 reviews</p>
-                        <p>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star-empty"></span>
-                            4.0 stars
-                        </p>
-                    </div>
-                        <hr />
-
+                            <p class="pull-right">3 reviews</p>
+                            <p>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                            </p>
+                            <h4>En stock</h4>
+                            <hr />
+                            <br>
+                            <!--
+                            <div class="form-group row">
+                              <div class="col-sm-12 text-center">
+                                <div class="form-check">
+                                  <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox">Sí, quiero que mi proxima compra sea <a href="#">GRATIS</a>
+                                  </label>
+                                </div>
+                              </div>
+                            </div>-->
+                            <div class="text-center"> 
+                                <a href="#" class="btn btn-info btn-md"><span class="glyphicon glyphicon-shopping-cart"></span> Añadir al carrito</a>
+                            </div>
+                            <br>
+                            <div class="text-center">
+                                <input class="form-control form-control-sm" type="text" placeholder="XXXXX" id="ex1">
+                                <label for="ex1">Validar Cupón</label>
+                            </div>
+                            <hr />
+                            <div class="text-center"> 
+                                <a href="#" class="btn btn-primary btn-warning"><span class="glyphicon glyphicon-star"></span> Añadir a lista de deseos</a>
+                            </div>
+                            <br>
+                        </div>
                     </div>
                 </div>
                 
@@ -139,48 +152,48 @@
                         <div class="text-muted bootstrap-admin-box-title">Datos del Vinilo</div>
                     </div>
 
+                        <div class="clearfix">
+                            <div class="col-sm-4">
 
-                    <div class="row">
-                        <div class="col-sm-4">
-                            
-                            <h3>Intérprete</h3>
-                            <p>intérprete del vinilo</p>
+                                <h3>Intérprete</h3>
+                                <p>intérprete del vinilo</p>
 
+                            </div>
+                            <div class="col-sm-4">
+
+                                <h3>Fecha</h3>
+                                <p>fecha del vinilo</p>
+
+                            </div>
+
+                            <div class="col-sm-4">
+
+                                <h3>Estado</h3>
+                                <p>estado del vinilo</p>
+
+                            </div>
                         </div>
-                        <div class="col-sm-4">
+                    
+                        <div class="clearfix">
+                            <div class="col-sm-4">
 
-                            <h3>Fecha</h3>
-                            <p>fecha del vinilo</p>
-                            
+                                <h3 class="text-left">Album</h3>
+                                <p>album del vinilo</p>
+
+                            </div>
+                            <div class="col-sm-4">
+
+                                <h3>Precio</h3>
+                                <p>precio del vinilo</p>
+
+                            </div>
+                            <div class="col-sm-4">
+
+                                <h3>Código</h3>
+                                <p>código del vinilo</p>
+
+                            </div>
                         </div>
-                        
-                        <div class="col-sm-4">
-
-                            <h3>Estado</h3>
-                            <p>estado del vinilo</p>
-
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-4">
-
-                            <h3>Album</h3>
-                            <p>album del vinilo</p>
-
-                        </div>
-                        <div class="col-sm-4">
-
-                            <h3>Precio</h3>
-                            <p>precio del vinilo</p>
-                            
-                        </div>
-                        <div class="col-sm-4">
-
-                            <h3>Código</h3>
-                            <p>código del vinilo</p>
-
-                        </div>
-                    </div>
                     <br>
                 </div>
                 <br>
@@ -190,20 +203,20 @@
                     </div>
 
 
-                    <div class="row">
-                        <div class="col-sm-6">
+                    <div class="clearfix">
+                        <div class="col-md-6">
                             <br>
                             <p>cancion del vinilo</p>
                             <p>cancion del vinilo</p>
                             <p>cancion del vinilo</p>
-
+                            <p>cancion del vinilo</p>
                         </div>
                         <div class="col-sm-6">
                             <br>
                             <p>cancion del vinilo</p>
                             <p>cancion del vinilo</p>
                             <p>cancion del vinilo</p>
-
+                            <p>cancion del vinilo</p>
                         </div>
                         
                     </div>
@@ -227,10 +240,10 @@
                             <form class="form-horizontal">
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        <label class="col-lg-2 control-label text-center" for="textarea-wysihtml5">
+                                        <label class="col-lg-2  col-md-2 col-sm-7 col-xs-12 control-label text-center" for="textarea-wysihtml5">
                                             <a href="#" class="btn btn-primary">Guardar</a>
                                         </label>
-                                        <div class="col-lg-10">
+                                        <div class="col-lg-10 col-md-10 col-xs-12">
                                             <textarea id="textarea-wysihtml5" class="form-control col-md-7" placeholder="Introduce un comentario..." rows="5"></textarea>
                                         </div>
                                     </div>
@@ -309,8 +322,8 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p align="center">Copyright &copy; Virtual Vinilo VV</p>
-                    <p align="center">Guillermo Urbano, Ilia Ramírez, Daniel Camacho, Jorge Galindo Peña</p>
+                    <p align= "center">Copyright &copy; VirtualVinilo</p>
+                    <p align= "center">Guillermo Urbano, Ilia Ramírez, Jorge Galindo, Daniel Camacho</p>
                 </div>
             </div>
             <!-- /.row -->
