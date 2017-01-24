@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Mascota</title>
+    <title>Vinilo</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
@@ -17,7 +17,7 @@
     <div class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <a href="index.html" class="navbar-brand">AdoptaUnCompañero</a>
+                <a id="logo-container" href="index.html" class="brand-logo" style="width: 180px; height: 64px"><img src="imagenes/VirtualViniloLogo.png" style="width: 180px; height: 58px; padding: 5px"></a>
                 <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -27,16 +27,7 @@
             <div class="navbar-collapse collapse" id="navbar-main">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="noticias.html">Noticias</a>
-                    </li>
-                    <li>
-                        <a href="adopta.html">Adopta</a>
-                    </li>
-                    <li>
-                        <a href="foro.html">Foro</a>
-                    </li>
-                    <li>
-                        <a href="contacta.html">Contacta</a>
+                        <a href="noticias.html">Ofertas</a>
                     </li>
                 </ul>
 
@@ -55,7 +46,7 @@
 
             </div>
         </div>
-    </div>
+</div>
 
     <br>
     <br>
@@ -78,10 +69,10 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="page-header">
-                            <h1 id="forms"> Nombre mascota 
+                            <h1 id="forms"> Nombre del Vinilo 
                               <small>
                                   <br>
-                                  Te presento a (nombre mascota)</small>
+                                  Vinilo Edición Especial de The Beatles de 1969</small>
                           </h1>
                         </div>
                     </div>
@@ -97,21 +88,55 @@
 
                 <div class="user-wrapper">
                     <br>
-                    <img src="imagenes/beagle.jpg" class="img-responsive" />
-                    <div class="description">
-                        <br>
-                        <h4> Nombre mascota</h4>
-                        <hr />
-
+                    <img src="https://http2.mlstatic.com/disco-vinilo-the-beatles-D_NQ_NP_13626-MLA3209892061_092012-F.jpg" class="img-responsive" />
+                    <br>
+                    <div class="description well">
+                        <h3> Nombre del album</h3>
+                        <div class="ratings">
+                            <p class="pull-right">3 reviews</p>
+                            <p>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                            </p>
+                            <h4>En stock</h4>
+                            <hr />
+                            <br>
+                            <!--
+                            <div class="form-group row">
+                              <div class="col-sm-12 text-center">
+                                <div class="form-check">
+                                  <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox">Sí, quiero que mi proxima compra sea <a href="#">GRATIS</a>
+                                  </label>
+                                </div>
+                              </div>
+                            </div>-->
+                            <div class="text-center"> 
+                                <a href="#" class="btn btn-info btn-md"><span class="glyphicon glyphicon-shopping-cart"></span> Añadir al carrito</a>
+                            </div>
+                            <br>
+                            <div class="text-center">
+                                <input class="form-control form-control-sm" type="text" placeholder="XXXXX" id="ex1">
+                                <label for="ex1">Validar Cupón</label>
+                            </div>
+                            <hr />
+                            <div class="text-center"> 
+                                <a href="#" class="btn btn-primary btn-warning"><span class="glyphicon glyphicon-star"></span> Añadir a lista de deseos</a>
+                            </div>
+                            <br>
+                        </div>
                     </div>
                 </div>
+                
             </div>
             <br>
 
 
             <div class="col-md-9 col-sm-9  user-wrapper">
                 <div class="alert alert-info">
-                    <h3> Acerca del anunciante </h3>
+                    <h3> Acerca del vendedor </h3>
                     <p>
                         Descripcion del anunciante, datos del anunciante, contacto etc Descripcion del anunciante, datos del anunciante, contacto etc Descripcion del anunciante, datos del anunciante, contacto etc Descripcion del anunciante, datos del anunciante, contacto etc
                     </p>
@@ -124,60 +149,170 @@
 
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <div class="text-muted bootstrap-admin-box-title">Hola! Soy (nombre mascota)</div>
+                        <div class="text-muted bootstrap-admin-box-title">Datos del Vinilo</div>
                     </div>
 
+                        <div class="clearfix">
+                            <div class="col-sm-4">
 
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <h3>Especie</h3>
-                            <p>especie de la mascota</p>
+                                <h3>Intérprete</h3>
+                                <p>intérprete del vinilo</p>
 
+                            </div>
+                            <div class="col-sm-4">
+
+                                <h3>Fecha</h3>
+                                <p>fecha del vinilo</p>
+
+                            </div>
+
+                            <div class="col-sm-4">
+
+                                <h3>Estado</h3>
+                                <p>estado del vinilo</p>
+
+                            </div>
                         </div>
-                        <div class="col-lg-4">
+                    
+                        <div class="clearfix">
+                            <div class="col-sm-4">
 
-                            <h3>Tamaño</h3>
-                            <p>tamaño de la mascota</p>
+                                <h3 class="text-left">Album</h3>
+                                <p>album del vinilo</p>
 
+                            </div>
+                            <div class="col-sm-4">
+
+                                <h3>Precio</h3>
+                                <p>precio del vinilo</p>
+
+                            </div>
+                            <div class="col-sm-4">
+
+                                <h3>Código</h3>
+                                <p>código del vinilo</p>
+
+                            </div>
                         </div>
-                        <div class="col-lg-4">
-
-                            <h3>Raza</h3>
-                            <p>raza de la mascota</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <h3>Edad</h3>
-                            <p>edad de la mascota</p>
-
-                        </div>
-                        <div class="col-lg-4">
-
-                            <h3>Sexo</h3>
-                            <p>sexo de la mascota</p>
-
-                        </div>
-                        <div class="col-lg-4">
-
-                            <h3>Fecha</h3>
-                            <p>fecha de la mascota</p>
-                        </div>
-                    </div>
                     <br>
+                </div>
+                <br>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="text-muted bootstrap-admin-box-title">Tracklist del Vinilo</div>
+                    </div>
+
+
+                    <div class="clearfix">
+                        <div class="col-md-6">
+                            <br>
+                            <p>cancion del vinilo</p>
+                            <p>cancion del vinilo</p>
+                            <p>cancion del vinilo</p>
+                            <p>cancion del vinilo</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <br>
+                            <p>cancion del vinilo</p>
+                            <p>cancion del vinilo</p>
+                            <p>cancion del vinilo</p>
+                            <p>cancion del vinilo</p>
+                        </div>
+                        
+                    </div>
                 </div>
                 <br>
 
                 <!-- </div>   <!-- fin div description -->
-
-
-
             </div>
         </div>
         <!-- USER PROFILE ROW END-->
+        
+        <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="text-muted bootstrap-admin-box-title">Añade un comentario</div>
+                    </div>
+                    <br>
+                    <br>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <form class="form-horizontal">
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <label class="col-lg-2  col-md-2 col-sm-7 col-xs-12 control-label text-center" for="textarea-wysihtml5">
+                                            <a href="#" class="btn btn-primary">Guardar</a>
+                                        </label>
+                                        <div class="col-lg-10 col-md-10 col-xs-12">
+                                            <textarea id="textarea-wysihtml5" class="form-control col-md-7" placeholder="Introduce un comentario..." rows="5"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+        
+        <!-- RATINGS ROW -->
+        
+        <div class="well">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <span class="pull-left"><h3>Comentarios</h3></span>
+                        </div>
+                    </div>
+                    <hr>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star-empty"></span>
+                            Anonymous
+                            <span class="pull-right">10 days ago</span>
+                            <p>This product was great in terms of quality. I would definitely buy another!</p>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star-empty"></span>
+                            Anonymous
+                            <span class="pull-right">12 days ago</span>
+                            <p>I've alredy ordered another one!</p>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star-empty"></span>
+                            Anonymous
+                            <span class="pull-right">15 days ago</span>
+                            <p>I've seen some better than this, but not at this price. I definitely recommend this item.</p>
+                        </div>
+                    </div>
+
+                </div>
+        
+        <!-- RATINGS ROW END -->
+        
     </div>
 
-    <br>
     <br>
 
     <div class="container">
@@ -187,8 +322,8 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p align="center">Copyright &copy; AdoptaUnCompañero</p>
-                    <p align="center">Guillermo Urbano, Ilia Ramírez, Dina El Gueddari, Yasmina Leranca</p>
+                    <p align= "center">Copyright &copy; VirtualVinilo</p>
+                    <p align= "center">Guillermo Urbano, Ilia Ramírez, Jorge Galindo, Daniel Camacho</p>
                 </div>
             </div>
             <!-- /.row -->
