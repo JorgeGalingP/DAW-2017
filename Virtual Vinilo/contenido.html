@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>VirtualVinilo</title>
     <meta charset="utf-8">
@@ -31,7 +32,7 @@
                     <li>
                         <a href="carrito.html">VER CARRITO</a>
                     </li>
-                    
+
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
@@ -44,7 +45,9 @@
                             <li class="divider"></li>
                             <li><a href="miperfil.html">Mi Perfil</a></li>
                             <li class="divider"></li>
-                            <li><a href="somos.html">Quienes Somos</a></li>    
+                            <li><a href="somos.html">Quienes Somos</a></li>
+                            <li class="divider"></li>
+                            <li><a href="administrador.html">Administrador</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -57,100 +60,111 @@
     <br>
     <br>
     <br>
-     <div class="paginado">
-                <!-- Unica fila (Contenido en pestañas) -->
-                <div class="row">
-                    <!-- Menú del pefil  -->
-                    <div class="col-md-2">
-                        <div class="menu">
-                            <div class="list-group">
-                                <a href="perfil.html" class="list-group-item"><span class="glyphicon glyphicon-user"> Cuenta </span></a>
-                                <a href="contenido.html" class="list-group-item"><span class="glyphicon glyphicon-folder-open" > Contenido </span></a>
-                                <a href="ajustes.html" class="list-group-item"><span class="glyphicon glyphicon-cog"> Ajustes </span></a>
-                                <a href="amigos.html" class="list-group-item"><span class="glyphicon glyphicon-globe"> Amigos </span></a>
-                            </div>
+    <div class="paginado">
+        <!-- Unica fila (Contenido en pestañas) -->
+        <div class="row">
+            <!-- Menú del pefil  -->
+            <div class="col-md-2">
+                <div class="list-group">
+                    <a href="administrador.html" class="list-group-item"><span class="glyphicon glyphicon-user"></span> Cuenta Administrador </a>
+                    <a href="contenido.html" class="list-group-item"><span class="glyphicon glyphicon-folder-open"></span> Contenido </a>
+                    <a href="amigos.html" class="list-group-item"><span class="glyphicon glyphicon-globe"></span> Amigos </a>
+                </div>
+            </div>
+            <!-- Contenido  -->
+            <div class="col-md-10">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="tabpanel">
+                            <ul class="nav nav-tabs">
+                                <li class="active pestaña"><a data-toggle="tab" href="#vjuegos">Mas Vendidos</a></li>
+                                <li class="pestaña"><a data-toggle="tab" href="#series">Mas Visitados</a></li>
+                                <li class="pestaña"><a data-toggle="tab" href="#peliculas">Ofertas</a></li>
+                            </ul>
                         </div>
-                    </div>
-                    <!-- Contenido  -->
-                    <div class="col-md-10">
-                         <div class="panel panel-default">
-                            <div class="panel-body">
-                                <div class="tabpanel">
-                                    <ul class="nav nav-tabs">
-                                        <li class="active pestaña"><a data-toggle="tab" href="#vjuegos">Mas Vendidos</a></li>
-                                        <li class="pestaña"><a data-toggle="tab" href="#series">Mas Visitados</a></li>
-                                        <li class="pestaña"><a data-toggle="tab" href="#peliculas">Ofertas</a></li>
-                                    </ul>
-                                </div>
-                                <div class="tab-content">                
-                                    <div id="vjuegos" class="tab-pane fade in active">
-                                        <ul class="listado">
-                                            <li> 
-                                                <div>
-                                                    <br/>
-                                                    <img src="imagenes/img2.jpg">
-                                                    <p>Los beatles</p>
-                                                </div>
-                                            </li>
-                                            <li> 
-                                                <div>
-                                                    <img src="imagenes/img3.jpg">
-                                                    <p>Fito</p>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div id="series" class="tab-pane fade">
-                                        <ul class="listado">
+                        <div class="tab-content">
+                            <div id="vjuegos" class="tab-pane fade in active">
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <div>
                                             <br/>
-                                            <li>
-                                                <div>
-                                                    <img src="imagenes/img1.jpg">
-                                                    <p>ABBA</p>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div>
-                                                    <img src="imagenes/img4.jpg">
-                                                    <p>The Doors</p>
-                                                </div>
-                                            </li>
-                                            <li> 
-                                                <div>
-                                                    <img src="imagenes/img5.jpg">
-                                                    <p>Los 100</p>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div id="peliculas" class="tab-pane fade">
-                                        <ul class="listado">
-                                            <li>
-                                                <div>
-                                                    <img src="imagenes/img3.jpg" class="img-responsive">
-                                                    <p>Deadpool</p>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div>
-                                                    <img src="imagenes/img6.jpg">
-                                                    <p>cd1</p>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div>
-                                                    <img src="imagenes/img2.jpg">
-                                                    <p>cd2</p>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                             </div>
+                                            <img src="imagenes/img2.jpg">
+                                            <p>Los beatles</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <img src="imagenes/img3.jpg">
+                                            <p>Fito</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div id="series" class="tab-pane fade">
+                                <ul class="list-unstyled">
+                                    <br/>
+                                    <li>
+                                        <div>
+                                            <img src="imagenes/img1.jpg">
+                                            <p>ABBA</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <img src="imagenes/img4.jpg">
+                                            <p>The Doors</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <img src="imagenes/img5.jpg">
+                                            <p>Los 100</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div id="peliculas" class="tab-pane fade">
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <div>
+                                            <img src="imagenes/img3.jpg" class="img-responsive">
+                                            <p>Deadpool</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <img src="imagenes/img6.jpg">
+                                            <p>cd1</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <img src="imagenes/img2.jpg">
+                                            <p>cd2</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        
-    </body>
+        </div>
+    </div>
+    <div class="container">
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p align="center">Copyright &copy; VirtualVinilo</p>
+                    <p align="center">Guillermo Urbano, Ilia Ramírez, Jorge Galindo, Daniel Camacho</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+    </div>
+</body>
+
 </html>
