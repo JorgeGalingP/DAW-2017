@@ -30,3 +30,6 @@ Página web de compra y venta de vinilos. En esta web podrás encontrar ofertas 
   
 ### Tablero Trello
 *https://trello.com/daw2017*
+
+### Diagrama UML
+ ![imagen daw](https://www.dropbox.com/s/7kb9rsfr9t103s8/diagrama.png?dl=0)
