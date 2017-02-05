@@ -13,9 +13,9 @@
 
 <body>
 
-    <!header>
+<!header>
     <div class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
+   
             <div class="navbar-header">
                 <a id="logo-container" href="index.html" class="brand-logo" style="width: 180px; height: 64px"><img src="imagenes/VirtualViniloLogo.png" style="width: 180px; height: 58px; padding: 5px"></a>
                 <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
@@ -24,18 +24,27 @@
                     <span class="icon-bar"></span>
                 </button>
             </div>
+        <div class="container">
             <div class="navbar-collapse collapse" id="navbar-main">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="ofertas.html">Ofertas</a>
-                    </li>
-                    <li>
-                        <a href="carrito.html">VER CARRITO</a>
-                    </li>
-
-                </ul>
-
+                <form class="navbar-form navbar-left">
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="search" class="btn btn-default">
+                        <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </form>
                 <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <form class="navbar-form">
+                            <button type="button" class="btn btn-default">
+                            <i class="glyphicon glyphicon-shopping-cart" href="carrito.html"></i>
+                            </button>
+                        </form>
+                    </li>
+                    <li>
+                        <a href="noticias.html">OFERTAS</a>
+                    </li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">USUARIO <span class="caret"></span></a>
                         <ul class="dropdown-menu" aria-labelledby="download">
@@ -51,7 +60,6 @@
                         </ul>
                     </li>
                 </ul>
-
             </div>
         </div>
     </div>
