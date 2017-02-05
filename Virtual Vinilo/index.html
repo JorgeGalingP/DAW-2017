@@ -9,6 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <link type="text/css" rel="stylesheet" href="css/bootstraptheme.css" />
+    <script src="js/cookie.js"></script>
 </head>
 
 <body>
@@ -34,7 +35,12 @@
                         <a href="carrito.html">VER CARRITO</a>
                     </li>
                 </ul>
+                <script>
+                    document.cookie = "pais=" + encodeURIComponent("Si acepta esta de acuerdo con nuestras politicas de cookies");
+                    var miCookie = readCookie("pais");
+                    alert(miCookie);
 
+                </script>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">USUARIO <span class="caret"></span></a>
