@@ -48,6 +48,8 @@
                             <li><a href="miperfil.html">Mi Perfil</a></li>
                             <li class="divider"></li>
                             <li><a href="somos.html">Quienes Somos</a></li>
+                            <li class="divider"></li>
+                            <li><a href="administrador.html">Administrador</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -96,92 +98,54 @@
                     <div class="description">
                         <br>
                         <h4> Luis Hernández</h4>
-                        <hr />
+                        <hr>
                         <ul class="list-unstyled">
                             <li>
-                                <a href="a%C3%B1adirArticulo.html" class="btn btn-primary"> <i class="fa fa-user-plus"></i> &nbsp;Añadir Articulo</a>
-                            </li>
-                            <br>
-                            <li>
-                                <a href="carrito.html" class="btn btn-primary"> <i class="fa fa-user-plus"></i> &nbsp;Mis Articulos</a>
+                                <a href="amigos.html" class="btn btn-primary"> <i class="fa fa-user-plus"></i> &nbsp;Mis Amigos</a>
                             </li>
 
                         </ul>
-
                     </div>
+                </div>
+                <hr />
+                <div class="alert alert-info">
+                    <h3> Acerca de usted </h3>
+                    <ul class="list-unstyled">Información de compra
+                        <li>Nombre</li>
+                        <li>Apellidos</li>
+                        <li>Direccion de pago 1</li>
+                        <li>Direccion de pago 2</li>
+                        <li>País</li>
+                        <li>Ciudad</li>
+                        <li>Localidad</li>
+                        <li>Código Postal</li>
+                    </ul>
+
+                    <ul class="list-unstyled">Información de pago
+                        <li>Número de tarjeta</li>
+                        <li>CVV</li>
+                        <li>Nombre de la tarjeta</li>
+                        <li>Apellidos</li>
+                    </ul>
+
+                    <ul class="list-unstyled">Metodo de Pago Preferido
+                        <li>
+                            Opcion 1
+                        </li>
+                    </ul>
+
+                    <ul class="list-unstyled">Información de Contacto
+                        <li>Email</li>
+                        <li>Telefono</li>
+                    </ul>
+
+                    <ul class="list-unstyled">Informacion Adiccional
+                        <li>Telefono</li>
+                    </ul>
                 </div>
             </div>
             <br>
-
-
             <div class="col-md-9 col-sm-9  user-wrapper">
-                <div class="alert alert-info">
-                    <h3> Acerca de usted </h3>
-                    <p>
-                        Soy un vendedor de vinilos. Cualquier interesado puede contactar conmigo, dirigiéndose al siguiente correo: luisadopta@gmail.com
-                    </p>
-                </div>
-                <hr />
-
-                <!-- ver imagénes enlazadas de tus mascotas -->
-                <!--            <h3> Mis mascotas </h3>
-                <br>
-                
-                        <!-- Projects Row -->
-                <!--           <div class="row">
-                    <div class="col-md-4 portfolio-item">
-                        <a href="#">
-                            <p align="center"><img class="img-responsive" src="http://placehold.it/700x400"                                         alt="Imagen responsive"></p>
-                        </a>
-                        <h3 align="center">
-                            <a href="#">Mascota 1</a>
-                        </h3>
-                    </div>
-                    <div class="col-md-4 portfolio-item">
-                        <a href="#">
-                            <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-                        </a>
-                        <h3 align="center">
-                            <a href="#">Mascota 2</a>
-                        </h3>
-                    </div>
-                    <div class="col-md-4 portfolio-item">
-                        <a href="#">
-                            <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-                        </a>
-                        <h3 align="center">
-                            <a href="#">Mascota 3</a>
-                        </h3>
-                    </div>
-                </div>
-                <!-- /.row 
-                <br>  -->
-                <!-- Pagination 
-                    <div class="row text-center">
-                        <div class="col-lg-12">
-                            <ul class="pagination">
-                                <li>
-                                    <a href="#">&laquo;</a>
-                                </li>
-                                <li class="active">
-                                    <a href="#">1</a>
-                                </li>
-                                <li>
-                                    <a href="#">2</a>
-                                </li>
-                                <li>
-                                    <a href="#">3</a>
-                                </li>
-                                <li>
-                                    <a href="#">&raquo;</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>    -->
-                <!-- /.row -->
-
-                <!-- fin ver mascotas -->
-                <!--   <hr /> -->
                 <!-- Editar opciones del perfil -->
                 <h3> Editar Perfil </h3>
                 <br>
@@ -219,7 +183,198 @@
                     </div>
                     <br>
                 </div>
+                <div class="panel panel-default text-center">
+                    <div class="panel-heading">
+                        <div class="text-muted bootstrap-admin-box-title">Añade un nuevo Nombre</div>
+                    </div>
+                    <br>
+                    <br>
 
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <form class="form-horizontal">
+                                <div class="col-lg-11">
+
+                                    <div class="form-group">
+                                        <label class="col-lg-3 control-label"> Nombre</label>
+                                        <div class="col-lg-9">
+                                            <input type="text" class="form-control col-md-6">
+
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-lg-3 control-label" for="typeahead">Apellido 1</label>
+                                        <div class="col-lg-9">
+                                            <input type="text" class="form-control col-md-6">
+
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-lg-3 control-label" for="typeahead">Apellido 2</label>
+                                        <div class="col-lg-9">
+                                            <input type="text" class="form-control col-md-6">
+
+                                        </div>
+                                    </div>
+                                    <br>
+
+                                    <label class="col-lg-12">
+                                        <a href="#" class="btn btn-primary">Guardar</a>
+                                    </label>
+
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+                <br>
+                <div class="panel panel-default text-center">
+                    <div class="panel-heading">
+                        <div class="text-muted bootstrap-admin-box-title">Añade una nueva Dirección</div>
+                    </div>
+                    <br>
+                    <br>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <form class="form-horizontal">
+                                <div class="col-lg-11">
+
+                                    <div class="form-group">
+                                        <label class="col-lg-3 control-label"> Direccion 1</label>
+                                        <div class="col-lg-9">
+                                            <input type="text" class="form-control col-md-6">
+
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-lg-3 control-label" for="typeahead">Direccion 2</label>
+                                        <div class="col-lg-9">
+                                            <input type="password" class="form-control col-md-6">
+
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-lg-3 control-label" for="typeahead">Pais</label>
+                                        <div class="col-lg-9">
+                                            <input type="text" class="form-control col-md-6">
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-lg-3 control-label" for="typeahead">Ciudad</label>
+                                        <div class="col-lg-9">
+                                            <input type="text" class="form-control col-md-6">
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-lg-3 control-label" for="typeahead">Localidad</label>
+                                        <div class="col-lg-9">
+                                            <input type="text" class="form-control col-md-6">
+
+                                        </div>
+                                    </div>
+                                    <br>
+
+                                    <label class="col-lg-12">
+                                        <a href="#" class="btn btn-primary">Guardar</a>
+                                    </label>
+
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+                <br>
+                <div class="panel panel-default text-center">
+                    <div class="panel-heading">
+                        <div class="text-muted bootstrap-admin-box-title">Añade una nueva Tarjeta de Crédito</div>
+                    </div>
+                    <br>
+                    <br>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <form class="form-horizontal">
+                                <div class="col-lg-11">
+
+                                    <div class="form-group">
+                                        <label class="col-lg-3 control-label"> Nombre asociado a la Tarjeta</label>
+                                        <div class="col-lg-9">
+                                            <input type="text" class="form-control col-md-6">
+
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-lg-3 control-label" for="typeahead">Apellidos asociados a la Tarjeta</label>
+                                        <div class="col-lg-9">
+                                            <input type="password" class="form-control col-md-6">
+
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-lg-3 control-label" for="typeahead">Numero de Tarjeta</label>
+                                        <div class="col-lg-9">
+                                            <input type="number" class="form-control col-md-6">
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-lg-3 control-label" for="typeahead">Fecha de caducidad de la tarjeta</label>
+                                        <div class="col-lg-9">
+                                            <input type="date" class="form-control col-md-6">
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-lg-3 control-label" for="typeahead">CVV</label>
+                                        <div class="col-lg-9">
+                                            <input type="number" class="form-control col-md-6">
+
+                                        </div>
+                                    </div>
+                                    <br>
+
+                                    <label class="col-lg-12">
+                                        <a href="#" class="btn btn-primary">Guardar</a>
+                                    </label>
+
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+                <!--<li>
+                            <label>
+                                <input type="radio" name="opciones" id="opciones_1" value="opcion_1" checked> Opcion 1
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="radio" name="opciones" id="opciones_1" value="opcion_1" disabled> Opcion 2
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="radio" name="opciones" id="opciones_1" value="opcion_1" disabled> Opcion 3
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="radio" name="opciones" id="opciones_1" value="opcion_1" disabled> Opcion 4
+                            </label>
+                        </li>-->
+                <br>
                 <div class="panel panel-default text-center">
                     <div class="panel-heading">
                         <div class="text-muted bootstrap-admin-box-title">Cambia tu contraseña</div>
@@ -321,20 +476,6 @@
                         </div>
                         <br>
                         <br>
-                        <span>Contenido</span>
-                        <div class="btn-group" data-toggle="buttons">
-                            <label class="btn btn-success active">
-                                <input type="radio" autocomplete="off" checked> Visible para todos
-                            </label>
-                            <label class="btn btn-success">
-                                <input type="radio" autocomplete="off"> Visible para amigos
-                            </label>
-                            <label class="btn btn-success">
-                                <input type="radio" autocomplete="off"> No visible
-                            </label>
-                        </div>
-                        <br>
-                        <br>
                         <span>Amigos</span>
                         <div class="btn-group" data-toggle="buttons">
                             <label class="btn btn-success active">
@@ -359,7 +500,59 @@
                         <button type="submit" class="btn btn-danger"> Eliminar </button>
                     </div>
                 </div>
+                <div class="row">
 
+                    <div class="col-xs-12 col-md-12 col-sm-12 col-lg-12 center-block titulo">
+                        <h1>Lista de deseados</h1>
+                        <div/>
+                        <div class="col-xs-12 col-sm-4 col-lg-4 col-md-4">
+                            <div class="thumbnail">
+                                <img src="http://placehold.it/480x420" style="width: 480px; height: 320px" alt="">
+                                <div class="caption">
+                                    <h4 class="pull-right">$24.99</h4>
+                                    <h4><a href="#">First Product</a>
+                                </h4>
+                                    <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
+                                </div>
+                                <div class="ratings">
+                                    <p class="pull-right">15 reviews</p>
+                                    <p>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+
+                            <div class="col-xs-12 col-sm-4 col-lg-4 col-md-4">
+                                <div class="thumbnail">
+                                    <img src="http://placehold.it/480x420" style="width: 480px; height: 320px" alt="">
+                                    <div class="caption">
+                                        <h4 class="pull-right">$24.99</h4>
+                                        <h4><a href="#">Second Product</a>
+                                </h4>
+                                        <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
+                                    </div>
+                                    <div class="ratings">
+                                        <p class="pull-right">15 reviews</p>
+                                        <p>
+                                            <span class="glyphicon glyphicon-star"></span>
+                                            <span class="glyphicon glyphicon-star"></span>
+                                            <span class="glyphicon glyphicon-star"></span>
+                                            <span class="glyphicon glyphicon-star"></span>
+                                            <span class="glyphicon glyphicon-star"></span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- USER PROFILE ROW END-->
