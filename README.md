@@ -33,3 +33,25 @@ Página web de compra y venta de vinilos. En esta web podrás encontrar ofertas 
 
 ### Diagrama UML
 ![alt tag](https://raw.githubusercontent.com/JorgeGalingP/DAW-2017/master/capturas/diagrama de navegación.png)
+
+### Capturas
+![alt tag](https://raw.githubusercontent.com/JorgeGalingP/DAW-2017/master/capturas/administrador1.png)
+![alt tag](https://raw.githubusercontent.com/JorgeGalingP/DAW-2017/master/capturas/administrador2.png)
+![alt tag](https://raw.githubusercontent.com/JorgeGalingP/DAW-2017/master/capturas/administrador3.png)
+![alt tag](https://raw.githubusercontent.com/JorgeGalingP/DAW-2017/master/capturas/administradorContenido1.png)
+![alt tag](https://raw.githubusercontent.com/JorgeGalingP/DAW-2017/master/capturas/administradorContenido2.png)
+![alt tag](https://raw.githubusercontent.com/JorgeGalingP/DAW-2017/master/capturas/administradorEstadisticas1.png)
+![alt tag](https://raw.githubusercontent.com/JorgeGalingP/DAW-2017/master/capturas/administradorUsuarios.png)
+![alt tag](https://raw.githubusercontent.com/JorgeGalingP/DAW-2017/master/capturas/carrito.PNG)
+![alt tag](https://raw.githubusercontent.com/JorgeGalingP/DAW-2017/master/capturas/index1.png)
+![alt tag](https://raw.githubusercontent.com/JorgeGalingP/DAW-2017/master/capturas/index2.png)
+![alt tag](https://raw.githubusercontent.com/JorgeGalingP/DAW-2017/master/capturas/inicio sesion.PNG)
+![alt tag](https://raw.githubusercontent.com/JorgeGalingP/DAW-2017/master/capturas/miperfil1.png)
+![alt tag](https://raw.githubusercontent.com/JorgeGalingP/DAW-2017/master/capturas/miperfil2.png)
+![alt tag](https://raw.githubusercontent.com/JorgeGalingP/DAW-2017/master/capturas/miperfil3.png)
+![alt tag](https://raw.githubusercontent.com/JorgeGalingP/DAW-2017/master/capturas/miperfil4.png)
+![alt tag](https://raw.githubusercontent.com/JorgeGalingP/DAW-2017/master/capturas/miperfil5.png)
+![alt tag](https://raw.githubusercontent.com/JorgeGalingP/DAW-2017/master/capturas/ofertas.png)
+![alt tag](https://raw.githubusercontent.com/JorgeGalingP/DAW-2017/master/capturas/registro.PNG)
+![alt tag](https://raw.githubusercontent.com/JorgeGalingP/DAW-2017/master/capturas/somos1.PNG)
+![alt tag](https://raw.githubusercontent.com/JorgeGalingP/DAW-2017/master/capturas/somos2.PNG)
