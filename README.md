@@ -32,4 +32,4 @@ Página web de compra y venta de vinilos. En esta web podrás encontrar ofertas 
 *https://trello.com/daw2017*
 
 ### Diagrama UML
-![alt tag](https://lh3.googleusercontent.com/Gipu-TJ25folfMo1MppCOodHz4AVHTijIrLJeHHxYuFid_q_B3VnWYmQyo4KTmhzyPopi_z0WtLWOUA=w1920-h905 "Diagrama UML")
+![alt tag](https://raw.githubusercontent.com/JorgeGalingP/DAW-2017/master/capturas/diagrama de navegación.png) "Diagrama UML")
