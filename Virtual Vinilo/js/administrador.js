@@ -1,8 +1,8 @@
 $(document).ready(function () {
-    $('#admin').show();
+    $('#admin').hide();
     $('#contents').hide();
     $('#users').hide();
-    $('#analytics').hide();
+    $('#analytics').show();
 
     $('#adminMenu').click(function () {
         $('#admin').slideDown("slow");
