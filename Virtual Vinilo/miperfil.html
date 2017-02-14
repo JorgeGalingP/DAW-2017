@@ -11,6 +11,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <link type="text/css" rel="stylesheet" href="css/bootstraptheme.css" />
+    <script src="js/miPerfil.js"></script>
+    <script src="jquery-3.1.1.min.js"></script>
 </head>
 
 <body>
@@ -88,19 +90,21 @@
         <!-- USER PROFILE ROW STARTS-->
         <div class="row">
             <div class="col-md-3 col-sm-3">
-
                 <div class="user-wrapper">
-                    <br>
-                    <img src="imagenes/250x250.png" class="img-responsive" />
                     <div class="description">
                         <br>
                         <h3> Luis Hernández</h3>
+                        <hr />
+                        <div class="list-group">
+                            <a id="miPerfilMenu" href="#" class="list-group-item"><span class="glyphicon glyphicon-user"></span> Mi Perfil </a>
+                            <a id="editarPerfilMenu" href="#" class="list-group-item"><span class="glyphicon glyphicon-folder-open"></span> Editar perfil</a>
+                        </div>
                     </div>
                 </div>
-                <hr />
-
-                <!--jeje-->
-                <p class="lead">Información de compra</p>
+            </div>
+            <br>
+            <div class="col-lg-9 col-md-9" id="miPerfil">
+                <p class="lead">Información de usuario</p>
                 <div class="list-group">
                     <p class="list-group-item">Nombre</p>
                     <p class="list-group-item">Apellidos</p>
@@ -135,48 +139,65 @@
                 <div class="list-group">
                     <p class="list-group-item">Descripción</p>
                 </div>
+                <div class="row">
 
-                <!--jeje-->
+                    <div class="col-xs-12 col-md-12 col-sm-12 col-lg-12 center-block titulo">
+                        <h1>Lista de deseados</h1>
+                        <div/>
+                        <div class="col-xs-12 col-sm-4 col-lg-4 col-md-4">
+                            <div class="thumbnail">
+                                <img src="http://placehold.it/480x420" style="width: 480px; height: 320px" alt="">
+                                <div class="caption">
+                                    <h4 class="pull-right">$24.99</h4>
+                                    <h4><a href="#">First Product</a>
+                                </h4>
+                                    <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
+                                </div>
+                                <div class="ratings">
+                                    <p class="pull-right">15 reviews</p>
+                                    <p>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+
+                            <div class="col-xs-12 col-sm-4 col-lg-4 col-md-4">
+                                <div class="thumbnail">
+                                    <img src="http://placehold.it/480x420" style="width: 480px; height: 320px" alt="">
+                                    <div class="caption">
+                                        <h4 class="pull-right">$24.99</h4>
+                                        <h4><a href="#">Second Product</a>
+                                </h4>
+                                        <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
+                                    </div>
+                                    <div class="ratings">
+                                        <p class="pull-right">15 reviews</p>
+                                        <p>
+                                            <span class="glyphicon glyphicon-star"></span>
+                                            <span class="glyphicon glyphicon-star"></span>
+                                            <span class="glyphicon glyphicon-star"></span>
+                                            <span class="glyphicon glyphicon-star"></span>
+                                            <span class="glyphicon glyphicon-star"></span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <br>
-            <div class="col-md-9 col-sm-9  user-wrapper">
+            <div class="col-md-9 col-sm-9" id="editarPerfil">
                 <!-- Editar opciones del perfil -->
                 <h3> Editar Perfil </h3>
                 <br>
                 <!-- <div class="description"> -->
-
-
-                <div class="panel panel-default text-center">
-                    <div class="panel-heading">
-                        <div class="text-muted bootstrap-admin-box-title">Cambia tu foto de perfil</div>
-                    </div>
-                    <br>
-                    <br>
-
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <form enctype="multipart/form-data" class="form-horizontal">
-
-                                <div class="col-lg-11">
-                                    <div class="form-group">
-                                        <label class="col-lg-3 control-label" for="textarea-wysihtml5">Vista preliminar</label>
-                                        <div class="col-lg-9 ">
-                                            <!-- <textarea id="textarea-wysihtml5" class="form-control col-md-7" placeholder="Introduce una descripción..." rows="5"></textarea> -->
-                                            <input id="file-1" type="file" class="file" multiple=true data-preview-file-type="any">
-                                            <p class="help-block pull-left">Procura que tus imágenes no superen un tamaño de 250x250 </p>
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <label class="col-lg-12">
-                                        <a href="#" class="btn btn-primary">Guardar</a>
-                                    </label>
-
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <br>
-                </div>
                 <div class="panel panel-default text-center">
                     <div class="panel-heading">
                         <div class="text-muted bootstrap-admin-box-title">Añade un nuevo Nombre</div>
@@ -458,59 +479,6 @@
                     <div class="panel-body text-center">
                         <p> Su cuenta será borrada para siempre y no podrá recuperarla. Al pulsar el botón de eliminar su cuenta será totalmente eliminada</p>
                         <button type="submit" class="btn btn-danger"> Eliminar </button>
-                    </div>
-                </div>
-                <div class="row">
-
-                    <div class="col-xs-12 col-md-12 col-sm-12 col-lg-12 center-block titulo">
-                        <h1>Lista de deseados</h1>
-                        <div/>
-                        <div class="col-xs-12 col-sm-4 col-lg-4 col-md-4">
-                            <div class="thumbnail">
-                                <img src="http://placehold.it/480x420" style="width: 480px; height: 320px" alt="">
-                                <div class="caption">
-                                    <h4 class="pull-right">$24.99</h4>
-                                    <h4><a href="#">First Product</a>
-                                </h4>
-                                    <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
-                                </div>
-                                <div class="ratings">
-                                    <p class="pull-right">15 reviews</p>
-                                    <p>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                    </p>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="row">
-
-                            <div class="col-xs-12 col-sm-4 col-lg-4 col-md-4">
-                                <div class="thumbnail">
-                                    <img src="http://placehold.it/480x420" style="width: 480px; height: 320px" alt="">
-                                    <div class="caption">
-                                        <h4 class="pull-right">$24.99</h4>
-                                        <h4><a href="#">Second Product</a>
-                                </h4>
-                                        <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
-                                    </div>
-                                    <div class="ratings">
-                                        <p class="pull-right">15 reviews</p>
-                                        <p>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
