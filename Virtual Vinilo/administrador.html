@@ -13,6 +13,34 @@
     <link type="text/css" rel="stylesheet" href="css/bootstraptheme.css" />
     <script src="js/administrador.js"></script>
     <script src="jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {
+            'packages': ['bar']
+        });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Año', 'Ventas', 'Gastos', 'Beneficios'],
+                ['2014', 25000, 5000, 20000],
+                ['2015', 11700, 1700, 10000],
+                ['2016', 26000, 8000, 18000],
+                ['2017', 19000, 5400, 13600]
+            ]);
+
+            var options = {
+                chart: {
+                    title: 'Analiticas de Virtual Vinilo',
+                    subtitle: 'Ejercicio 2014-2017',
+                }
+            };
+            var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+            chart.draw(data, options);
+        }
+
+    </script>
 </head>
 
 <body>
@@ -58,7 +86,7 @@
                             <li class="divider"></li>
                             <li><a href="miperfil.html">Mi Perfil</a></li>
                             <li class="divider"></li>
-                            
+
                             <li><a href="administrador.html">Administrador</a></li>
                         </ul>
                     </li>
@@ -90,7 +118,7 @@
             <div class="col-lg-3 col-md-3 col-sm-3">
                 <div class="user-wrapper">
                     <br>
-                 
+
 
                     <div class="description">
 
@@ -100,7 +128,8 @@
                         <div class="list-group">
                             <a id="adminMenu" href="#" class="list-group-item"><span class="glyphicon glyphicon-user"></span> Administrador </a>
                             <a id="contentMenu" href="#" class="list-group-item"><span class="glyphicon glyphicon-folder-open"></span> Contenido </a>
-                            <a id="analyticsMenu" href="#" class="list-group-item"><span class="glyphicon glyphicon-globe"></span> Estadisticas </a>
+                            <a id="validationMenu" href="#" class="list-group-item"><span class="glyphicon glyphicon-send"></span> Pedidos </a>
+                            <a id="analyticsMenu" href="#" class="list-group-item"><span class="glyphicon glyphicon-signal"></span> Estadisticas </a>
                             <a id="usersMenu" href="#" class="list-group-item"><span class="glyphicon glyphicon-globe"></span> Usuarios </a>
                         </div>
 
@@ -108,6 +137,70 @@
                 </div>
             </div>
             <br/>
+
+            <!-- Pedidos -->
+            <div class="col-lg-9 col-md-9 col-sm-9" id="validation" style="display:none">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="text-muted bootstrap-admin-box-title">Pedidos para validar</div>
+                    </div>
+                    <br/>
+                    <div class="col-lg-12">
+                        <div class="col-sm-4 col-lg-4 col-md-4">
+                            <div class="thumbnail">
+                                <img src="http://placehold.it/320x280" style="width: 320px; height: 280px" alt="">
+                                <div class="caption">
+                                    <h4 class="pull-right">$84.99</h4>
+                                    <h4><a href="articulo.html">Pedido<span>#1234</span></a>
+                                </h4>
+                                    <div class="col-md-12 text-center">
+                                        <button type="button" class="btn btn-success text-center">Validar</button>
+                                    </div>
+                                    <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4 col-lg-4 col-md-4">
+                            <div class="thumbnail">
+                                <img src="http://placehold.it/320x280" style="width: 320px; height: 280px" alt="">
+                                <div class="caption">
+                                    <h4 class="pull-right">$84.99</h4>
+                                    <h4><a href="articulo.html">Pedido<span>#1235</span></a>
+                                </h4>
+                                    <div class="col-md-12 text-center">
+                                        <button type="button" class="btn btn-success text-center">Validar</button>
+                                    </div>
+                                    <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-lg-4 col-md-4">
+                            <div class="thumbnail">
+                                <img src="http://placehold.it/320x280" style="width: 320px; height: 280px" alt="">
+                                <div class="caption">
+                                    <h4 class="pull-right">$84.99</h4>
+                                    <h4><a href="articulo.html">Pedido<span>#1236</span></a>
+                                </h4>
+                                    <div class="col-md-12 text-center">
+                                        <button type="button" class="btn btn-success text-center">Validar</button>
+                                    </div>
+                                    <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <form class="form-horizontal">
+                        </form>
+                    </div>
+
+                    <div class="row">
+                    </div>
+                    <br>
+                </div>
+
+            </div>
+            <!-- Pedidos -->
 
             <div class="col-lg-9 col-md-9 col-sm-9" id="admin" style="display:none">
                 <!-- administrador -->
@@ -245,7 +338,7 @@
 
                                     </div>
                                 </div>
-                                
+
                                 <div class="form-group">
                                     <label class="col-lg-3 control-label" for="typeahead">Número productos que te llevas</label>
                                     <div class="col-lg-8">
@@ -253,7 +346,7 @@
 
                                     </div>
                                 </div>
-                                
+
                                 <div class="form-group">
                                     <label class="col-lg-3 control-label" for="typeahead">Número de productos que pagas</label>
                                     <div class="col-lg-8">
@@ -302,8 +395,8 @@
                     </div>
                     <br>
                 </div>
-                
-                                <div class="panel panel-default">
+
+                <div class="panel panel-default">
                     <div class="panel-heading">
                         <div class="text-muted bootstrap-admin-box-title">Añadir promoción tipo 2 (descuento precio total)</div>
                     </div>
@@ -328,7 +421,7 @@
 
                                     </div>
                                 </div>
-                                
+
                                 <div class="form-group">
                                     <label class="col-lg-3 control-label" for="typeahead">Porcentaje de descuento al precio total</label>
                                     <div class="col-lg-8">
@@ -903,6 +996,15 @@
             <div class="col-lg-9 col-md-9 col-sm-9" id="analytics" style="display:none">
                 <div class="panel panel-default">
                     <div class="panel-heading">
+                        <div class="text-muted bootstrap-admin-box-title">Ventas, Gastos, y Beneficios en el ejercicio 2014-2017</div>
+                    </div>
+                    <br/>
+                    <div id="columnchart_material" style="width: 845px; height: 400px;"></div>
+                    <br/>
+                </div>
+                <br/>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
                         <div class="text-muted bootstrap-admin-box-title">Vinilos más vendidos</div>
                     </div>
                     <br/>
@@ -1062,6 +1164,7 @@
                 </div>
 
             </div>
+
             <div class="col-lg-9 col-md-9 col-sm-9" id="users" style="display:none">
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -1071,7 +1174,7 @@
                     <div class="col-lg-12">
                         <div class="col-sm-4 col-lg-4 col-md-4">
                             <div class="thumbnail">
-                               
+
                                 <div class="caption">
                                     <h4><a href="articulo.html">Jorge Pérez</a>
                                 </h4>
@@ -1082,7 +1185,7 @@
 
                         <div class="col-sm-4 col-lg-4 col-md-4">
                             <div class="thumbnail">
-                                
+
                                 <div class="caption">
                                     <h4><a href="articulo.html">María Sánchez</a>
                                 </h4>
@@ -1115,7 +1218,7 @@
 
                         <div class="col-sm-4 col-lg-4 col-md-4">
                             <div class="thumbnail">
-                               
+
                                 <div class="caption">
                                     <h4><a href="articulo.html">María Sánchez</a>
                                 </h4>
@@ -1126,7 +1229,7 @@
 
                         <div class="col-sm-4 col-lg-4 col-md-4">
                             <div class="thumbnail">
-                   
+
                                 <div class="caption">
                                     <h4><a href="articulo.html">Pablo Castro</a>
                                 </h4>
@@ -1136,7 +1239,7 @@
                         </div>
                         <div class="col-sm-4 col-lg-4 col-md-4">
                             <div class="thumbnail">
-                            
+
                                 <div class="caption">
                                     <h4><a href="articulo.html">Miguel Perez</a>
                                 </h4>
@@ -1147,7 +1250,7 @@
 
                         <div class="col-sm-4 col-lg-4 col-md-4">
                             <div class="thumbnail">
-                          
+
                                 <div class="caption">
                                     <h4><a href="articulo.html">Jorge Pérez</a>
                                 </h4>
@@ -1158,7 +1261,7 @@
 
                         <div class="col-sm-4 col-lg-4 col-md-4">
                             <div class="thumbnail">
-                   
+
                                 <div class="caption">
                                     <h4><a href="articulo.html">María Sánchez</a>
                                 </h4>
@@ -1189,6 +1292,8 @@
                 <div class="col-lg-12">
                     <p align="center">Copyright &copy; VirtualVinilo</p>
                     <p align="center">Guillermo Urbano, Ilia Ramírez, Jorge Galindo, Daniel Camacho</p>
+                    <p align="center" class="text-danger"><a href="somos.html">Quienes Somos</a></p>
+
                 </div>
             </div>
             <!-- /.row -->
