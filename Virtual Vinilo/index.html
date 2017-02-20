@@ -10,6 +10,7 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <link type="text/css" rel="stylesheet" href="css/bootstraptheme.css" />
     <script src="js/cookie.js"></script>
+    <script src="js/addProducts.js"></script>
 </head>
 
 <body>
@@ -55,7 +56,7 @@
                             <li class="divider"></li>
                             <li><a href="miperfil.html">Mi Perfil</a></li>
                             <li class="divider"></li>
-                           
+
                             <li><a href="administrador.html">Administrador</a></li>
                         </ul>
                     </li>
@@ -124,7 +125,7 @@
         <div class="row">
 
             <div class="col-md-3">
-               
+
 
                 <p class="lead">Filtrar Productos</p>
                 <div class="list-group">
@@ -156,7 +157,7 @@
                     <a href="#" class="list-group-item">rango2 <span class="badge">10</span></a>
                     <a href="#" class="list-group-item">rango3 <span class="badge">10</span></a>
                 </div>
-                   <p class="lead">Los más deseados</p>
+                <p class="lead">Los más deseados</p>
                 <div class="thumbnail-index">
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                         <a href="articulo.html"><img src="http://placehold.it/320x280" class="img-thumbnail" style="width: 60px; height: 60px" alt=""></a>
@@ -194,7 +195,7 @@
 
             <div class="col-md-9">
 
-                <div class="row">
+                <div class="row" id="productsIndexTotal">
 
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
@@ -525,9 +526,13 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
-
+                <div class="row">
+                    <div class="text-center">
+                        <!-- boton cargar más -->
+                        <button id="addProductsIndex" type="button" class="btn btn-primary btn-lg btn-block"><span class="glyphicon glyphicon-download"></span> Ver más </button>
+                    </div>
+                </div>
             </div>
 
         </div>
@@ -545,7 +550,7 @@
                     <p align="center">Copyright &copy; VirtualVinilo</p>
                     <p align="center">Guillermo Urbano, Ilia Ramírez, Jorge Galindo, Daniel Camacho</p>
                     <p align="center" class="text-danger"><a href="somos.html">Quienes Somos</a></p>
-                    
+
                 </div>
             </div>
             <!-- /.row -->
