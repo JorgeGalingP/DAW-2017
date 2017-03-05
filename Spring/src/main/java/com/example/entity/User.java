@@ -44,11 +44,11 @@ public class User {
 		
 	}
 
-	public User(Integer id, String name, String username, String direccion1, String direccion2, String country,
+	public User( String name, String username, String direccion1, String direccion2, String country,
 			String city, int postalCode, String password, int creditNumber, int cVV, String email, int telefono,
 			String descripcion,String roles) {
-		super();
-		this.id = id;
+	
+		
 		Name = name;
 		Username = username;
 		Direccion1 = direccion1;
@@ -65,13 +65,7 @@ public class User {
 		this.roles= new ArrayList<>(Arrays.asList(roles));
 	}
 
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
+	
 
 	public String getName() {
 		return Name;

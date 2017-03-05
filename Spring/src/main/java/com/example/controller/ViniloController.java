@@ -7,18 +7,20 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.example.entity.Vinilo;
-import com.example.repository.ViniloRepository;
+import com.example.entity.Resource;
+import com.example.repository.ResourceRepository;
 
 @Controller
 public class ViniloController {
 	
 	@Autowired
-	private ViniloRepository viniloRepo;
+	private ResourceRepository viniloRepo;
+	
+	
 	@RequestMapping (value="/{id}", method=RequestMethod.GET)
 	public String viniloProfile(Model model,@PathVariable Integer id){
 	
-	     Vinilo vinilo=viniloRepo.findOne(id);
+	     Resource vinilo=viniloRepo.findOne(id);
 	     model.addAttribute("vinilo",vinilo);
 	     
 	     return "articulo";

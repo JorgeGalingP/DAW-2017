@@ -35,12 +35,7 @@ public class Oferta {
 		this.Description=Description;
 		this.vinilos= new ArrayList<>(Arrays.asList(vinilos));
 	}
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
+	
 	public String getNombre() {
 		return Nombre;
 	}
