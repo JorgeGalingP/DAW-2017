@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Oferta {
+public class OfertaDescuento {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	
@@ -14,49 +14,39 @@ public class Oferta {
 	private  String name;
 	private int code;
 	private String description;
-	private int llevas;
-	private int pagas;
+	private int porcentaje;
 	
 	
-	protected Oferta(){
+	protected OfertaDescuento(){
 		
 	}
 	
 
 
-	public Oferta(String name, int code, String description, int llevas, int pagas) {
+	public OfertaDescuento(String name, int code, String description, int porcentaje) {
 		
 		this.name = name;
 		this.code = code;
 		this.description = description;
-		this.llevas=llevas;
-		this.pagas=pagas;
+		this.porcentaje=porcentaje;
 		
 	}
 	
 
 
 
-	public int getLlevas() {
-		return llevas;
+	
+
+
+
+	public int getPorcentaje() {
+		return porcentaje;
 	}
 
 
 
-	public void setLlevas(int llevas) {
-		this.llevas = llevas;
-	}
-
-
-
-	public int getPagas() {
-		return pagas;
-	}
-
-
-
-	public void setPagas(int pagas) {
-		this.pagas = pagas;
+	public void setPorcentaje(int porcentaje) {
+		this.porcentaje = porcentaje;
 	}
 
 
@@ -109,3 +99,4 @@ public class Oferta {
 	
 
 }
+
