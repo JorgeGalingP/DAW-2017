@@ -25,6 +25,8 @@ public class ViniloController {
 	public void init(){
 		Resource rs1 = new Resource ("hola","pep","mayi","hh",89,90);
 		repository.save(rs1);
+		Resource rs2 = new Resource ("adios","pop","mayo","hhh",87,77);
+		repository.save(rs2);
 	
 	}
 	
