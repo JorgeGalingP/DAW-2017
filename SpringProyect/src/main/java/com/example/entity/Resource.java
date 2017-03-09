@@ -12,27 +12,71 @@ public class Resource {
 	private Integer id;
 	
 	private  String title;
+	private  String subtitle;
 	private String interprete;
 	private String fecha;
+	private String estado;
 	private String album;
 	private double precio;
 	private int codigo;
+	private String tracklist;
 	
 	
 	
+	
+	public String getSubtitle() {
+		return subtitle;
+	}
+
+
+
+	public void setSubtitle(String subtitle) {
+		this.subtitle = subtitle;
+	}
+
+
+
+	public String getEstado() {
+		return estado;
+	}
+
+
+
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+
+
+
+	public String getTracklist() {
+		return tracklist;
+	}
+
+
+
+	public void setTracklist(String tracklist) {
+		this.tracklist = tracklist;
+	}
+
+
+
 	protected Resource(){
 	}
 
 
 
-	public Resource(String title, String interprete, String fecha, String album, double precio, int codigo) {
+	public Resource(String title, String subtitle, String interprete, String fecha, String estado, String album, double precio, int codigo, String tracklist) {
 		
 		this.title = title;
+		this.subtitle=subtitle;
 		this.interprete = interprete;
 		this.fecha = fecha;
+		this.estado=estado;
 		this.album = album;
 		this.precio = precio;
 		this.codigo = codigo;
+		this.tracklist=tracklist;
+		
 	}
 
 

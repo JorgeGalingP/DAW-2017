@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-
+import com.example.entity.Oferta;
 import com.example.entity.OfertaDescuento;
 import com.example.repository.OfertaDescuentoRepository;
 
@@ -40,6 +40,15 @@ public class OfertaDescuentoController {
 	        return "ofertaDescuento";
 	}*/
 	
+	
+	//metodo para crear una oferta descuento desde el form
+		@RequestMapping("/nuevaOfertaDescuento")
+		public String nuevaOfertaDescuento(Model model, OfertaDescuento ofertaDescuento) {
+
+			ofertaDescuentoRepository.save(ofertaDescuento);
+			return "ofertas";
+			
+			}
 	
 	
 	
