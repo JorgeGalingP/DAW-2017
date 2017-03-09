@@ -18,6 +18,8 @@ import com.example.repository.OfertaRepository;
 
 
 
+
+
 @Controller
 public class OfertaController {
 	
@@ -40,18 +42,39 @@ public class OfertaController {
 	        Oferta oferta=  ofertaRepository.findOne(id);
 	        model.addAttribute("oferta",oferta);
 	        
-	        return "oferta";
+	        return "ofertas";
 	}*/
 	
+	
+	@RequestMapping("/ofertas.html")
+	public String tablon(Model model) {
+
+		model.addAttribute("ofertas", ofertaRepository.findAll());
+
+		return "ofertas";
+	}
 	
 	//metodo para crear una oferta desde el form
 	@RequestMapping("/nuevaOferta")
 	public String nuevaOferta(Model model, Oferta oferta) {
 
 		ofertaRepository.save(oferta);
-		return "ofertas";
+		return "ofertas.html";
 		
 		}
+	
+	
+	
+	
+	/*@RequestMapping("/ofertas")
+	public String verOfertas(Model model, @PathVariable long id) {
+		
+		Oferta oferta = ofertaRepository.findOne((int) id);
+
+		model.addAttribute("oferta", oferta);
+
+		return "ofertas";
+	}*/
 	
 	
 	
