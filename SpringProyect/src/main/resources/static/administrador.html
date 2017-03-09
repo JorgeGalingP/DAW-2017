@@ -314,13 +314,13 @@
                     <br>
                     <br>
                     <div class="col-lg-12">
-                        <form class="form-horizontal">
+                        <form class="form-horizontal" action="nuevaOferta" method="post">
                             <div class="col-lg-12">
 
                                 <div class="form-group">
                                     <label class="col-lg-3 control-label">Nombre de la promoción </label>
                                     <div class="col-lg-8">
-                                        <input type="password" class="form-control col-md-6">
+                                        <input type="text" class="form-control col-md-6" name="name">
 
                                     </div>
                                 </div>
@@ -328,7 +328,7 @@
                                 <div class="form-group">
                                     <label class="col-lg-3 control-label" for="typeahead">Descripción</label>
                                     <div class="col-lg-8">
-                                        <input type="password" class="form-control col-md-6">
+                                        <input type="text" class="form-control col-md-6" name="description">
 
                                     </div>
                                 </div>
@@ -336,7 +336,7 @@
                                 <div class="form-group">
                                     <label class="col-lg-3 control-label" for="typeahead">Número productos que te llevas</label>
                                     <div class="col-lg-8">
-                                        <input type="password" class="form-control col-md-6">
+                                        <input type="text" class="form-control col-md-6" name="llevas">
 
                                     </div>
                                 </div>
@@ -344,7 +344,7 @@
                                 <div class="form-group">
                                     <label class="col-lg-3 control-label" for="typeahead">Número de productos que pagas</label>
                                     <div class="col-lg-8">
-                                        <input type="password" class="form-control col-md-6">
+                                        <input type="text" class="form-control col-md-6" name="pagas">
 
                                     </div>
                                 </div>
@@ -352,10 +352,12 @@
                                 <div class="form-group">
                                     <label class="col-lg-3 control-label" for="typeahead">Asignar CODIGO</label>
                                     <div class="col-lg-8">
-                                        <input type="password" class="form-control col-md-6">
+                                        <input type="text" class="form-control col-md-6" name="code">
 
                                     </div>
                                 </div>
+                                
+                                <input type='submit' value='Enviar'/>
 
                                 <br>
 
