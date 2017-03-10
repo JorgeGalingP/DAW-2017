@@ -7,11 +7,13 @@ import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.entity.Oferta;
 import com.example.entity.Resource;
 import com.example.repository.ResourceRepository;
+
 
 
 
@@ -51,6 +53,16 @@ public class ViniloController {
 			return "index.html";
 			
 			}
+		
+		@RequestMapping("/articulo/{id}")
+		public String verArticulo(Model model, @PathVariable int id) {
+			
+			Resource vinilo = repository.findOne(id);
+
+			model.addAttribute("vinilo", vinilo);
+
+			return "articulo";
+		}
 
 		
 		
