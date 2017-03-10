@@ -41,12 +41,14 @@ public class OfertaDescuentoController {
 	}*/
 	
 	
+	
+
 	//metodo para crear una oferta descuento desde el form
 		@RequestMapping("/nuevaOfertaDescuento")
 		public String nuevaOfertaDescuento(Model model, OfertaDescuento ofertaDescuento) {
 
 			ofertaDescuentoRepository.save(ofertaDescuento);
-			return "ofertas";
+			return "ofertas.html";
 			
 			}
 	

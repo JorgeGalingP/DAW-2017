@@ -31,12 +31,24 @@ public class ViniloController {
 	
 	}
 	
+	
+	@RequestMapping("/index.html")
+	public void tablon( Model model) {
+		
+		
+
+		model.addAttribute("vinilos", repository.findAll());
+		
+		
+
+		
+	}
 	//metodo para crear un vinilo desde el form
 		@RequestMapping("/nuevoVinilo")
 		public String nuevoVinilo(Model model, Resource resource) {
 
 			repository.save(resource);
-			return "index";
+			return "index.html";
 			
 			}
 
