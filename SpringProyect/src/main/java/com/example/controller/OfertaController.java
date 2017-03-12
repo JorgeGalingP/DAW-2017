@@ -30,7 +30,7 @@ public class OfertaController {
 	private OfertaRepository ofertaRepository;
 
 @Autowired
-	private OfertaRepository ofertaDescuentoRepository;
+	private OfertaDescuentoRepository ofertaDescuentoRepository;
 	
 	
 	@PostConstruct
@@ -55,16 +55,17 @@ public class OfertaController {
 	
 	
 	@RequestMapping("/ofertas.html")
-	public void tablon( Model model1, Model model2) {
+	public void tablon( Model model) {
 		
 		
 
-		model1.addAttribute("ofertas", ofertaRepository.findAll());
-		model2.addAttribute("ofertasDescuento", ofertaDescuentoRepository.findAll());
+		model.addAttribute("ofertas", ofertaRepository.findAll());
+		model.addAttribute("ofertasDescuento", ofertaDescuentoRepository.findAll());
 		
 
 		
 	}
+	
 	
 	
 	
@@ -82,9 +83,15 @@ public class OfertaController {
 	@RequestMapping("/borrarPromocion")
 	public String borrarPromocion(Model model, Oferta oferta) {
 		
+		
+		
 		Oferta promocion = ofertaRepository.findByCode(oferta.getCode());
-
 		ofertaRepository.delete(promocion);
+		
+		OfertaDescuento promociondescuento = ofertaDescuentoRepository.findByCode(oferta.getCode());
+		ofertaDescuentoRepository.delete(promociondescuento);
+		
+		
 		return "ofertas.html";
 		
 		}

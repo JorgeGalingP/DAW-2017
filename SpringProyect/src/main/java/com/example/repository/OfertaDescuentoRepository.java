@@ -11,7 +11,7 @@ public interface OfertaDescuentoRepository extends JpaRepository<OfertaDescuento
 	
 	List<OfertaDescuento> findByName(String name);
 	
-	List<OfertaDescuento> findByCode(int code);
+	OfertaDescuento findByCode(int code);
 	
 	
 	
