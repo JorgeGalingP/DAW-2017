@@ -6,12 +6,12 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
-import appSpring.repository.UserRepositoryAuthenticationProvider;
+//import appSpring.repository.UserRepositoryAuthenticationProvider;
 @Configuration
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter   {
 	
-	@Autowired
-	public UserRepositoryAuthenticationProvider authenticationProvider;
+	//@Autowired
+	//public UserRepositoryAuthenticationProvider authenticationProvider;
 	
 	@Override
 	protected void configure (HttpSecurity http) throws Exception{
@@ -51,10 +51,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter   {
 		
 	}
 	
-	@Override 
+	/*@Override 
 	protected void configure (AuthenticationManagerBuilder auth) throws Exception{
 		auth.authenticationProvider(authenticationProvider);
-	}
+	}*/
 	
 	
 	

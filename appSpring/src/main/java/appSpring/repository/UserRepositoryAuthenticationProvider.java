@@ -1,4 +1,4 @@
-package appSpring.repository;
+/*package appSpring.repository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,4 +43,4 @@ public class UserRepositoryAuthenticationProvider implements AuthenticationProvi
 		return true;
 	}
 
-}
+}*/

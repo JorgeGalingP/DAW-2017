@@ -1,0 +1,32 @@
+<div class="row item">
+    <div class="col-sm-12 col-md-4 col-lg-3">
+        <div class="coverItem">
+            {{#picture}}
+            <img src="img/books/{{picture}}" class="img-responsive" /> {{/picture}} {{^picture}}
+            <img src="img/noPicture.png" class="img-responsive" /> {{/picture}}
+            <a href="/{{id}}/reserve" class="btn btn-reserve">Reservar</a>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-8 col-lg-7 informationItem">
+        <h3 class="title">{{ title }}</h3>
+        <h5 class="authorName">por {{ author }}</h5>
+        <ul class="stars">
+            <li class="staticStar p10"></li>
+            <li class="staticStar p10"></li>
+            <li class="staticStar p10"></li>
+            <li class="staticStar p6"></li>
+            <li class="staticStar p0"></li>
+        </ul> <span class="ratingValue">3.66</span>
+        <div class="description">
+            <p>
+                {{ description }}
+                <span>...</span>
+                <a href="/{{ id }}"> <span class="moreInfo">+ info</span> </a>
+            </p>
+            <div class="available stockAvailable">
+                <span class="glyphicon glyphicon-ok-circle"></span>
+                <span class="textAvailable">Disponible</span>
+            </div>
+        </div>
+    </div>
+</div>
