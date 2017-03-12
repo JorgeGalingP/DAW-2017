@@ -60,6 +60,17 @@ public class ViniloController {
 			
 			}
 		
+		//metodo para borrar un vinilo desde el form
+				@RequestMapping("/borrarArticulo")
+				public String borrarVinilo(Model model, Resource resource) {
+					
+					Resource vinilo = repository.findByTitle(resource.getTitle());
+
+					repository.delete(vinilo);
+					return "index.html";
+					
+					}
+		
 		@RequestMapping("/articulo/{id}")
 		public String verArticulo(Model model, @PathVariable int id) {
 			

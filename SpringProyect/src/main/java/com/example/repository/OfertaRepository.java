@@ -11,7 +11,7 @@ public interface OfertaRepository extends JpaRepository<Oferta,Integer> {
 	
 	List<Oferta> findByName(String name);
 	
-	List<Oferta> findByCode(int code);
+	Oferta findByCode(int code);
 	
 	
 	

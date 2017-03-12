@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 import com.example.entity.Oferta;
 import com.example.entity.OfertaDescuento;
+import com.example.entity.Resource;
 import com.example.repository.OfertaDescuentoRepository;
 import com.example.repository.OfertaRepository;
 
@@ -73,6 +74,17 @@ public class OfertaController {
 	public String nuevaOferta(Model model, Oferta oferta) {
 
 		ofertaRepository.save(oferta);
+		return "ofertas.html";
+		
+		}
+	
+	//metodo para borrar una oferta desde el form
+	@RequestMapping("/borrarPromocion")
+	public String borrarPromocion(Model model, Oferta oferta) {
+		
+		Oferta promocion = ofertaRepository.findByCode(oferta.getCode());
+
+		ofertaRepository.delete(promocion);
 		return "ofertas.html";
 		
 		}
