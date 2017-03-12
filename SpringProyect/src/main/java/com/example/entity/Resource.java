@@ -1,9 +1,18 @@
 package com.example.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+
+
+
 
 @Entity
 public class Resource {
@@ -21,7 +30,8 @@ public class Resource {
 	private int codigo;
 	private String tracklist;
 	
-	
+	@OneToMany(cascade = CascadeType.ALL)
+	private List<Comment> comments = new ArrayList<>();
 	
 	
 	public String getSubtitle() {
@@ -163,7 +173,13 @@ public class Resource {
 		this.codigo = codigo;
 	}
 	
-	
+	public List<Comment> getComments() {
+		return comments;
+	}
+
+	public void setComments(List<Comment> comments) {
+		this.comments = comments;
+	}
 	
 	
 	

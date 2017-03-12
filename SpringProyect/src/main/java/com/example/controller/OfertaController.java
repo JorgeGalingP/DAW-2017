@@ -13,7 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 import com.example.entity.Oferta;
-
+import com.example.entity.OfertaDescuento;
+import com.example.repository.OfertaDescuentoRepository;
 import com.example.repository.OfertaRepository;
 
 
@@ -23,9 +24,13 @@ import com.example.repository.OfertaRepository;
 @Controller
 public class OfertaController {
 	
-	@Autowired
+@Autowired
 	
 	private OfertaRepository ofertaRepository;
+
+@Autowired
+	private OfertaRepository ofertaDescuentoRepository;
+	
 	
 	@PostConstruct
 	public void init(){
@@ -33,6 +38,8 @@ public class OfertaController {
 		ofertaRepository.save(oferta1);
 		Oferta oferta2 = new Oferta ("3x2",4321,"LLevate 3 y paga 2",3,2);
 		ofertaRepository.save(oferta2);
+		
+		
 	
 	}
 	
@@ -47,12 +54,19 @@ public class OfertaController {
 	
 	
 	@RequestMapping("/ofertas.html")
-	public String tablon(Model model) {
+	public void tablon( Model model1, Model model2) {
+		
+		
 
-		model.addAttribute("ofertas", ofertaRepository.findAll());
+		model1.addAttribute("ofertas", ofertaRepository.findAll());
+		model2.addAttribute("ofertasDescuento", ofertaDescuentoRepository.findAll());
+		
 
-		return "ofertas";
+		
 	}
+	
+	
+	
 	
 	//metodo para crear una oferta desde el form
 	@RequestMapping("/nuevaOferta")
