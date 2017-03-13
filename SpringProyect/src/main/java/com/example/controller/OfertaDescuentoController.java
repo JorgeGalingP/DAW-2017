@@ -22,8 +22,12 @@ public class OfertaDescuentoController {
 	
 	@PostConstruct
 	public void init(){
-		OfertaDescuento ofertadescuento1 = new OfertaDescuento ("20%",1111,"20 porciento de descuento",20);
+		OfertaDescuento ofertadescuento1 = new OfertaDescuento ("AHORRA 10%",1111,"10% de descuento en todos nuestros productos",10);
 		ofertaDescuentoRepository.save(ofertadescuento1);
+		OfertaDescuento ofertadescuento2 = new OfertaDescuento ("AHORRA 20%",1112,"20% de descuento si te llevas 3 o más artículos",20);
+		ofertaDescuentoRepository.save(ofertadescuento2);
+		
+		
 		
 	
 	}
