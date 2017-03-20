@@ -70,12 +70,6 @@ public class OfertaController {
 		
 	}
 	
-	@RequestMapping("/administrador.html")
-	public void adminOfertas( Model model) {
-		model.addAttribute("ofertas", ofertaRepository.findAll());
-		model.addAttribute("ofertasDescuento", ofertaDescuentoRepository.findAll());
-	}
-	
 	
 	
 	

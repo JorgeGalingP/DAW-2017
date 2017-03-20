@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.example.entity.Comment;
 import com.example.entity.Oferta;
 import com.example.entity.Resource;
-import com.example.repository.OfertaRepository;
 import com.example.repository.ResourceRepository;
 
 
@@ -51,10 +50,15 @@ public class ViniloController {
 	
 	@RequestMapping("/index.html")
 	public void tablon( Model model) {
+		
+		
+
 		model.addAttribute("vinilos", repository.findAll());
+		
+		
+
+		
 	}
-	
-	
 	//metodo para crear un vinilo desde el form
 		@RequestMapping("/nuevoVinilo")
 		public String nuevoVinilo(Model model, Resource resource) {
