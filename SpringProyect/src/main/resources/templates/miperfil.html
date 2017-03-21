@@ -84,7 +84,7 @@
                     <div class="col-lg-12">
                         <div class="page-header">
                             <h1 id="forms"> Mi Perfil 
-                              <small> Cuenta Creada . Visualice sus datos</small>
+                              <small>  Visualice sus datos</small>
                           </h1>
                         </div>
                     </div>
@@ -99,11 +99,11 @@
                 <div class="user-wrapper">
                     <div class="description">
                         <br>
-                        <h3> name</h3>
+                        <h3> {{user.name}}</h3>
                         <hr />
                         <div class="list-group">
                             <a id="miPerfilMenu" href="#" class="list-group-item"><span class="glyphicon glyphicon-user"></span> Mi Perfil </a>
-                            <a id="editarPerfilMenu" href="#" class="list-group-item"><span class="glyphicon glyphicon-folder-open"></span> Editar perfil</a>
+                            <a id="editarPerfilMenu" href="#" class="list-group-item"><span class="glyphicon glyphicon-folder-open"></span> Administrar perfil</a>
                         </div>
                     </div>
                 </div>
@@ -112,150 +112,36 @@
             <div class="col-lg-9 col-md-9" id="miPerfil">
                 <p class="lead">Información de usuario</p>
                 <div class="list-group">
-                    <p class="list-group-item">name</p>
-                    <p class="list-group-item">surname</p>
-                    <p class="list-group-item">email</p>
-                    <p class="list-group-item">telephone</p>
-                    <p class="list-group-item">pais</p>
-                    <p class="list-group-item">postalCode</p>
+                    <p class="list-group-item">{{user.name}}</p>
+                    <p class="list-group-item">{{user.surname}}</p>
+                    <p class="list-group-item">{{user.email}}</p>
+                    <p class="list-group-item">{{user.telephone}}</p>
+                    <p class="list-group-item">{{user.pais}}</p>
+                    <p class="list-group-item">{{user.postalCode}}</p>
                 </div>
                 <hr />
                 
                 <p class="lead">Información de contacto</p>
                 <div class="list-group">
-                    <p class="list-group-item">email</p>
-                    <p class="list-group-item">telephone</p>
+                    <p class="list-group-item">{{user.email}}</p>
+                    <p class="list-group-item">{{user.telephone}}</p>
                 </div>
                 <hr />
                 <p class="lead">Información adicional</p>
                 <div class="list-group">
-                    <p class="list-group-item">descripcion</p>
-                    <p class="list-group-item">password</p>
+                    <p class="list-group-item">{{user.descripcion}}</p>
+                    
                 </div>
             </div>
             <div class="col-md-9 col-sm-9" id="editarPerfil">
                 <!-- Editar opciones del perfil -->
-                <h3> Editar Perfil </h3>
+                <h3> Administrar perfil </h3>
                 <br>
                 <!-- <div class="description"> -->
-                <div class="panel panel-default text-center">
-                    <div class="panel-heading">
-                        <div class="text-muted bootstrap-admin-box-title">Añade un nuevo Nombre</div>
-                    </div>
-                    <br>
-                    <br>
-
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <form class="form-horizontal">
-                                <div class="col-lg-11">
-
-                                    <div class="form-group">
-                                        <label class="col-lg-3 control-label">    name</label>
-                                        <div class="col-lg-9">
-                                            <input type="text" class="form-control col-md-6">
-
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label class="col-lg-3 control-label" for="typeahead">Apellidos surname</label>
-                                        <div class="col-lg-9">
-                                            <input type="text" class="form-control col-md-6">
-
-                                        </div>
-                                    </div>
-                                     <div class="form-group">
-                                        <label class="col-lg-3 control-label" for="typeahead"> telephone</label>
-                                        <div class="col-lg-9">
-                                            <input type="text" class="form-control col-md-6">
-
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label class="col-lg-3 control-label" for="typeahead">email email</label>
-                                        <div class="col-lg-9">
-                                            <input type="text" class="form-control col-md-6">
-
-                                        </div>
-                                    </div>
-                                    <br>
-
-                                    <label class="col-lg-12">
-                                        <a href="#" class="btn btn-primary">Guardar</a>
-                                    </label>
-
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <br>
-                </div>
+              
                 <br>
-                <div class="panel panel-default text-center">
-                    <div class="panel-heading">
-                        <div class="text-muted bootstrap-admin-box-title">Añade una nueva Dirección</div>
-                    </div>
-                    <br>
-                    <br>
-
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <form class="form-horizontal">
-                                <div class="col-lg-11">
-
-                                    <div class="form-group">
-                                        <label class="col-lg-3 control-label"> Direccion 1</label>
-                                        <p> telephone</p>
-                                        <div class="col-lg-9">
-                                            <input type="text" class="form-control col-md-6">
-
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label class="col-lg-3 control-label" for="typeahead">Direccion 2</label>
-                                        <div class="col-lg-9">
-                                            <input type="password" class="form-control col-md-6">
-
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label class="col-lg-3 control-label" for="typeahead">Pais</label>
-                                        <div class="col-lg-9">
-                                            <input type="text" class="form-control col-md-6">
-
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-lg-3 control-label" for="typeahead">Ciudad</label>
-                                        <div class="col-lg-9">
-                                            <input type="text" class="form-control col-md-6">
-
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-lg-3 control-label" for="typeahead">Localidad</label>
-                                        <div class="col-lg-9">
-                                            <input type="text" class="form-control col-md-6">
-
-                                        </div>
-                                    </div>
-                                    <br>
-
-                                    <label class="col-lg-12">
-                                        <a href="#" class="btn btn-primary">Guardar</a>
-                                    </label>
-
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <br>
-                </div>
-                <br>
+          
+                
                 <div class="panel panel-default text-center">
                     <div class="panel-heading">
                         <div class="text-muted bootstrap-admin-box-title">Añade una nueva Tarjeta de Crédito</div>
@@ -317,106 +203,12 @@
                     </div>
                     <br>
                 </div>
-                <!--<li>
-                            <label>
-                                <input type="radio" name="opciones" id="opciones_1" value="opcion_1" checked> Opcion 1
-                            </label>
-                        </li>
-                        <li>
-                            <label>
-                                <input type="radio" name="opciones" id="opciones_1" value="opcion_1" disabled> Opcion 2
-                            </label>
-                        </li>
-                        <li>
-                            <label>
-                                <input type="radio" name="opciones" id="opciones_1" value="opcion_1" disabled> Opcion 3
-                            </label>
-                        </li>
-                        <li>
-                            <label>
-                                <input type="radio" name="opciones" id="opciones_1" value="opcion_1" disabled> Opcion 4
-                            </label>
-                        </li>-->
+              
                 <br>
-                <div class="panel panel-default text-center">
-                    <div class="panel-heading">
-                        <div class="text-muted bootstrap-admin-box-title">Cambia tu password</div>
-                    </div>
-                    <br>
-                    <br>
-
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <form class="form-horizontal">
-                                <div class="col-lg-11">
-
-                                    <div class="form-group">
-                                        <label class="col-lg-3 control-label">password actual</label>
-                                        <div class="col-lg-9">
-                                            <input type="password" class="form-control col-md-6">
-
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label class="col-lg-3 control-label" for="typeahead">Nueva password</label>
-                                        <div class="col-lg-9">
-                                            <input type="password" class="form-control col-md-6">
-
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label class="col-lg-3 control-label" for="typeahead">Confirmar password</label>
-                                        <div class="col-lg-9">
-                                            <input type="password" class="form-control col-md-6">
-
-                                        </div>
-                                    </div>
-                                    <br>
-
-                                    <label class="col-lg-12">
-                                        <a href="#" class="btn btn-primary">Guardar</a>
-                                    </label>
-
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <br>
-                </div>
+           
                 <br>
 
-                <!-- </div>   <!-- fin div description -->
-
-                <!--   <div class="description"> -->
-
-                <div class="panel panel-default text-center">
-                    <div class="panel-heading">
-                        <div class="text-muted bootstrap-admin-box-title">Cambia tu descripción</div>
-                    </div>
-                    <br>
-                    <br>
-
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <form class="form-horizontal">
-                                <div class="form-group">
-                                    <label class="col-lg-2" for="textarea-wysihtml5">Nueva descripción</label>
-                                    <div class="col-lg-9">
-                                        <textarea id="textarea-wysihtml5" class="form-control col-md-7" placeholder="Introduce una descripción..." rows="5"></textarea>
-                                    </div>
-                                </div>
-                                <label class="col-lg-12 text-center">
-                                    <a href="#" class="btn btn-primary">Guardar</a>
-                                </label>
-
-                            </form>
-                        </div>
-                    </div>
-                    <br>
-                </div>
-                <!-- </div>   <!-- fin div description -->
+              
 
 
                 <!-- Eliminar cuenta  -->
@@ -424,10 +216,12 @@
                     <div class="panel-heading">
                         Borrar cuenta
                     </div>
+                    <form action="borrarPerfil">
                     <div class="panel-body text-center">
                         <p> Su cuenta será borrada para siempre y no podrá recuperarla. Al pulsar el botón de eliminar su cuenta será totalmente eliminada</p>
                         <button type="submit" class="btn btn-danger"> Eliminar </button>
                     </div>
+                    </form>
                 </div>
             </div>
         </div>

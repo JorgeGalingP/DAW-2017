@@ -33,9 +33,10 @@ public class User {
 	@ElementCollection(fetch = FetchType.EAGER)
 	private List<String> roles;
 	
+	
 	protected User(){}
 	
-	
+		
 
 
 	public User(String name, String surname, String email, String pais, String descripcion, String telephone, String password,
@@ -50,8 +51,20 @@ public class User {
 		this.passwordHash = new BCryptPasswordEncoder().encode(password);
 		this.postalCode = postalCode;
 		this.roles = new ArrayList <> (Arrays.asList(roles));
+		
 	}
 
+
+
+	
+	
+
+	
+
+
+
+
+	
 
 
 
