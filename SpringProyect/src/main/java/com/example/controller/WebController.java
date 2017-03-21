@@ -13,9 +13,9 @@ public class WebController {
 	public String index(){
 		return "index";
 	    }
-	@RequestMapping("/inicio_sesion")
+	@RequestMapping("/login")
 		public String inicioSesion(){
-			return "inicio_sesion";
+			return "login";
 	    }
 	@RequestMapping("/articulo")
 		public String articulo(){

@@ -51,13 +51,14 @@
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">USUARIO <span class="caret"></span></a>
                         <ul class="dropdown-menu" aria-labelledby="download">
-                            <li><a href="inicio_sesion.html">Iniciar Sesión</a></li>
+                            <li><a href="login.html">Iniciar Sesión</a></li>
                             <li class="divider"></li>
                             <li><a href="registro.html">Registrarse</a></li>
                             <li class="divider"></li>
                             <li><a href="miperfil.html">Mi Perfil</a></li>
                             <li class="divider"></li>
-                            
+                            <li><a href="login.html">Cerrar sesion</a></li>
+                            <li class="divider"></li>
                             <li><a href="administrador.html">Administrador</a></li>
                         </ul>
                     </li>
@@ -85,103 +86,58 @@
         <!-- /.row -->
 
         <!-- Project One -->
+        {{#ofertas}}
         <div class="row">
+        
             <div class="col-md-7">
                 <a href="#">
                     <img class="img-responsive" src="http://placehold.it/700x300" alt="">
                 </a>
             </div>
+            
             <div class="col-md-5">
-                <h3>Nombre promoción</h3>
-                <h4>CODIGO</h4>
+            
+                <h3>{{name}}</h3>
+                <h4>{{code}}</h4>
                  <div class="form-group">
                 <a type="submit" class="btn btn-warning" href="inicio.html">Copiar código</a>
                 </div>
-                <p>Descripción de la promoción. Descripción de la promoción. Descripción de la promoción. Descripción de la promoción. Descripción de la promoción. Descripción de la promoción. Descripción de la promoción. Descripción de la promoción. Descripción de la promoción. Descripción de la promoción. Descripción de la promoción. Descripción de la promoción. Descripción de la promoción. </p>
+                <p>{{description}} </p>
+                    
 
             </div>
         </div>
+        <br>
+        <br>
+        {{/ofertas}}
         <!-- /.row -->
-
-        <hr>
-
-        <!-- Project Two -->
+		 {{#ofertasDescuento}}
         <div class="row">
+        
             <div class="col-md-7">
                 <a href="#">
                     <img class="img-responsive" src="http://placehold.it/700x300" alt="">
                 </a>
             </div>
+            
             <div class="col-md-5">
-                <h3>Nombre promoción</h3>
-                <h4>CODIGO</h4>
-                <div class="form-group">
+            
+                <h3>{{name}}</h3>
+                <h4>{{code}}</h4>
+                 <div class="form-group">
                 <a type="submit" class="btn btn-warning" href="inicio.html">Copiar código</a>
                 </div>
-                <p>Descripción de la promoción. Descripción de la promoción. Descripción de la promoción. Descripción de la promoción. Descripción de la promoción. Descripción de la promoción. Descripción de la promoción. Descripción de la promoción. Descripción de la promoción. Descripción de la promoción. Descripción de la promoción. Descripción de la promoción. Descripción de la promoción. </p>
+                <p>{{description}} </p>
+                    
+
             </div>
         </div>
-        <!-- /.row -->
-
+        <br>
+        <br>
+        {{/ofertasDescuento}}
         <hr>
 
-        <!-- Project Three -->
-        <div class="row">
-            <div class="col-md-7">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x300" alt="">
-                </a>
-            </div>
-            <div class="col-md-5">
-                <h3>Nombre promoción</h3>
-                <h4>CODIGO</h4>
-                <div class="form-group">
-                <a type="submit" class="btn btn-warning" href="inicio.html">Copiar código</a>
-                </div>
-                <p>Descripción de la promoción. Descripción de la promoción. Descripción de la promoción. Descripción de la promoción. Descripción de la promoción. Descripción de la promoción. Descripción de la promoción. Descripción de la promoción. Descripción de la promoción. Descripción de la promoción. Descripción de la promoción. Descripción de la promoción. Descripción de la promoción. </p>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <hr>
-
-        <!-- Project Four -->
-        <div class="row">
-
-            <div class="col-md-7">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x300" alt="">
-                </a>
-            </div>
-            <div class="col-md-5">
-                <h3>Nombre promoción</h3>
-                <h4>CODIGO</h4>
-                <div class="form-group">
-                <a type="submit" class="btn btn-warning" href="inicio.html">Copiar código</a>
-                </div>
-                <p>Descripción de la promoción. Descripción de la promoción. Descripción de la promoción. Descripción de la promoción. Descripción de la promoción. Descripción de la promoción. Descripción de la promoción. Descripción de la promoción. Descripción de la promoción. Descripción de la promoción. Descripción de la promoción. Descripción de la promoción. Descripción de la promoción. </p>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <hr>
-
-        <!-- Project Five -->
-        <div class="row">
-            <div class="col-md-7">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x300" alt="">
-                </a>
-            </div>
-            <div class="col-md-5">
-                <h3>Nombre promoción</h3>
-                <h4>CODIGO</h4>
-                <div class="form-group">
-                <a type="submit" class="btn btn-warning" href="inicio.html">Copiar código</a>
-                </div>
-                <p>Descripción de la promoción. Descripción de la promoción. Descripción de la promoción. Descripción de la promoción. Descripción de la promoción. Descripción de la promoción. Descripción de la promoción. Descripción de la promoción. Descripción de la promoción. Descripción de la promoción. Descripción de la promoción. Descripción de la promoción. Descripción de la promoción. </p>
-            </div>
-        </div>
+       
         <!-- /.row -->
 
         <hr>

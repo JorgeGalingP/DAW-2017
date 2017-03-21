@@ -52,13 +52,14 @@
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">USUARIO <span class="caret"></span></a>
                         <ul class="dropdown-menu" aria-labelledby="download">
-                            <li><a href="inicio_sesion.html">Iniciar Sesión</a></li>
+                            <li><a href="login.html">Iniciar Sesión</a></li>
                             <li class="divider"></li>
                             <li><a href="registro.html">Registrarse</a></li>
                             <li class="divider"></li>
                             <li><a href="miperfil.html">Mi Perfil</a></li>
                             <li class="divider"></li>
-                           
+                           <li><a href="login.html">Cerrar sesion</a></li>
+                            <li class="divider"></li>
                             <li><a href="administrador.html">Administrador</a></li>
                         </ul>
                     </li>
@@ -78,7 +79,7 @@
                     <div class="col-lg-12">
                         <div class="page-header">
                             <h1 id="forms"> Mi Perfil 
-                              <small> Visualiza y edita tus datos de contacto</small>
+                              <small> Cuenta Creada . Visualice sus datos</small>
                           </h1>
                         </div>
                     </div>
@@ -93,7 +94,7 @@
                 <div class="user-wrapper">
                     <div class="description">
                         <br>
-                        <h3> Luis Hernández</h3>
+                        <h3> {{usuario.name}}</h3>
                         <hr />
                         <div class="list-group">
                             <a id="miPerfilMenu" href="#" class="list-group-item"><span class="glyphicon glyphicon-user"></span> Mi Perfil </a>
@@ -106,38 +107,25 @@
             <div class="col-lg-9 col-md-9" id="miPerfil">
                 <p class="lead">Información de usuario</p>
                 <div class="list-group">
-                    <p class="list-group-item">Nombre</p>
-                    <p class="list-group-item">Apellidos</p>
-                    <p class="list-group-item">Direccion 1</p>
-                    <p class="list-group-item">Direccion 2</p>
-                    <p class="list-group-item">País</p>
-                    <p class="list-group-item">Ciudad</p>
-                    <p class="list-group-item">Localidad</p>
-                    <p class="list-group-item">Código Postal</p>
+                    <p class="list-group-item">{{usuario.name}}</p>
+                    <p class="list-group-item">{{usuario.surname}}</p>
+                    <p class="list-group-item">{{usuario.email}}</p>
+                    <p class="list-group-item">{{usuario.telephone}}</p>
+                    <p class="list-group-item">{{usuario.pais}}</p>
+                    <p class="list-group-item">{{usuario.postalCode}}</p>
                 </div>
                 <hr />
-                <p class="lead">Información de pago</p>
-                <div class="list-group">
-                    <p class="list-group-item">Número de tarjeta</p>
-                    <p class="list-group-item">CVV</p>
-                    <p class="list-group-item">Nombre asociado</p>
-                    <p class="list-group-item">Apellidos asociados</p>
-                </div>
-                <hr />
-                <p class="lead">Método de pago</p>
-                <div class="list-group">
-                    <p class="list-group-item">Opcion 1</p>
-                </div>
-                <hr />
+                
                 <p class="lead">Información de contacto</p>
                 <div class="list-group">
-                    <p class="list-group-item">Email</p>
-                    <p class="list-group-item">Telefono</p>
+                    <p class="list-group-item">{{usuario.email}}</p>
+                    <p class="list-group-item">{{usuario.telephone}}</p>
                 </div>
                 <hr />
                 <p class="lead">Información adicional</p>
                 <div class="list-group">
-                    <p class="list-group-item">Descripción</p>
+                    <p class="list-group-item">{{usuario.descripcion}}</p>
+                    <p class="list-group-item">{{usuario.password}}</p>
                 </div>
             </div>
             <div class="col-md-9 col-sm-9" id="editarPerfil">
@@ -158,7 +146,7 @@
                                 <div class="col-lg-11">
 
                                     <div class="form-group">
-                                        <label class="col-lg-3 control-label"> Nombre</label>
+                                        <label class="col-lg-3 control-label">    {{usuario.name}}</label>
                                         <div class="col-lg-9">
                                             <input type="text" class="form-control col-md-6">
 
@@ -166,7 +154,14 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="col-lg-3 control-label" for="typeahead">Apellido 1</label>
+                                        <label class="col-lg-3 control-label" for="typeahead">Apellidos {{usuario.surname}}</label>
+                                        <div class="col-lg-9">
+                                            <input type="text" class="form-control col-md-6">
+
+                                        </div>
+                                    </div>
+                                     <div class="form-group">
+                                        <label class="col-lg-3 control-label" for="typeahead"> {{usuario.telephone}}</label>
                                         <div class="col-lg-9">
                                             <input type="text" class="form-control col-md-6">
 
@@ -174,7 +169,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="col-lg-3 control-label" for="typeahead">Apellido 2</label>
+                                        <label class="col-lg-3 control-label" for="typeahead">email {{usuario.email}}</label>
                                         <div class="col-lg-9">
                                             <input type="text" class="form-control col-md-6">
 
@@ -207,6 +202,7 @@
 
                                     <div class="form-group">
                                         <label class="col-lg-3 control-label"> Direccion 1</label>
+                                        <p> {{usuario.telephone}}</p>
                                         <div class="col-lg-9">
                                             <input type="text" class="form-control col-md-6">
 
@@ -339,7 +335,7 @@
                 <br>
                 <div class="panel panel-default text-center">
                     <div class="panel-heading">
-                        <div class="text-muted bootstrap-admin-box-title">Cambia tu contraseña</div>
+                        <div class="text-muted bootstrap-admin-box-title">Cambia tu password</div>
                     </div>
                     <br>
                     <br>
@@ -350,7 +346,7 @@
                                 <div class="col-lg-11">
 
                                     <div class="form-group">
-                                        <label class="col-lg-3 control-label">Contraseña actual</label>
+                                        <label class="col-lg-3 control-label">password actual</label>
                                         <div class="col-lg-9">
                                             <input type="password" class="form-control col-md-6">
 
@@ -358,7 +354,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="col-lg-3 control-label" for="typeahead">Nueva Contraseña</label>
+                                        <label class="col-lg-3 control-label" for="typeahead">Nueva password</label>
                                         <div class="col-lg-9">
                                             <input type="password" class="form-control col-md-6">
 
@@ -366,7 +362,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="col-lg-3 control-label" for="typeahead">Confirmar Contraseña</label>
+                                        <label class="col-lg-3 control-label" for="typeahead">Confirmar password</label>
                                         <div class="col-lg-9">
                                             <input type="password" class="form-control col-md-6">
 
@@ -443,10 +439,9 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p align="center">Copyright &copy; VirtualVinilo</p>
-                    <p align="center">Guillermo Urbano, Ilia Ramírez, Jorge Galindo, Daniel Camacho</p>
+                    <p align="center">Copyright &copy; AdoptaUnCompañero</p>
+                    <p align="center">Guillermo Urbano, Ilia Ramírez, Dina El Gueddari, Yasmina Leranca</p>
                     <p align="center" class="text-danger"><a href="somos.html">Quienes Somos</a></p>
-                    
                 </div>
             </div>
             <!-- /.row -->

@@ -1,5 +1,5 @@
 -
--<html lang="en">
+<html lang="en">
 
 <head>
     <title>VirtualVinilo</title>
@@ -48,13 +48,13 @@
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">USUARIO <span class="caret"></span></a>
                         <ul class="dropdown-menu" aria-labelledby="download">
-                            <li><a href="inicio_sesion.html">Iniciar Sesión</a></li>
+                            <li><a href="login.html">Iniciar Sesión</a></li>
                             <li class="divider"></li>
                             <li><a href="registro.html">Registrarse</a></li>
                             <li class="divider"></li>
                             <li><a href="miperfil.html">Mi Perfil</a></li>
                             <li class="divider"></li>
-                           
+                            
                             <li><a href="administrador.html">Administrador</a></li>
                         </ul>
                     </li>
@@ -65,7 +65,7 @@
 
 
     <!rejilla con diferentes secciones>
-
+    
     <div class="container">
         <br>
         <br>
@@ -76,34 +76,100 @@
                     <div class="row">
                         <div class="col-lg-10">
                             <div class="page-header">
-                                <h1 id="forms">Inicio Sesion <small> Compra y vende vinilos en nuestro portal</small></h1>
+                                <h1 id="forms">Regístrate ahora! <small> Compra y vende vinilos en nuestro portal</small></h1>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Columna Izquierda -->
-                <div class=" col-xs-12 col-sm-6 col-md-6 col-lg-6 text-justify">
+                <!-- Columna -->
+                <div class=" col-xs-12 col-sm-6 col-md-6 col-lg-6 col-md-offset-3 col-sm-offset-3 col-lg-offset-3 text-justify">
                     <!-- Formulario -->
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                             <div class="well bs-component">
-                                <form class="form">
-                                    <fieldset>
-                                        <legend>BIENVENIDOS</legend>
+                                
+                                 <form action="registrarse" method="post">
+                                   
+                                        <legend>Datos personales</legend>
                                         <div class="form-group">
-                                            <label for="inputUser" class="col-lg-12 control-label"> ¡VIRTUAL VINILO!</label>
+                                            <label for="inputUser" class="col-lg-12 control-label">Nombre de usuario</label>
                                             <div class="col-lg-12">
-                                                <p class="news">Bienvenido a Virtual vinilo la web de vinilos mas top del panorama español.Tenemos los último en vinilos a precios inreibles.Si ya formas parte de nuestra comunidad inicia sesion sino registrate haciendo click <a href="registro.html"><kbd>aqui</kbd></a></p>
-                                                <p><img src="imagenes/VIrtualViniloLogo.png" width="500"></p>
-                                               
+                                                <input type="text" class="form-control" name="name" placeholder="Elige un nombre de usuario">
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
                                             <br>
                                         </div>
+                                        <div class="form-group">
+                                            <label for="inputUser" class="col-lg-12 control-label">Apellidos</label>
+                                            <div class="col-lg-12">
+                                                <input type="text" class="form-control" name="surname" placeholder="Introduce tus apellidos">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <br>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputEmail" class="col-lg-12 control-label">Email</label>
+                                            <div class="col-lg-12">
+                                                <input type="text" class="form-control" name="email" placeholder="Introduce email">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <br>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputEmail" class="col-lg-12 control-label">País</label>
+                                            <div class="col-lg-12">
+                                                <input type="text" class="form-control" name="pais" placeholder="Introduce el país">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <br>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputEmail" class="col-lg-12 control-label">Codigo Postal</label>
+                                            <div class="col-lg-12">
+                                                <input type="text" class="form-control" name="postalCode" placeholder="Introduce el código postal">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <br>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputEmail" class="col-lg-12 control-label">Descripcion</label>
+                                            <div class="col-lg-12">
+                                                <input type="text" class="form-control" name="descripcion" placeholder="Introduce una descripción que te defina">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <br>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputEmail" class="col-lg-12 control-label">Número de teléfono</label>
+                                            <div class="col-lg-12">
+                                                <input type="text" class="form-control" name="telephone" placeholder="Introduce tu número de telefono">
+                                            </div>
+                                        </div>
+                                         <div class="col-lg-12">
+                                            <br>
+                                            </div>
                                         
-                                        
-                                    </fieldset>
+                                         <div class="form-group">
+                                            <label for="inputEmail" class="col-lg-12 control-label">password</label>
+                                            <div class="col-lg-12">
+                                                <input type="password" class="form-control" name="password" placeholder="Elige una password">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                        <br>
+                                        </div>
+           
+                                    <div class="form-group">
+                                     
+                                    <input type='submit' class="btn btn-primary" value='Crear nueva cuenta'/></>
+                                    </div>
+                                  
                                 </form>
                             </div>
                         </div>
@@ -111,54 +177,8 @@
                 </div>
 
                 <!-- Columna Derecha -->
-                <div class=" col-xs-12 col-sm-6 col-md-6 col-lg-6 text-justify">
-                    <!-- Formulario -->
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                            <div class="well bs-component">
-                                <form class="form">
-                                    <fieldset>
-                                        <legend>Inicio Sesion</legend>
-
-                                        <div class="form-group">
-
-                                            <label for="inputEmail" class="col-lg-12">Introduzca su nombre de usuario</label>
-                                            <div class="col-lg-12">
-                                                <input type="text" class="form-control" id="inputPassword" placeholder="Usuario">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <br>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="inputPassword" class="col-lg-12">Introduzca su contraseña</label>
-                                            <div class="col-lg-12">
-                                                <input type="password" class="form-control" id="inputPassword" placeholder="Password">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <br>
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="col-lg-11">
-                                                <span class="help-block">Pulsándo el boton de "Iniciar Sesión" estás aceptando los Terminos de Servicio y la Política de Privacidad.</span>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="col-lg-12">
-                                                <a type="submit" class="btn btn-primary" href="inicio.html">Iniciar Sesion</a>
-                                            </div>
-                                        </div>
-
-                                    </fieldset>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+                
+    
 
     <div class="container">
         <hr>
@@ -170,6 +190,7 @@
                     <p align="center">Copyright &copy; VirtualVinilo</p>
                     <p align="center">Guillermo Urbano, Ilia Ramírez, Jorge Galindo, Daniel Camacho</p>
                     <p align="center" class="text-danger"><a href="somos.html">Quienes Somos</a></p>
+                    
                 </div>
             </div>
             <!-- /.row -->
