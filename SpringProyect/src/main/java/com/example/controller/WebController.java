@@ -5,8 +5,10 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.example.entity.Resource;
 import com.example.entity.User;
 import com.example.repository.OfertaDescuentoRepository;
 import com.example.repository.OfertaRepository;
@@ -44,6 +46,27 @@ public class WebController {
 		model.addAttribute("vinilos", repository.findAll());
 		return "index";
 	}
+	
+	@RequestMapping("/{id}")
+	public String verArticulo(Model model, HttpServletRequest request,  @PathVariable int id) {
+
+		if (request.isUserInRole("ADMIN") || request.isUserInRole("USER")) {
+			User loggedUser = userRepository.findByName(request.getUserPrincipal().getName());
+			model.addAttribute("user", loggedUser);
+			model.addAttribute("logged", true);
+		} else
+			model.addAttribute("unlogged", true);
+		if (request.isUserInRole("ADMIN"))
+			model.addAttribute("admin", true);
+		
+		Resource vinilo = repository.findOne(id);
+
+		model.addAttribute("vinilo", vinilo);
+
+		return "articulo";
+	}
+	
+	
 
 	@RequestMapping("/login")
 	public String inicioSesion(Model model, HttpServletRequest request) {

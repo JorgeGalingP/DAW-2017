@@ -69,15 +69,7 @@ public class ViniloController {
 					
 					}
 		
-		@RequestMapping("/articulo/{id}")
-		public String verArticulo(Model model, @PathVariable int id) {
-			
-			Resource vinilo = repository.findOne(id);
-
-			model.addAttribute("vinilo", vinilo);
-
-			return "articulo";
-		}
+	
 		
 
 		/*@RequestMapping("/articulo/addComment")

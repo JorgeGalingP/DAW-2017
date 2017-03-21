@@ -18,14 +18,15 @@ public class RegistroController {
 	private UserRepository userRepository;
 	
 	@RequestMapping("/registrarse")
-	public String Registro( User user){
+	public String Registro(@RequestParam String name, @RequestParam String surname, @RequestParam String email, @RequestParam String pais, @RequestParam String descripcion,  @RequestParam String telephone, @RequestParam String contraseña,  @RequestParam int postalCode){
 		
-		
+		User user = new User(name, surname, email, pais, descripcion, telephone, contraseña, postalCode, "ROLE_USER");
 		userRepository.save(user);
 		
 		return "login";	
 		
 	}
+
 	
 	
 	/*@RequestMapping("/Modificar")
