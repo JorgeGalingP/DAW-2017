@@ -1,4 +1,4 @@
-package security;
+package com.example.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -42,12 +42,12 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http.formLogin().loginPage("/login");
         http.formLogin().usernameParameter("username");
         http.formLogin().passwordParameter("password");
-        http.formLogin().defaultSuccessUrl("/index");
+        http.formLogin().defaultSuccessUrl("/");
         http.formLogin().failureUrl("/loginError");
 
         // Logout
         http.logout().logoutUrl("/logout");
-         http.logout().logoutSuccessUrl("/");
+        http.logout().logoutSuccessUrl("/");
         
         // Disable CSRF at the moment
         http.csrf().disable();
