@@ -164,6 +164,10 @@ public class WebController {
 		if (request.isUserInRole("ADMIN"))
 			model.addAttribute("admin", true);
 		
+		model.addAttribute("vinilos", repository.findAll());
+		model.addAttribute("ofertas", ofertaRepository.findAll());
+ 		model.addAttribute("ofertasDescuento", ofertaDescuentoRepository.findAll());
+		
 		return ("administrador");
 	}
 
