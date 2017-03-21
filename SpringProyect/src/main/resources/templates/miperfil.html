@@ -93,7 +93,7 @@
                 <div class="user-wrapper">
                     <div class="description">
                         <br>
-                        <h3> {{name}}</h3>
+                        <h3> {{usuario.name}}</h3>
                         <hr />
                         <div class="list-group">
                             <a id="miPerfilMenu" href="#" class="list-group-item"><span class="glyphicon glyphicon-user"></span> Mi Perfil </a>
@@ -106,25 +106,25 @@
             <div class="col-lg-9 col-md-9" id="miPerfil">
                 <p class="lead">Información de usuario</p>
                 <div class="list-group">
-                    <p class="list-group-item">{{name}}</p>
-                    <p class="list-group-item">{{surname}}</p>
-                    <p class="list-group-item">{{email}}</p>
-                    <p class="list-group-item">{{telephone}}</p>
-                    <p class="list-group-item">{{pais}}</p>
-                    <p class="list-group-item">{{codigoPostal}}</p>
+                    <p class="list-group-item">{{usuario.name}}</p>
+                    <p class="list-group-item">{{usuario.surname}}</p>
+                    <p class="list-group-item">{{usuario.email}}</p>
+                    <p class="list-group-item">{{usuario.telephone}}</p>
+                    <p class="list-group-item">{{usuario.pais}}</p>
+                    <p class="list-group-item">{{usuario.postalCode}}</p>
                 </div>
                 <hr />
                 
                 <p class="lead">Información de contacto</p>
                 <div class="list-group">
-                    <p class="list-group-item">{{email}}</p>
-                    <p class="list-group-item">{{telephone}}</p>
+                    <p class="list-group-item">{{usuario.email}}</p>
+                    <p class="list-group-item">{{usuario.telephone}}</p>
                 </div>
                 <hr />
                 <p class="lead">Información adicional</p>
                 <div class="list-group">
-                    <p class="list-group-item">{{descripcion}}</p>
-                    <p class="list-group-item">{{inputPassword}}</p>
+                    <p class="list-group-item">{{usuario.descripcion}}</p>
+                    <p class="list-group-item">{{usuario.contraseña}}</p>
                 </div>
             </div>
             <div class="col-md-9 col-sm-9" id="editarPerfil">
@@ -145,7 +145,7 @@
                                 <div class="col-lg-11">
 
                                     <div class="form-group">
-                                        <label class="col-lg-3 control-label">    {{name}}</label>
+                                        <label class="col-lg-3 control-label">    {{usuario.name}}</label>
                                         <div class="col-lg-9">
                                             <input type="text" class="form-control col-md-6">
 
@@ -153,14 +153,14 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="col-lg-3 control-label" for="typeahead">Apellidos {{surname}}</label>
+                                        <label class="col-lg-3 control-label" for="typeahead">Apellidos {{usuario.surname}}</label>
                                         <div class="col-lg-9">
                                             <input type="text" class="form-control col-md-6">
 
                                         </div>
                                     </div>
                                      <div class="form-group">
-                                        <label class="col-lg-3 control-label" for="typeahead"> {{telephone}}</label>
+                                        <label class="col-lg-3 control-label" for="typeahead"> {{usuario.telephone}}</label>
                                         <div class="col-lg-9">
                                             <input type="text" class="form-control col-md-6">
 
@@ -168,7 +168,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="col-lg-3 control-label" for="typeahead">email {{email}}</label>
+                                        <label class="col-lg-3 control-label" for="typeahead">email {{usuario.email}}</label>
                                         <div class="col-lg-9">
                                             <input type="text" class="form-control col-md-6">
 
@@ -201,7 +201,7 @@
 
                                     <div class="form-group">
                                         <label class="col-lg-3 control-label"> Direccion 1</label>
-                                        <p> {{telephone}}</p>
+                                        <p> {{usuario.telephone}}</p>
                                         <div class="col-lg-9">
                                             <input type="text" class="form-control col-md-6">
 

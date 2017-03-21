@@ -13,11 +13,12 @@ public class User {
 	private Integer id;
 	
 	private String name;
-	private String username;
-	private String street1;
-	private String street2;
-	private String country;
-	private String city;
+	private String surname;
+	private String email;
+	private String pais;
+	private String descripcion;
+	private String telephone;
+	private String contraseña;
 	private int postalCode;
 	
 	
@@ -26,15 +27,16 @@ public class User {
 	
 
 
-	public User(String name, String username, String street1, String street2, String country, String city,
+	public User(String name, String surname, String email, String pais, String descripcion, String telephone, String contraseña,
 			int postalCode) {
 		
 		this.name = name;
-		this.username = username;
-		this.street1 = street1;
-		this.street2 = street2;
-		this.country = country;
-		this.city = city;
+		this.surname = surname;
+		this.email = email;
+		this.pais = pais;
+		this.descripcion = descripcion;
+		this.telephone = telephone;
+		this.contraseña = contraseña;
 		this.postalCode = postalCode;
 	}
 
@@ -65,54 +67,17 @@ public class User {
 	}
 
 
-	public String getUsername() {
-		return username;
+	public String getSurname() {
+		return surname;
 	}
 
 
-	public void setUsername(String username) {
-		this.username = username;
+	public void setSurname(String username) {
+		this.surname = username;
 	}
 
 
-	public String getStreet1() {
-		return street1;
-	}
-
-
-	public void setStreet1(String street1) {
-		this.street1 = street1;
-	}
-
-
-	public String getStreet2() {
-		return street2;
-	}
-
-
-	public void setStreet2(String street2) {
-		this.street2 = street2;
-	}
-
-
-	public String getCountry() {
-		return country;
-	}
-
-
-	public void setCountry(String country) {
-		this.country = country;
-	}
-
-
-	public String getCity() {
-		return city;
-	}
-
-
-	public void setCity(String city) {
-		this.city = city;
-	}
+	
 
 
 	public int getPostalCode() {
@@ -122,6 +87,76 @@ public class User {
 
 	public void setPostalCode(int postalCode) {
 		this.postalCode = postalCode;
+	}
+
+
+
+
+	public String getEmail() {
+		return email;
+	}
+
+
+
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+
+
+
+	public String getPais() {
+		return pais;
+	}
+
+
+
+
+	public void setPais(String pais) {
+		this.pais = pais;
+	}
+
+
+
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+
+
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
+
+
+
+	public String getTelephone() {
+		return telephone;
+	}
+
+
+
+
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
+	}
+
+
+
+
+	public String getContraseña() {
+		return contraseña;
+	}
+
+
+
+
+	public void setContraseña(String contraseña) {
+		this.contraseña = contraseña;
 	}
 	
 	
