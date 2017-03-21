@@ -18,17 +18,12 @@ public class RegistroController {
 	private UserRepository userRepository;
 	
 	@RequestMapping("/registrarse")
-	public String Registro( Model model, User user){
+	public String Registro( User user){
 		
 		
 		userRepository.save(user);
 		
-		
-		model.addAttribute("usuario",user);
-	
-
-
-		return "miperfil";	
+		return "login";	
 		
 	}
 	

@@ -67,19 +67,31 @@
                     <li>
                         <a href="/ofertas">OFERTAS</a>
                     </li>
+                    {{#unlogged}}
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">USUARIO <span class="caret"></span></a>
                         <ul class="dropdown-menu" aria-labelledby="download">
                             <li><a href="/login">Iniciar Sesión</a></li>
                             <li class="divider"></li>
                             <li><a href="/registro">Registrarse</a></li>
-                            <li class="divider"></li>
-                            <li><a href="/miperfil">Mi Perfil</a></li>
-                            <li class="divider"></li>
-
-                            <li><a href="/administrador">Administrador</a></li>
                         </ul>
                     </li>
+                    {{/unlogged}}
+                    
+                    {{#logged}}
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">{{#user}} {{ name }} {{/user}} <span class="caret"></span></a>
+                        <ul class="dropdown-menu" aria-labelledby="download">
+                            <li><a href="/miperfil">Mi Perfil</a></li>
+                            <li class="divider"></li>
+                            {{#admin}}
+                            <li><a href="/administrador">Administrador</a></li>
+                            <li class="divider"></li>
+                            {{/admin}}
+                            <li><a href="/logout">Cerrar sesion</a></li>
+                        </ul>
+                    </li>
+                    {{/logged}}
                 </ul>
             </div>
         </div>
