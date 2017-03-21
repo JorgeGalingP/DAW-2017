@@ -58,17 +58,7 @@ public class OfertaController {
 	}*/
 	
 	
-	@RequestMapping("/ofertas.html")
-	public void tablon( Model model) {
-		
-		
-
-		model.addAttribute("ofertas", ofertaRepository.findAll());
-		model.addAttribute("ofertasDescuento", ofertaDescuentoRepository.findAll());
-		
-
-		
-	}
+	
 	
 	
 	
@@ -79,7 +69,7 @@ public class OfertaController {
 	public String nuevaOferta(Model model, Oferta oferta) {
 
 		ofertaRepository.save(oferta);
-		return "ofertas.html";
+		return "ofertas";
 		
 		}
 	
@@ -96,7 +86,7 @@ public class OfertaController {
 		ofertaDescuentoRepository.delete(promociondescuento);
 		
 		
-		return "ofertas.html";
+		return "ofertas";
 		
 		}
 	

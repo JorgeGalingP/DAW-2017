@@ -2,15 +2,32 @@ package com.example.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.example.repository.OfertaDescuentoRepository;
+import com.example.repository.OfertaRepository;
+import com.example.repository.ResourceRepository;
+
 @Controller
 public class WebController {
 	
+	@Autowired 
+	private ResourceRepository repository;
+	
+@Autowired
+	
+	private OfertaRepository ofertaRepository;
+
+@Autowired
+	private OfertaDescuentoRepository ofertaDescuentoRepository;
+	
+	
 	@RequestMapping("/")
-	public String index(){
+	public String index(Model model){
+		model.addAttribute("vinilos", repository.findAll());
 		return "index";
 	    }
 	@RequestMapping("/login")
@@ -38,7 +55,9 @@ public class WebController {
 		      return("miperfil");
 	    }
 	@RequestMapping("/ofertas")
-	   public String Ofertas(){
+	   public String Ofertas(Model model){
+		model.addAttribute("ofertas", ofertaRepository.findAll());
+		model.addAttribute("ofertasDescuento", ofertaDescuentoRepository.findAll());
 		      return("ofertas");
 	}
 	
