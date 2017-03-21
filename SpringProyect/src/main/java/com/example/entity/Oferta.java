@@ -16,6 +16,7 @@ public class Oferta {
 	private String description;
 	private int llevas;
 	private int pagas;
+	private String img;
 	
 	
 	protected Oferta(){
@@ -24,13 +25,14 @@ public class Oferta {
 	
 
 
-	public Oferta(String name, int code, String description, int llevas, int pagas) {
+	public Oferta(String name, int code, String description, int llevas, int pagas, String img) {
 		
 		this.name = name;
 		this.code = code;
 		this.description = description;
 		this.llevas=llevas;
 		this.pagas=pagas;
+		this.img = img;
 		
 	}
 	
@@ -100,6 +102,18 @@ public class Oferta {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+
+
+	public String getImg() {
+		return img;
+	}
+
+
+
+	public void setImg(String img) {
+		this.img = img;
 	}
 	
 	
