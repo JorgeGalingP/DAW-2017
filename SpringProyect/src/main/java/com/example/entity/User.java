@@ -1,17 +1,9 @@
 package com.example.entity;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @Entity
 public class User {
@@ -26,20 +18,17 @@ public class User {
 	private String pais;
 	private String descripcion;
 	private String telephone;
-	private String passwordHash;
+	private String contraseña;
 	private int postalCode;
 	
-	
-	@ElementCollection(fetch = FetchType.EAGER)
-	private List<String> roles;
 	
 	protected User(){}
 	
 	
 
 
-	public User(String name, String surname, String email, String pais, String descripcion, String telephone, String password,
-			int postalCode, String... roles) {
+	public User(String name, String surname, String email, String pais, String descripcion, String telephone, String contraseña,
+			int postalCode) {
 		
 		this.name = name;
 		this.surname = surname;
@@ -47,37 +36,8 @@ public class User {
 		this.pais = pais;
 		this.descripcion = descripcion;
 		this.telephone = telephone;
-		this.passwordHash = new BCryptPasswordEncoder().encode(password);
+		this.contraseña = contraseña;
 		this.postalCode = postalCode;
-		this.roles = new ArrayList <> (Arrays.asList(roles));
-	}
-
-
-
-
-	public String getPasswordHash() {
-		return passwordHash;
-	}
-
-
-
-
-	public void setPasswordHash(String passwordHash) {
-		this.passwordHash = passwordHash;
-	}
-
-
-
-
-	public List<String> getRoles() {
-		return roles;
-	}
-
-
-
-
-	public void setRoles(List<String> roles) {
-		this.roles = roles;
 	}
 
 
@@ -188,6 +148,16 @@ public class User {
 
 
 
+	public String getContraseña() {
+		return contraseña;
+	}
+
+
+
+
+	public void setContraseña(String contraseña) {
+		this.contraseña = contraseña;
+	}
 	
 	
 	

@@ -9,7 +9,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <link type="text/css" rel="stylesheet" href="css/bootstraptheme.css" />
-    <link href="css/round-about.css" rel="stylesheet">
 </head>
 
 <body>
@@ -67,81 +66,96 @@
     <br/>
     <br/>
     <br/>
-
-    <!-- Page Content -->
+    <br/>
     <div class="container">
-
-        <!-- Introduction Row -->
+        <!-- Primera fila (Datos personales y avatar con información)  -->
         <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">Sobre Nosotros
-                    <small>Bienvenido a Virtual Vinilo! Tu web de compra de vinilos.</small>
-                </h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, explicabo dolores ipsam aliquam inventore corrupti eveniet quisquam quod totam laudantium repudiandae obcaecati ea consectetur debitis velit facere nisi expedita vel?</p>
+            <!-- Menú del pefil  -->
+            <div class="col-md-2">
+                <div class="list-group">
+                    <a href="miperfil.html" class="list-group-item"><span class="glyphicon glyphicon-user"></span> Cuenta </a>
+                    <a href="contenido.html" class="list-group-item"><span class="glyphicon glyphicon-folder-open"></span> Contenido </a>
+                    <a href="amigos.html" class="list-group-item"><span class="glyphicon glyphicon-globe"></span> Amigos </a>
+                </div>
             </div>
-        </div>
-
-        <!-- Team Members Row -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h2 class="page-header">¿Quien hace posible Virtual Vinilo?</h2>
-            </div>
-            <div class="col-lg-4 col-sm-6 text-center">
-                <img class="img-circle img-responsive img-center" src="imagenes/250x250.png" alt="">
-                <h3>Daniel Camacho
-                    <small>Desarrollador</small>
-                </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-            </div>
-            <div class="col-lg-4 col-sm-6 text-center">
-                <img class="img-circle img-responsive img-center" src="imagenes/250x250.png" alt="">
-                <h3>Guille Urbano
-                    <small>Desarrollador</small>
-                </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-            </div>
-            <div class="col-lg-4 col-sm-6 text-center">
-                <img class="img-circle img-responsive img-center" src="imagenes/250x250.png" alt="">
-                <h3>Jorge Galindo
-                    <small>Desarrollador</small>
-                </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-            </div>
-            <div class="col-lg-4 col-sm-6 text-center">
-                <img class="img-circle img-responsive img-center" src="imagenes/250x250.png" alt="">
-                <h3>Ilia Ramírez 
-                    <small>Desarrollador</small>
-                </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-            </div>
-        </div>
-
-    </div>
-    <!-- /.container -->
-
-    <div class="container">
-        <br>
-        <hr>
-        <br>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="panel panel-danger">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Aqui podras comprobar nuestra forma de trabajar</h3>
+            <!-- Datos personales  -->
+            <div class="col-md-7">
+                <div class="panel panel-default">
+                    <div class="panel-heading cabecera">
+                        Datos personales
                     </div>
-                    <div class="video">
-                        <div class="panel-body">
-                            <div class="embed-responsive embed-responsive-16by9 margen">
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/Z2wzM5OqDbE" frameborder="0" allowfullscreen></iframe>>
+                    <div class="panel-body">
+                        <p class="datos"> Nombre : Daniel </p>
+                        <p class="datos"> Apellidos : Camacho Jimenez </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Avatar y datos principales  -->
+            <div class="col-md-3">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <img src="imagenes/250x250.png">
+                        <p class="avatar"> Usuario : d.camacho </p>
+                        <p class="avatar"> Correo: danicamacho9@gmail.com </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Segunda fila (Estadisticas y detalles) -->
+        <div class="row">
+            <!-- Estadísticas -->
+            <div class="col-md-9">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <p class="datos"> Número de amigos : 2 </p>
+                        <p class="datos"> Número de vinilos comprados : 1 </p>
+                        <p class="datos"> Número de ofertas adquiridas : 2 </p>
+
+
+                    </div>
+                </div>
+            </div>
+            <!-- Detalles -->
+            <div class="col-md-3">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <p class="info2"> Aportes : Ninguno </p>
+                        <p class="info2"> Ultima visita : hace una hora </p>
+                        <p class="info2"> Usuario desde : hace menos de 1 año </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Favoritos-->
+        <div class="centrado">
+            <div class="panel panel-danger">
+                <div class="panel-heading cabecera">
+                    Favoritos
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="panel panel-default">
+                                <div class="panel-body fotos">
+                                    <p> Vinilos Comprados </p>
+                                    <img src="imagenes/img3.jpg" />
+                                </div>
                             </div>
                         </div>
+                        <div class="col-md-4">
+                            <div class="panel panel-default">
+                                <div class="panel-body fotos">
+                                    <p> ofertas Adquiridas </p>
+                                    <img src="imagenes/img2.jpg" />
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <br>
-
     <div class="container">
         <hr>
 
@@ -151,12 +165,12 @@
                 <div class="col-lg-12">
                     <p align="center">Copyright &copy; VirtualVinilo</p>
                     <p align="center">Guillermo Urbano, Ilia Ramírez, Jorge Galindo, Daniel Camacho</p>
+                    <p align="center" class="text-danger"><a href="somos.html">Quienes Somos</a></p>
                 </div>
             </div>
             <!-- /.row -->
         </footer>
     </div>
-
 </body>
 
 </html>
