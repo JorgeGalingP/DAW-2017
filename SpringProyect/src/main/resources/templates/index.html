@@ -110,52 +110,22 @@
     <br/>
     <br/>
 
-    <!rejilla con diferentes secciones>
+    <!rejilla con diferentes secciones>-
 
     <!-- Page Content -->
-    <div class="container">
-
-        <div class="row">
-
-            <div class="col-md-12">
-
-                <div class="row" id="productsIndexTotal">
+   
+             
 					{{#vinilos}}
-                    <div class="col-sm-3 col-lg-3 col-md-3">
-                        <div class="thumbnail">
-                            <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS36ZXKAhpMh5a89xezbFtbVpJl4V5Q0Zg6o2bDfsn-dF4v5r0L" style="width: 320px; height: 280px" alt="">
-                            <div class="caption">
-                                <h4 class="pull-right">{{precio}}$</h4>
-                                <h4><a href="articulo/{{id}}">{{title}}</a>
-                                </h4>
-                                <p>{{subtitle}}</p>
-                            </div>
-                            <div class="ratings">
-                                <p class="pull-right">15 reviews</p>
-                                <p>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                    {{> listItems}}
 					{{/vinilos}}
-                    
-                </div>
-                <div class="row">
-                    <div class="text-center">
+					
+             
+                
                         <!-- boton cargar más -->
-                        <button id="addProductsIndex" type="button" class="btn btn-primary btn-lg btn-block"><span class="glyphicon glyphicon-download"></span> Ver más </button>
-                    </div>
-                </div>
-            </div>
+                        <button id="moreVinilos" type="button" class="btn btn-primary btn-lg btn-block"><span class="glyphicon glyphicon-download"></span> Ver más Vinilos</button>
+               
 
-        </div>
-
-    </div>
+     
     <!-- /.container -->
 
     <div class="container">

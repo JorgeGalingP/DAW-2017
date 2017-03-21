@@ -5,9 +5,9 @@
     <title>VirtualVinilo</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <link type="text/css" rel="stylesheet" href="css/bootstraptheme.css" />
     <script src="js/cookie.js"></script>
     <script src="js/addProducts.js"></script>
@@ -19,7 +19,7 @@
     <div class="navbar navbar-default navbar-fixed-top">
 
         <div class="navbar-header">
-            <a id="logo-container" href="index.html" class="brand-logo" style="width: 180px; height: 64px"><img src="imagenes/VirtualViniloLogo.png" style="width: 180px; height: 58px; padding: 5px"></a>
+            <a id="logo-container" href="/" class="brand-logo" style="width: 180px; height: 64px"><img src="imagenes/VirtualViniloLogo.png" style="width: 180px; height: 58px; padding: 5px"></a>
             <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -28,37 +28,29 @@
         </div>
         <div class="container">
             <div class="navbar-collapse collapse" id="navbar-main">
-                <form class="navbar-form navbar-left">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search">
-                    </div>
-                    <button type="search" class="btn btn-default">
-                        <i class="glyphicon glyphicon-search"></i>
-                    </button>
-                </form>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
                         <form class="navbar-form">
                             <button type="button" class="btn btn-default">
-                                <a class="glyphicon glyphicon-shopping-cart" href="carrito.html"></a>
+                                <a class="glyphicon glyphicon-shopping-cart" href="/carrito"></a>
                             </button>
                         </form>
                     </li>
                     <li>
-                        <a href="ofertas.html">OFERTAS</a>
+                        <a href="/ofertas">OFERTAS</a>
                     </li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">USUARIO <span class="caret"></span></a>
                         <ul class="dropdown-menu" aria-labelledby="download">
-                            <li><a href="login.html">Iniciar Sesión</a></li>
+                            <li><a href="/login">Iniciar Sesión</a></li>
                             <li class="divider"></li>
-                            <li><a href="registro.html">Registrarse</a></li>
+                            <li><a href="/registro">Registrarse</a></li>
                             <li class="divider"></li>
-                            <li><a href="miperfil.html">Mi Perfil</a></li>
+                            <li><a href="/miperfil">Mi Perfil</a></li>
                             <li class="divider"></li>
-                            <li><a href="login.html">Cerrar sesion</a></li>
+                            <li><a href="/login">Cerrar sesion</a></li>
                             <li class="divider"></li>
-                            <li><a href="administrador.html">Administrador</a></li>
+                            <li><a href="/administrador">Administrador</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -125,80 +117,11 @@
 
         <div class="row">
 
-            <div class="col-md-3">
-
-
-                <p class="lead">Filtrar Productos</p>
-                <div class="list-group">
-                    <p class="list-group-item">Por interprete</p>
-                    <a href="#" class="list-group-item">interprete1 <span class="badge">10</span></a>
-                    <a href="#" class="list-group-item">interprete2 <span class="badge">10</span></a>
-                    <a href="#" class="list-group-item">interprete3 <span class="badge">10</span></a>
-                    <a href="#" class="list-group-item">interprete4 <span class="badge">10</span></a>
-                    <a href="#" class="list-group-item">interprete5 <span class="badge">10</span></a>
-                    <a href="#" class="list-group-item">interprete6 <span class="badge">10</span></a>
-                    <a href="#" class="list-group-item">interprete7 <span class="badge">10</span></a>
-                </div>
-                <div class="list-group">
-                    <p class="list-group-item">Por estado</p>
-                    <a href="#" class="list-group-item">estado1 <span class="badge">10</span></a>
-                    <a href="#" class="list-group-item">estado2 <span class="badge">10</span></a>
-                </div>
-                <div class="list-group">
-                    <p class="list-group-item">Por fecha</p>
-                    <a href="#" class="list-group-item">fecha1 <span class="badge">10</span></a>
-                    <a href="#" class="list-group-item">fecha2 <span class="badge">10</span></a>
-                    <a href="#" class="list-group-item">fecha3 <span class="badge">10</span></a>
-                    <a href="#" class="list-group-item">fecha4 <span class="badge">10</span></a>
-                    <a href="#" class="list-group-item">fecha5 <span class="badge">10</span></a>
-                </div>
-                <div class="list-group">
-                    <p class="list-group-item">Por precio</p>
-                    <a href="#" class="list-group-item">rango1 <span class="badge">10</span></a>
-                    <a href="#" class="list-group-item">rango2 <span class="badge">10</span></a>
-                    <a href="#" class="list-group-item">rango3 <span class="badge">10</span></a>
-                </div>
-                <p class="lead">Los más deseados</p>
-                <div class="thumbnail-index">
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                        <a href="articulo.html"><img src="http://placehold.it/320x280" class="img-thumbnail" style="width: 60px; height: 60px" alt=""></a>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                        <a href="articulo.html"><img src="http://placehold.it/320x280" class="img-thumbnail" style="width: 60px; height: 60px" alt=""></a>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                        <a href="articulo.html"><img src="http://placehold.it/320x280" class="img-thumbnail" style="width: 60px; height: 60px" alt=""></a>
-                    </div>
-                </div>
-                <div class="thumbnail-index">
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                        <a href="articulo.html"><img src="http://placehold.it/320x280" class="img-thumbnail" style="width: 60px; height: 60px" alt=""></a>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                        <a href="articulo.html"><img src="http://placehold.it/320x280" class="img-thumbnail" style="width: 60px; height: 60px" alt=""></a>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                        <a href="articulo.html"><img src="http://placehold.it/320x280" class="img-thumbnail" style="width: 60px; height: 60px" alt=""></a>
-                    </div>
-                </div>
-                <div class="thumbnail-index">
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                        <a href="articulo.html"><img src="http://placehold.it/320x280" class="img-thumbnail" style="width: 60px; height: 60px" alt=""></a>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                        <a href="articulo.html"><img src="http://placehold.it/320x280" class="img-thumbnail" style="width: 60px; height: 60px" alt=""></a>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                        <a href="articulo.html"><img src="http://placehold.it/320x280" class="img-thumbnail" style="width: 60px; height: 60px" alt=""></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-9">
+            <div class="col-md-12">
 
                 <div class="row" id="productsIndexTotal">
 					{{#vinilos}}
-                    <div class="col-sm-4 col-lg-4 col-md-4">
+                    <div class="col-sm-3 col-lg-3 col-md-3">
                         <div class="thumbnail">
                             <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS36ZXKAhpMh5a89xezbFtbVpJl4V5Q0Zg6o2bDfsn-dF4v5r0L" style="width: 320px; height: 280px" alt="">
                             <div class="caption">
@@ -244,7 +167,7 @@
                 <div class="col-lg-12">
                     <p align="center">Copyright &copy; VirtualVinilo</p>
                     <p align="center">Guillermo Urbano, Ilia Ramírez, Jorge Galindo, Daniel Camacho</p>
-                    <p align="center" class="text-danger"><a href="somos.html">Quienes Somos</a></p>
+                    <p align="center" class="text-danger"><a href="/somos">Quienes Somos</a></p>
 
                 </div>
             </div>

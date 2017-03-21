@@ -5,6 +5,8 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -48,12 +50,33 @@ public class ViniloController {
 	}
 	
 	
-	
+	 @RequestMapping("/vinilos/")
+	 public String vinilos (Model model){
+		 
+		 model.addAttribute("vinilos",repository.findAll());
+		 
+		 Page <Resource> resource= repository.findAll(new PageRequest(0,7));
+		 
+		 
+		 model.addAttribute("vinilos",resource);
+		 return"index";
+		 
+		
+		 
+		 
+	 }
+
+	 
+	 
+	 
+	 
 	//metodo para crear un vinilo desde el form
 		@RequestMapping("/nuevoVinilo")
 		public String nuevoVinilo(Model model, Resource resource) {
 
 			repository.save(resource);
+			
+			
 			return "index";
 			
 			}

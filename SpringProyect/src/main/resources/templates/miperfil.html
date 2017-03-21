@@ -81,349 +81,67 @@
             <!-- final cabecera -->
         </div>
 
-        <!-- USER PROFILE ROW STARTS-->
-        <div class="row">
-            <div class="col-md-3 col-sm-3">
-                <div class="user-wrapper">
-                    <div class="description">
-                        <br>
-                        <h3> {{usuario.name}}</h3>
-                        <hr />
-                        <div class="list-group">
-                            <a id="miPerfilMenu" href="#" class="list-group-item"><span class="glyphicon glyphicon-user"></span> Mi Perfil </a>
-                            <a id="editarPerfilMenu" href="#" class="list-group-item"><span class="glyphicon glyphicon-folder-open"></span> Editar perfil</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <div class="col-lg-9 col-md-9" id="miPerfil">
-                <p class="lead">Información de usuario</p>
-                <div class="list-group">
-                    <p class="list-group-item">{{usuario.name}}</p>
-                    <p class="list-group-item">{{usuario.surname}}</p>
-                    <p class="list-group-item">{{usuario.email}}</p>
-                    <p class="list-group-item">{{usuario.telephone}}</p>
-                    <p class="list-group-item">{{usuario.pais}}</p>
-                    <p class="list-group-item">{{usuario.postalCode}}</p>
-                </div>
-                <hr />
-                
-                <p class="lead">Información de contacto</p>
-                <div class="list-group">
-                    <p class="list-group-item">{{usuario.email}}</p>
-                    <p class="list-group-item">{{usuario.telephone}}</p>
-                </div>
-                <hr />
-                <p class="lead">Información adicional</p>
-                <div class="list-group">
-                    <p class="list-group-item">{{usuario.descripcion}}</p>
-                    <p class="list-group-item">{{usuario.password}}</p>
-                </div>
-            </div>
-            <div class="col-md-9 col-sm-9" id="editarPerfil">
-                <!-- Editar opciones del perfil -->
-                <h3> Editar Perfil </h3>
-                <br>
-                <!-- <div class="description"> -->
-                <div class="panel panel-default text-center">
-                    <div class="panel-heading">
-                        <div class="text-muted bootstrap-admin-box-title">Añade un nuevo Nombre</div>
-                    </div>
-                    <br>
-                    <br>
+      {{#user}}
+		<!-- CONTENT USER PROFILE -->
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="tab-content">
 
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <form class="form-horizontal">
-                                <div class="col-lg-11">
+					<!-- USER PROFILE -->
+					<div role="tabpanel" class="tab-pane active" id="miperfil">
+						<div class="row userProfile">
+							<div class="col-lg-2 avatar">
+							<img src="imagenes/avatar/{{avatar}}" class="img-responsive avatar">
+								
+							
+							<div class="col-lg-8">
+								<h4>
+									Información Básica
+									<a href="#" data-toggle="modal" aria-haspopup="true" aria-expanded="false" data-target="#editProfile-modal">
+										<span class="glyphicon glyphicon-pencil"></span >(Editar)
+									</a>
+								</h4>
 
-                                    <div class="form-group">
-                                        <label class="col-lg-3 control-label">    {{usuario.name}}</label>
-                                        <div class="col-lg-9">
-                                            <input type="text" class="form-control col-md-6">
+								<table class="table">
+									<tbody>
+										<tr>
+											<th scope="row">Nombre completo</th>
+											<td>{{name}} {{surname}} </td>
+										</tr>
+										<tr>
+											<th scope="row">Usuario</th>
+											<td>{{name}}</td>
+										</tr>
+										<tr>
+											<th scope="row">Email</th>
+											<td>{{email}}</td>
+										</tr>
+										
+										
+										<tr>
+											<th scope="row" class="lastRow">Última vez</th>
+											<td>hace 34 minutos</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						
+					</div>
 
-                                        </div>
-                                    </div>
+					<!--  HISTORIAL -->
+					
 
-                                    <div class="form-group">
-                                        <label class="col-lg-3 control-label" for="typeahead">Apellidos {{usuario.surname}}</label>
-                                        <div class="col-lg-9">
-                                            <input type="text" class="form-control col-md-6">
+					<!-- PRESTAMOS -->
+					
 
-                                        </div>
-                                    </div>
-                                     <div class="form-group">
-                                        <label class="col-lg-3 control-label" for="typeahead"> {{usuario.telephone}}</label>
-                                        <div class="col-lg-9">
-                                            <input type="text" class="form-control col-md-6">
-
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label class="col-lg-3 control-label" for="typeahead">email {{usuario.email}}</label>
-                                        <div class="col-lg-9">
-                                            <input type="text" class="form-control col-md-6">
-
-                                        </div>
-                                    </div>
-                                    <br>
-
-                                    <label class="col-lg-12">
-                                        <a href="#" class="btn btn-primary">Guardar</a>
-                                    </label>
-
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <br>
-                </div>
-                <br>
-                <div class="panel panel-default text-center">
-                    <div class="panel-heading">
-                        <div class="text-muted bootstrap-admin-box-title">Añade una nueva Dirección</div>
-                    </div>
-                    <br>
-                    <br>
-
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <form class="form-horizontal">
-                                <div class="col-lg-11">
-
-                                    <div class="form-group">
-                                        <label class="col-lg-3 control-label"> Direccion 1</label>
-                                        <p> {{usuario.telephone}}</p>
-                                        <div class="col-lg-9">
-                                            <input type="text" class="form-control col-md-6">
-
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label class="col-lg-3 control-label" for="typeahead">Direccion 2</label>
-                                        <div class="col-lg-9">
-                                            <input type="password" class="form-control col-md-6">
-
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label class="col-lg-3 control-label" for="typeahead">Pais</label>
-                                        <div class="col-lg-9">
-                                            <input type="text" class="form-control col-md-6">
-
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-lg-3 control-label" for="typeahead">Ciudad</label>
-                                        <div class="col-lg-9">
-                                            <input type="text" class="form-control col-md-6">
-
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-lg-3 control-label" for="typeahead">Localidad</label>
-                                        <div class="col-lg-9">
-                                            <input type="text" class="form-control col-md-6">
-
-                                        </div>
-                                    </div>
-                                    <br>
-
-                                    <label class="col-lg-12">
-                                        <a href="#" class="btn btn-primary">Guardar</a>
-                                    </label>
-
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <br>
-                </div>
-                <br>
-                <div class="panel panel-default text-center">
-                    <div class="panel-heading">
-                        <div class="text-muted bootstrap-admin-box-title">Añade una nueva Tarjeta de Crédito</div>
-                    </div>
-                    <br>
-                    <br>
-
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <form class="form-horizontal">
-                                <div class="col-lg-11">
-
-                                    <div class="form-group">
-                                        <label class="col-lg-3 control-label"> Nombre asociado a la Tarjeta</label>
-                                        <div class="col-lg-9">
-                                            <input type="text" class="form-control col-md-6">
-
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label class="col-lg-3 control-label" for="typeahead">Apellidos asociados a la Tarjeta</label>
-                                        <div class="col-lg-9">
-                                            <input type="password" class="form-control col-md-6">
-
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label class="col-lg-3 control-label" for="typeahead">Numero de Tarjeta</label>
-                                        <div class="col-lg-9">
-                                            <input type="number" class="form-control col-md-6">
-
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-lg-3 control-label" for="typeahead">Fecha de caducidad de la tarjeta</label>
-                                        <div class="col-lg-9">
-                                            <input type="date" class="form-control col-md-6">
-
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-lg-3 control-label" for="typeahead">CVV</label>
-                                        <div class="col-lg-9">
-                                            <input type="number" class="form-control col-md-6">
-
-                                        </div>
-                                    </div>
-                                    <br>
-
-                                    <label class="col-lg-12">
-                                        <a href="#" class="btn btn-primary">Guardar</a>
-                                    </label>
-
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <br>
-                </div>
-                <!--<li>
-                            <label>
-                                <input type="radio" name="opciones" id="opciones_1" value="opcion_1" checked> Opcion 1
-                            </label>
-                        </li>
-                        <li>
-                            <label>
-                                <input type="radio" name="opciones" id="opciones_1" value="opcion_1" disabled> Opcion 2
-                            </label>
-                        </li>
-                        <li>
-                            <label>
-                                <input type="radio" name="opciones" id="opciones_1" value="opcion_1" disabled> Opcion 3
-                            </label>
-                        </li>
-                        <li>
-                            <label>
-                                <input type="radio" name="opciones" id="opciones_1" value="opcion_1" disabled> Opcion 4
-                            </label>
-                        </li>-->
-                <br>
-                <div class="panel panel-default text-center">
-                    <div class="panel-heading">
-                        <div class="text-muted bootstrap-admin-box-title">Cambia tu password</div>
-                    </div>
-                    <br>
-                    <br>
-
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <form class="form-horizontal">
-                                <div class="col-lg-11">
-
-                                    <div class="form-group">
-                                        <label class="col-lg-3 control-label">password actual</label>
-                                        <div class="col-lg-9">
-                                            <input type="password" class="form-control col-md-6">
-
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label class="col-lg-3 control-label" for="typeahead">Nueva password</label>
-                                        <div class="col-lg-9">
-                                            <input type="password" class="form-control col-md-6">
-
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label class="col-lg-3 control-label" for="typeahead">Confirmar password</label>
-                                        <div class="col-lg-9">
-                                            <input type="password" class="form-control col-md-6">
-
-                                        </div>
-                                    </div>
-                                    <br>
-
-                                    <label class="col-lg-12">
-                                        <a href="#" class="btn btn-primary">Guardar</a>
-                                    </label>
-
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <br>
-                </div>
-                <br>
-
-                <!-- </div>   <!-- fin div description -->
-
-                <!--   <div class="description"> -->
-
-                <div class="panel panel-default text-center">
-                    <div class="panel-heading">
-                        <div class="text-muted bootstrap-admin-box-title">Cambia tu descripción</div>
-                    </div>
-                    <br>
-                    <br>
-
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <form class="form-horizontal">
-                                <div class="form-group">
-                                    <label class="col-lg-2" for="textarea-wysihtml5">Nueva descripción</label>
-                                    <div class="col-lg-9">
-                                        <textarea id="textarea-wysihtml5" class="form-control col-md-7" placeholder="Introduce una descripción..." rows="5"></textarea>
-                                    </div>
-                                </div>
-                                <label class="col-lg-12 text-center">
-                                    <a href="#" class="btn btn-primary">Guardar</a>
-                                </label>
-
-                            </form>
-                        </div>
-                    </div>
-                    <br>
-                </div>
-                <!-- </div>   <!-- fin div description -->
-
-
-                <!-- Eliminar cuenta  -->
-                <div class="panel panel-danger text-center">
-                    <div class="panel-heading">
-                        Borrar cuenta
-                    </div>
-                    <div class="panel-body text-center">
-                        <p> Su cuenta será borrada para siempre y no podrá recuperarla. Al pulsar el botón de eliminar su cuenta será totalmente eliminada</p>
-                        <button type="submit" class="btn btn-danger"> Eliminar </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- USER PROFILE ROW END-->
-    </div>
-
-    <br>
-    <br>
+					<!-- MULTAS -->
+					
+				</div>
+			</div>
+		</div>
+	</div>
+		{{> userProfile-modalEdit}} {{/user}}
 
     <div class="container">
         <hr>

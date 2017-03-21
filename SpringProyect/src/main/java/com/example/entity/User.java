@@ -28,6 +28,7 @@ public class User {
 	private String telephone;
 	private String passwordHash;
 	private int postalCode;
+	private String avatar;
 	
 	
 	@ElementCollection(fetch = FetchType.EAGER)
@@ -49,6 +50,7 @@ public class User {
 		this.telephone = telephone;
 		this.passwordHash = new BCryptPasswordEncoder().encode(password);
 		this.postalCode = postalCode;
+		this.avatar="avatar.png";
 		this.roles = new ArrayList <> (Arrays.asList(roles));
 	}
 
@@ -184,6 +186,21 @@ public class User {
 	public void setTelephone(String telephone) {
 		this.telephone = telephone;
 	}
+
+
+
+
+	public String getAvatar() {
+		return avatar;
+	}
+
+
+
+
+	public void setAvatar(String avatar) {
+		this.avatar = avatar;
+	}
+	
 
 
 
