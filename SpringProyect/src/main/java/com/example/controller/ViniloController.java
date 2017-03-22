@@ -1,9 +1,7 @@
 package com.example.controller;
 
-<<<<<<< HEAD
-=======
+
 import java.io.File;
->>>>>>> refs/remotes/origin/jorge-spring
 import java.util.ArrayList;
 import java.util.List;
 
