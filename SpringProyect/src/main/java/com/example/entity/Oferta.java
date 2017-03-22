@@ -12,7 +12,7 @@ public class Oferta {
 	
 	private Integer id;
 	private  String name;
-	private int code;
+	private String code;
 	private String description;
 	private int llevas;
 	private int pagas;
@@ -25,7 +25,7 @@ public class Oferta {
 	
 
 
-	public Oferta(String name, int code, String description, int llevas, int pagas, String img) {
+	public Oferta(String name, String code, String description, int llevas, int pagas, String img) {
 		
 		this.name = name;
 		this.code = code;
@@ -85,12 +85,12 @@ public class Oferta {
 	}
 
 
-	public int getCode() {
+	public String getCode() {
 		return code;
 	}
 
 
-	public void setCode(int code) {
+	public void setCode(String code) {
 		this.code = code;
 	}
 

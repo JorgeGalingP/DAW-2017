@@ -45,13 +45,13 @@ public class OfertaController {
 	
 	@PostConstruct
 	public void init(){
-		Oferta oferta1 = new Oferta ("2x1",1234,"LLevate 2 y paga 1",2,1,"2x1.jpg");
+		Oferta oferta1 = new Oferta ("2x1","1234","LLevate 2 y paga 1",2,1,"2x1.jpg");
 		ofertaRepository.save(oferta1);
-		Oferta oferta2 = new Oferta ("3x2",1233,"LLevate 3 y paga 2",3,2,"3x2.jpg");
+		Oferta oferta2 = new Oferta ("3x2","1233","LLevate 3 y paga 2",3,2,"3x2.jpg");
 		ofertaRepository.save(oferta2);
-		Oferta oferta3 = new Oferta ("7x5",1235,"LLevate 7 y paga 5",7,5,"7x5.jpg");
+		Oferta oferta3 = new Oferta ("7x5","1235","LLevate 7 y paga 5",7,5,"7x5.jpg");
 		ofertaRepository.save(oferta3);
-		Oferta oferta4 = new Oferta ("10x7",1232,"LLevate 10 y paga 7",10,7,"10x7.jpg");
+		Oferta oferta4 = new Oferta ("10x7","1232","LLevate 10 y paga 7",10,7,"10x7.jpg");
 		ofertaRepository.save(oferta4);
 	
 		
@@ -125,12 +125,11 @@ public class OfertaController {
 		
 		Oferta promocion = ofertaRepository.findByCode(oferta.getCode());
 		ofertaRepository.delete(promocion);
-		
+		/*
 		OfertaDescuento promociondescuento = ofertaDescuentoRepository.findByCode(oferta.getCode());
-		ofertaDescuentoRepository.delete(promociondescuento);
+		ofertaDescuentoRepository.delete(promociondescuento);*/
 		
-		
-		return "/";
+		return "/ofertas.html";
 		
 		}
 	

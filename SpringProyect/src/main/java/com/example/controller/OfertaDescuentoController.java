@@ -31,9 +31,9 @@ public class OfertaDescuentoController {
 	
 	@PostConstruct
 	public void init(){
-		OfertaDescuento ofertadescuento1 = new OfertaDescuento ("AHORRA 10%",1111,"10% de descuento en todos nuestros productos",10,"10.png");
+		OfertaDescuento ofertadescuento1 = new OfertaDescuento ("AHORRA 10%","1111","10% de descuento en todos nuestros productos",10,"10.png");
 		ofertaDescuentoRepository.save(ofertadescuento1);
-		OfertaDescuento ofertadescuento2 = new OfertaDescuento ("AHORRA 20%",1112,"20% de descuento si te llevas 3 o más artículos",20,"20.jpg");
+		OfertaDescuento ofertadescuento2 = new OfertaDescuento ("AHORRA 20%","1112","20% de descuento si te llevas 3 o más artículos",20,"20.jpg");
 		ofertaDescuentoRepository.save(ofertadescuento2);
 	}
 	
@@ -90,9 +90,14 @@ public class OfertaDescuentoController {
 				}
 			}
 		
-	
-	
-
-	
-
+		//metodo para borrar una oferta descuento desde el form
+		@RequestMapping("/borrarPromocionDescuento")
+		public String borrarPromocion(Model model, OfertaDescuento oferta) {
+			
+			OfertaDescuento promociondescuento = ofertaDescuentoRepository.findByCode(oferta.getCode());
+			ofertaDescuentoRepository.delete(promociondescuento);
+			
+			return "/ofertas.html";
+			
+			}
 }
