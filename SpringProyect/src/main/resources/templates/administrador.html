@@ -207,7 +207,7 @@
                     <br/>
                     <div class="row">
                         <div class="col-lg-12">
-                            <form class="form-horizontal" action="nuevoVinilo" method="post">
+                            <form class="form-horizontal" action="nuevoVinilo" method="post" enctype="multipart/form-data">
                                 <div class="col-lg-12">
 
                                     <div class="form-group">
@@ -278,19 +278,16 @@
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
-                                        <div class="form-group">
-                                            <label class="col-lg-3 control-label" for="textarea-wysihtml5">Vista preliminar</label>
-                                            <div class="col-lg-9">
-                                                <!-- <textarea id="textarea-wysihtml5" class="form-control col-md-7" placeholder="Introduce una descripción..." rows="5"></textarea> -->
-                                                <input id="file-1" type="file" class="file" multiple=true data-preview-file-type="any">
-                                                <p class="help-block">Procura que tus imágenes no superen un tamaño de 250x250 </p>
-                                            </div>
-                                        </div>
                                         <br>
-                                        <label class="col-lg-6">
-                                            <input class="btn btn-primary" type='submit' value='Guardar' />
+										<p>
+											<label>Title:</label> <input type='text' name='imageTitle' />
+										</p>
+										<p>
+											<label>Image file:</label><input type="file" name="file" />
+										</p>
+										<label class="col-lg-6">
+                                            <input class="btn btn-primary" type='submit' name='enviar' value='Guardar' />
                                         </label>
-
                                     </div>
                                     <br>
                                 </div>
@@ -543,8 +540,7 @@
                         {{#ofertas}}
                         <div class="col-sm-4 col-lg-4 col-md-4">
                             <div class="thumbnail">
-                                <img src="/imagenes/img1.jpg" style="width: 250px; height: 220px" alt="">
-                                <!-- cambiar en el src por src="/imagenes/{{img}}"-->
+                                <img src="/imagenes/{{img}}" style="width: 250px; height: 220px" alt="">
                                 <div class="caption">
                                     <h4><a href="/articulo">{{name}}</a>
                                     <button type="button" class="btn btn-link btn-xs">
@@ -559,8 +555,7 @@
                         {{#ofertasDescuento}}
                         <div class="col-sm-4 col-lg-4 col-md-4">
                             <div class="thumbnail">
-                                <img src="/imagenes/img1.jpg" style="width: 250px; height: 220px" alt="">
-                                <!-- cambiar en el src por src="/imagenes/{{img}}"-->
+                                <img src="/imagenes/{{img}}" style="width: 250px; height: 220px" alt="">
                                 <div class="caption">
                                     <h4><a href="/articulo">{{name}}</a>
                                     <button type="button" class="btn btn-link btn-xs">
@@ -589,8 +584,7 @@
                         {{#vinilos}}
                         <div class="col-sm-4 col-lg-4 col-md-4">
                             <div class="thumbnail">
-                                <img src="/imagenes/img1.jpg" style="width: 320px; height: 280px" alt="">
-                                <!-- cambiar en el src por src="/imagenes/{{img}}"-->
+                                <img src="/imagenes/{{img}}" style="width: 320px; height: 280px" alt="">
                                 <div class="caption">
                                     <h4 class="pull-right">{{precio}}$</h4>
                                     <h4><a href="/articulo">{{title}}</a>

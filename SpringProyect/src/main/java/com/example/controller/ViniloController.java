@@ -1,5 +1,7 @@
 package com.example.controller;
 
+import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -9,6 +11,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.example.entity.Comment;
 import com.example.entity.Oferta;
@@ -16,15 +21,15 @@ import com.example.entity.Resource;
 import com.example.repository.ResourceRepository;
 
 
-
-
-
-
 @Controller
 public class ViniloController {
 	
 	@Autowired 
 	private ResourceRepository repository;
+	
+	private static final String FILES_FOLDER = ".\\src\\main\\resources\\static\\imagenes";
+
+	private List<String> imageTitles = new ArrayList<>();
 	
 	
 	@PostConstruct
@@ -47,14 +52,45 @@ public class ViniloController {
 		repository.save(rs7);
 	}
 	
-	
-	
-	//metodo para crear un vinilo desde el form
-		@RequestMapping("/nuevoVinilo")
-		public String nuevoVinilo(Model model, Resource resource) {
+		@RequestMapping(value="/nuevoVinilo",  method = RequestMethod.POST)
+		public String nuevoVinilo(Model model, Resource resource, @RequestParam("imageTitle") String imageTitle,
+				@RequestParam("file") MultipartFile file) {
+			String fileName = imageTitles.size() + ".jpg";
+			if (!file.isEmpty()) {
+				try {
 
-			repository.save(resource);
-			return "/";
+					File filesFolder = new File(FILES_FOLDER);
+					if (!filesFolder.exists()) {
+						filesFolder.mkdirs();
+					}
+
+					File uploadedFile = new File(filesFolder.getAbsolutePath(), fileName);
+					file.transferTo(uploadedFile);
+
+					imageTitles.add(imageTitle);
+					
+					model.addAttribute("imageTitles", imageTitles);
+
+					resource.setImg(fileName);
+					
+					repository.save(resource);
+					
+					return "/";
+
+				} catch (Exception e) {
+					
+					model.addAttribute("fileName",fileName);
+					model.addAttribute("error",
+							e.getClass().getName() + ":" + e.getMessage());
+					
+					return "/";
+				}
+			} else {
+				
+				model.addAttribute("error",	"The file is empty");
+				
+				return "/";
+				}
 			
 			}
 		
