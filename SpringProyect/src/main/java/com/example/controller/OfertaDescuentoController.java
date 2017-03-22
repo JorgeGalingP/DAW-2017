@@ -1,5 +1,9 @@
 package com.example.controller;
 
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +12,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.example.entity.Oferta;
 import com.example.entity.OfertaDescuento;
@@ -17,8 +23,11 @@ import com.example.repository.OfertaDescuentoRepository;
 public class OfertaDescuentoController {
 	
 	@Autowired
-	
 	private OfertaDescuentoRepository ofertaDescuentoRepository;
+
+	private static final String FILES_FOLDER = ".\\src\\main\\resources\\static\\imagenes";
+
+	private List<String> imageTitles = new ArrayList<>();
 	
 	@PostConstruct
 	public void init(){
@@ -26,10 +35,6 @@ public class OfertaDescuentoController {
 		ofertaDescuentoRepository.save(ofertadescuento1);
 		OfertaDescuento ofertadescuento2 = new OfertaDescuento ("AHORRA 20%",1112,"20% de descuento si te llevas 3 o más artículos",20,"20.jpg");
 		ofertaDescuentoRepository.save(ofertadescuento2);
-		
-		
-		
-	
 	}
 	
 	/*
@@ -44,16 +49,45 @@ public class OfertaDescuentoController {
 	        return "ofertaDescuento";
 	}*/
 	
-	
-	
+		@RequestMapping(value="/nuevaOfertaDescuento",  method = RequestMethod.POST)
+		public String nuevoVinilo(Model model, OfertaDescuento oferta, @RequestParam("imageTitle") String imageTitle,
+				@RequestParam("file") MultipartFile file) {
+			String fileName = imageTitles.size() + ".jpg";
+			if (!file.isEmpty()) {
+				try {
 
-	//metodo para crear una oferta descuento desde el form
-		@RequestMapping("/nuevaOfertaDescuento")
-		public String nuevaOfertaDescuento(Model model, OfertaDescuento ofertaDescuento) {
+					File filesFolder = new File(FILES_FOLDER);
+					if (!filesFolder.exists()) {
+						filesFolder.mkdirs();
+					}
 
-			ofertaDescuentoRepository.save(ofertaDescuento);
-			return "ofertas.html";
-			
+					File uploadedFile = new File(filesFolder.getAbsolutePath(), fileName);
+					file.transferTo(uploadedFile);
+
+					imageTitles.add(imageTitle);
+					
+					model.addAttribute("imageTitles", imageTitles);
+
+					oferta.setImg(fileName);
+					
+					ofertaDescuentoRepository.save(oferta);
+					
+					return "ofertas.html";
+
+				} catch (Exception e) {
+					
+					model.addAttribute("fileName",fileName);
+					model.addAttribute("error",
+							e.getClass().getName() + ":" + e.getMessage());
+					
+					return "/";
+				}
+			} else {
+				
+				model.addAttribute("error",	"The file is empty");
+				
+				return "/";
+				}
 			}
 		
 	

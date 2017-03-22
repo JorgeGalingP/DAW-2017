@@ -91,7 +91,6 @@ public class ViniloController {
 				
 				return "/";
 				}
-			
 			}
 		
 		//metodo para borrar un vinilo desde el form

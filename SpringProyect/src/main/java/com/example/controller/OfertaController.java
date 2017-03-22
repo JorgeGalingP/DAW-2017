@@ -1,5 +1,9 @@
 package com.example.controller;
 
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +14,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.example.entity.Oferta;
 import com.example.entity.OfertaDescuento;
@@ -25,12 +31,16 @@ import com.example.repository.OfertaRepository;
 @Controller
 public class OfertaController {
 	
-@Autowired
-	
+	@Autowired
 	private OfertaRepository ofertaRepository;
 
-@Autowired
+	@Autowired
 	private OfertaDescuentoRepository ofertaDescuentoRepository;
+
+	private static final String FILES_FOLDER = ".\\src\\main\\resources\\static\\imagenes";
+
+	private List<String> imageTitles = new ArrayList<>();
+
 	
 	
 	@PostConstruct
@@ -56,14 +66,7 @@ public class OfertaController {
 	        
 	        return "ofertas";
 	}*/
-	
-	
-	
-	
-	
-	
-	
-	
+	/*
 	//metodo para crear una oferta desde el form
 	@RequestMapping("/nuevaOferta")
 	public String nuevaOferta(Model model, Oferta oferta) {
@@ -71,6 +74,47 @@ public class OfertaController {
 		ofertaRepository.save(oferta);
 		return "ofertas";
 		
+		}*/
+	
+	@RequestMapping(value="/nuevaOferta",  method = RequestMethod.POST)
+	public String nuevoVinilo(Model model, Oferta oferta, @RequestParam("imageTitle") String imageTitle,
+			@RequestParam("file") MultipartFile file) {
+		String fileName = imageTitles.size() + ".jpg";
+		if (!file.isEmpty()) {
+			try {
+
+				File filesFolder = new File(FILES_FOLDER);
+				if (!filesFolder.exists()) {
+					filesFolder.mkdirs();
+				}
+
+				File uploadedFile = new File(filesFolder.getAbsolutePath(), fileName);
+				file.transferTo(uploadedFile);
+
+				imageTitles.add(imageTitle);
+				
+				model.addAttribute("imageTitles", imageTitles);
+
+				oferta.setImg(fileName);
+				
+				ofertaRepository.save(oferta);
+				
+				return "ofertas.html";
+
+			} catch (Exception e) {
+				
+				model.addAttribute("fileName",fileName);
+				model.addAttribute("error",
+						e.getClass().getName() + ":" + e.getMessage());
+				
+				return "/";
+			}
+		} else {
+			
+			model.addAttribute("error",	"The file is empty");
+			
+			return "/";
+			}
 		}
 	
 	//metodo para borrar una oferta desde el form
@@ -86,7 +130,7 @@ public class OfertaController {
 		ofertaDescuentoRepository.delete(promociondescuento);
 		
 		
-		return "ofertas";
+		return "/";
 		
 		}
 	
