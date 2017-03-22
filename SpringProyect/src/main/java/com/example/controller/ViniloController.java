@@ -1,8 +1,10 @@
 package com.example.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,7 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.example.entity.Comment;
 import com.example.entity.Oferta;
 import com.example.entity.Resource;
+import com.example.entity.User;
 import com.example.repository.ResourceRepository;
+import com.example.repository.UserRepository;
 
 
 
@@ -25,6 +29,7 @@ public class ViniloController {
 	
 	@Autowired 
 	private ResourceRepository repository;
+	
 	
 	
 	@PostConstruct
@@ -68,6 +73,9 @@ public class ViniloController {
 					return "index";
 					
 					}
+				
+				
+
 		
 	
 		

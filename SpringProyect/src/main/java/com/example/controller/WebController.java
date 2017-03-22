@@ -1,5 +1,8 @@
 package com.example.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.example.entity.Resource;
 import com.example.entity.User;
@@ -65,6 +69,32 @@ public class WebController {
 
 		return "articulo";
 	}
+	
+	/*@RequestMapping("/{id}/addCarrito")
+	public String addComment( HttpServletRequest request, @PathVariable int id) {
+		
+		  if (request.isUserInRole("ADMIN") || request.isUserInRole("USER")) {	
+			  
+		User loggedUser = userRepository.findByName(request.getUserPrincipal().getName());
+
+		Resource r = repository.findOne(id);
+		
+		List<Resource> carro = new ArrayList<>();
+		
+		carro.add(r);
+		
+		loggedUser.setCarrito(carro);
+		
+		userRepository.save(loggedUser);
+		
+		  
+
+			return "carrito";	
+			}
+		  else return "login";
+	}*/
+	
+	
 	
 	
 
@@ -235,4 +265,16 @@ public class WebController {
 		
 		return "validacion";
 	}
+	
+	@RequestMapping("/deleteUser")
+	public String BorrarUser(HttpServletRequest request){
+		
+		User loggedUser = userRepository.findByName(request.getUserPrincipal().getName());
+		userRepository.delete(loggedUser.getId());
+		
+		return "login";	
+		
+	}
+		
+	
 }

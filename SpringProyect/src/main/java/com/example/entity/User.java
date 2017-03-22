@@ -10,6 +10,10 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+
+import com.example.entity.Resource;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
@@ -34,6 +38,8 @@ public class User {
 	private List<String> roles;
 	
 	
+	
+	
 	protected User(){}
 	
 		
@@ -52,6 +58,8 @@ public class User {
 		this.postalCode = postalCode;
 		this.roles = new ArrayList <> (Arrays.asList(roles));
 		
+		
+		
 	}
 
 
@@ -65,6 +73,11 @@ public class User {
 
 
 	
+
+
+
+	
+
 
 
 
@@ -197,6 +210,11 @@ public class User {
 	public void setTelephone(String telephone) {
 		this.telephone = telephone;
 	}
+
+
+
+
+	
 
 
 
