@@ -12,9 +12,10 @@ public class OfertaDescuento {
 	
 	private Integer id;
 	private  String name;
-	private int code;
+	private String code;
 	private String description;
 	private int porcentaje;
+	private String img;
 	
 	
 	protected OfertaDescuento(){
@@ -23,12 +24,13 @@ public class OfertaDescuento {
 	
 
 
-	public OfertaDescuento(String name, int code, String description, int porcentaje) {
+	public OfertaDescuento(String name, String code, String description, int porcentaje, String img) {
 		
 		this.name = name;
 		this.code = code;
 		this.description = description;
 		this.porcentaje=porcentaje;
+		this.setImg(img);
 		
 	}
 	
@@ -73,12 +75,12 @@ public class OfertaDescuento {
 	}
 
 
-	public int getCode() {
+	public String getCode() {
 		return code;
 	}
 
 
-	public void setCode(int code) {
+	public void setCode(String code) {
 		this.code = code;
 	}
 
@@ -90,6 +92,18 @@ public class OfertaDescuento {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+
+
+	public String getImg() {
+		return img;
+	}
+
+
+
+	public void setImg(String img) {
+		this.img = img;
 	}
 	
 	

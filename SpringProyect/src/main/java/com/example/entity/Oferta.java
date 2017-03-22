@@ -12,10 +12,11 @@ public class Oferta {
 	
 	private Integer id;
 	private  String name;
-	private int code;
+	private String code;
 	private String description;
 	private int llevas;
 	private int pagas;
+	private String img;
 	
 	
 	protected Oferta(){
@@ -24,13 +25,14 @@ public class Oferta {
 	
 
 
-	public Oferta(String name, int code, String description, int llevas, int pagas) {
+	public Oferta(String name, String code, String description, int llevas, int pagas, String img) {
 		
 		this.name = name;
 		this.code = code;
 		this.description = description;
 		this.llevas=llevas;
 		this.pagas=pagas;
+		this.img = img;
 		
 	}
 	
@@ -83,12 +85,12 @@ public class Oferta {
 	}
 
 
-	public int getCode() {
+	public String getCode() {
 		return code;
 	}
 
 
-	public void setCode(int code) {
+	public void setCode(String code) {
 		this.code = code;
 	}
 
@@ -100,6 +102,18 @@ public class Oferta {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+
+
+	public String getImg() {
+		return img;
+	}
+
+
+
+	public void setImg(String img) {
+		this.img = img;
 	}
 	
 	
