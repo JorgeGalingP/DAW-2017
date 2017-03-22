@@ -29,6 +29,7 @@ public class Resource {
 	private double precio;
 	private int codigo;
 	private String tracklist;
+	private String img;
 	
 	@OneToMany(cascade = CascadeType.ALL)
 	private List<Comment> comments = new ArrayList<>();
@@ -75,7 +76,7 @@ public class Resource {
 
 
 
-	public Resource(String title, String subtitle, String interprete, String fecha, String estado, String album, double precio, int codigo, String tracklist) {
+	public Resource(String title, String subtitle, String interprete, String fecha, String estado, String album, double precio, int codigo, String tracklist, String img) {
 		
 		this.title = title;
 		this.subtitle=subtitle;
@@ -86,6 +87,7 @@ public class Resource {
 		this.precio = precio;
 		this.codigo = codigo;
 		this.tracklist=tracklist;
+		this.img = img;
 		
 	}
 
@@ -179,6 +181,18 @@ public class Resource {
 
 	public void setComments(List<Comment> comments) {
 		this.comments = comments;
+	}
+
+
+
+	public String getImg() {
+		return img;
+	}
+
+
+
+	public void setImg(String img) {
+		this.img = img;
 	}
 	
 	
