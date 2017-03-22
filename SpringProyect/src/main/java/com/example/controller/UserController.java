@@ -36,15 +36,6 @@ public class UserController {
 	
 	
 	
-	/*@RequestMapping("/borrarPerfil")
-	public String borrarPerfil(HttpServletRequest request){
-
-		User user = userRepository.findByName(request.getUserPrincipal().getName());
-		userRepository.delete(user.getId());
-		
 	
-
-		return "index";
-	}*/
 
 }
