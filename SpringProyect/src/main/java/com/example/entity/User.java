@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -11,6 +12,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 import com.example.entity.Resource;
@@ -37,8 +39,9 @@ public class User {
 	@ElementCollection(fetch = FetchType.EAGER)
 	private List<String> roles;
 	
-	
-	
+	@OneToMany(cascade = CascadeType.ALL)
+	private List<Resource> carrito;
+
 	
 	protected User(){}
 	
@@ -57,29 +60,12 @@ public class User {
 		this.passwordHash = new BCryptPasswordEncoder().encode(password);
 		this.postalCode = postalCode;
 		this.roles = new ArrayList <> (Arrays.asList(roles));
-		
+		this.carrito = new ArrayList<Resource>();
 		
 		
 	}
 
-
-
 	
-	
-
-	
-
-
-
-
-	
-
-
-
-	
-
-
-
 
 	public String getPasswordHash() {
 		return passwordHash;
@@ -209,6 +195,20 @@ public class User {
 
 	public void setTelephone(String telephone) {
 		this.telephone = telephone;
+	}
+
+
+
+
+	public List<Resource> getCarrito() {
+		return carrito;
+	}
+
+
+
+
+	public void setCarrito(List<Resource> carrito) {
+		this.carrito = carrito;
 	}
 
 

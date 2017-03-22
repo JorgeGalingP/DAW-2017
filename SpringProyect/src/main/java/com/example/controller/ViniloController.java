@@ -40,8 +40,6 @@ public class ViniloController {
 	@PostConstruct
 	public void init(){
 		Resource rs1 = new Resource ("Catch a fire", "Uno de los mejores vinilos de reggae","Bob Marley & The Wailers","1973","Nuevo", "Catch a Fire",37,0001, "vfd", "img1.jpg");
-		rs1.getComments().add(new Comment("Cool"));
-		rs1.getComments().add(new Comment("Very cool"));
 		repository.save(rs1);
 		Resource rs2 = new Resource ("Live", "Uno de los mejores vinilos de reggae","Bob Marley & The Wailers","1975","Seminuevo", "live",28,0002, "vfd", "img2.jpg");
 		repository.save(rs2);

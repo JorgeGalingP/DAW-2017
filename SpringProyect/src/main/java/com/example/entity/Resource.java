@@ -31,9 +31,6 @@ public class Resource {
 	private String tracklist;
 	private String img;
 	
-	@OneToMany(cascade = CascadeType.ALL)
-	private List<Comment> comments = new ArrayList<>();
-	
 	
 	public String getSubtitle() {
 		return subtitle;
@@ -175,14 +172,6 @@ public class Resource {
 		this.codigo = codigo;
 	}
 	
-	public List<Comment> getComments() {
-		return comments;
-	}
-
-	public void setComments(List<Comment> comments) {
-		this.comments = comments;
-	}
-
 
 
 	public String getImg() {

@@ -70,29 +70,31 @@ public class WebController {
 		return "articulo";
 	}
 	
-	/*@RequestMapping("/{id}/addCarrito")
-	public String addComment( HttpServletRequest request, @PathVariable int id) {
+	@RequestMapping("/{id}/addCarrito")
+	public String addCarrito( HttpServletRequest request, @PathVariable int id) {
 		
 		  if (request.isUserInRole("ADMIN") || request.isUserInRole("USER")) {	
 			  
 		User loggedUser = userRepository.findByName(request.getUserPrincipal().getName());
+		
 
-		Resource r = repository.findOne(id);
+		Resource vinilo = repository.findOne(id);
 		
-		List<Resource> carro = new ArrayList<>();
 		
-		carro.add(r);
+		List<Resource> carro = loggedUser.getCarrito();
+		
+		carro.add(vinilo);
+		
 		
 		loggedUser.setCarrito(carro);
 		
 		userRepository.save(loggedUser);
 		
-		  
-
-			return "carrito";	
+		  return "carrito";	
 			}
+		 
 		  else return "login";
-	}*/
+	}
 	
 	
 	
@@ -139,6 +141,12 @@ public class WebController {
 			model.addAttribute("unlogged", true);
 		if (request.isUserInRole("ADMIN"))
 			model.addAttribute("admin", true);
+		
+		User loggedUser = userRepository.findByName(request.getUserPrincipal().getName());
+		
+		List <Resource> productos = loggedUser.getCarrito();
+		model.addAttribute("productos", productos);
+		
 
 		return ("carrito");
 	}
