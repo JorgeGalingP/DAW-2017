@@ -1,9 +1,8 @@
 $(document).ready(function () {
     $('#admin').hide();
-    $('#contents').hide();
+    $('#contents').show();
     $('#users').hide();
     $('#validation').hide();
-    $('#analytics').show();
     $('#adminMenu').addClass('active');
 
 
@@ -51,22 +50,7 @@ $(document).ready(function () {
 
         return false;
     });
-
-    $('#analyticsMenu').click(function () {
-        $('#admin').hide();
-        $('#contents').hide();
-        $('#users').hide();
-        $('#validation').hide();
-        $('#analytics').slideDown("slow");
-        $('#adminMenu').removeClass('active');
-        $('#contentMenu').removeClass('active');
-        $('#usersMenu').removeClass('active');
-        $('#analyticsMenu').addClass('active');
-        $('#validationMenu').removeClass('active');
-
-        return false;
-    });
-
+    
     $('#validationMenu').click(function () {
         $('#admin').hide();
         $('#contents').hide();

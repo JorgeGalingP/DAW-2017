@@ -11,34 +11,6 @@
     <link type="text/css" rel="stylesheet" href="css/bootstraptheme.css" />
     <script src="js/administrador.js"></script>
     <script src="jquery-3.1.1.min.js"></script>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-        google.charts.load('current', {
-            'packages': ['bar']
-        });
-        google.charts.setOnLoadCallback(drawChart);
-
-        function drawChart() {
-            var data = google.visualization.arrayToDataTable([
-                ['Año', 'Ventas', 'Gastos', 'Beneficios'],
-                ['2014', 25000, 5000, 20000],
-                ['2015', 11700, 1700, 10000],
-                ['2016', 26000, 8000, 18000],
-                ['2017', 19000, 5400, 13600]
-            ]);
-
-            var options = {
-                chart: {
-                    title: 'Analiticas de Virtual Vinilo',
-                    subtitle: 'Ejercicio 2014-2017',
-                }
-            };
-            var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
-
-            chart.draw(data, options);
-        }
-
-    </script>
 </head>
 
 <body>
@@ -125,13 +97,12 @@
                     <div class="description">
 
                         <br>
-                        <h3> Luis Hernández</h3>
+                        <h3>{{user.name}}</h3>
                         <hr />
                         <div class="list-group">
                             <a id="adminMenu" href="#" class="list-group-item"><span class="glyphicon glyphicon-user"></span> Administrador </a>
                             <a id="contentMenu" href="#" class="list-group-item"><span class="glyphicon glyphicon-folder-open"></span> Contenido </a>
                             <a id="validationMenu" href="#" class="list-group-item"><span class="glyphicon glyphicon-send"></span> Pedidos </a>
-                            <a id="analyticsMenu" href="#" class="list-group-item"><span class="glyphicon glyphicon-signal"></span> Estadisticas </a>
                             <a id="usersMenu" href="#" class="list-group-item"><span class="glyphicon glyphicon-globe"></span> Usuarios </a>
                         </div>
 
@@ -207,7 +178,7 @@
                     <br/>
                     <div class="row">
                         <div class="col-lg-12">
-                            <form class="form-horizontal" action="nuevoVinilo" method="post">
+                            <form class="form-horizontal" action="nuevoVinilo" method="post" enctype="multipart/form-data">
                                 <div class="col-lg-12">
 
                                     <div class="form-group">
@@ -229,7 +200,7 @@
                                     <div class="form-group">
                                         <label class="col-lg-3 control-label" for="typeahead">Interprete</label>
                                         <div class="col-lg-8">
-                                            <input type="text" class="form-control col-md-6" name="intreprete">
+                                            <input type="text" class="form-control col-md-6" name="interprete">
 
                                         </div>
                                     </div>
@@ -278,19 +249,16 @@
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
-                                        <div class="form-group">
-                                            <label class="col-lg-3 control-label" for="textarea-wysihtml5">Vista preliminar</label>
-                                            <div class="col-lg-9">
-                                                <!-- <textarea id="textarea-wysihtml5" class="form-control col-md-7" placeholder="Introduce una descripción..." rows="5"></textarea> -->
-                                                <input id="file-1" type="file" class="file" multiple=true data-preview-file-type="any">
-                                                <p class="help-block">Procura que tus imágenes no superen un tamaño de 250x250 </p>
-                                            </div>
-                                        </div>
                                         <br>
-                                        <label class="col-lg-6">
-                                            <input class="btn btn-primary" type='submit' value='Guardar' />
+										<p>
+											<label>Title:</label> <input type='text' name='imageTitle' />
+										</p>
+										<p>
+											<label>Image file:</label><input type="file" name="file" />
+										</p>
+										<label class="col-lg-6">
+                                            <input class="btn btn-primary" type='submit' name='enviar' value='Guardar' />
                                         </label>
-
                                     </div>
                                     <br>
                                 </div>
@@ -308,7 +276,7 @@
                     <br>
                     <div class="row">
                         <div class="col-lg-12">
-                            <form class="form-horizontal" action="nuevaOferta" method="post">
+                            <form class="form-horizontal" action="nuevaOferta" method="post" enctype="multipart/form-data">
                                 <div class="col-lg-12">
 
                                     <div class="form-group">
@@ -350,21 +318,17 @@
 
                                         </div>
                                     </div>
-
                                     <div class="col-lg-12">
-                                        <div class="form-group">
-                                            <label class="col-lg-3 control-label" for="textarea-wysihtml5">Vista preliminar</label>
-                                            <div class="col-lg-9">
-                                                <!-- <textarea id="textarea-wysihtml5" class="form-control col-md-7" placeholder="Introduce una descripción..." rows="5"></textarea> -->
-                                                <input id="file-1" type="file" class="file" multiple=true data-preview-file-type="any">
-                                                <p class="help-block">Procura que tus imágenes no superen un tamaño de 250x250 </p>
-                                            </div>
-                                        </div>
                                         <br>
-                                        <label class="col-lg-6">
-                                            <input class="btn btn-primary" type='submit' value='Guardar' />
+										<p>
+											<label>Title:</label> <input type='text' name='imageTitle' />
+										</p>
+										<p>
+											<label>Image file:</label><input type="file" name="file" />
+										</p>
+										<label class="col-lg-6">
+                                            <input class="btn btn-primary" type='submit' name='enviar' value='Guardar' />
                                         </label>
-
                                     </div>
                                     <br>
                                 </div>
@@ -382,7 +346,7 @@
                     <br>
                     <div class="row">
                         <div class="col-lg-12">
-                            <form class="form-horizontal" action="nuevaOfertaDescuento" method="post">
+                            <form class="form-horizontal" action="nuevaOfertaDescuento" method="post" enctype="multipart/form-data">
                                 <div class="col-lg-12">
 
                                     <div class="form-group">
@@ -417,116 +381,22 @@
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
-                                        <div class="form-group">
-                                            <label class="col-lg-3 control-label" for="textarea-wysihtml5">Vista preliminar</label>
-                                            <div class="col-lg-9">
-                                                <!-- <textarea id="textarea-wysihtml5" class="form-control col-md-7" placeholder="Introduce una descripción..." rows="5"></textarea> -->
-                                                <input id="file-1" type="file" class="file" multiple=true data-preview-file-type="any">
-                                                <p class="help-block">Procura que tus imágenes no superen un tamaño de 250x250 </p>
-                                            </div>
-                                        </div>
                                         <br>
-                                        <label class="col-lg-6">
-                                            <input class="btn btn-primary" type='submit' value='Guardar' />
+										<p>
+											<label>Title:</label> <input type='text' name='imageTitle' />
+										</p>
+										<p>
+											<label>Image file:</label><input type="file" name="file" />
+										</p>
+										<label class="col-lg-6">
+                                            <input class="btn btn-primary" type='submit' name='enviar' value='Guardar' />
                                         </label>
-
                                     </div>
-
                                     <br>
                                 </div>
                             </form>
                         </div>
                     </div>
-                    <br>
-                </div>
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <div class="text-muted bootstrap-admin-box-title">Eliminar articulo</div>
-                    </div>
-                    <br>
-                    <br>
-                    <div class="col-lg-12">
-                        <form class="form-horizontal"  action="borrarArticulo" method="post">
-                            <div class="col-lg-12">
-
-                                <div class="form-group">
-                                    <label class="col-lg-3 control-label">Nombre </label>
-                                    <div class="col-lg-8">
-                                        <input type="text" class="form-control col-md-6" name="title">
-
-                                    </div>
-                                </div>
-
-
-                                <br>
-
-
-
-                            </div>
-                      
-                    </div>
-
-                    <div class="row">
-                        <div class="col-lg-12">
-                           
-
-                                <div class="col-lg-12">
-
-                                    <br>
-                                     <label class="col-lg-6">
-                                            <input class="btn btn-primary" type='submit' value='Eliminar' />
-                                        </label>
-
-                                </div>
-                            
-                        </div>
-                        </form>
-                    </div>
-                    <br>
-                </div>
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <div class="text-muted bootstrap-admin-box-title">Eliminar promoción</div>
-                    </div>
-                    <br>
-                    <br>
-                    <div class="col-lg-12">
-                        <form class="form-horizontal" action="borrarPromocion" method="post">
-                            <div class="col-lg-12">
-
-                                <div class="form-group">
-                                    <label class="col-lg-3 control-label">Código </label>
-                                    <div class="col-lg-8">
-                                        <input type="text" class="form-control col-md-6" name ="code">
-
-                                    </div>
-                                </div>
-
-
-                                <br>
-
-
-
-                            </div>
-                     
-                    </div>
-
-                    <div class="row">
-                        <div class="col-lg-12">
-                           
-
-                                <div class="col-lg-11">
-
-                                    <br>
-                                     <label class="col-lg-6">
-                                            <input class="btn btn-primary" type='submit' value='Eliminar' />
-                                        </label>
-
-                                </div>
-                           
-                        </div>
-                    </div>
-                     </form>
                     <br>
                 </div>
             </div>
@@ -540,47 +410,42 @@
                     </div>
                     <br/>
                     <div class="col-lg-12">
+                        {{#ofertas}}
                         <div class="col-sm-4 col-lg-4 col-md-4">
                             <div class="thumbnail">
-                                <img src="http://placehold.it/320x280" style="width: 250px; height: 220px" alt="">
+                                <img src="/imagenes/{{img}}" style="width: 250px; height: 220px" alt="">
                                 <div class="caption">
-                                    <h4><a href="/articulo">Fourth Product</a>
-                                    <button type="button" class="btn btn-link btn-xs">
-                                        <span class="glyphicon glyphicon-trash"> </span>
-                                    </button>
-                                </h4>
-                                    <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <h4><a href="/articulo">{{code}}</a></h4>
+                                    	<form class="form-horizontal"  action="borrarPromocion" method="post">
+                                        	<input name="code" type="hidden" value="{{code}}"/>
+                                        	<button type="button" class="btn btn-default btn-xs">
+                                    		<span class="glyphicon glyphicon-trash" aria-hidden="true">
+                                            	<input type="submit"value="Eliminar" onClick="return confirm('¿Estas seguro de querer eliminar esta oferta?')"/>
+                                            </span>
+                                       	</form>
                                 </div>
+                                <p>{{description}}</p>
                             </div>
                         </div>
-
+                        {{/ofertas}}
+                        {{#ofertasDescuento}}
                         <div class="col-sm-4 col-lg-4 col-md-4">
                             <div class="thumbnail">
-                                <img src="http://placehold.it/320x280" style="width: 250px; height: 220px" alt="">
+                                <img src="/imagenes/{{img}}" style="width: 250px; height: 220px" alt="">
                                 <div class="caption">
-                                    <h4><a href="/articulo">Fourth Product</a>
-                                    <button type="button" class="btn btn-link btn-xs">
-                                        <span class="glyphicon glyphicon-trash"> </span>
-                                    </button>
-                                </h4>
-                                    <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <h4><a href="/articulo">{{code}}</a></h4>
+                                    <form class="form-horizontal"  action="borrarPromocionDescuento" method="post">
+                                        	<input name="code" type="hidden" value="{{code}}"/>
+                                        	<button type="button" class="btn btn-default btn-xs">
+                                    		<span class="glyphicon glyphicon-trash" aria-hidden="true">
+                                            	<input type="submit"value="Eliminar" onClick="return confirm('¿Estas seguro de querer eliminar esta oferta?')"/>
+                                            </span>
+                                       	</form>
                                 </div>
+                                <p>{{description}}</p>
                             </div>
                         </div>
-                        <div class="col-sm-4 col-lg-4 col-md-4">
-                            <div class="thumbnail">
-                                <img src="http://placehold.it/320x280" style="width: 250px; height: 220px" alt="">
-                                <div class="caption">
-                                    <h4><a href="/articulo">Fourth Product</a>
-                                    <button type="button" class="btn btn-link btn-xs">
-                                        <span class=" glyphicon glyphicon-trash"></span>
-                                    </button>
-                                </h4>
-                                    <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                            </div>
-                        </div>
-
+                        {{/ofertasDescuento}}
                         <form class="form-horizontal">
                         </form>
                     </div>
@@ -595,14 +460,15 @@
                     </div>
                     <br/>
                     <div class="col-lg-12">
+                        {{#vinilos}}
                         <div class="col-sm-4 col-lg-4 col-md-4">
                             <div class="thumbnail">
-                                <img src="http://placehold.it/320x280" style="width: 320px; height: 280px" alt="">
+                                <img src="/imagenes/{{img}}" style="width: 320px; height: 280px" alt="">
                                 <div class="caption">
-                                    <h4 class="pull-right">$24.99</h4>
-                                    <h4><a href="/articulo">First Product</a>
+                                    <h4 class="pull-right">{{precio}}$</h4>
+                                    <h4><a href="/articulo">{{title}}</a>
                                 </h4>
-                                    <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
+                                    <p>{{subtitle}}</p>
                                 </div>
                                 <div class="ratings">
                                     <p class="pull-right">
@@ -612,528 +478,26 @@
                                         <span class="glyphicon glyphicon-star"></span>
                                         <span class="glyphicon glyphicon-star-empty"></span>
                                     </p>
-                                    <button type="button" class="btn btn-link btn-xs">
-                                        <span class="glyphicon glyphicon-trash"> </span>
+                                        <form class="form-horizontal"  action="borrarArticulo" method="post">
+                                        	<input name="title" type="hidden" value="{{title}}"/> 
+                                        	<button type="button" class="btn btn-default btn-xs">
+                                    		<span class="glyphicon glyphicon-trash" aria-hidden="true">
+                                            	<input type="submit" value="Eliminar" onClick="return confirm('¿Estas seguro de querer eliminar este vinilo?')"/>
+                                            </span>
+                                            </button>
+                                        </form>
                                     </button>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="col-sm-4 col-lg-4 col-md-4">
-                            <div class="thumbnail">
-                                <img src="http://placehold.it/320x280" style="width: 320px; height: 280px" alt="">
-                                <div class="caption">
-                                    <h4 class="pull-right">$64.99</h4>
-                                    <h4><a href="/articulo">Second Product</a>
-                                </h4>
-                                    <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                                <div class="ratings">
-                                    <p class="pull-right">
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star-empty"></span>
-                                    </p>
-                                    <button type="button" class="btn btn-link btn-xs">
-                                        <span class="glyphicon glyphicon-trash"> </span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4 col-lg-4 col-md-4">
-                            <div class="thumbnail">
-                                <img src="http://placehold.it/320x280" style="width: 320px; height: 280px" alt="">
-                                <div class="caption">
-                                    <h4 class="pull-right">$74.99</h4>
-                                    <h4><a href="/articulo">Third Product</a>
-                                </h4>
-                                    <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                                <div class="ratings">
-                                    <p class="pull-right">
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star-empty"></span>
-                                    </p>
-                                    <button type="button" class="btn btn-link btn-xs">
-                                        <span class="glyphicon glyphicon-trash"> </span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4 col-lg-4 col-md-4">
-                            <div class="thumbnail">
-                                <img src="http://placehold.it/320x280" style="width: 320px; height: 280px" alt="">
-                                <div class="caption">
-                                    <h4 class="pull-right">$84.99</h4>
-                                    <h4><a href="/articulo">Fourth Product</a>
-                                </h4>
-                                    <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                                <div class="ratings">
-                                    <p class="pull-right">
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star-empty"></span>
-                                    </p>
-                                    <button type="button" class="btn btn-link btn-xs">
-                                        <span class="glyphicon glyphicon-trash"> </span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4 col-lg-4 col-md-4">
-                            <div class="thumbnail">
-                                <img src="http://placehold.it/320x280" style="width: 320px; height: 280px" alt="">
-                                <div class="caption">
-                                    <h4 class="pull-right">$94.99</h4>
-                                    <h4><a href="/articulo">Fifth Product</a>
-                                </h4>
-                                    <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                                <div class="ratings">
-                                    <p class="pull-right">
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star-empty"></span>
-                                    </p>
-                                    <button type="button" class="btn btn-link btn-xs">
-                                        <span class="glyphicon glyphicon-trash"> </span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4 col-lg-4 col-md-4">
-                            <div class="thumbnail">
-                                <img src="http://placehold.it/320x280" style="width: 320px; height: 280px" alt="">
-                                <div class="caption">
-                                    <h4 class="pull-right">$24.99</h4>
-                                    <h4><a href="/articulo">First Product</a>
-                                </h4>
-                                    <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
-                                </div>
-                                <div class="ratings">
-                                    <p class="pull-right">
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star-empty"></span>
-                                    </p>
-                                    <button type="button" class="btn btn-link btn-xs">
-                                        <span class="glyphicon glyphicon-trash"> </span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4 col-lg-4 col-md-4">
-                            <div class="thumbnail">
-                                <img src="http://placehold.it/320x280" style="width: 320px; height: 280px" alt="">
-                                <div class="caption">
-                                    <h4 class="pull-right">$64.99</h4>
-                                    <h4><a href="/articulo">Second Product</a>
-                                </h4>
-                                    <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                                <div class="ratings">
-                                    <p class="pull-right">
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star-empty"></span>
-                                    </p>
-                                    <button type="button" class="btn btn-link btn-xs">
-                                        <span class="glyphicon glyphicon-trash"> </span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4 col-lg-4 col-md-4">
-                            <div class="thumbnail">
-                                <img src="http://placehold.it/320x280" style="width: 320px; height: 280px" alt="">
-                                <div class="caption">
-                                    <h4 class="pull-right">$74.99</h4>
-                                    <h4><a href="/articulo">Third Product</a>
-                                </h4>
-                                    <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                                <div class="ratings">
-                                    <p class="pull-right">
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star-empty"></span>
-                                    </p>
-                                    <button type="button" class="btn btn-link btn-xs">
-                                        <span class="glyphicon glyphicon-trash"> </span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4 col-lg-4 col-md-4">
-                            <div class="thumbnail">
-                                <img src="http://placehold.it/320x280" style="width: 320px; height: 280px" alt="">
-                                <div class="caption">
-                                    <h4 class="pull-right">$84.99</h4>
-                                    <h4><a href="/articulo">Fourth Product</a>
-                                </h4>
-                                    <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                                <div class="ratings">
-                                    <p class="pull-right">
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star-empty"></span>
-                                    </p>
-                                    <button type="button" class="btn btn-link btn-xs">
-                                        <span class="glyphicon glyphicon-trash"> </span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4 col-lg-4 col-md-4">
-                            <div class="thumbnail">
-                                <img src="http://placehold.it/320x280" style="width: 320px; height: 280px" alt="">
-                                <div class="caption">
-                                    <h4 class="pull-right">$94.99</h4>
-                                    <h4><a href="/articulo">Fifth Product</a>
-                                </h4>
-                                    <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                                <div class="ratings">
-                                    <p class="pull-right">
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star-empty"></span>
-                                    </p>
-                                    <button type="button" class="btn btn-link btn-xs">
-                                        <span class="glyphicon glyphicon-trash"> </span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4 col-lg-4 col-md-4">
-                            <div class="thumbnail">
-                                <img src="http://placehold.it/320x280" style="width: 320px; height: 280px" alt="">
-                                <div class="caption">
-                                    <h4 class="pull-right">$24.99</h4>
-                                    <h4><a href="/articulo">First Product</a>
-                                </h4>
-                                    <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
-                                </div>
-                                <div class="ratings">
-                                    <p class="pull-right">
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star-empty"></span>
-                                    </p>
-                                    <button type="button" class="btn btn-link btn-xs">
-                                        <span class="glyphicon glyphicon-trash"> </span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4 col-lg-4 col-md-4">
-                            <div class="thumbnail">
-                                <img src="http://placehold.it/320x280" style="width: 320px; height: 280px" alt="">
-                                <div class="caption">
-                                    <h4 class="pull-right">$64.99</h4>
-                                    <h4><a href="/articulo">Second Product</a>
-                                </h4>
-                                    <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                                <div class="ratings">
-                                    <p class="pull-right">
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star-empty"></span>
-                                    </p>
-                                    <button type="button" class="btn btn-link btn-xs">
-                                        <span class="glyphicon glyphicon-trash"> </span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4 col-lg-4 col-md-4">
-                            <div class="thumbnail">
-                                <img src="http://placehold.it/320x280" style="width: 320px; height: 280px" alt="">
-                                <div class="caption">
-                                    <h4 class="pull-right">$74.99</h4>
-                                    <h4><a href="/articulo">Third Product</a>
-                                </h4>
-                                    <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                                <div class="ratings">
-                                    <p class="pull-right">
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star-empty"></span>
-                                    </p>
-                                    <button type="button" class="btn btn-link btn-xs">
-                                        <span class="glyphicon glyphicon-trash"> </span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4 col-lg-4 col-md-4">
-                            <div class="thumbnail">
-                                <img src="http://placehold.it/320x280" style="width: 320px; height: 280px" alt="">
-                                <div class="caption">
-                                    <h4 class="pull-right">$84.99</h4>
-                                    <h4><a href="/articulo">Fourth Product</a>
-                                </h4>
-                                    <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                                <div class="ratings">
-                                    <p class="pull-right">
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star-empty"></span>
-                                    </p>
-                                    <button type="button" class="btn btn-link btn-xs">
-                                        <span class="glyphicon glyphicon-trash"> </span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4 col-lg-4 col-md-4">
-                            <div class="thumbnail">
-                                <img src="http://placehold.it/320x280" style="width: 320px; height: 280px" alt="">
-                                <div class="caption">
-                                    <h4 class="pull-right">$94.99</h4>
-                                    <h4><a href="/articulo">Fifth Product</a>
-                                </h4>
-                                    <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                                <div class="ratings">
-                                    <p class="pull-right">
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star-empty"></span>
-                                    </p>
-                                    <button type="button" class="btn btn-link btn-xs">
-                                        <span class="glyphicon glyphicon-trash"> </span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
+                        {{/vinilos}}
                         <form class="form-horizontal">
                         </form>
                     </div>
-
                     <div class="row">
                     </div>
                     <br>
                 </div>
-            </div>
-
-            <div class="col-lg-9 col-md-9 col-sm-9" id="analytics" style="display:none">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <div class="text-muted bootstrap-admin-box-title">Ventas, Gastos, y Beneficios en el ejercicio 2014-2017</div>
-                    </div>
-                    <br/>
-                    <div id="columnchart_material" style="width: 845px; height: 400px;"></div>
-                    <br/>
-                </div>
-                <br/>
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <div class="text-muted bootstrap-admin-box-title">Vinilos más vendidos</div>
-                    </div>
-                    <br/>
-                    <div class="col-lg-12">
-                        <div class="col-sm-4 col-lg-4 col-md-4">
-                            <div class="thumbnail">
-                                <img src="http://placehold.it/320x280" style="width: 320px; height: 280px" alt="">
-                                <div class="caption">
-                                    <h4 class="pull-right">$84.99</h4>
-                                    <h4><a href="/articulo">Fourth Product</a>
-                                </h4>
-                                    <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                                <div class="ratings">
-                                    <p class="pull-right">6 reviews</p>
-                                    <p>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star-empty"></span>
-                                        <span class="glyphicon glyphicon-star-empty"></span>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4 col-lg-4 col-md-4">
-                            <div class="thumbnail">
-                                <img src="http://placehold.it/320x280" style="width: 320px; height: 280px" alt="">
-                                <div class="caption">
-                                    <h4 class="pull-right">$84.99</h4>
-                                    <h4><a href="/articulo">Fourth Product</a>
-                                </h4>
-                                    <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                                <div class="ratings">
-                                    <p class="pull-right">6 reviews</p>
-                                    <p>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star-empty"></span>
-                                        <span class="glyphicon glyphicon-star-empty"></span>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4 col-lg-4 col-md-4">
-                            <div class="thumbnail">
-                                <img src="http://placehold.it/320x280" style="width: 320px; height: 280px" alt="">
-                                <div class="caption">
-                                    <h4 class="pull-right">$84.99</h4>
-                                    <h4><a href="/articulo">Fourth Product</a>
-                                </h4>
-                                    <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                                <div class="ratings">
-                                    <p class="pull-right">6 reviews</p>
-                                    <p>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star-empty"></span>
-                                        <span class="glyphicon glyphicon-star-empty"></span>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <form class="form-horizontal">
-                        </form>
-                    </div>
-
-                    <div class="row">
-                    </div>
-                    <br>
-                </div>
-
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <div class="text-muted bootstrap-admin-box-title">Vinilos más buscados</div>
-                    </div>
-                    <br/>
-                    <div class="col-lg-12">
-                        <div class="col-sm-4 col-lg-4 col-md-4">
-                            <div class="thumbnail">
-                                <img src="http://placehold.it/320x280" style="width: 320px; height: 280px" alt="">
-                                <div class="caption">
-                                    <h4 class="pull-right">$84.99</h4>
-                                    <h4><a href="/articulo">Fourth Product</a>
-                                </h4>
-                                    <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                                <div class="ratings">
-                                    <p class="pull-right">6 reviews</p>
-                                    <p>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star-empty"></span>
-                                        <span class="glyphicon glyphicon-star-empty"></span>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4 col-lg-4 col-md-4">
-                            <div class="thumbnail">
-                                <img src="http://placehold.it/320x280" style="width: 320px; height: 280px" alt="">
-                                <div class="caption">
-                                    <h4 class="pull-right">$84.99</h4>
-                                    <h4><a href="/articulo">Fourth Product</a>
-                                </h4>
-                                    <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                                <div class="ratings">
-                                    <p class="pull-right">6 reviews</p>
-                                    <p>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star-empty"></span>
-                                        <span class="glyphicon glyphicon-star-empty"></span>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4 col-lg-4 col-md-4">
-                            <div class="thumbnail">
-                                <img src="http://placehold.it/320x280" style="width: 320px; height: 280px" alt="">
-                                <div class="caption">
-                                    <h4 class="pull-right">$84.99</h4>
-                                    <h4><a href="/articulo">Fourth Product</a>
-                                </h4>
-                                    <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                                <div class="ratings">
-                                    <p class="pull-right">6 reviews</p>
-                                    <p>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star-empty"></span>
-                                        <span class="glyphicon glyphicon-star-empty"></span>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <form class="form-horizontal">
-                        </form>
-                    </div>
-
-                    <div class="row">
-                    </div>
-                    <br>
-                </div>
-
             </div>
 
             <div class="col-lg-9 col-md-9 col-sm-9" id="users" style="display:none">
@@ -1143,106 +507,20 @@
                     </div>
                     <br/>
                     <div class="col-lg-12">
+                    {{#users}}
                         <div class="col-sm-4 col-lg-4 col-md-4">
                             <div class="thumbnail">
 
                                 <div class="caption">
-                                    <h4><a href="/articulo">Jorge Pérez</a>
-                                </h4>
-                                    <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
+                                    <h4>{{name}}</h4>
+                                    <p>{{surname}}</p>
+                                    <p>{{email}}</p>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="col-sm-4 col-lg-4 col-md-4">
-                            <div class="thumbnail">
-
-                                <div class="caption">
-                                    <h4><a href="/articulo">María Sánchez</a>
-                                </h4>
-                                    <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4 col-lg-4 col-md-4">
-                            <div class="thumbnail">
-
-                                <div class="caption">
-                                    <h4><a href="/articulo">Pablo Castro</a>
-                                </h4>
-                                    <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4 col-lg-4 col-md-4">
-                            <div class="thumbnail">
-
-                                <div class="caption">
-                                    <h4><a href="/articulo">Jorge Pérez</a>
-                                </h4>
-                                    <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4 col-lg-4 col-md-4">
-                            <div class="thumbnail">
-
-                                <div class="caption">
-                                    <h4><a href="/articulo">María Sánchez</a>
-                                </h4>
-                                    <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4 col-lg-4 col-md-4">
-                            <div class="thumbnail">
-
-                                <div class="caption">
-                                    <h4><a href="/articulo">Pablo Castro</a>
-                                </h4>
-                                    <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4 col-lg-4 col-md-4">
-                            <div class="thumbnail">
-
-                                <div class="caption">
-                                    <h4><a href="/articulo">Miguel Perez</a>
-                                </h4>
-                                    <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4 col-lg-4 col-md-4">
-                            <div class="thumbnail">
-
-                                <div class="caption">
-                                    <h4><a href="/articulo">Jorge Pérez</a>
-                                </h4>
-                                    <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4 col-lg-4 col-md-4">
-                            <div class="thumbnail">
-
-                                <div class="caption">
-                                    <h4><a href="/articulo">María Sánchez</a>
-                                </h4>
-                                    <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                            </div>
-                        </div>
-
                         <form class="form-horizontal">
                         </form>
+                    {{/users}}
                     </div>
 
                     <div class="row">
