@@ -546,14 +546,14 @@
                                         <span class="glyphicon glyphicon-star"></span>
                                         <span class="glyphicon glyphicon-star-empty"></span>
                                     </p>
-                                    <button type="button" class="btn btn-link btn-xs">
-                                        <span class="glyphicon glyphicon-trash"> </span>
-                                        <!--  -->
                                         <form class="form-horizontal"  action="borrarArticulo" method="post">
-                                        	<input name="title" value="Catch a fire">Catch a fire</input>
-                                            <input class="btn btn-primary" type='submit' value='Eliminar' />
+                                        	<input name="title" type="hidden" value="{{title}}"/>
+                                        	<button type="button" class="btn btn-default btn-xs">
+                                    		<span class="glyphicon glyphicon-trash" aria-hidden="true">
+                                            	<input type="submit"value="Eliminar" onClick="return confirm('¿Estas seguro de querer eliminar este vinilo?')"/>
+                                            </span>
+                                            </button>
                                         </form>
-                                        <!--  -->
                                     </button>
                                 </div>
                             </div>
