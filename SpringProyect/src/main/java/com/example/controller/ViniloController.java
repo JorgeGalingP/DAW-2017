@@ -112,7 +112,7 @@ public class ViniloController {
 				@RequestMapping("/moreVinilos")
 				public String vinilos(Model model,@RequestParam int page){
 					
-					Page<Resource> resources = repository.findAll(new PageRequest(page,10));
+					Page<Resource> resources = repository.findAll(new PageRequest(page,12));
 					model.addAttribute("items","resources");
 					
 					return"listItemsPage";
