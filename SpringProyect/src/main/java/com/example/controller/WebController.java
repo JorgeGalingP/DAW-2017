@@ -11,7 +11,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import com.example.entity.Comment;
 import com.example.entity.Resource;
 import com.example.entity.User;
 import com.example.repository.OfertaDescuentoRepository;
@@ -64,8 +66,10 @@ public class WebController {
 			model.addAttribute("admin", true);
 
 		Resource vinilo = repository.findOne(id);
+		List <Comment> listaComentarios = vinilo.getComentarios();
 
 		model.addAttribute("vinilo", vinilo);
+		model.addAttribute("comentarios",listaComentarios);
 
 		return "articulo";
 	}
@@ -80,6 +84,14 @@ public class WebController {
 			carro.add(vinilo);
 
 			loggedUser.setCarrito(carro);
+			
+			
+			int precioTotal = loggedUser.getPrecioCarrito();
+			for(int i=0; carro.size() > i; i++){
+				precioTotal = precioTotal + carro.get(i).getPrecio();
+			}
+			
+			loggedUser.setPrecioCarrito(precioTotal);
 
 			userRepository.save(loggedUser);
 
@@ -130,27 +142,15 @@ public class WebController {
 			model.addAttribute("admin", true);
 
 		User loggedUser = userRepository.findByName(request.getUserPrincipal().getName());
-
+		
 		List<Resource> productos = loggedUser.getCarrito();
+		
 		model.addAttribute("productos", productos);
-
+		model.addAttribute("precioTotal", loggedUser.getPrecioCarrito());
+		
 		return ("carrito");
 	}
 
-	@RequestMapping("/inicio")
-	public String inicio(Model model, HttpServletRequest request) {
-
-		if (request.isUserInRole("ADMIN") || request.isUserInRole("USER")) {
-			User loggedUser = userRepository.findByName(request.getUserPrincipal().getName());
-			model.addAttribute("user", loggedUser);
-			model.addAttribute("logged", true);
-		} else
-			model.addAttribute("unlogged", true);
-		if (request.isUserInRole("ADMIN"))
-			model.addAttribute("admin", true);
-
-		return ("inicio");
-	}
 
 	@RequestMapping("/metodo-pago")
 	public String MetodoPago(Model model, HttpServletRequest request) {
@@ -288,6 +288,27 @@ public class WebController {
 
 		return "login";
 
+	}
+	
+	@RequestMapping( value = "/{id}/addComment", method = RequestMethod.POST)
+	public String addComment(HttpServletRequest request, @PathVariable int id, @RequestParam String message, @RequestParam String asunto) {
+
+		if (request.isUserInRole("ADMIN") || request.isUserInRole("USER")) {
+
+			
+			Resource vinilo = repository.findOne(id);
+			
+			Comment com = new Comment(message, asunto);
+
+			vinilo.getComentarios().add(com);
+
+
+			repository.save(vinilo);
+
+			return "redirect:/{id}";
+
+		} else
+			return "redirect:/login";
 	}
 
 }

@@ -14,12 +14,14 @@ public class Comment {
 
 	
 	private String message;
+	private String asunto;
 
 	protected Comment() {
 	}
 
-	public Comment(String message) {
+	public Comment(String message, String asunto) {
 		this.message = message;
+		this.asunto = asunto;
 	}
 
 	public long getId() {
@@ -38,6 +40,14 @@ public class Comment {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getAsunto() {
+		return asunto;
+	}
+
+	public void setAsunto(String asunto) {
+		this.asunto = asunto;
 	}
 
 	

@@ -41,7 +41,7 @@ public class User {
 	
 	@OneToMany(cascade = CascadeType.ALL)
 	private List<Resource> carrito;
-
+	private int precioCarrito;
 	
 	protected User(){}
 	
@@ -61,7 +61,7 @@ public class User {
 		this.postalCode = postalCode;
 		this.roles = new ArrayList <> (Arrays.asList(roles));
 		this.carrito = new ArrayList<Resource>();
-		
+		this.precioCarrito = 0;
 		
 	}
 
@@ -214,16 +214,18 @@ public class User {
 
 
 
-	
+	public int getPrecioCarrito() {
+		return precioCarrito;
+	}
 
 
 
 
-	
-	
-	
-	
-	
+	public void setPrecioCarrito(int precioTotal) {
+		this.precioCarrito = precioTotal;
+	}
+
+
 	
 
 }
