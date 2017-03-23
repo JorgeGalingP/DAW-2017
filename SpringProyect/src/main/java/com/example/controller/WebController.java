@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.example.entity.Comment;
 import com.example.entity.Resource;
@@ -76,6 +77,8 @@ public class WebController {
 
 	@RequestMapping("/{id}/addCarrito")
 	public String addCarrito(HttpServletRequest request, @PathVariable int id) {
+		
+		if (request.isUserInRole("ADMIN") || request.isUserInRole("USER")) {
 
 			User loggedUser = userRepository.findByName(request.getUserPrincipal().getName());
 			Resource vinilo = repository.findOne(id);
@@ -97,6 +100,7 @@ public class WebController {
 
 			return "redirect:/carrito";
 
+	} else return "redirect:/login";
 	}
 
 	@RequestMapping("/login")
@@ -310,5 +314,62 @@ public class WebController {
 		} else
 			return "redirect:/login";
 	}
+	
+	@RequestMapping("/aplicarCodigo")
+	public String AplicarCodigo(Model model, HttpServletRequest request, @RequestParam String code,
+			RedirectAttributes redirectAttrs) {
+		
+		redirectAttrs.addFlashAttribute("error", "entra");
+		
+		return "redirect:/carrito ";
+		
+			
+	}
+	
+	/*@RequestMapping("/aplicarCodigo")
+	public String AplicarCodigo(Model model, HttpServletRequest request, @RequestParam String codigo,
+			RedirectAttributes redirectAttrs) {
+
+		User loggedUser = userRepository.findByName(request.getUserPrincipal().getName());
+
+		List<Oferta> ofertas1 = ofertaRepository.findAll();
+		List<OfertaDescuento> ofertas2 = ofertaDescuentoRepository.findAll();
+		
+		 int longitud = ofertas1.size();
+		 int longitud2 = ofertas2.size();
+		 
+
+		for (int i = 0; longitud <= i; i++) {
+			if (codigo == ofertas1.get(i).getCode()) {
+				// aplicar codigo de oferta1
+				if (loggedUser.getCarrito().size() == ofertas1.get(i).getLlevas()) {
+					// aplicar
+					redirectAttrs.addFlashAttribute("error", "vale");
+					return "redirect:/carrito";
+				} else {
+					redirectAttrs.addFlashAttribute("error", "El código no es aplicable");
+					return "redirect:/carrito";
+
+				}
+
+			} else {
+				for (int j = 0; longitud2 <= j; j++) {
+					if (codigo == ofertas2.get(j).getCode()) {
+						// aplicar codigo de oferta2
+						redirectAttrs.addFlashAttribute("error", "vale");
+						return "redirect:/carrito";
+
+					} else {
+
+						redirectAttrs.addFlashAttribute("error", "El código no existe");
+						return "redirect:/carrito";
+					}
+				}
+			}
+
+		}
+		redirectAttrs.addFlashAttribute("error", "No entra");
+		return "redirect:/ofertas ";
+	}*/
 
 }
