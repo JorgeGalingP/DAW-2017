@@ -19,6 +19,7 @@ import com.example.entity.Resource;
 import com.example.entity.User;
 import com.example.repository.OfertaDescuentoRepository;
 import com.example.repository.OfertaRepository;
+import com.example.repository.PurchaseOrderRepository;
 import com.example.repository.ResourceRepository;
 import com.example.repository.UserRepository;
 
@@ -37,6 +38,9 @@ public class WebController {
 
 	@Autowired
 	private UserRepository userRepository;
+	
+	@Autowired 
+	private PurchaseOrderRepository purchaseOrderRepository;
 
 	@RequestMapping("/")
 	public String index(Model model, HttpServletRequest request) {
@@ -219,6 +223,7 @@ public class WebController {
 		model.addAttribute("ofertas", ofertaRepository.findAll());
 		model.addAttribute("ofertasDescuento", ofertaDescuentoRepository.findAll());
 		model.addAttribute("users", userRepository.findAll());
+		model.addAttribute("orders", purchaseOrderRepository.findAll());
 
 		return ("administrador");
 	}
@@ -254,7 +259,7 @@ public class WebController {
 		return "somos";
 	}
 
-	@RequestMapping("/validacion-pedidos")
+	@RequestMapping("/validaciondepedidos")
 	public String validacion(Model model, HttpServletRequest request) {
 
 		if (request.isUserInRole("ADMIN") || request.isUserInRole("USER")) {
@@ -266,7 +271,7 @@ public class WebController {
 		if (request.isUserInRole("ADMIN"))
 			model.addAttribute("admin", true);
 
-		return "validacion";
+		return "validacion-pedidos";
 	}
 	
 	@RequestMapping("/metododepago")
