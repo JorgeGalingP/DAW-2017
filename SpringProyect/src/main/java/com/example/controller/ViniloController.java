@@ -9,6 +9,8 @@ import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -104,6 +106,20 @@ public class ViniloController {
 
 					repository.delete(vinilo);
 					return "/";
+					
+					}
+				
+				@RequestMapping("/moreVinilos")
+				public String vinilos(Model model,@RequestParam int page){
+					
+					Page<Resource> resources = repository.findAll(new PageRequest(page,10));
+					model.addAttribute("items","resources");
+					
+					return"listItemsPage";
+					
+					
+					
+					
 					
 					}
 				

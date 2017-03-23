@@ -11,6 +11,7 @@
     <link type="text/css" rel="stylesheet" href="css/bootstraptheme.css" />
     <script src="js/cookie.js"></script>
     <script src="js/addProducts.js"></script>
+    <script src="js/editor.js"></script>
 </head>
 
 <body>
@@ -134,34 +135,18 @@
 
                 <div class="row" id="productsIndexTotal">
 					{{#vinilos}}
-                    <div class="col-sm-3 col-lg-3 col-md-3">
-                        <div class="thumbnail">
-                            <img src="/imagenes/{{img}}" style="width: 320px; height: 280px" alt="">
-                            <div class="caption">
-                                <h4 class="pull-right">{{precio}}$</h4>
-                                <h4><a href="{{id}}">{{title}}</a>
-                                </h4>
-                                <p>{{subtitle}}</p>
-                            </div>
-                            <div class="ratings">
-                                <p class="pull-right">15 reviews</p>
-                                <p>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+					      <div class="listItems">
+					       {{> listItems}}
+					      
+					      </div>
+                          
 					{{/vinilos}}
-                    
+                 <button id="moreVinilos" type="button" class="btn btn-primary btn-lg btn-block"><span class="glyphicon glyphicon-download"></span> Ver más </button>   
                 </div>
                 <div class="row">
                     <div class="text-center">
                         <!-- boton cargar más -->
-                        <button id="addProductsIndex" type="button" class="btn btn-primary btn-lg btn-block"><span class="glyphicon glyphicon-download"></span> Ver más </button>
+                      
                     </div>
                 </div>
             </div>
