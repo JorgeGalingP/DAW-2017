@@ -50,9 +50,9 @@ public class WebController {
 		model.addAttribute("vinilos", repository.findAll());
 		return "index";
 	}
-	
+
 	@RequestMapping("/{id}")
-	public String verArticulo(Model model, HttpServletRequest request,  @PathVariable int id) {
+	public String verArticulo(Model model, HttpServletRequest request, @PathVariable int id) {
 
 		if (request.isUserInRole("ADMIN") || request.isUserInRole("USER")) {
 			User loggedUser = userRepository.findByName(request.getUserPrincipal().getName());
@@ -62,43 +62,30 @@ public class WebController {
 			model.addAttribute("unlogged", true);
 		if (request.isUserInRole("ADMIN"))
 			model.addAttribute("admin", true);
-		
+
 		Resource vinilo = repository.findOne(id);
 
 		model.addAttribute("vinilo", vinilo);
 
 		return "articulo";
 	}
-	
-	@RequestMapping("/{id}/addCarrito")
-	public String addCarrito( HttpServletRequest request, @PathVariable int id) {
-		
-		  if (request.isUserInRole("ADMIN") || request.isUserInRole("USER")) {	
-			  
-		User loggedUser = userRepository.findByName(request.getUserPrincipal().getName());
-		
 
-		Resource vinilo = repository.findOne(id);
-		
-		
-		List<Resource> carro = loggedUser.getCarrito();
-		
-		carro.add(vinilo);
-		
-		
-		loggedUser.setCarrito(carro);
-		
-		userRepository.save(loggedUser);
-		
-		  return "carrito";	
-			}
-		 
-		  else return "login";
+	@RequestMapping("/{id}/addCarrito")
+	public String addCarrito(HttpServletRequest request, @PathVariable int id) {
+
+			User loggedUser = userRepository.findByName(request.getUserPrincipal().getName());
+			Resource vinilo = repository.findOne(id);
+			List<Resource> carro = loggedUser.getCarrito();
+
+			carro.add(vinilo);
+
+			loggedUser.setCarrito(carro);
+
+			userRepository.save(loggedUser);
+
+			return "redirect:/carrito";
+
 	}
-	
-	
-	
-	
 
 	@RequestMapping("/login")
 	public String inicioSesion(Model model, HttpServletRequest request) {
@@ -141,12 +128,11 @@ public class WebController {
 			model.addAttribute("unlogged", true);
 		if (request.isUserInRole("ADMIN"))
 			model.addAttribute("admin", true);
-		
+
 		User loggedUser = userRepository.findByName(request.getUserPrincipal().getName());
-		
-		List <Resource> productos = loggedUser.getCarrito();
+
+		List<Resource> productos = loggedUser.getCarrito();
 		model.addAttribute("productos", productos);
-		
 
 		return ("carrito");
 	}
@@ -215,7 +201,7 @@ public class WebController {
 
 	@RequestMapping("/administrador")
 	public String Administrador(Model model, HttpServletRequest request) {
-		
+
 		if (request.isUserInRole("ADMIN") || request.isUserInRole("USER")) {
 			User loggedUser = userRepository.findByName(request.getUserPrincipal().getName());
 			model.addAttribute("user", loggedUser);
@@ -224,18 +210,18 @@ public class WebController {
 			model.addAttribute("unlogged", true);
 		if (request.isUserInRole("ADMIN"))
 			model.addAttribute("admin", true);
-		
+
 		model.addAttribute("vinilos", repository.findAll());
 		model.addAttribute("ofertas", ofertaRepository.findAll());
- 		model.addAttribute("ofertasDescuento", ofertaDescuentoRepository.findAll());
- 		model.addAttribute("users", userRepository.findAll());
-		
+		model.addAttribute("ofertasDescuento", ofertaDescuentoRepository.findAll());
+		model.addAttribute("users", userRepository.findAll());
+
 		return ("administrador");
 	}
 
 	@RequestMapping("/registro")
 	public String registro(Model model, HttpServletRequest request) {
-		
+
 		if (request.isUserInRole("ADMIN") || request.isUserInRole("USER")) {
 			User loggedUser = userRepository.findByName(request.getUserPrincipal().getName());
 			model.addAttribute("user", loggedUser);
@@ -244,14 +230,14 @@ public class WebController {
 			model.addAttribute("unlogged", true);
 		if (request.isUserInRole("ADMIN"))
 			model.addAttribute("admin", true);
-		
+
 		return ("registro");
 
 	}
 
 	@RequestMapping("/somos")
 	public String somos(Model model, HttpServletRequest request) {
-		
+
 		if (request.isUserInRole("ADMIN") || request.isUserInRole("USER")) {
 			User loggedUser = userRepository.findByName(request.getUserPrincipal().getName());
 			model.addAttribute("user", loggedUser);
@@ -260,13 +246,13 @@ public class WebController {
 			model.addAttribute("unlogged", true);
 		if (request.isUserInRole("ADMIN"))
 			model.addAttribute("admin", true);
-		
+
 		return "somos";
 	}
 
 	@RequestMapping("/validacion-pedidos")
 	public String validacion(Model model, HttpServletRequest request) {
-		
+
 		if (request.isUserInRole("ADMIN") || request.isUserInRole("USER")) {
 			User loggedUser = userRepository.findByName(request.getUserPrincipal().getName());
 			model.addAttribute("user", loggedUser);
@@ -275,19 +261,18 @@ public class WebController {
 			model.addAttribute("unlogged", true);
 		if (request.isUserInRole("ADMIN"))
 			model.addAttribute("admin", true);
-		
+
 		return "validacion";
 	}
-	
+
 	@RequestMapping("/deleteUser")
-	public String BorrarUser(HttpServletRequest request){
-		
+	public String BorrarUser(HttpServletRequest request) {
+
 		User loggedUser = userRepository.findByName(request.getUserPrincipal().getName());
 		userRepository.delete(loggedUser.getId());
-		
-		return "login";	
-		
+
+		return "login";
+
 	}
-		
-	
+
 }
