@@ -32,8 +32,8 @@ public class PurchaseOrderController {
 	
 	@PostConstruct
 	public void init(){
-		Resource re1 = new Resource ("Play Deep", "Lo mejor del mejor","Outfield","2008","Nuevo", "King of Pop",23,0006, "vfd", "img7.jpg");
-		Resource re2 = new Resource ("Play Deep", "Lo mejor del mejor","Outfield","2008","Nuevo", "King of Pop",23,0006, "vfd", "img7.jpg");
+		Resource re1 = new Resource ("Just be", "Lo mejor del mejor","Outfield","2008","Nuevo", "King of Pop",23,0006, "vfd", "img23.jpg");
+		Resource re2 = new Resource ("Duke", "Lo mejor del mejor","Outfield","2008","Nuevo", "King of Pop",23,0006, "vfd", "img30.jpg");
 		
 		List<Resource> carrito = new ArrayList<>();
 		carrito.add(re1);
