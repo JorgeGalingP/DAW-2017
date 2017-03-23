@@ -164,7 +164,7 @@ public class WebController {
 		if (request.isUserInRole("ADMIN"))
 			model.addAttribute("admin", true);
 
-		return ("metodo_pago");
+		return ("metodo-pago");
 	}
 
 	@RequestMapping("/miperfil")
@@ -263,6 +263,21 @@ public class WebController {
 			model.addAttribute("admin", true);
 
 		return "validacion";
+	}
+	
+	@RequestMapping("/metododepago")
+	public String metodoPago(Model model, HttpServletRequest request) {
+
+		if (request.isUserInRole("ADMIN") || request.isUserInRole("USER")) {
+			User loggedUser = userRepository.findByName(request.getUserPrincipal().getName());
+			model.addAttribute("user", loggedUser);
+			model.addAttribute("logged", true);
+		} else
+			model.addAttribute("unlogged", true);
+		if (request.isUserInRole("ADMIN"))
+			model.addAttribute("admin", true);
+
+		return "metodo-pago";
 	}
 
 	@RequestMapping("/deleteUser")
