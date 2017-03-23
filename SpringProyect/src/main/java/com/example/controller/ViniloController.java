@@ -116,19 +116,9 @@ public class ViniloController {
 					model.addAttribute("items","resources");
 					
 					return"listItemsPage";
-					
-					
-					
-					
-					
+
 					}
 				
-				
-
-		
-	
-		
-
 		/*@RequestMapping("/articulo/addComment")
 		public void addComment(Comment comment, @PathVariable int id) {
 			
