@@ -15,11 +15,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.example.entity.Comment;
+import com.example.entity.Oferta;
+import com.example.entity.OfertaDescuento;
 import com.example.entity.Resource;
 import com.example.entity.User;
 import com.example.repository.OfertaDescuentoRepository;
 import com.example.repository.OfertaRepository;
-import com.example.repository.PurchaseOrderRepository;
 import com.example.repository.ResourceRepository;
 import com.example.repository.UserRepository;
 
@@ -38,9 +39,6 @@ public class WebController {
 
 	@Autowired
 	private UserRepository userRepository;
-	
-	@Autowired 
-	private PurchaseOrderRepository purchaseOrderRepository;
 
 	@RequestMapping("/")
 	public String index(Model model, HttpServletRequest request) {
@@ -94,9 +92,10 @@ public class WebController {
 			
 			
 			int precioTotal = loggedUser.getPrecioCarrito();
-			for(int i=0; carro.size() > i; i++){
-				precioTotal = precioTotal + carro.get(i).getPrecio();
-			}
+			
+			
+			precioTotal = precioTotal + vinilo.getPrecio();
+			
 			
 			loggedUser.setPrecioCarrito(precioTotal);
 
@@ -223,7 +222,6 @@ public class WebController {
 		model.addAttribute("ofertas", ofertaRepository.findAll());
 		model.addAttribute("ofertasDescuento", ofertaDescuentoRepository.findAll());
 		model.addAttribute("users", userRepository.findAll());
-		model.addAttribute("orders", purchaseOrderRepository.findAll());
 
 		return ("administrador");
 	}
@@ -259,7 +257,7 @@ public class WebController {
 		return "somos";
 	}
 
-	@RequestMapping("/validaciondepedidos")
+	@RequestMapping("/validacion-pedidos")
 	public String validacion(Model model, HttpServletRequest request) {
 
 		if (request.isUserInRole("ADMIN") || request.isUserInRole("USER")) {
@@ -271,7 +269,7 @@ public class WebController {
 		if (request.isUserInRole("ADMIN"))
 			model.addAttribute("admin", true);
 
-		return "validacion-pedidos";
+		return "validacion";
 	}
 	
 	@RequestMapping("/metododepago")
@@ -324,9 +322,31 @@ public class WebController {
 	public String AplicarCodigo(Model model, HttpServletRequest request, @RequestParam String code,
 			RedirectAttributes redirectAttrs) {
 		
-		redirectAttrs.addFlashAttribute("error", "entra");
+		User loggedUser = userRepository.findByName(request.getUserPrincipal().getName());
+
+		OfertaDescuento ofertaDescuento = ofertaDescuentoRepository.findByCode(code);
 		
-		return "redirect:/carrito ";
+		 int precioinicial = loggedUser.getPrecioCarrito();
+		 
+		 
+		precioinicial = precioinicial - ofertaDescuento.getPorcentaje();
+		 
+		 
+		
+		 
+	
+		 
+		 loggedUser.setPrecioCarrito(precioinicial);
+		 
+		 userRepository.save(loggedUser);
+		
+		redirectAttrs.addFlashAttribute("messages", "descuento aplicado");
+		
+		
+		
+		
+		
+		return "redirect:/carrito";
 		
 			
 	}

@@ -33,8 +33,7 @@ public class OfertaDescuentoController {
 	public void init(){
 		OfertaDescuento ofertadescuento1 = new OfertaDescuento ("Descuento 10 euros","1111","Ahorrate 10 euros en tu carrito de compra",10,"10.png");
 		ofertaDescuentoRepository.save(ofertadescuento1);
-		OfertaDescuento ofertadescuento2 = new OfertaDescuento ("AHORRA 20%","1112","20% de descuento si te llevas 3 o más artículos",20,"20.jpg");
-		ofertaDescuentoRepository.save(ofertadescuento2);
+		
 	}
 	
 	/*
