@@ -17,10 +17,12 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.example.entity.Comment;
 import com.example.entity.Oferta;
 import com.example.entity.OfertaDescuento;
+import com.example.entity.PurchaseOrder;
 import com.example.entity.Resource;
 import com.example.entity.User;
 import com.example.repository.OfertaDescuentoRepository;
 import com.example.repository.OfertaRepository;
+import com.example.repository.PurchaseOrderRepository;
 import com.example.repository.ResourceRepository;
 import com.example.repository.UserRepository;
 
@@ -39,6 +41,9 @@ public class WebController {
 
 	@Autowired
 	private UserRepository userRepository;
+	
+	@Autowired
+	private PurchaseOrderRepository purchaseOrderRepository;
 
 	@RequestMapping("/")
 	public String index(Model model, HttpServletRequest request) {
@@ -106,6 +111,22 @@ public class WebController {
 	} else return "redirect:/login";
 	}
 
+	@RequestMapping("/addOrder")
+	public String addOrder(HttpServletRequest request) {
+		
+		if (request.isUserInRole("ADMIN") || request.isUserInRole("USER")) {
+
+			User loggedUser = userRepository.findByName(request.getUserPrincipal().getName());
+			PurchaseOrder p = new PurchaseOrder("CODE#1234", loggedUser.getPrecioCarrito(), "Aquí irian los productos", loggedUser.getCarrito());
+			purchaseOrderRepository.save(p);
+
+			userRepository.save(loggedUser);
+
+			return "redirect:/metodo-pago";
+
+	} else return "redirect:/login";
+	}
+	
 	@RequestMapping("/login")
 	public String inicioSesion(Model model, HttpServletRequest request) {
 
@@ -222,6 +243,7 @@ public class WebController {
 		model.addAttribute("ofertas", ofertaRepository.findAll());
 		model.addAttribute("ofertasDescuento", ofertaDescuentoRepository.findAll());
 		model.addAttribute("users", userRepository.findAll());
+		model.addAttribute("orders", purchaseOrderRepository.findAll());
 
 		return ("administrador");
 	}
