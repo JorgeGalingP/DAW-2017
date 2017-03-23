@@ -133,25 +133,22 @@
 
             <div class="col-md-12">
 
-                <div class="row" id="productsIndexTotal">
-					{{#vinilos}}
-					      <div class="listItems">
-					       {{> listItems}}
-					      
-					      </div>
-                          
-					{{/vinilos}}
-                 <button id="moreVinilos" type="button" class="btn btn-primary btn-lg btn-block"><span class="glyphicon glyphicon-download"></span> Ver más </button>   
+                <div role = "tabpanel" class="tab-pane active" id="vinilos">
+                    <div class="listItems">
+                
+                    {{#vinilos}} {{> listItems}} {{/vinilos}}
+                
+                
+                      </div>
+                   <button id="moreVinilos" type="button" class="btn btn-primary btn-lg btn-block btn-view-more"> Ver más </button>   
                 </div>
-                <div class="row">
-                    <div class="text-center">
-                        <!-- boton cargar más -->
+         
                       
                     </div>
                 </div>
             </div>
 
-        </div>
+  
 
     </div>
     <!-- /.container -->

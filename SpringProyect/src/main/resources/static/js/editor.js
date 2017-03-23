@@ -12,7 +12,7 @@ $(document).ready(function(){
 			if(!$.trim(data)){
 				$("#moreVinilos").attr("disabled","disabled");
 			}else{
-				$("#vinilos.listItems").append(data);
+				$("#vinilos .listItems").append(data);
 			}
 			});
 			
