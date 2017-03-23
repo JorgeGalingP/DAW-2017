@@ -14,3 +14,15 @@ body {
 footer {
     margin: 50px 0;
 }
+.listItems{
+	float:left;
+}
+.tab-pane active{
+	float:left;
+}
+.row {
+	float:left;
+}
+.centro{
+	float:left;
+}

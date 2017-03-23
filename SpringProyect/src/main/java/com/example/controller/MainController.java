@@ -26,7 +26,7 @@ public class MainController {
 	@RequestMapping("/index")
 	public String resources(Model model,HttpServletRequest request){
 		
-		Page<Resource> vinilos = resourceRepository.findAll(new PageRequest(0,2));
+		Page<Resource> vinilos = resourceRepository.findAll(new PageRequest(0,12));
 		model.addAttribute("vinilos",vinilos);
 		
 		return"index";
@@ -35,7 +35,7 @@ public class MainController {
 	
 	@RequestMapping(value="/moreVinilos")
 	public String moreVinilos(Model model ,@RequestParam int page){
-		Page<Resource> allVinilos = resourceRepository.findAll(new PageRequest(page,2));
+		Page<Resource> allVinilos = resourceRepository.findAll(new PageRequest(page,12));
 		model.addAttribute("items",allVinilos);
 		
 		return"listItemsPage";
