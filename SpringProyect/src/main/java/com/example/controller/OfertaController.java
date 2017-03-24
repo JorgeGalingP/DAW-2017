@@ -118,9 +118,6 @@ public class OfertaController {
 		
 		Oferta promocion = ofertaRepository.findByCode(oferta.getCode());
 		ofertaRepository.delete(promocion);
-		/*
-		OfertaDescuento promociondescuento = ofertaDescuentoRepository.findByCode(oferta.getCode());
-		ofertaDescuentoRepository.delete(promociondescuento);*/
 		
 		return "/ofertas.html";
 		

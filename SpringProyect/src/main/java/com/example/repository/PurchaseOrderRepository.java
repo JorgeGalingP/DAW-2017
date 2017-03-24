@@ -9,8 +9,8 @@ import com.example.entity.PurchaseOrder;
 public interface PurchaseOrderRepository extends JpaRepository<PurchaseOrder,Integer> {
 		
 	
-	List<PurchaseOrder> findByCode(String code);
+	//List<PurchaseOrder> findByCode(String code);
 	
-	//PurchaseOrder findByCode(String code);
+	PurchaseOrder findByCode(String code);
 
 }

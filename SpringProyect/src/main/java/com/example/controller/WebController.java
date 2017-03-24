@@ -293,7 +293,7 @@ public class WebController {
 		return "somos";
 	}
 
-	@RequestMapping("/validacion-pedidos")
+	@RequestMapping("/validaciondepedidos")
 	public String validacion(Model model, HttpServletRequest request) {
 
 		if (request.isUserInRole("ADMIN") || request.isUserInRole("USER")) {
@@ -305,7 +305,7 @@ public class WebController {
 		if (request.isUserInRole("ADMIN"))
 			model.addAttribute("admin", true);
 
-		return "validacion";
+		return "validacion-pedidos";
 	}
 	
 	@RequestMapping("/metododepago")
