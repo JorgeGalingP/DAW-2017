@@ -304,7 +304,9 @@ public class WebController {
 			model.addAttribute("unlogged", true);
 		if (request.isUserInRole("ADMIN"))
 			model.addAttribute("admin", true);
-
+		
+		model.addAttribute("orders", purchaseOrderRepository.findAll());
+		
 		return "validacion-pedidos";
 	}
 	

@@ -124,14 +124,6 @@
                                 <div class="caption">
                                     <a href="/validaciondepedidos" type="button" class="pull-right btn btn-success glyphicon glyphicon-ok text-center"></a>
                                     <h4><a href="#">Pedido<span>{{code}}</span></a></h4>
-                                    <form class="form-horizontal"  action="borrarPedido" method="post">
-                                        	<input name="code" type="hidden" value="{{code}}"/>
-                                        	<button type="button" class="btn btn-default btn-xs">
-                                    		<span class="glyphicon glyphicon-trash" aria-hidden="true">
-                                            	<input type="submit"value="Cancelar pedido" onClick="return confirm('¿Estas seguro de querer cancelar este pedido?')"/>
-                                            </span>
-                                            </button>
-                                    </form>
                                     <br>
                                     <p>{{description}}</p>
                                     <h4 class="pull-center">{{totalToPay}}$</h4>

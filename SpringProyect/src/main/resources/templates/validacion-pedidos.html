@@ -95,7 +95,7 @@
                         <div class="panel-title">
                             <div class="row">
                                 <div class="col-xs-6">
-                                    <h5><span class="glyphicon glyphicon-ok"></span> Pedido #1234 </h5>
+                                    {{#orders}}<h5><span class="glyphicon glyphicon-ok"></span> Pedido {{code}} </h5>{{/orders}}
                                 </div>
                                 <div class="col-xs-6">
                                     <a href="/administrador" class="btn btn-primary btn-sm btn-block" role="button"><span class="glyphicon glyphicon-share-alt"></span>Volver a pedidos pendientes de validación</a>
@@ -208,9 +208,24 @@
                             <div class="col-xs-9">
                                 <h4 class="text-right">Total <strong>$50.00</strong></h4>
                             </div>
-                            <div class="col-xs-3">
+                            <!--<div class="col-xs-3">
                                 <a href="/administrador" class="btn btn-success btn-block" role="button" onClick="return confirm('¿Estas seguro de querer enviar este pedido?')">Enviar Pedido</a>
-                            </div>
+                            </div> -->
+                            {{#orders}}
+                            <div class="col-xs-3">
+	                            <!--  <form class="form-horizontal"  action="borrarPedido" method="post">
+	                               	<input name="code" type="hidden" value="{{code}}"/>
+	                               	<a href="/administrador" class="btn btn-success btn-block" role="button" onClick="return confirm('¿Estas seguro de querer enviar este pedido?')">Enviar Pedido</a>
+	                            </form>-->
+	                            <form class="form-horizontal"  action="borrarPedido" method="post">
+                                        	<input name="code" type="hidden" value="{{code}}"/>
+                                    		<span class="btn btn-success btn-block" aria-hidden="true">
+                                            	<input type="submit"value="Enviar pedido" onClick="return confirm('¿Estas seguro de querer enviar este pedido?')"/>
+                                            </span>
+                                            </button>
+                                    </form>
+	                         </div>
+                             {{/orders}}
                         </div>
                     </div>
                 </div>
