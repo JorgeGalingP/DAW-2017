@@ -6,6 +6,8 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -57,9 +59,21 @@ public class WebController {
 		if (request.isUserInRole("ADMIN"))
 			model.addAttribute("admin", true);
 
-		model.addAttribute("vinilos", repository.findAll());
+		Page<Resource> vinilos = repository.findAll(new PageRequest(0,12));
+		model.addAttribute("vinilos",vinilos);
 		return "index";
 	}
+	
+	// Metodo para añadir nuevos vinilos con el atributo index
+	@RequestMapping(value="/moreVinilos")//--> devolver /
+	public String moreVinilos(Model model ,@RequestParam int page){
+		Page<Resource> allVinilos = repository.findAll(new PageRequest(page,12));
+		model.addAttribute("items",allVinilos);
+		
+		return"index";//listItemsPage
+		
+	}
+	
 
 	@RequestMapping("/{id}")
 	public String verArticulo(Model model, HttpServletRequest request, @PathVariable int id) {
