@@ -62,7 +62,46 @@ public class WebController {
 
 		Page<Resource> vinilos = repository.findAll(new PageRequest(0,12));
 		model.addAttribute("vinilos",vinilos);
-		return "index";
+		
+		return "index"; 
+	}
+	
+	@RequestMapping("/michael")
+	public String michael(Model model) {
+		
+		List<Resource> vinilosMichael = repository.findByInterprete("Michael Jackson");
+		
+		model.addAttribute("vinilosMichael",vinilosMichael);
+		
+		return "index"; 
+	}
+	@RequestMapping("/bob-marley")
+	public String bob(Model model) {
+		
+		List<Resource> bob = repository.findByInterprete("Bob Marley & The Wailers");
+		
+		model.addAttribute("vinilosBob",bob);
+		
+		return "index"; 
+	}
+	
+	@RequestMapping("/nuevos")
+	public String nuevos(Model model) {
+		
+		List<Resource> nuevos = repository.findByEstado("Nuevo");
+		
+		model.addAttribute("nuevos",nuevos);
+		
+		return "index"; 
+	}
+	@RequestMapping("/segunda-mano")
+	public String segundaMano(Model model) {
+		
+		List<Resource> segundamano = repository.findByEstado("Segunda mano");
+		
+		model.addAttribute("segunda-mano",segundamano);
+		
+		return "index"; 
 	}
 	
 	// Metodo para añadir nuevos vinilos con el atributo index

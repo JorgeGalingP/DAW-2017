@@ -10,6 +10,7 @@ public interface ResourceRepository extends JpaRepository<Resource,Integer> {
 		
 	
 	List<Resource> findByInterprete(String interprete);
+	List<Resource> findByEstado(String estado);
 	
 	Resource findByTitle(String title);
 

@@ -124,22 +124,61 @@
     <br/>
     <br/>
 
-    <!rejilla con diferentes secciones>
-
     <!-- Page Content -->
    <div class="centro">
     <div class="container">
 
         <div class="row">
+        	<div class="col-md-3">
+                <p class="lead">Filtrar Productos</p>
+                <div class="list-group">
+                    <p class="list-group-item">Décadas destacadas</p>
+                    <a href="#" class="list-group-item">70's</a>
+                    <a href="#" class="list-group-item">80's</a>
+                    <a href="#" class="list-group-item">90's</a>
+                </div>
+                <div class="list-group">
+                    <p class="list-group-item">Precio</p>
+                    <a href="#" class="list-group-item">Menos de 5 euros</a>
+                    <a href="#" class="list-group-item">Entre 5 a 15 euros</a>
+                    <a href="#" class="list-group-item">Entre 15 a 30 euros</a>
+                    <a href="#" class="list-group-item">Más de 30 euros</a>
+                </div>
+                <div class="list-group">
+                    <p class="list-group-item">Estado</p>
+                    <a href="/segunda-mano" class="list-group-item">Segunda mano</a>
+                    <a href="/nuevos" class="list-group-item">Nuevo</a>
+                </div>
+                <div class="list-group">
+                    <p class="list-group-item">Interpretes destacados</p>
+                    <a href="/michael" class="list-group-item">Michael Jackson</a>
+                    <a href="/bob-marley" class="list-group-item">Bob Marley & The Wailers</a>
+                    <a href="#" class="list-group-item">Pink Floyd</a>
+                    <a href="#" class="list-group-item">Lionel Richie</a>
+                    <a href="#" class="list-group-item">The Who</a>
+                    <a href="#" class="list-group-item">George Michael</a>
+                    <a href="#" class="list-group-item">The Alan Parsons Project</a>
+                    <a href="#" class="list-group-item">Fleetwood Mac</a>
+                    <a href="#" class="list-group-item">Prince & The Revolution</a>
+                    <a href="#" class="list-group-item">David Bowie</a>
+                    <a href="#" class="list-group-item">Dire Straits</a>
+                    <a href="#" class="list-group-item">Genesis</a>
+                </div>
+             </div>
+             <div class="col-md-9">
                 <div role = "tabpanel" class="tab-pane active" id="vinilos">
                     <div class="listItems">
                     	{{#vinilos}} {{> listItems}} {{/vinilos}}
+                    	{{#vinilosMichael}} {{> listItems}} {{/vinilosMichael}}
+                    	{{#vinilosBob}} {{> listItems}} {{/vinilosBob}}
+                    	{{#segunda-mano}} {{> listItems}} {{/segunda-mano}}
+                    	{{#nuevos}} {{> listItems}} {{/nuevos}}
                       </div>
                    <button id="moreVinilos" type="button" class="btn btn-primary btn-lg btn-block btn-view-more"> Ver más </button>   
                 </div>
                 </div>
             </div>
-
+		</div>
     </div>
     <!-- /.container -->
 
