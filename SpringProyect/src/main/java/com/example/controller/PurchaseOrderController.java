@@ -45,11 +45,10 @@ public class PurchaseOrderController {
 	}
 	
 	//metodo para borrar un pedido
-	@RequestMapping("/{id}/borrarPedido")
-	public String borrarPedido(Model model, PurchaseOrder order, @PathVariable int id) {
+	@RequestMapping("/borrarPedido")
+	public String borrarPedido(Model model, PurchaseOrder order) {
 		
-		//PurchaseOrder thatOrder = purchaseOrderRepository.findByCode(order.getCode());
-		PurchaseOrder thatOrder = purchaseOrderRepository.findOne(id);
+		PurchaseOrder thatOrder = purchaseOrderRepository.findByCode(order.getCode());
 
 		purchaseOrderRepository.delete(thatOrder);
 		return "/administrador.html";

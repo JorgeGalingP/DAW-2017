@@ -171,21 +171,6 @@ public class WebController {
 
 		return ("articulo");
 	}
-	
-	@RequestMapping("/validaciondepedidos")
-	public String validationPedidos(Model model, HttpServletRequest request) {
-
-		if (request.isUserInRole("ADMIN") || request.isUserInRole("USER")) {
-			User loggedUser = userRepository.findByName(request.getUserPrincipal().getName());
-			model.addAttribute("user", loggedUser);
-			model.addAttribute("logged", true);
-		} else
-			model.addAttribute("unlogged", true);
-		if (request.isUserInRole("ADMIN"))
-			model.addAttribute("admin", true);
-
-		return ("validacion-pedidos");
-	}
 
 	@RequestMapping("/carrito")
 	public String carrito(Model model, HttpServletRequest request) {
@@ -309,8 +294,8 @@ public class WebController {
 		return "somos";
 	}
 
-	@RequestMapping("/{id}/validaciondepedidos")
-	public String validacion(Model model, HttpServletRequest request,  @PathVariable int id) {
+	@RequestMapping("/validaciondepedidos")
+	public String validacion(Model model, HttpServletRequest request) {
 
 		if (request.isUserInRole("ADMIN") || request.isUserInRole("USER")) {
 			User loggedUser = userRepository.findByName(request.getUserPrincipal().getName());
@@ -321,10 +306,6 @@ public class WebController {
 		if (request.isUserInRole("ADMIN"))
 			model.addAttribute("admin", true);
 		
-		PurchaseOrder order = purchaseOrderRepository.findOne(id);
-		List<Resource> productos = order.getCarrito();
-		
-		model.addAttribute("productos", productos);
 		model.addAttribute("orders", purchaseOrderRepository.findAll());
 		
 		return "validacion-pedidos";

@@ -14,7 +14,6 @@ import javax.persistence.OneToMany;
 public class PurchaseOrder {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer id;
 	
 	private String code;
 	private double totalToPay;
@@ -32,14 +31,6 @@ public class PurchaseOrder {
 		this.totalToPay = totalToPay;
 		this.description = description;
 		this.carrito = carrito;
-	}
-	
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
 	}
 	
 	public String getCode() {
