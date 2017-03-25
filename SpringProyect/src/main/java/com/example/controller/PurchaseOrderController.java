@@ -40,7 +40,7 @@ public class PurchaseOrderController {
 		carrito.add(re1);
 		carrito.add(re2);
 		
-		PurchaseOrder po1 = new PurchaseOrder("CODE#1234", 45.67, "Vinilos: Let it be y Tango in the Night", carrito);
+		PurchaseOrder po1 = new PurchaseOrder("CODE#1234", 45.67, "Let it be y Tango in the Night", carrito);
 		purchaseOrderRepository.save(po1);
 	}
 	

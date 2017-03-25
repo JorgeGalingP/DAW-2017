@@ -2,6 +2,7 @@ package com.example.controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -132,7 +133,20 @@ public class WebController {
 		if (request.isUserInRole("ADMIN") || request.isUserInRole("USER")) {
 
 			User loggedUser = userRepository.findByName(request.getUserPrincipal().getName());
-			PurchaseOrder p = new PurchaseOrder("CODE#1234", loggedUser.getPrecioCarrito(), "Aquí irian los productos", loggedUser.getCarrito());
+			List<Resource> carrito = new ArrayList<>();
+			
+			carrito = loggedUser.getCarrito();
+			
+			List<String> array = new ArrayList<String>();
+
+			for(Resource resource : carrito){
+				String e = resource.getTitle().toString();
+				array.add(e);
+			}
+			
+			String orderDescription = String.join(" - ", array);
+			
+			PurchaseOrder p = new PurchaseOrder("CODE#1234", loggedUser.getPrecioCarrito(), orderDescription, carrito);
 			purchaseOrderRepository.save(p);
 
 			userRepository.save(loggedUser);
