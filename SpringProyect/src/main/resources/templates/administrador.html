@@ -122,8 +122,14 @@
                             <div class="thumbnail">
                                 <img src="imagenes/pedido.png" style="width: 550px; height: 280px" alt="">
                                 <div class="caption">
-                                    <a href="/validaciondepedidos" type="button" class="pull-right btn btn-success glyphicon glyphicon-ok text-center"></a>
-                                    <h4><a href="#">Pedido<span>{{code}}</span></a></h4>
+                                    <form class="form-horizontal"  action="borrarPedido" method="post">
+                                        	<input name="code" type="hidden" value="{{code}}"/>
+                                    		<span class="btn btn-success btn-block" aria-hidden="true">
+                                            	<input type="submit"value="Enviar pedido" onClick="return confirm('¿Estas seguro de querer enviar este pedido?')"/>
+                                            </span>
+                                            </button>
+                                    </form>
+                                    <h4>Código del pedido: {{code}}</h4>
                                     <br>
                                     <p>Vinilos: {{description}}</p>
                                     <h4 class="pull-center">Precio total: {{totalToPay}}€</h4>
@@ -444,13 +450,6 @@
                                     <p>{{subtitle}}</p>
                                 </div>
                                 <div class="ratings">
-                                    <p class="pull-right">
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star-empty"></span>
-                                    </p>
                                         <form class="form-horizontal"  action="borrarArticulo" method="post">
                                         	<input name="title" type="hidden" value="{{title}}"/> 
                                         	<button type="button" class="btn btn-default btn-xs">
