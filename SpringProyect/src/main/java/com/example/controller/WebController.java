@@ -74,6 +74,7 @@ public class WebController {
 		
 	}
 	
+	
 
 	@RequestMapping("/{id}")
 	public String verArticulo(Model model, HttpServletRequest request, @PathVariable int id) {
@@ -406,6 +407,22 @@ public class WebController {
 		return "redirect:/carrito";
 		
 			
+	}
+	
+	@RequestMapping("/loginError")
+	public String loginError(Model model){
+		model.addAttribute("loginError",true);
+		
+		return"login";
+	}
+	
+	@RequestMapping ("/registerError")
+	public String registerError(Model model){
+		
+		model.addAttribute("unloged",true);
+		
+		return "register";
+		
 	}
 	
 	/*@RequestMapping("/aplicarCodigo")
