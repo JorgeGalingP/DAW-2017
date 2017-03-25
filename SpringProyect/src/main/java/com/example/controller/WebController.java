@@ -70,7 +70,7 @@ public class WebController {
 		Page<Resource> allVinilos = repository.findAll(new PageRequest(page,12));
 		model.addAttribute("items",allVinilos);
 		
-		return"index";//listItemsPage
+		return"listItemsPage";//listItemsPage
 		
 	}
 	
