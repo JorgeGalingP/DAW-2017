@@ -638,6 +638,27 @@ public class WebController {
 		
 	}
 	
+	@RequestMapping("/borrarCarrito")
+	public String BorrarCarrito(Model model, HttpServletRequest request, @RequestParam String title,
+			RedirectAttributes redirectAttrs) {
+		
+		User loggedUser = userRepository.findByName(request.getUserPrincipal().getName());
+		
+		Resource vinilo = repository.findByTitle(title);
+		
+		loggedUser.getCarrito().remove(vinilo);
+		
+		userRepository.save(loggedUser);
+
+		
+		 redirectAttrs.addFlashAttribute("messages", "Articulo eliminado del carrito de compra.");
+			
+		 return "redirect:/carrito";
+		
+		
+		
+	}
+	
 	@RequestMapping("/loginError")
 	public String loginError(Model model){
 		model.addAttribute("loginError",true);

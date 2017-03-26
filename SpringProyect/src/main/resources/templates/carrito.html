@@ -139,9 +139,12 @@
 								</div>
 
 								<div class="col-xs-2">
-									<button type="button" class="btn btn-link btn-xs">
+									<form action="/borrarCarrito" method="post">
+									<input name="title" type="hidden" value="{{title}}"/>
+									<button type="submit" class="btn btn-link btn-xs">
 										<span class="glyphicon glyphicon-trash"> </span>
 									</button>
+									</form>
 								</div>
 							</div>
 						</div>
