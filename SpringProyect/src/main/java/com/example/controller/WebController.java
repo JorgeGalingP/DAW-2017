@@ -59,10 +59,32 @@ public class WebController {
 			model.addAttribute("unlogged", true);
 		if (request.isUserInRole("ADMIN"))
 			model.addAttribute("admin", true);
-
+        
 		Page<Resource> vinilos = repository.findAll(new PageRequest(0,12));
 		model.addAttribute("vinilos",vinilos);
 		return "index";
+	}
+	@RequestMapping("/Ofertas")
+	public String ofertas(Model model,HttpServletRequest request){
+		Page<OfertaDescuento> ofertaDescuento = ofertaDescuentoRepository.findAll(new PageRequest(0,8));
+		Page<Oferta>ofertas = ofertaRepository.findAll(new PageRequest(0,8));
+		model.addAttribute("ofertas",ofertas);
+		model.addAttribute("ofertaDescuento",ofertaDescuento);
+		return"ofertas";
+		
+		
+	}
+	@RequestMapping("/moreOfertasDescuento")
+	public String moreOfertasDescuento(Model model ,@RequestParam int page){
+		Page<OfertaDescuento> allOfertasDescuento = ofertaDescuentoRepository.findAll(new PageRequest(page,8));
+		model.addAttribute("items", allOfertasDescuento);
+		return"listItemsPage";
+	}
+	@RequestMapping("/moreOfertas")
+	public String moreOfertas (Model model,@RequestParam int page){
+		Page<Oferta> allOfertas = ofertaRepository.findAll(new PageRequest(page,8));
+		model.addAttribute("items", allOfertas);
+		return"listItemsPage";
 	}
 	
 	// Metodo para añadir nuevos vinilos con el atributo index
@@ -74,6 +96,8 @@ public class WebController {
 		return"listItemsPage";//listItemsPage
 		
 	}
+	
+	
 	
 	
 
@@ -411,14 +435,7 @@ public class WebController {
 		return"login";
 	}
 	
-	@RequestMapping ("/registerError")
-	public String registerError(Model model){
-		
-		model.addAttribute("unloged",true);
-		
-		return "register";
-		
-	}
+	
 	
 	/*@RequestMapping("/aplicarCodigo")
 	public String AplicarCodigo(Model model, HttpServletRequest request, @RequestParam String codigo,
