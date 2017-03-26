@@ -48,6 +48,8 @@ public class WebController {
 	
 	@Autowired
 	private PurchaseOrderRepository purchaseOrderRepository;
+	
+	int numPedidos = 1;
 
 	@RequestMapping("/")
 	public String index(Model model, HttpServletRequest request) {
@@ -292,8 +294,6 @@ public class WebController {
 				
 			}
 			
-			
-
 	} else return "redirect:/login";
 	}
 
@@ -316,7 +316,10 @@ public class WebController {
 			
 			String orderDescription = String.join(" - ", array);
 			
-			PurchaseOrder p = new PurchaseOrder("CODE#1234", loggedUser.getPrecioCarrito(), orderDescription, carrito);
+			++numPedidos;
+			String numPed = Integer.toString(numPedidos);
+			
+			PurchaseOrder p = new PurchaseOrder(numPed,loggedUser.getPrecioCarrito(), orderDescription, carrito);
 			purchaseOrderRepository.save(p);
 
 			userRepository.save(loggedUser);

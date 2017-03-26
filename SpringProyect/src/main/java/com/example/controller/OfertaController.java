@@ -34,9 +34,6 @@ public class OfertaController {
 	@Autowired
 	private OfertaRepository ofertaRepository;
 
-	@Autowired
-	private OfertaDescuentoRepository ofertaDescuentoRepository;
-
 	private static final String FILES_FOLDER = ".\\src\\main\\resources\\static\\imagenes";
 
 	private List<String> imageTitles = new ArrayList<>();
