@@ -84,6 +84,96 @@ public class WebController {
 		
 		return "index"; 
 	}
+	@RequestMapping("/pink-floyd")
+	public String pinkfloyd(Model model) {
+		
+		List<Resource> vinilosPink = repository.findByInterprete("Pink Floyd");
+		
+		model.addAttribute("vinilosFloyd",vinilosPink);
+		
+		return "index"; 
+	}
+	@RequestMapping("/the-who")
+	public String thewho(Model model) {
+		
+		List<Resource> vinilosWho = repository.findByInterprete("The Who");
+		
+		model.addAttribute("vinilosWho",vinilosWho);
+		
+		return "index"; 
+	}
+	@RequestMapping("/george-michael")
+	public String georgemichael(Model model) {
+		
+		List<Resource> vinilosGeorge = repository.findByInterprete("George Michael");
+		
+		model.addAttribute("vinilosGeorge",vinilosGeorge);
+		
+		return "index"; 
+	}
+	@RequestMapping("/alan")
+	public String alan(Model model) {
+		
+		List<Resource> vinilosAlan = repository.findByInterprete("The Alan Parsons Project");
+		
+		model.addAttribute("vinilosAlan",vinilosAlan);
+		
+		return "index"; 
+	}
+	@RequestMapping("/fleetwood-mac")
+	public String fleetwoodmac(Model model) {
+		
+		List<Resource> vinilosMac = repository.findByInterprete("Fleetwood Mac");
+		
+		model.addAttribute("vinilosMac",vinilosMac);
+		
+		return "index"; 
+	}
+	@RequestMapping("/prince")
+	public String prince(Model model) {
+		
+		List<Resource> vinilosPrince = repository.findByInterprete("Prince & The Revolution");
+		
+		model.addAttribute("vinilosPrince",vinilosPrince);
+		
+		return "index"; 
+	}
+	@RequestMapping("/david-bowie")
+	public String davidbowie(Model model) {
+		
+		List<Resource> vinilosDavid = repository.findByInterprete("David Bowie");
+		
+		model.addAttribute("vinilosDavid",vinilosDavid);
+		
+		return "index"; 
+	}
+	@RequestMapping("/dire-straits")
+	public String direstraits(Model model) {
+		
+		List<Resource> vinilosDire = repository.findByInterprete("Dire Straits");
+		
+		model.addAttribute("vinilosDire",vinilosDire);
+		
+		return "index"; 
+	}
+	@RequestMapping("/genesis")
+	public String genesis(Model model) {
+		
+		List<Resource> vinilosGenesis = repository.findByInterprete("Genesis");
+		
+		model.addAttribute("vinilosGenesis",vinilosGenesis);
+		
+		return "index"; 
+	}
+	@RequestMapping("/lionel-richie")
+	public String lionelrichie(Model model) {
+		
+		List<Resource> vinilosRichie = repository.findByInterprete("Lionel Richie");
+		
+		model.addAttribute("vinilosRichie",vinilosRichie);
+		
+		return "index"; 
+	}
 	
 	@RequestMapping("/nuevos")
 	public String nuevos(Model model) {
