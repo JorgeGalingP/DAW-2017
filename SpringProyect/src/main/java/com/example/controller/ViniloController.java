@@ -43,7 +43,7 @@ public class ViniloController {
 	public void init(){
 		Resource rs1 = new Resource ("Catch a fire", "Uno de los mejores vinilos de reggae","Bob Marley & The Wailers","1973","Nuevo", "Catch a Fire",37,0001, "vfd", "img1.jpg");
 		repository.save(rs1);
-		Resource rs2 = new Resource ("Live", "Uno de los mejores vinilos de reggae","Bob Marley & The Wailers","1975","Seminuevo", "live",28,0002, "vfd", "img2.jpg");
+		Resource rs2 = new Resource ("Live", "Uno de los mejores vinilos de reggae","Bob Marley & The Wailers","1975","Nuevo", "live",28,0002, "vfd", "img2.jpg");
 		repository.save(rs2);
 		Resource rs3 = new Resource ("Let it be", "¡El primero!","The Beatles","1970","Nuevo", "Let it be",45,0003, "vfd", "img3.jpg");
 		repository.save(rs3);
@@ -83,7 +83,7 @@ public class ViniloController {
 		repository.save(rs20);
 		Resource rs21 = new Resource ("Boys and Girls", "¡El último!","Steve Ferry","2001","Nuevo", "Invincible",32,0006, "vfd", "img21.jpg");
 		repository.save(rs21);
-		Resource rs22 = new Resource ("Prince & The Revolution: Purple Rain ", "Lo mejor del mejor","PrincePrince & The Revolution","2008","Nuevo", "King of Pop",23,0006, "vfd", "img22.jpg");
+		Resource rs22 = new Resource ("Prince & The Revolution: Purple Rain ", "Lo mejor del mejor","Prince & The Revolution","2008","Nuevo", "King of Pop",23,0006, "vfd", "img22.jpg");
 		repository.save(rs22);
 		Resource rs23 = new Resource ("Chicago X", "El más vendido de todos los tiempos","Chicago","1982","Segunda mano", "Thriller",12,0005, "vfd", "img23.jpg");
 		repository.save(rs23);

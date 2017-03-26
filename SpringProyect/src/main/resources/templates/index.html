@@ -124,34 +124,59 @@
     <br/>
     <br/>
 
-    <!rejilla con diferentes secciones>
-
     <!-- Page Content -->
    <div class="centro">
     <div class="container">
 
         <div class="row">
-
-           
-
+        	<div class="col-md-3">
+                <p class="lead">Filtrar Productos</p>
+                <div class="list-group">
+                    <p class="list-group-item">Interpretes destacados</p>
+                    <a href="/michael" class="list-group-item">Michael Jackson</a>
+                    <a href="/bob-marley" class="list-group-item">Bob Marley & The Wailers</a>
+                    <a href="/pink-floyd" class="list-group-item">Pink Floyd</a>
+                    <a href="/lionel-richie" class="list-group-item">Lionel Richie</a>
+                    <a href="/the-who" class="list-group-item">The Who</a>
+                    <a href="/george-michael" class="list-group-item">George Michael</a>
+                    <a href="/alan" class="list-group-item">The Alan Parsons Project</a>
+                    <a href="/fleetwood-mac" class="list-group-item">Fleetwood Mac</a>
+                    <a href="/prince" class="list-group-item">Prince & The Revolution</a>
+                    <a href="/david-bowie" class="list-group-item">David Bowie</a>
+                    <a href="/dire-straits" class="list-group-item">Dire Straits</a>
+                    <a href="/genesis" class="list-group-item">Genesis</a>
+                </div>
+                <div class="list-group">
+                    <p class="list-group-item">Estado</p>
+                    <a href="/segunda-mano" class="list-group-item">Segunda mano</a>
+                    <a href="/nuevos" class="list-group-item">Nuevo</a>
+                </div>
+             </div>
+             <div class="col-md-9">
                 <div role = "tabpanel" class="tab-pane active" id="vinilos">
                     <div class="listItems">
-                	<!-- Este añade los vinilos del primer metodo del webcontroller (de 0 a 12)-->
-                    {{#vinilos}} {{> listItems}} {{/vinilos}}
-                    <!-- Este añade los vinilos del segundo metodo del webcontroller (de 12 a 24)-->
-                   
+                    	{{#vinilos}} {{> listItems}} {{/vinilos}}
+                    	{{#vinilosMichael}} {{> listItems}} {{/vinilosMichael}}
+                    	{{#vinilosBob}} {{> listItems}} {{/vinilosBob}}
+                    	{{#vinilosFloyd}} {{> listItems}} {{/vinilosFloyd}}
+                    	{{#vinilosRichie}} {{> listItems}} {{/vinilosRichie}}
+                    	{{#vinilosWho}} {{> listItems}} {{/vinilosWho}}
+                    	{{#vinilosGeorge}} {{> listItems}} {{/vinilosGeorge}}
+                    	{{#vinilosAlan}} {{> listItems}} {{/vinilosAlan}}
+                    	{{#vinilosMac}} {{> listItems}} {{/vinilosMac}}
+                    	{{#vinilosPrince}} {{> listItems}} {{/vinilosPrince}}
+                    	{{#vinilosDavid}} {{> listItems}} {{/vinilosDavid}}
+                    	{{#vinilosDire}} {{> listItems}} {{/vinilosDire}}
+                    	{{#vinilosGenesis}} {{> listItems}} {{/vinilosGenesis}}
+                    	
+                    	{{#segunda-mano}} {{> listItems}} {{/segunda-mano}}
+                    	{{#nuevos}} {{> listItems}} {{/nuevos}}
                       </div>
                    <button id="moreVinilos" type="button" class="btn btn-primary btn-lg btn-block btn-view-more"> Ver más </button>   
                 </div>
-         
-                      
-                   
                 </div>
             </div>
-           
-
-  
-
+		</div>
     </div>
     <!-- /.container -->
 
