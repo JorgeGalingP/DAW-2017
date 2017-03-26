@@ -298,11 +298,13 @@ public class WebController {
 	}
 
 	@RequestMapping("/addOrder")
-	public String addOrder(HttpServletRequest request) {
+	public String addOrder(HttpServletRequest request, RedirectAttributes redirectAttrs) {
 		
-		if (request.isUserInRole("ADMIN") || request.isUserInRole("USER")) {
+		User loggedUser = userRepository.findByName(request.getUserPrincipal().getName());
+		
+		if (loggedUser.getCarrito().size()>0) {
 
-			User loggedUser = userRepository.findByName(request.getUserPrincipal().getName());
+		
 			List<Resource> carrito = new ArrayList<>();
 			
 			carrito = loggedUser.getCarrito();
@@ -326,7 +328,12 @@ public class WebController {
 
 			return "redirect:/metodo-pago";
 
-	} else return "redirect:/login";
+	} else {
+		
+		 redirectAttrs.addFlashAttribute("error", "No has añadido ningun producto al carrito de compra.");
+			
+		 return "redirect:/carrito";
+	}
 	}
 	
 	@RequestMapping("/login")
