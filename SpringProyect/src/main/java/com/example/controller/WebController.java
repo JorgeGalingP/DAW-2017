@@ -225,10 +225,6 @@ public class WebController {
 		return"listItemsPage";//listItemsPage
 		
 	}
-	
-	
-	
-	
 
 	@RequestMapping("/{id}")
 	public String verArticulo(Model model, HttpServletRequest request, @PathVariable int id) {
@@ -244,7 +240,13 @@ public class WebController {
 
 		Resource vinilo = repository.findOne(id);
 		List <Comment> listaComentarios = vinilo.getComentarios();
-
+		
+		vinilo.setVisto(true);
+		int veces = vinilo.getVeces();
+		vinilo.setVeces(++veces);
+		
+		repository.save(vinilo);
+		
 		model.addAttribute("vinilo", vinilo);
 		model.addAttribute("comentarios",listaComentarios);
 
@@ -261,7 +263,7 @@ public class WebController {
 			List<Resource> carro = loggedUser.getCarrito();
 
 			carro.add(vinilo);
-
+			
 			loggedUser.setCarrito(carro);
 			
 			
@@ -420,8 +422,9 @@ public class WebController {
 			model.addAttribute("unlogged", true);
 		if (request.isUserInRole("ADMIN"))
 			model.addAttribute("admin", true);
-
+		
 		model.addAttribute("vinilos", repository.findAll());
+		model.addAttribute("vinilosMas", repository.findByVisto(true));
 		model.addAttribute("ofertas", ofertaRepository.findAll());
 		model.addAttribute("ofertasDescuento", ofertaDescuentoRepository.findAll());
 		model.addAttribute("users", userRepository.findAll());

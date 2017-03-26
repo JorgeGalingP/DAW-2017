@@ -30,6 +30,8 @@ public class Resource {
 	private int codigo;
 	private String tracklist;
 	private String img;
+	private boolean visto;
+	private int veces;
 	
 	@OneToMany(cascade=CascadeType.ALL)
 	private List<Comment> comentarios;
@@ -88,6 +90,8 @@ public class Resource {
 		this.tracklist=tracklist;
 		this.img = img;
 		this.comentarios=new ArrayList<Comment>();
+		this.visto = false;
+		this.veces = 0;
 		
 	}
 
@@ -198,10 +202,28 @@ public class Resource {
 	public void setComentarios(List<Comment> comentarios) {
 		this.comentarios = comentarios;
 	}
-	
-	
-	
-	
-	
 
+
+
+	public boolean getVisto() {
+		return visto;
+	}
+
+
+
+	public void setVisto(boolean visto) {
+		this.visto = visto;
+	}
+
+
+
+	public int getVeces() {
+		return veces;
+	}
+
+
+
+	public void setVeces(int veces) {
+		this.veces = veces;
+	}
 }
