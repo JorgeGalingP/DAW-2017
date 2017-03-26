@@ -298,33 +298,39 @@ public class WebController {
 	}
 
 	@RequestMapping("/addOrder")
-	public String addOrder(HttpServletRequest request) {
+	public String addOrder(HttpServletRequest request, RedirectAttributes redirectAttrs) {
 		
 		if (request.isUserInRole("ADMIN") || request.isUserInRole("USER")) {
-
 			User loggedUser = userRepository.findByName(request.getUserPrincipal().getName());
 			List<Resource> carrito = new ArrayList<>();
 			
 			carrito = loggedUser.getCarrito();
 			
-			List<String> array = new ArrayList<String>();
-
-			for(Resource resource : carrito){
-				String e = resource.getTitle().toString();
-				array.add(e);
+			if(!carrito.isEmpty()){
+			
+				List<String> array = new ArrayList<String>();
+	
+				for(Resource resource : carrito){
+					String e = resource.getTitle().toString();
+					array.add(e);
+				}
+				
+				String orderDescription = String.join(" - ", array);
+				
+				++numPedidos;
+				String numPed = Integer.toString(numPedidos);
+				
+				PurchaseOrder p = new PurchaseOrder(numPed,loggedUser.getPrecioCarrito(), orderDescription, carrito);
+				purchaseOrderRepository.save(p);
+	
+				userRepository.save(loggedUser);
+	
+				return "redirect:/metodo-pago";
+				
+			} else{
+				redirectAttrs.addFlashAttribute("error", "Este vinilo ya está añadido a tu carrito de compra");
+				return "redirect:/";
 			}
-			
-			String orderDescription = String.join(" - ", array);
-			
-			++numPedidos;
-			String numPed = Integer.toString(numPedidos);
-			
-			PurchaseOrder p = new PurchaseOrder(numPed,loggedUser.getPrecioCarrito(), orderDescription, carrito);
-			purchaseOrderRepository.save(p);
-
-			userRepository.save(loggedUser);
-
-			return "redirect:/metodo-pago";
 
 	} else return "redirect:/login";
 	}
