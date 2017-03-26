@@ -15,7 +15,9 @@ import javax.persistence.OneToMany;
 
 
 @Entity
-public class Resource {
+public class Resource implements Comparable<Resource> {
+	
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
@@ -34,6 +36,41 @@ public class Resource {
 	@OneToMany(cascade=CascadeType.ALL)
 	private List<Comment> comentarios;
 	
+	
+	protected Resource(){
+	}
+
+
+
+	public Resource(String title, String subtitle, String interprete, String fecha, String estado, String album, int precio, int codigo, String tracklist, String img) {
+		
+		this.title = title;
+		this.subtitle=subtitle;
+		this.interprete = interprete;
+		this.fecha = fecha;
+		this.estado=estado;
+		this.album = album;
+		this.precio = precio;
+		this.codigo = codigo;
+		this.tracklist=tracklist;
+		this.img = img;
+		this.comentarios=new ArrayList<Comment>();
+		
+	}
+	
+	@Override
+    public int compareTo(Resource o) {
+        if (precio < o.precio) {
+            return 1;
+        }
+        if (precio > o.precio) {
+            return -1;
+        }
+        return 0;
+    }
+
+
+
 	public String getSubtitle() {
 		return subtitle;
 	}
@@ -70,26 +107,7 @@ public class Resource {
 
 
 
-	protected Resource(){
-	}
-
-
-
-	public Resource(String title, String subtitle, String interprete, String fecha, String estado, String album, int precio, int codigo, String tracklist, String img) {
-		
-		this.title = title;
-		this.subtitle=subtitle;
-		this.interprete = interprete;
-		this.fecha = fecha;
-		this.estado=estado;
-		this.album = album;
-		this.precio = precio;
-		this.codigo = codigo;
-		this.tracklist=tracklist;
-		this.img = img;
-		this.comentarios=new ArrayList<Comment>();
-		
-	}
+	
 
 
 

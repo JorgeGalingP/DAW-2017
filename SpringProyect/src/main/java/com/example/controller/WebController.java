@@ -1,6 +1,7 @@
 package com.example.controller;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -528,33 +529,110 @@ public class WebController {
 	public String AplicarCodigo(Model model, HttpServletRequest request, @RequestParam String code,
 			RedirectAttributes redirectAttrs) {
 		
+		
 		User loggedUser = userRepository.findByName(request.getUserPrincipal().getName());
-
-		OfertaDescuento ofertaDescuento = ofertaDescuentoRepository.findByCode(code);
 		
-		 int precioinicial = loggedUser.getPrecioCarrito();
-		 
-		 
-		precioinicial = precioinicial - ofertaDescuento.getPorcentaje();
-		 
-		 
-		
-		 
-	
-		 
-		 loggedUser.setPrecioCarrito(precioinicial);
-		 
-		 userRepository.save(loggedUser);
-		
-		redirectAttrs.addFlashAttribute("messages", "descuento aplicado");
-		
-		
-		
-		
-		
-		return "redirect:/carrito";
-		
+		if (loggedUser.getCarrito().size()==0){
 			
+			redirectAttrs.addFlashAttribute("error", "El carrito está vacio. No pueden aplicarse códigos promocionales.");
+			
+			return "redirect:/carrito";
+			
+		} else { //si el carrito no está vacío:
+			
+			
+			if (code == null) {
+				//si no has introducido ningun codigo:
+				redirectAttrs.addFlashAttribute("error", "No has introducido ningún código promocional");
+				
+				return "redirect:/carrito";
+				
+			} else { //si si has introducido algun código
+				
+				Oferta oferta = ofertaRepository.findByCode(code);
+				OfertaDescuento ofertaDescuento = ofertaDescuentoRepository.findByCode(code);
+				
+				if ((oferta == null) && (ofertaDescuento == null)) {
+					
+					redirectAttrs.addFlashAttribute("error", "El código introducido no existe.");
+					
+					return "redirect:/carrito";
+					
+				} else { //si el cdigo es de oferta descuento:
+					
+					if (oferta == null) {
+						
+						 int precioinicial = loggedUser.getPrecioCarrito();
+						 
+						 precioinicial = precioinicial - ofertaDescuento.getPorcentaje();
+							 
+						 loggedUser.setPrecioCarrito(precioinicial);
+							 
+						 userRepository.save(loggedUser);
+							
+						 redirectAttrs.addFlashAttribute("messages", "Descuento aplicado");
+							
+						 return "redirect:/carrito";
+						
+					} else { //si el codigo es de oferta:
+						
+						List <Resource> carro = loggedUser.getCarrito();
+						
+						//ordenar el array
+						
+						 Collections.sort(carro);   
+						 
+						 int pago = oferta.getPagas();
+						 int llevo = oferta.getLlevas();
+						 
+						 if (llevo == loggedUser.getCarrito().size()) {
+							 //aplicar
+							 
+							 int dinero = 0;
+							 
+						
+							 int cont = 0;
+							 
+							 while (cont<pago){
+								 
+								 dinero=dinero+carro.get(cont).getPrecio();
+								 cont=cont+1;
+							 }
+							 
+							 
+							 
+							 loggedUser.setPrecioCarrito(dinero);
+							 
+							 userRepository.save(loggedUser);
+							 
+							 redirectAttrs.addFlashAttribute("messages", "Código descuento aplicado.");
+								
+							 return "redirect:/carrito";
+							 
+							 
+						 }
+						 
+						 else { //no aplicable
+							 
+							 redirectAttrs.addFlashAttribute("error", "El código solo es aplicable para un número de productos en carrito.");
+								
+							 return "redirect:/carrito";
+							 
+							 
+						 }
+						
+						
+						
+						
+						
+						
+						
+					}
+				}
+				
+			}
+		}
+		
 	}
 	
 	@RequestMapping("/loginError")
@@ -566,50 +644,5 @@ public class WebController {
 	
 	
 	
-	/*@RequestMapping("/aplicarCodigo")
-	public String AplicarCodigo(Model model, HttpServletRequest request, @RequestParam String codigo,
-			RedirectAttributes redirectAttrs) {
-
-		User loggedUser = userRepository.findByName(request.getUserPrincipal().getName());
-
-		List<Oferta> ofertas1 = ofertaRepository.findAll();
-		List<OfertaDescuento> ofertas2 = ofertaDescuentoRepository.findAll();
-		
-		 int longitud = ofertas1.size();
-		 int longitud2 = ofertas2.size();
-		 
-
-		for (int i = 0; longitud <= i; i++) {
-			if (codigo == ofertas1.get(i).getCode()) {
-				// aplicar codigo de oferta1
-				if (loggedUser.getCarrito().size() == ofertas1.get(i).getLlevas()) {
-					// aplicar
-					redirectAttrs.addFlashAttribute("error", "vale");
-					return "redirect:/carrito";
-				} else {
-					redirectAttrs.addFlashAttribute("error", "El código no es aplicable");
-					return "redirect:/carrito";
-
-				}
-
-			} else {
-				for (int j = 0; longitud2 <= j; j++) {
-					if (codigo == ofertas2.get(j).getCode()) {
-						// aplicar codigo de oferta2
-						redirectAttrs.addFlashAttribute("error", "vale");
-						return "redirect:/carrito";
-
-					} else {
-
-						redirectAttrs.addFlashAttribute("error", "El código no existe");
-						return "redirect:/carrito";
-					}
-				}
-			}
-
-		}
-		redirectAttrs.addFlashAttribute("error", "No entra");
-		return "redirect:/ofertas ";
-	}*/
 
 }
