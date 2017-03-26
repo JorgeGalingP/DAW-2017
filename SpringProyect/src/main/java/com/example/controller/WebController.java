@@ -255,30 +255,44 @@ public class WebController {
 	}
 
 	@RequestMapping("/{id}/addCarrito")
-	public String addCarrito(HttpServletRequest request, @PathVariable int id) {
+	public String addCarrito(HttpServletRequest request, @PathVariable int id, RedirectAttributes redirectAttrs) {
 		
 		if (request.isUserInRole("ADMIN") || request.isUserInRole("USER")) {
+			
+			
 
 			User loggedUser = userRepository.findByName(request.getUserPrincipal().getName());
 			Resource vinilo = repository.findOne(id);
-			List<Resource> carro = loggedUser.getCarrito();
+			
+			if (loggedUser.getCarrito().contains(vinilo)){
+				 redirectAttrs.addFlashAttribute("error", "Este vinilo ya está añadido a tu carrito de compra");
+					
+				 return "redirect:/{id}";
+				
+			} else {
+				
+				List<Resource> carro = loggedUser.getCarrito();
 
-			carro.add(vinilo);
-			
-			loggedUser.setCarrito(carro);
-			
-			
-			int precioTotal = loggedUser.getPrecioCarrito();
-			
-			
-			precioTotal = precioTotal + vinilo.getPrecio();
-			
-			
-			loggedUser.setPrecioCarrito(precioTotal);
+				carro.add(vinilo);
+				
+				loggedUser.setCarrito(carro);
+				
+				
+				int precioTotal = loggedUser.getPrecioCarrito();
+				
+				
+				precioTotal = precioTotal + vinilo.getPrecio();
+				
+				
+				loggedUser.setPrecioCarrito(precioTotal);
 
-			userRepository.save(loggedUser);
+				userRepository.save(loggedUser);
 
-			return "redirect:/carrito";
+				return "redirect:/carrito";
+				
+			}
+			
+			
 
 	} else return "redirect:/login";
 	}

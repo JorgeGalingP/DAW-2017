@@ -75,6 +75,29 @@
     <br>
     <br>
 
+	<div class="container content">
+	 {{#messages}}
+	
+		<div class="alert alert-success alert-dismissible" role="alert">
+			<button type="button" class="close" data-dismiss="alert"
+				aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+			{{messages}}
+		</div>
+	
+	{{/messages}} 
+	{{#error}}
+	
+		<div class="alert alert-danger alert-dismissible" role="alert">
+			<button type="button" class="close" data-dismiss="alert"
+				aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+			{{error}}
+		</div>
+	
+	{{/error}}
     <div class="container">
        
 
@@ -95,14 +118,9 @@
                             <br>
 
                             <div class="text-center" >
-                                <a href="/{{id}}/addCarrito" style="width: 100%" class="btn btn-info btn-md" onclick="feebackCarrito()"><span class="glyphicon glyphicon-shopping-cart"></span> Añadir al carrito</a>
+                                <a href="/{{id}}/addCarrito" style="width: 100%" class="btn btn-info btn-md" "><span class="glyphicon glyphicon-shopping-cart"></span> Añadir al carrito</a>
                             </div>
-                            <script>
-                                function feebackCarrito() {
-                                    alert("¡Producto añadido!");
-                                }
-
-                            </script>
+                           
                         </div>
                     </div>
                 </div>
@@ -236,7 +254,7 @@
     </div>
 
     <br>
-
+	</div>
     <div class="container">
         <hr>
 
