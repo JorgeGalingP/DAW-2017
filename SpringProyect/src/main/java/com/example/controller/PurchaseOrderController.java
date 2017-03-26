@@ -47,10 +47,8 @@ public class PurchaseOrderController {
 	//metodo para borrar un pedido
 	@RequestMapping("/borrarPedido")
 	public String borrarPedido(Model model, PurchaseOrder order) {
-		
-		PurchaseOrder thatOrder = purchaseOrderRepository.findByCode(order.getCode());
 
-		purchaseOrderRepository.delete(thatOrder);
+		purchaseOrderRepository.delete(order);
 		return "/administrador.html";
 		
 		}

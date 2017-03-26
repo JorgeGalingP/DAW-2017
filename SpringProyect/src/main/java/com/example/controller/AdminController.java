@@ -13,8 +13,6 @@ public class AdminController {
 	
 	@Autowired
 	private UserRepository userRepository;
-	@Autowired
-	private ResourceRepository resourceRepository;
 	
 	
 	@RequestMapping("/admin/")
