@@ -81,7 +81,7 @@ public class WebController {
 	@RequestMapping("/bob-marley")
 	public String bob(Model model) {
 		
-		List<Resource> bob = repository.findByInterprete("Bob Marley & The Wailers");
+		List<Resource> bob = repository.findByInterprete("Bob Marley");
 		
 		model.addAttribute("vinilosBob",bob);
 		

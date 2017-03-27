@@ -41,15 +41,15 @@ public class ViniloController {
 	
 	@PostConstruct
 	public void init(){
-		Resource rs1 = new Resource ("Catch a fire", "Uno de los mejores vinilos de reggae","Bob Marley & The Wailers","1973","Nuevo", "Catch a Fire",37,0001, "vfd", "img1.jpg");
+		Resource rs1 = new Resource ("Catch a fire", "Uno de los mejores","Bob Marley","1973","Nuevo", "Catch a Fire",37,0001, "vfd", "img1.jpg");
 		repository.save(rs1);
-		Resource rs2 = new Resource ("Live", "Uno de los mejores vinilos de reggae","Bob Marley & The Wailers","1975","Nuevo", "live",28,0002, "vfd", "img2.jpg");
+		Resource rs2 = new Resource ("Live", "Uno de los mejores","Bob Marley","1975","Nuevo", "live",28,0002, "vfd", "img2.jpg");
 		repository.save(rs2);
 		Resource rs3 = new Resource ("Let it be", "¡El primero!","The Beatles","1970","Nuevo", "Let it be",45,0003, "vfd", "img3.jpg");
 		repository.save(rs3);
 		Resource rs4 = new Resource ("The Beatles Box", "Grandes éxitos","The Beatles","1980","Nuevo", "The beatles Box",15,0004, "vfd", "img4.jpg");
 		repository.save(rs4);
-		Resource rs5 = new Resource ("Thriller 1982", "El más vendido de todos los tiempos","Michael Jackson","1982","Segunda mano", "Thriller",12,0005, "vfd", "img5.jpg");
+		Resource rs5 = new Resource ("Thriller 1982", "El más vendido","Michael Jackson","1982","Segunda mano", "Thriller",12,0005, "vfd", "img5.jpg");
 		repository.save(rs5);
 		Resource rs6 = new Resource ("Invincible", "¡El último!","Michael Jackson","2001","Nuevo", "Invincible",32,0006, "vfd", "img6.jpg");
 		repository.save(rs6);
@@ -57,7 +57,7 @@ public class ViniloController {
 		repository.save(rs7);
 		Resource rs8 = new Resource ("Heart", "Grandes éxitos","Heart","1980","Nuevo", "The beatles Box",15,0004, "vfd", "img8.jpg");
 		repository.save(rs8);
-		Resource rs9 = new Resource ("The Wall", "El más vendido de todos los tiempos","Pink Floyd","1982","Segunda mano", "Thriller",12,0005, "vfd", "img9.jpg");
+		Resource rs9 = new Resource ("The Wall", "El más vendido","Pink Floyd","1982","Segunda mano", "Thriller",12,0005, "vfd", "img9.jpg");
 		repository.save(rs9);
 		Resource rs10 = new Resource ("Aretha Now", "¡El último!","Aretha Franklin","2001","Nuevo", "Invincible",32,0006, "vfd", "img10.jpg");
 		repository.save(rs10);
@@ -65,7 +65,7 @@ public class ViniloController {
 		repository.save(rs11);
 		Resource rs12 = new Resource ("Who's Next", "Grandes éxitos","The Who","1980","Nuevo", "The beatles Box",15,0004, "vfd", "img12.jpg");
 		repository.save(rs12);
-		Resource rs13 = new Resource ("Faith", "El más vendido de todos los tiempos","George Michael","1982","Segunda mano", "Thriller",12,0005, "vfd", "img13.jpg");
+		Resource rs13 = new Resource ("Faith", "El más vendido","George Michael","1982","Segunda mano", "Thriller",12,0005, "vfd", "img13.jpg");
 		repository.save(rs13);
 		Resource rs14 = new Resource ("Too Low For Zero", "¡El último!","Elton John","2001","Nuevo", "Invincible",32,0006, "vfd", "img14.jpg");
 		repository.save(rs14);
@@ -75,7 +75,7 @@ public class ViniloController {
 		repository.save(rs16);
 		Resource rs17 = new Resource ("Street Talk", "Grandes éxitos","Steve Perry","1980","Nuevo", "The beatles Box",15,0004, "vfd", "img17.jpg");
 		repository.save(rs17);
-		Resource rs18 = new Resource ("The Very Best of KC", "El más vendido de todos los tiempos","KC and the Sunshine Band","1982","Segunda mano", "Thriller",12,0005, "vfd", "img18.jpg");
+		Resource rs18 = new Resource ("The Very Best of KC", "El más vendido","KC","1982","Segunda mano", "Thriller",12,0005, "vfd", "img18.jpg");
 		repository.save(rs18);
 		Resource rs19 = new Resource ("True Blue", "¡El último!","Madonna","2001","Nuevo", "Invincible",32,0006, "vfd", "img19.jpg");
 		repository.save(rs19);
@@ -83,11 +83,11 @@ public class ViniloController {
 		repository.save(rs20);
 		Resource rs21 = new Resource ("Boys and Girls", "¡El último!","Steve Ferry","2001","Nuevo", "Invincible",32,0006, "vfd", "img21.jpg");
 		repository.save(rs21);
-		Resource rs22 = new Resource ("Prince & The Revolution: Purple Rain ", "Lo mejor del mejor","Prince & The Revolution","2008","Nuevo", "King of Pop",23,0006, "vfd", "img22.jpg");
+		Resource rs22 = new Resource ("The Revolution", "Lo mejor del mejor","Prince & The Revolution","2008","Nuevo", "King of Pop",23,0006, "vfd", "img22.jpg");
 		repository.save(rs22);
-		Resource rs23 = new Resource ("Chicago X", "El más vendido de todos los tiempos","Chicago","1982","Segunda mano", "Thriller",12,0005, "vfd", "img23.jpg");
+		Resource rs23 = new Resource ("Chicago X", "El más vendido","Chicago","1982","Segunda mano", "Thriller",12,0005, "vfd", "img23.jpg");
 		repository.save(rs23);
-		Resource rs24 = new Resource ("Christopher Cross - The Album", "¡El último!","Christopher Cross","2001","Nuevo", "Invincible",32,0006, "vfd", "img24.jpg");
+		Resource rs24 = new Resource ("Christopher Cross", "¡El último!","Christopher Cross","2001","Nuevo", "Invincible",32,0006, "vfd", "img24.jpg");
 		repository.save(rs24);
 		Resource rs25 = new Resource ("The Best of Culture Club", "Lo mejor del mejor","Culture Club","2008","Nuevo", "King of Pop",23,0006, "vfd", "img25.jpg");
 		repository.save(rs25);
@@ -95,7 +95,7 @@ public class ViniloController {
 		repository.save(rs26);
 		Resource rs27 = new Resource ("Let's Dance", "Grandes éxitos","David Bowie","1980","Nuevo", "The beatles Box",15,0004, "vfd", "img27.jpg");
 		repository.save(rs27);
-		Resource rs28 = new Resource ("Brothers in Arms", "El más vendido de todos los tiempos","Dire Straits","1982","Segunda mano", "Thriller",12,0005, "vfd", "img28.jpg");
+		Resource rs28 = new Resource ("Brothers in Arms", "El más vendido","Dire Straits","1982","Segunda mano", "Thriller",12,0005, "vfd", "img28.jpg");
 		repository.save(rs28);
 		Resource rs29 = new Resource ("4[Expanded]", "¡El último!","Foreigner","2001","Nuevo", "Invincible",32,0006, "vfd", "img29.jpg");
 		repository.save(rs29);
