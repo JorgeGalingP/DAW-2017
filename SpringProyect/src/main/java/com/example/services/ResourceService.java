@@ -13,7 +13,7 @@ import com.example.repository.ResourceRepository;
 @Service
 public class ResourceService {
 	
-	
+	//Hacemos un servicio para que pueda usarse desde el controlador web y el rest
 	@Autowired ResourceRepository resourceRepository;
 	
 	public Resource findOne(int id){
