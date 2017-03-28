@@ -14,5 +14,5 @@ public interface ResourceRepository extends JpaRepository<Resource,Integer> {
 	List<Resource> findByVisto(boolean visto);
 	
 	Resource findByTitle(String title);
-
+	
 }

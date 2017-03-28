@@ -19,8 +19,8 @@ import com.fasterxml.jackson.databind.introspect.TypeResolutionContext.Basic;
 
 @Entity
 public class Resource implements Comparable<Resource> {
-	
-	
+	public interface Basic{}
+	public interface comentarios{}
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@JsonView(Basic.class)
