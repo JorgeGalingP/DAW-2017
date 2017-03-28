@@ -1,4 +1,4 @@
-package RestController;
+package com.example.RestController;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,7 +13,7 @@ import com.example.repository.UserRepository;
 
 @RestController
 @RequestMapping("api/user")
-public class UserRestControler {
+public class UserRestController {
 	
 
 	
@@ -29,10 +29,11 @@ public class UserRestControler {
 	}
 	
 	
-	@JsonView
+	
 	
 	
 	
 	
 
 }
+
