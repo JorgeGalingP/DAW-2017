@@ -23,6 +23,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @Entity
 public class User {
+	public interface Roles{}
+	public interface Carrito{}
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
