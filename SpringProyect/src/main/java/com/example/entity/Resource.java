@@ -10,6 +10,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonView;
+import com.fasterxml.jackson.databind.introspect.TypeResolutionContext.Basic;
+
 
 
 
@@ -20,21 +23,46 @@ public class Resource implements Comparable<Resource> {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@JsonView(Basic.class)
 	private Integer id;
 	
+	@JsonView(Basic.class)
 	private  String title;
+	
+	@JsonView(Basic.class)
 	private  String subtitle;
+	@JsonView(Basic.class)
 	private String interprete;
+	
+	@JsonView(Basic.class)
 	private String fecha;
+	
+	@JsonView(Basic.class)
 	private String estado;
+	
+	@JsonView(Basic.class)
 	private String album;
+	
+	@JsonView(Basic.class)
 	private int precio;
+	
+	@JsonView(Basic.class)
 	private int codigo;
+	
+	@JsonView(Basic.class)
 	private String tracklist;
+	
+	@JsonView(Basic.class)
 	private String img;
+	
+	@JsonView(Basic.class)
 	private boolean visto;
+	
+	@JsonView(Basic.class)
 	private int veces;
 	
+	
+	@JsonView(Comment.class)
 	@OneToMany(cascade=CascadeType.ALL)
 	private List<Comment> comentarios;
 	

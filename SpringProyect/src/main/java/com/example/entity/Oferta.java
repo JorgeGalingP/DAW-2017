@@ -5,17 +5,32 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonView;
+import com.fasterxml.jackson.databind.introspect.TypeResolutionContext.Basic;
+
 @Entity
 public class Oferta {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	
+	@JsonView(Basic.class)
 	private Integer id;
+	
+	@JsonView(Basic.class)
 	private  String name;
+	
+	@JsonView(Basic.class)
 	private String code;
+	
+	@JsonView(Basic.class)
 	private String description;
+	
+	@JsonView(Basic.class)
 	private int llevas;
+	
+	@JsonView(Basic.class)
 	private int pagas;
+	
+	@JsonView(Basic.class)
 	private String img;
 	
 	

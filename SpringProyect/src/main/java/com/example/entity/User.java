@@ -16,6 +16,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 import com.example.entity.Resource;
+import com.fasterxml.jackson.annotation.JsonView;
+import com.fasterxml.jackson.databind.introspect.TypeResolutionContext.Basic;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
@@ -24,23 +26,43 @@ public class User {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@JsonView(Basic.class)
 	private Integer id;
 	
+	@JsonView(Basic.class)
 	private String name;
+	
+	@JsonView(Basic.class)
 	private String surname;
+	
+	@JsonView(Basic.class)
 	private String email;
+	
+	@JsonView(Basic.class)
 	private String pais;
+	
+	@JsonView(Basic.class)
 	private String descripcion;
+	
+	@JsonView(Basic.class)
 	private String telephone;
+	
+	@JsonView(Basic.class)
 	private String passwordHash;
+	
+	@JsonView(Basic.class)
 	private int postalCode;
 	
-	
+	@JsonView(Basic.class)
 	@ElementCollection(fetch = FetchType.EAGER)
 	private List<String> roles;
 	
+	
+	@JsonView(Resource.class)
 	@OneToMany(cascade = CascadeType.ALL)
 	private List<Resource> carrito;
+	
+	@JsonView(Basic.class)
 	private int precioCarrito;
 	
 	protected User(){}

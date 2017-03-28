@@ -5,15 +5,21 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonView;
+import com.fasterxml.jackson.databind.introspect.TypeResolutionContext.Basic;
+
 @Entity
 public class Comment {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@JsonView(Basic.class)
 	private long id;
 
-	
+	@JsonView(Basic.class)
 	private String message;
+	
+	@JsonView(Basic.class)
 	private String asunto;
 
 	protected Comment() {

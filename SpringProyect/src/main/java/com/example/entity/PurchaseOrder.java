@@ -9,16 +9,24 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonView;
+import com.fasterxml.jackson.databind.introspect.TypeResolutionContext.Basic;
+
 
 @Entity
 public class PurchaseOrder {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	
+	@JsonView(Basic.class)
 	private String code;
+	
+	@JsonView(Basic.class)
 	private double totalToPay;
+	
+	@JsonView(Basic.class)
 	private String description;
 	
+	@JsonView(Resource.class)
 	@OneToMany(cascade = CascadeType.ALL)
 	private List<Resource> carrito;
 	
