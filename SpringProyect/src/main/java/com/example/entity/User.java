@@ -25,6 +25,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 public class User {
 	public interface Roles{}
 	public interface Carrito{}
+	public interface LoginInt{}
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -55,6 +56,9 @@ public class User {
 	@JsonView(Basic.class)
 	private int postalCode;
 	
+	@JsonView({Basic.class,LoginInt.class})
+	private int avaiableLoans;
+	
 	@JsonView(Basic.class)
 	@ElementCollection(fetch = FetchType.EAGER)
 	private List<String> roles;
@@ -66,6 +70,8 @@ public class User {
 	
 	@JsonView(Basic.class)
 	private int precioCarrito;
+	
+	
 	
 	protected User(){}
 	
@@ -248,6 +254,21 @@ public class User {
 	public void setPrecioCarrito(int precioTotal) {
 		this.precioCarrito = precioTotal;
 	}
+
+
+
+
+	public int getAvaiableLoans() {
+		return avaiableLoans;
+	}
+
+
+
+
+	public void setAvaiableCredits(int avaiableLoans) {
+		this.avaiableLoans = avaiableLoans;
+	}
+	
 
 
 	
