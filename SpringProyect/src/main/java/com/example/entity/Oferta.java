@@ -40,8 +40,8 @@ public class Oferta {
 	
 
 
-	public Oferta(String name, String code, String description, int llevas, int pagas, String img) {
-		
+	public Oferta(Integer id,String name, String code, String description, int llevas, int pagas, String img) {
+		this.id=id;
 		this.name = name;
 		this.code = code;
 		this.description = description;

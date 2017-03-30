@@ -65,6 +65,16 @@ public class UserRestController {
 			return new ResponseEntity<>(user,HttpStatus.NOT_FOUND);
 		}
 	}
+	@JsonView(UserDetail.class)
+	@RequestMapping(value="miperfil/{name}", method= RequestMethod.GET)
+	public ResponseEntity<User>getUserName(@PathVariable String name){
+		User user = userRepository.findByName(name);
+		if(user!=null){
+			return new ResponseEntity<>(user,HttpStatus.OK);
+		}else{
+			return new ResponseEntity<>(user,HttpStatus.NOT_FOUND);
+		}
+	}
 	//borra un usuario a partir de su id
 	@JsonView(UserDetail.class)
 	@RequestMapping(value="/miperfil/{id}", method=RequestMethod.DELETE)

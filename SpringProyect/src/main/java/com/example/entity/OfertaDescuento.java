@@ -10,6 +10,9 @@ import com.fasterxml.jackson.databind.introspect.TypeResolutionContext.Basic;
 
 @Entity
 public class OfertaDescuento {
+	
+	public interface Basic{};
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@JsonView(Basic.class)
