@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 
 <html lang="en">
@@ -127,7 +127,7 @@
                     <p class="list-group-item">{{user.telephone}}</p>
                 </div>
                 <hr />
-                <p class="lead">Información adicional</p>
+                <p class="lead">Dirección de envío</p>
                 <div class="list-group">
                     <p class="list-group-item">{{user.descripcion}}</p>
                     
@@ -142,75 +142,7 @@
                 <br>
           
                 
-                <div class="panel panel-default text-center">
-                    <div class="panel-heading">
-                        <div class="text-muted bootstrap-admin-box-title">Añade una nueva Tarjeta de Crédito</div>
-                    </div>
-                    <br>
-                    <br>
-
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <form class="form-horizontal">
-                                <div class="col-lg-11">
-
-                                    <div class="form-group">
-                                        <label class="col-lg-3 control-label"> Nombre asociado a la Tarjeta</label>
-                                        <div class="col-lg-9">
-                                            <input type="text" class="form-control col-md-6">
-
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label class="col-lg-3 control-label" for="typeahead">Apellidos asociados a la Tarjeta</label>
-                                        <div class="col-lg-9">
-                                            <input type="password" class="form-control col-md-6">
-
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label class="col-lg-3 control-label" for="typeahead">Numero de Tarjeta</label>
-                                        <div class="col-lg-9">
-                                            <input type="number" class="form-control col-md-6">
-
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-lg-3 control-label" for="typeahead">Fecha de caducidad de la tarjeta</label>
-                                        <div class="col-lg-9">
-                                            <input type="date" class="form-control col-md-6">
-
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-lg-3 control-label" for="typeahead">CVV</label>
-                                        <div class="col-lg-9">
-                                            <input type="number" class="form-control col-md-6">
-
-                                        </div>
-                                    </div>
-                                    <br>
-
-                                    <label class="col-lg-12">
-                                        <a href="#" class="btn btn-primary">Guardar</a>
-                                    </label>
-
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <br>
-                </div>
-              
-                <br>
-           
-                <br>
-
-              
-
-
+                
                 <!-- Eliminar cuenta  -->
                 <div class="panel panel-danger text-center">
                     <div class="panel-heading">
@@ -219,7 +151,10 @@
                     <form action="borrarPerfil">
                     <div class="panel-body text-center">
                         <p> Su cuenta será borrada para siempre y no podrá recuperarla. Al pulsar el botón de eliminar su cuenta será totalmente eliminada</p>
-                        <button type="submit" class="btn btn-danger"> Eliminar </button>
+                        <a href="/deleteUser">
+	                         <button type="button"  class="btn btn-danger">Eliminar</button>
+                           </a>
+                        
                     </div>
                     </form>
                 </div>

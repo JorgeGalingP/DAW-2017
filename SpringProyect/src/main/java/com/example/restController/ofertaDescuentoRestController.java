@@ -1,4 +1,4 @@
-package com.example.restController;
+package com.example.RestController;
 
 import java.util.List;
 
@@ -17,7 +17,7 @@ import com.example.repository.OfertaDescuentoRepository;
 import com.fasterxml.jackson.annotation.JsonView;
 @RestController
 @RequestMapping
-public class OfertaDescuentoRestController {
+public class ofertaDescuentoRestController {
 	public interface OfertaDescuentoDetail extends OfertaDescuento.Basic{};
 	
 	@Autowired

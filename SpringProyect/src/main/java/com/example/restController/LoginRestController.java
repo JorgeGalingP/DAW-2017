@@ -1,4 +1,4 @@
-package com.example.restController;
+package com.example.RestController;
 
 import javax.servlet.http.HttpSession;
 

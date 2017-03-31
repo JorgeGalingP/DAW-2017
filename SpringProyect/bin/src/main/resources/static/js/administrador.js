@@ -1,15 +1,16 @@
 $(document).ready(function () {
     $('#admin').hide();
-    $('#contents').hide();
+    $('#contents').show();
     $('#users').hide();
     $('#validation').hide();
-    $('#analytics').show();
     $('#adminMenu').addClass('active');
+    $('#analytics').hide();
 
 
     $('#adminMenu').click(function () {
         $('#admin').slideDown("slow");
         $('#contents').hide();
+        $('#analytics').hide();
         $('#users').hide();
         $('#analytics').hide();
         $('#validation').hide();
@@ -27,6 +28,7 @@ $(document).ready(function () {
         $('#contents').slideDown("slow");
         $('#users').hide();
         $('#analytics').hide();
+        $('#analytics').hide();
         $('#validation').hide();
         $('#adminMenu').removeClass('active');
         $('#contentMenu').addClass('active');
@@ -40,6 +42,7 @@ $(document).ready(function () {
     $('#usersMenu').click(function () {
         $('#admin').hide();
         $('#contents').hide();
+        $('#analytics').hide();
         $('#users').slideDown("slow");
         $('#analytics').hide();
         $('#validation').hide();
@@ -51,24 +54,10 @@ $(document).ready(function () {
 
         return false;
     });
-
-    $('#analyticsMenu').click(function () {
-        $('#admin').hide();
-        $('#contents').hide();
-        $('#users').hide();
-        $('#validation').hide();
-        $('#analytics').slideDown("slow");
-        $('#adminMenu').removeClass('active');
-        $('#contentMenu').removeClass('active');
-        $('#usersMenu').removeClass('active');
-        $('#analyticsMenu').addClass('active');
-        $('#validationMenu').removeClass('active');
-
-        return false;
-    });
-
+    
     $('#validationMenu').click(function () {
         $('#admin').hide();
+        $('#analytics').hide();
         $('#contents').hide();
         $('#users').hide();
         $('#analytics').hide();
@@ -78,6 +67,21 @@ $(document).ready(function () {
         $('#usersMenu').removeClass('active');
         $('#analyticsMenu').removeClass('active');
         $('#validationMenu').addClass('active');
+
+        return false;
+    });
+    
+    $('#analyticsMenu').click(function () {
+        $('#admin').hide();
+        $('#contents').hide();
+        $('#users').hide();
+        $('#validation').hide();
+        $('#analytics').slideDown("slow");
+        $('#adminMenu').removeClass('active');
+        $('#contentMenu').removeClass('active');
+        $('#usersMenu').removeClass('active');
+        $('#validationMenu').removeClass('active');
+        $('#analyticsMenu').addClass('active');
 
         return false;
     });

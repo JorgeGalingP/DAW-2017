@@ -75,6 +75,29 @@
     <br>
     <br>
 
+	<div class="container content">
+	 {{#messages}}
+	
+		<div class="alert alert-success alert-dismissible" role="alert">
+			<button type="button" class="close" data-dismiss="alert"
+				aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+			{{messages}}
+		</div>
+	
+	{{/messages}} 
+	{{#error}}
+	
+		<div class="alert alert-danger alert-dismissible" role="alert">
+			<button type="button" class="close" data-dismiss="alert"
+				aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+			{{error}}
+		</div>
+	
+	{{/error}}
     <div class="container">
        
 
@@ -85,31 +108,19 @@
 
                 <div class="user-wrapper">
                     <br>
-                    <img src="https://http2.mlstatic.com/disco-vinilo-the-beatles-D_NQ_NP_13626-MLA3209892061_092012-F.jpg" class="img-responsive" />
+                    <img src="/imagenes/{{vinilo.img}}" class="img-responsive" />
                     <br>
                     <div class="description well">
-                        <h3>{{vinilo.album}}</h3>
+                        <h3>{{vinilo.precio}} €</h3>
                         <div class="ratings">
-                            <p class="pull-right">3 reviews</p>
-                            <p>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                            </p>
                             <h4>En stock</h4>
                             <hr />
                             <br>
 
                             <div class="text-center" >
-                                <a action="addCarrito" href="/carrito" style="width: 100%" class="btn btn-info btn-md" onclick="feebackCarrito()"><span class="glyphicon glyphicon-shopping-cart"></span> Añadir al carrito</a>
+                                <a href="/{{id}}/addCarrito" style="width: 100%" class="btn btn-info btn-md" "><span class="glyphicon glyphicon-shopping-cart"></span> Añadir al carrito</a>
                             </div>
-                            <script>
-                                function feebackCarrito() {
-                                    alert("¡Producto añadido!");
-                                }
-
-                            </script>
+                           
                         </div>
                     </div>
                 </div>
@@ -120,6 +131,7 @@
 
             <div class="col-md-9 user-wrapper">
                 <div class="alert alert-info">
+                	<h3>{{vinilo.interprete}}  </h3>
                     <h3>{{vinilo.title}}  </h3>
                     <p>
                        {{vinilo.subtitle}}
@@ -190,30 +202,20 @@
 
             <div class="row">
                 <div class="col-lg-9">
-                    <form class="form-horizontal" action="addComment" method="post">
+                    <form class="form-horizontal" action="{{id}}/addComment" method="post">
                         <div class="col-lg-12">
                             <div class="form-group">
                                 <label class="col-lg-2  col-md-2 col-sm-7 col-xs-12 control-label text-center">
                                     <input class="btn btn-primary" type='submit' value='Guardar' />
                                 </label>
                             <div class="col-lg-10 col-md-10 col-xs-12">
-                                <input id="textarea-wysihtml5" type="textarea" name="message" style="width:500px; height:50px" class="form-control col-lg-10 col-md-10 col-xs-12" placeholder="Introduce un comentario.">
+                            	<input type="textarea" name="asunto" style="width:700px; height:25px" class="form-control col-lg-10 col-md-10 col-xs-12" placeholder="Asunto.">           
+                                <br>
+                                <input id="textarea-wysihtml5" type="textarea" name="message" style="width:700px; height:50px" class="form-control col-lg-10 col-md-10 col-xs-12" placeholder="Introduce un comentario.">
                             </div>
                             </div>
                         </div>
                     </form>
-                </div>
-                <div class="col-lg-2">
-                    <div class="form-group">
-                        <label for="sel1">Selecciona valoración</label>
-                        <select class="form-control" id="sel1">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                        </select>
-                    </div>
                 </div>
             </div>
             <br>
@@ -228,49 +230,17 @@
                 </div>
             </div>
             <hr>
-
+			{{#comentarios}}
             <div class="row">
                 <div class="col-md-12">
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star-empty"></span> Anonymous
-                    <span class="pull-right">10 days ago</span>
-                    <p>This product was great in terms of quality. I would definitely buy another!</p>
-                   
+                    <h4>{{asunto}}</h4>
+                    <p>{{message}}</p>                   
                 </div>
             </div>
 
             <hr>
-
-            <div class="row">
-                <div class="col-md-12">
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star-empty"></span> Anonymous
-                    <span class="pull-right">12 days ago</span>
-                    <p>I've alredy ordered another one!</p>
-                    
-                </div>
-            </div>
-
-            <hr>
-
-            <div class="row">
-                <div class="col-md-12">
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star-empty"></span> Anonymous
-                    <span class="pull-right">15 days ago</span>
-                    <p>I've seen some better than this, but not at this price. I definitely recommend this item.</p>
-                   
-                </div>
-            </div>
+			{{/comentarios}}
+            
 
         </div>
 
@@ -284,7 +254,7 @@
     </div>
 
     <br>
-
+	</div>
     <div class="container">
         <hr>
 
