@@ -11,14 +11,16 @@ import com.example.entity.Resource;
 import com.example.entity.User;
 import com.example.repository.ResourceRepository;
 import com.example.repository.UserRepository;
+import com.example.services.ResourceService;
+import com.example.services.UserService;
 
 public class UserController {
 	
 	@Autowired
-	private UserRepository userRepository;
+	private UserService userRepository;
 	
 	@Autowired
-	private ResourceRepository repository;
+	private ResourceService repository;
 	
 	
 	

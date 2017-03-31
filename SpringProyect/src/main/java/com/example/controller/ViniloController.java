@@ -25,13 +25,14 @@ import com.example.entity.Resource;
 import com.example.entity.User;
 import com.example.repository.ResourceRepository;
 import com.example.repository.UserRepository;
+import com.example.services.ResourceService;
 
 
 @Controller
 public class ViniloController {
 	
 	@Autowired 
-	private ResourceRepository repository;
+	private ResourceService repository;
 	
 	private static final String FILES_FOLDER = ".\\src\\main\\resources\\static\\imagenes";
 

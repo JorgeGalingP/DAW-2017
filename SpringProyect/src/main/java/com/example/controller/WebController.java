@@ -29,25 +29,30 @@ import com.example.repository.OfertaRepository;
 import com.example.repository.PurchaseOrderRepository;
 import com.example.repository.ResourceRepository;
 import com.example.repository.UserRepository;
+import com.example.services.OfertaDescuentoService;
+import com.example.services.OfertaService;
+import com.example.services.PurchaseService;
+import com.example.services.ResourceService;
+import com.example.services.UserService;
 
 @Controller
 public class WebController {
 
 	@Autowired
-	private ResourceRepository repository;
+	private ResourceService repository;
 
 	@Autowired
 
-	private OfertaRepository ofertaRepository;
+	private OfertaService ofertaRepository;
 
 	@Autowired
-	private OfertaDescuentoRepository ofertaDescuentoRepository;
+	private OfertaDescuentoService ofertaDescuentoRepository;
 
 	@Autowired
-	private UserRepository userRepository;
+	private UserService userRepository;
 	
 	@Autowired
-	private PurchaseOrderRepository purchaseOrderRepository;
+	private PurchaseService purchaseOrderRepository;
 	
 	int numPedidos = 1;
 

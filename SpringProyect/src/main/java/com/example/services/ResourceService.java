@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import com.example.entity.Resource;
@@ -30,6 +31,16 @@ public class ResourceService {
 	public Resource findByTitle(String title){
 		return resourceRepository.findByTitle(title);
 	}
+	public List <Resource> findByInterprete(String interprete){
+		return resourceRepository.findByInterprete(interprete);
+	}
+	public List<Resource> findByEstado(String estado){
+		return resourceRepository.findByEstado(estado);
+	}
+	public List<Resource> findByVisto(boolean visto){
+		return resourceRepository.findByVisto(visto);
+	}
+	
 	
 	public void save(Resource resource){
 		resourceRepository.save(resource);
@@ -40,6 +51,11 @@ public class ResourceService {
 	
 	public void delete (Resource resource){
 		resourceRepository.delete(resource);
+	}
+
+	public Page<Resource> findAll(PageRequest pageRequest) {
+		// TODO Auto-generated method stub
+		return resourceRepository.findAll(pageRequest);
 	}
 	
 	
