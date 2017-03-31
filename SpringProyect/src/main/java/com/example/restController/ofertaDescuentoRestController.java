@@ -16,7 +16,7 @@ import com.example.entity.OfertaDescuento;
 import com.example.repository.OfertaDescuentoRepository;
 import com.fasterxml.jackson.annotation.JsonView;
 @RestController
-@RequestMapping
+@RequestMapping("api/ofertas")
 public class ofertaDescuentoRestController {
 	public interface OfertaDescuentoDetail extends OfertaDescuento.Basic{};
 	

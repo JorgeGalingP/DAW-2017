@@ -27,6 +27,7 @@ public class ResourceRestController {
 	public interface ResourceDetail extends Resource.Basic,Resource.comentarios{}
 	
 	
+	
 	@Autowired ResourceService resourceService;
 	
 	//Creamos un nuevo recurso

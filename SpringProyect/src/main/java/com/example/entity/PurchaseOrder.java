@@ -11,10 +11,17 @@ import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonView;
 import com.fasterxml.jackson.databind.introspect.TypeResolutionContext.Basic;
-
+  
+    
+    
+    
 
 @Entity
 public class PurchaseOrder {
+	public interface Basic{}
+	
+	public interface resource{}
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@JsonView(Basic.class)
