@@ -21,7 +21,7 @@ public class OfertaRestController {
 	@Autowired
 	private OfertaRepository ofertaRepository;
 	
-	@RequestMapping(value="/ofertas",method=RequestMethod.POST)
+	@RequestMapping(value="/",method=RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
 	public Oferta postOferta(@RequestBody Oferta oferta){
 		ofertaRepository.save(oferta);
@@ -30,7 +30,7 @@ public class OfertaRestController {
 	}
 	
 	
-	@RequestMapping(value="/ofertas",method = RequestMethod.GET)
+	@RequestMapping(value="/",method = RequestMethod.GET)
 	public ResponseEntity<List<Oferta>> getOfertas(){
 		List<Oferta>ofertas = ofertaRepository.findAll();
 		if(ofertas!= null){
@@ -42,7 +42,7 @@ public class OfertaRestController {
 		
 	}
 	
-	@RequestMapping(value="/ofertas/{id}",method=RequestMethod.GET)
+	@RequestMapping(value="/{id}",method=RequestMethod.GET)
 	public ResponseEntity<Oferta> getOferta(@PathVariable Integer id){
 		Oferta oferta = ofertaRepository.findOne(id);
 		if(oferta!=null){
@@ -51,7 +51,7 @@ public class OfertaRestController {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 	}
-	@RequestMapping(value="/ofertas/{code}", method=RequestMethod.GET)
+	@RequestMapping(value="/{code}", method=RequestMethod.GET)
 	public ResponseEntity<Oferta> getOfertaCodigo(@PathVariable String code){
 		Oferta oferta = ofertaRepository.findByCode(code);
 		if(oferta!= null){
@@ -72,7 +72,7 @@ public class OfertaRestController {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 	}
-	@RequestMapping(value="/ofertas/{code}",method=RequestMethod.DELETE)
+	@RequestMapping(value="/{code}",method=RequestMethod.DELETE)
 	public ResponseEntity<Oferta>deleteOfertaCodigo(@PathVariable String code){
 		Oferta ofertaSeleccionada = ofertaRepository.findByCode(code);
 		if(ofertaSeleccionada!= null){
@@ -94,7 +94,7 @@ public class OfertaRestController {
 			
 		}
 	}
-	@RequestMapping(value="ofertas/{code}",method= RequestMethod.PUT)
+	@RequestMapping(value="/{code}",method= RequestMethod.PUT)
 	public ResponseEntity<Oferta>PutOfertaCodigo(@PathVariable String code,@RequestBody Oferta ofertaModificada){
 		Oferta oferta = ofertaRepository.findByCode(code);
 		if((oferta!=null)&&(oferta.getId()==ofertaModificada.getId())){

@@ -76,7 +76,7 @@ public class ResourceRestController {
 	
 	
 	//eliminamos un recurso
-	@RequestMapping(value="/administrador/articulo/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(value="/articulo/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<Resource> deleteResource(@PathVariable Integer id){
 		Resource resourceSelected = resourceService.findOne(id);
 		if(resourceSelected != null){

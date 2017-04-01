@@ -14,6 +14,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
+import com.example.component.UserComponent;
 import com.example.entity.User;
 
 @Component
@@ -21,6 +22,9 @@ public class UserRepositoryAuthenticationProvider implements AuthenticationProvi
 
 	@Autowired
 	private UserRepository userRepository;
+	
+	@Autowired
+	private UserComponent userComponent;
 
 	@Override
 	public Authentication authenticate(Authentication auth) throws AuthenticationException {
@@ -40,6 +44,7 @@ public class UserRepositoryAuthenticationProvider implements AuthenticationProvi
 		for (String role : user.getRoles()) {
 			roles.add(new SimpleGrantedAuthority(role));
 		}
+		userComponent.setLoggedUser(user);
 
 		return new UsernamePasswordAuthenticationToken(user.getName(), password, roles);
 	}
