@@ -33,8 +33,12 @@ Página web de compra y venta de vinilos. En esta web podrás encontrar ofertas 
 
 ### Diagrama UML Fase 2
 ![alt tag](https://raw.githubusercontent.com/JorgeGalingP/DAW-2017/master/capturas/diagrama de navegación.png)
+
 ### Diagrama UML Fase 3
 ![alt tag](https://raw.githubusercontent.com/JorgeGalingP/DAW-2017/master/capturas/diagrama de navegación2.png)
+
+### Documentación API
+* [API Reference](https://github.com/JorgeGalingP/DAW-2017/blob/master/API.md)
 
 ### Capturas
 ![alt tag](https://raw.githubusercontent.com/JorgeGalingP/DAW-2017/master/capturas/administrador1.png)
