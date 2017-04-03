@@ -41,4 +41,19 @@ Then, you have to change to GET/PUT/POST/DELETE method in methods bar and put th
 #### DELETE Users
 * Put one user: https://localhost:8443/api/miperfil/id
 ## Examples
-* For example you can user https://localhost:8443/api/resources/articulo/1 to get the resource with id number 1
+* For example you can user https://localhost:8443/api/resources/articulo/23 to get the resource with id number 23 and the output in json format is 
+```{
+  "id": 23,
+  "title": "Boys and Girls",
+  "subtitle": "¡El último!",
+  "interprete": "Steve Ferry",
+  "fecha": "2001",
+  "estado": "Nuevo",
+  "album": "Invincible",
+  "precio": 32,
+  "codigo": 6,
+  "tracklist": "vfd",
+  "img": "img21.jpg",
+  "visto": false,
+  "veces": 0
+}
