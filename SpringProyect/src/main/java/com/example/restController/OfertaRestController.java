@@ -14,12 +14,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.entity.Oferta;
 import com.example.repository.OfertaRepository;
+import com.example.services.OfertaService;
 
 @RestController
 @RequestMapping("api/ofertas")
 public class OfertaRestController {
 	@Autowired
-	private OfertaRepository ofertaRepository;
+	private OfertaService ofertaRepository;
 	
 	@RequestMapping(value="/",method=RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
@@ -30,7 +31,7 @@ public class OfertaRestController {
 	}
 	
 	
-	@RequestMapping(value="/",method = RequestMethod.GET)
+	@RequestMapping(value="/ofertas",method = RequestMethod.GET)
 	public ResponseEntity<List<Oferta>> getOfertas(){
 		List<Oferta>ofertas = ofertaRepository.findAll();
 		if(ofertas!= null){
@@ -42,7 +43,7 @@ public class OfertaRestController {
 		
 	}
 	
-	@RequestMapping(value="/{id}",method=RequestMethod.GET)
+	@RequestMapping(value="get/{id}",method=RequestMethod.GET)
 	public ResponseEntity<Oferta> getOferta(@PathVariable Integer id){
 		Oferta oferta = ofertaRepository.findOne(id);
 		if(oferta!=null){

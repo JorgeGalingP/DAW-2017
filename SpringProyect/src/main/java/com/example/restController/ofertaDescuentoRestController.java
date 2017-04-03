@@ -23,7 +23,7 @@ public class ofertaDescuentoRestController {
 	@Autowired
 	private OfertaDescuentoRepository ofertaDescuentoRepository;
 	
-	@RequestMapping(value="/oferta", method =RequestMethod.POST)
+	@RequestMapping(value="/administrador/oferta", method =RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
 	public OfertaDescuento postOfertaDescuento(@RequestBody OfertaDescuento ofertaDescuento){
 		ofertaDescuentoRepository.save(ofertaDescuento);

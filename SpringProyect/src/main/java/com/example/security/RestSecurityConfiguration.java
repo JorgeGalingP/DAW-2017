@@ -29,10 +29,10 @@ public class RestSecurityConfiguration extends WebSecurityConfigurerAdapter{
 		http.authorizeRequests().antMatchers(HttpMethod.GET,"/api/users/all").hasAnyRole("ADMIN");
 		http.authorizeRequests().antMatchers(HttpMethod.DELETE,"/api/**/**").hasAnyRole("USER");
 		http.authorizeRequests().antMatchers(HttpMethod.DELETE,"/api/purchaseOrder/").hasAnyRole("USER");
-		http.authorizeRequests().antMatchers(HttpMethod.POST,"/api/**/**").hasAnyRole("USER");
-		http.authorizeRequests().antMatchers(HttpMethod.POST,"/api/ofertas/","/api/purchaseOrder/").hasAnyRole("ADMIN");
-		http.authorizeRequests().antMatchers(HttpMethod.PUT,"/api/**/**").hasAnyRole("ADMIN");
-		http.authorizeRequests().antMatchers(HttpMethod.PUT,"/api/users/").hasAnyRole("USER");
+		//http.authorizeRequests().antMatchers(HttpMethod.POST,"/api/**/**").hasAnyRole("USER");
+		//http.authorizeRequests().antMatchers(HttpMethod.POST,"/api/ofertas/","/api/purchaseOrder/").hasAnyRole("ADMIN");
+		//http.authorizeRequests().antMatchers(HttpMethod.PUT,"/api/**/**").hasAnyRole("ADMIN");
+		//http.authorizeRequests().antMatchers(HttpMethod.PUT,"/api/users/").hasAnyRole("USER");
 		
 		
 		

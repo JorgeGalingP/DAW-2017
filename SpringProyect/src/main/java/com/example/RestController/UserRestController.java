@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.entity.User;
 import com.example.entity.User.Roles;
 import com.example.repository.UserRepository;
+import com.example.services.UserService;
 import com.fasterxml.jackson.annotation.JsonView;
 
 @RestController
@@ -28,7 +29,7 @@ public class UserRestController {
    public  interface UserDetail extends User.Carrito,User.Roles{}
 	
 	
-	@Autowired UserRepository userRepository;
+	@Autowired UserService userRepository;
 	
 	
 	
