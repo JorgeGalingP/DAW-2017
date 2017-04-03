@@ -16,14 +16,14 @@ import com.example.entity.OfertaDescuento;
 import com.example.repository.OfertaDescuentoRepository;
 import com.fasterxml.jackson.annotation.JsonView;
 @RestController
-@RequestMapping("api/ofertas")
+@RequestMapping("api/ofertasDescuento")
 public class ofertaDescuentoRestController {
 	public interface OfertaDescuentoDetail extends OfertaDescuento.Basic{};
 	
 	@Autowired
 	private OfertaDescuentoRepository ofertaDescuentoRepository;
 	
-	@RequestMapping(value="/administrador/oferta", method =RequestMethod.POST)
+	@RequestMapping(value="/", method =RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
 	public OfertaDescuento postOfertaDescuento(@RequestBody OfertaDescuento ofertaDescuento){
 		ofertaDescuentoRepository.save(ofertaDescuento);
@@ -33,7 +33,7 @@ public class ofertaDescuentoRestController {
 	}
 	
 	@JsonView(OfertaDescuentoDetail.class)
-	@RequestMapping(value="/oferta", method = RequestMethod.GET)
+	@RequestMapping(value="/all", method = RequestMethod.GET)
 	public ResponseEntity<List<OfertaDescuento>> getOfertasDescuento(){
 		
 		List<OfertaDescuento> ofertas = ofertaDescuentoRepository.findAll();
@@ -47,7 +47,7 @@ public class ofertaDescuentoRestController {
 	}
 	
 	@JsonView(OfertaDescuentoDetail.class)
-	@RequestMapping(value="/oferta/{code}", method= RequestMethod.GET)
+	@RequestMapping(value="/{code}", method= RequestMethod.GET)
 	public ResponseEntity<OfertaDescuento>getOfertasDescuentoCodigo(@PathVariable String code){
 		OfertaDescuento ofertaDescuento= ofertaDescuentoRepository.findByCode(code);
 		if(ofertaDescuento!= null){
@@ -71,10 +71,10 @@ public class ofertaDescuentoRestController {
     	}
     }
 	
-	@RequestMapping(value="/oferta/{code}", method = RequestMethod.PUT)
-	public ResponseEntity<OfertaDescuento> putOfertaDescuento(@PathVariable String code,@RequestBody OfertaDescuento ofertaUpdated){
-		OfertaDescuento ofertaDescuento = ofertaDescuentoRepository.findByCode(code);
-		if((ofertaDescuento!= null) && (ofertaDescuento.getCode()== ofertaUpdated.getCode())){
+	@RequestMapping(value="/{id}", method = RequestMethod.PUT)
+	public ResponseEntity<OfertaDescuento> putOfertaDescuento(@PathVariable Integer id,@RequestBody OfertaDescuento ofertaUpdated){
+		OfertaDescuento ofertaDescuento = ofertaDescuentoRepository.findOne(id);
+		if((ofertaDescuento!= null) && (ofertaDescuento.getId()== ofertaUpdated.getId())){
 			ofertaDescuentoRepository.save(ofertaUpdated);
 			return new ResponseEntity<>(ofertaUpdated,HttpStatus.OK);
 		}else{

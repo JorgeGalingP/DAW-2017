@@ -31,7 +31,7 @@ public class OfertaRestController {
 	}
 	
 	
-	@RequestMapping(value="/ofertas",method = RequestMethod.GET)
+	@RequestMapping(value="/all",method = RequestMethod.GET)
 	public ResponseEntity<List<Oferta>> getOfertas(){
 		List<Oferta>ofertas = ofertaRepository.findAll();
 		if(ofertas!= null){
@@ -43,7 +43,7 @@ public class OfertaRestController {
 		
 	}
 	
-	@RequestMapping(value="get/{id}",method=RequestMethod.GET)
+	@RequestMapping(value="/{id}",method=RequestMethod.GET)
 	public ResponseEntity<Oferta> getOferta(@PathVariable Integer id){
 		Oferta oferta = ofertaRepository.findOne(id);
 		if(oferta!=null){
@@ -52,7 +52,7 @@ public class OfertaRestController {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 	}
-	@RequestMapping(value="/{code}", method=RequestMethod.GET)
+	@RequestMapping(value="/ofertas/{code}", method=RequestMethod.GET)
 	public ResponseEntity<Oferta> getOfertaCodigo(@PathVariable String code){
 		Oferta oferta = ofertaRepository.findByCode(code);
 		if(oferta!= null){
@@ -63,7 +63,7 @@ public class OfertaRestController {
 	}
 		
 	}
-	@RequestMapping(value="/ofertas/{id}", method=RequestMethod.DELETE)
+	@RequestMapping(value="/{id}", method=RequestMethod.DELETE)
 	public ResponseEntity<Oferta>deleteOferta(@PathVariable Integer id){
 		Oferta ofertaSeleccionada = ofertaRepository.findOne(id);
 		if(ofertaSeleccionada!=null){
@@ -73,7 +73,7 @@ public class OfertaRestController {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 	}
-	@RequestMapping(value="/{code}",method=RequestMethod.DELETE)
+	@RequestMapping(value="ofertas/{code}",method=RequestMethod.DELETE)
 	public ResponseEntity<Oferta>deleteOfertaCodigo(@PathVariable String code){
 		Oferta ofertaSeleccionada = ofertaRepository.findByCode(code);
 		if(ofertaSeleccionada!= null){

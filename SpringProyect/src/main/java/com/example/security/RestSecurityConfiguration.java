@@ -25,26 +25,47 @@ public class RestSecurityConfiguration extends WebSecurityConfigurerAdapter{
 		 
 		// URLS que necesitan autenticación
 		
-		http.authorizeRequests().antMatchers(HttpMethod.GET,"/api/purchaseOrder").hasAnyRole("USER");
+		http.authorizeRequests().antMatchers(HttpMethod.GET,
+				"/api/resources/all",
+				"/api/resources/{id}",
+				"/api/ofertas/all",
+				"/api/ofertas/{id}",
+				"/api/ofertas/{code}",
+				"/api/ofertasDescuento/all",
+				"/api/ofertasDescuento/{code}").permitAll();
+		http.authorizeRequests().antMatchers(HttpMethod.GET,
+				"/api/purcharseOrder/{id}",
+				"/api/purcharseOrder/{tittle}").hasAnyRole("USER");
 		http.authorizeRequests().antMatchers(HttpMethod.GET,"/api/users/all").hasAnyRole("ADMIN");
-		http.authorizeRequests().antMatchers(HttpMethod.DELETE,"/api/**/**").hasAnyRole("USER");
-		http.authorizeRequests().antMatchers(HttpMethod.DELETE,"/api/purchaseOrder/").hasAnyRole("USER");
-		//http.authorizeRequests().antMatchers(HttpMethod.POST,"/api/**/**").hasAnyRole("USER");
-		//http.authorizeRequests().antMatchers(HttpMethod.POST,"/api/ofertas/","/api/purchaseOrder/").hasAnyRole("ADMIN");
-		//http.authorizeRequests().antMatchers(HttpMethod.PUT,"/api/**/**").hasAnyRole("ADMIN");
-		//http.authorizeRequests().antMatchers(HttpMethod.PUT,"/api/users/").hasAnyRole("USER");
+		http.authorizeRequests().antMatchers(HttpMethod.POST,"api/users/").permitAll();
+		http.authorizeRequests().antMatchers(HttpMethod.POST,
+				"/api/resources/",
+				"/api/ofertas/",
+				"/api/ofertasDescuento/").hasAnyRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.DELETE,"/api/**/**").hasAnyRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.PUT,"/api/users/{id}").hasAnyRole("USER","ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.PUT,
+				"/api/resources/{id}",
+				"/api/ofertas/{id}",
+				"/api/ofertasDescuento/{code}").hasAnyRole("ADMIN");
+				
+				
+				
+				
 		
 		
-		
-		//paginas publicas
-		
-		http.authorizeRequests().anyRequest().permitAll();
+				
+				
+				
+				
+				
+				
 		
 		
 		// http
 		
 		http.httpBasic();
-		
+
 		http.logout().logoutSuccessHandler((rq,rs,a)->{ });
 		
 		http.csrf().disable();

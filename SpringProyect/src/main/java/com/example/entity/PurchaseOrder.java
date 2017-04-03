@@ -72,7 +72,7 @@ public class PurchaseOrder {
 	public void setCarrito(List<Resource> carrito) {
 		this.carrito = carrito;
 	}
-	
+
 	
 
 }

@@ -42,7 +42,7 @@ public class ResourceRestController {
 	}
 	//Obtenemos una lista
 	@JsonView(ResourceDetail.class)
-	@RequestMapping(value="/articulo", method= RequestMethod.GET)
+	@RequestMapping(value="/all", method= RequestMethod.GET)
 	public ResponseEntity<List<Resource>>getAllResource(){
 		List<Resource>resources = resourceService.findAll();
 		if(resources!=null){
@@ -55,7 +55,7 @@ public class ResourceRestController {
 		
 	}//obtenemos un recurso
 	@JsonView(ResourceDetail.class)
-	@RequestMapping(value="/articulo/{id}", method= RequestMethod.GET)
+	@RequestMapping(value="/{id}", method= RequestMethod.GET)
 	public ResponseEntity<Resource>getResource(@PathVariable int id){
 		
 		Resource resource = resourceService.findOne(id);
@@ -76,7 +76,7 @@ public class ResourceRestController {
 	
 	
 	//eliminamos un recurso
-	@RequestMapping(value="/articulo/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(value="/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<Resource> deleteResource(@PathVariable Integer id){
 		Resource resourceSelected = resourceService.findOne(id);
 		if(resourceSelected != null){
@@ -88,7 +88,7 @@ public class ResourceRestController {
 		}
 	}
 	//añadimos un recurso
-	@RequestMapping(value="/administrador/articulo/{id}", method= RequestMethod.PUT)
+	@RequestMapping(value="/{id}", method= RequestMethod.PUT)
 	public ResponseEntity<Resource> putResource(@PathVariable Integer id,@RequestBody Resource resourceUpdated){
 		
 		Resource resource = resourceService.findOne(id);

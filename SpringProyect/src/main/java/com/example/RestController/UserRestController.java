@@ -21,7 +21,7 @@ import com.example.services.UserService;
 import com.fasterxml.jackson.annotation.JsonView;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/users")
 public class UserRestController {
 	
     //Las url he suspuesto que lo añadidos en inicio sesion
@@ -44,7 +44,7 @@ public class UserRestController {
 	
 	//Obtiene los usuarios de una lista de usuarios
 	@JsonView(UserDetail.class)
-	@RequestMapping(value="/miperfil",method=RequestMethod.GET)
+	@RequestMapping(value="/all",method=RequestMethod.GET)
 	public ResponseEntity<List<User>>getUsers(){
 		List<User>users = (List<User>) userRepository.findAll();
 		if(users!=null){
@@ -57,7 +57,7 @@ public class UserRestController {
 	
 	// Obtiene un usuario a partir de su id
 	@JsonView(UserDetail.class)
-	@RequestMapping(value="/miperfil/{id}", method= RequestMethod.GET)
+	@RequestMapping(value="/user/{id}", method= RequestMethod.GET)
 	public ResponseEntity<User>getUser(@PathVariable Integer id){
 		User user = userRepository.findOne(id);
 		if(user!= null){
@@ -67,7 +67,7 @@ public class UserRestController {
 		}
 	}
 	@JsonView(UserDetail.class)
-	@RequestMapping(value="miperfil/{name}", method= RequestMethod.GET)
+	@RequestMapping(value="/{name}", method= RequestMethod.GET)
 	public ResponseEntity<User>getUserName(@PathVariable String name){
 		User user = userRepository.findByName(name);
 		if(user!=null){
@@ -78,9 +78,9 @@ public class UserRestController {
 	}
 	//borra un usuario a partir de su id
 	@JsonView(UserDetail.class)
-	@RequestMapping(value="/miperfil/{id}", method=RequestMethod.DELETE)
-	public ResponseEntity<User>deleteUser(@PathVariable Integer id){
-		User user = userRepository.findOne(id);
+	@RequestMapping(value="/{name}", method=RequestMethod.DELETE)
+	public ResponseEntity<User>deleteUser(@PathVariable String name){
+		User user = userRepository.findByName(name);
 		if(user!= null){
 			userRepository.delete(user);
 			return new ResponseEntity<>(user,HttpStatus.OK);
@@ -93,9 +93,9 @@ public class UserRestController {
 
      //modifica un usuario por otro si no son iguales
 	@JsonView(UserDetail.class)
-	@RequestMapping(value="/miperfil/{id}", method=RequestMethod.PUT)
-	public ResponseEntity<User>putUser(@PathVariable Integer id,@RequestBody User usuarioModificado){
-		User user = userRepository.findOne(id);
+	@RequestMapping(value="/{name}", method=RequestMethod.PUT)
+	public ResponseEntity<User>putUser(@PathVariable String name,@RequestBody User usuarioModificado){
+		User user = userRepository.findByName(name);
 		if((user!=null) && (user.getId()!= usuarioModificado.getId())){
 			userRepository.save(user);
 			return new ResponseEntity<>(user,HttpStatus.OK);
