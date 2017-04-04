@@ -54,7 +54,7 @@ Then, you have to change to GET/PUT/POST/DELETE method in methods bar and put th
 * Delete one order in checkout by id: https://localhost:8443/api/purchaseOrder/id
 * Delete one order in checkout by code: https://localhost:8443/api/purchaseOrder/code
 ## Examples
-* For example you can user https://localhost:8443/api/resources/articulo/23 to get the resource with id number 23 and the output in J format is 
+* For example you can user https://localhost:8443/api/resources/articulo/23 to get the resource with id number 23 and the output in JSON format is 
 ```
 {
   "id": 23,
