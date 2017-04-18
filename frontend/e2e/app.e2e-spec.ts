@@ -1,10 +1,10 @@
-import { Ejem1Page } from './app.po';
+import { FrontendPage } from './app.po';
 
-describe('ejem1 App', function() {
-  let page: Ejem1Page;
+describe('frontend App', () => {
+  let page: FrontendPage;
 
   beforeEach(() => {
-    page = new Ejem1Page();
+    page = new FrontendPage();
   });
 
   it('should display message saying app works', () => {
