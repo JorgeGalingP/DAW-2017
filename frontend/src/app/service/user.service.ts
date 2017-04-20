@@ -14,10 +14,26 @@ export class UserService{
 
 
     constructor(private http:Http){
-        
+
     }
+    setAuthHeaders(authCred:string){
+        this.authCred = authCred
+    }
+
+    getUserCompleted(){
+        return this.user
+    }
+    getUsers(page:number){
+        this.authCred = localStorage.getItem("creds");
+        let headers:Headers = new Headers();
+        headers.append('Authorization','Basic'+this.authCred);
+        return this.http.get(USER_URL +'?page ='+page,{headers:headers})
+        .map(response=>response.json().content)
+        ._catch(error => Observable.throw('Serve error'))
+
+    }
+    
 
 
 }
-
 
