@@ -5,8 +5,13 @@ import'rxjs';
 import{OFERTA_URL} from"../util";
 
 @Injectable()
-export class ofertaService{
+export class OfertaService{
+
+    authCreds:string;
     constructor(private http:Http){
+    }
+    setAuthHeaders(authCreds:string){
+        this.authCreds = authCreds;
     }
 
     getAllOfertas(page:number){

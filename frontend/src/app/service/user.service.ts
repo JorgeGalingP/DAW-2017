@@ -32,7 +32,40 @@ export class UserService{
         ._catch(error => Observable.throw('Serve error'))
 
     }
-    
+    getUser(id:number){
+        this.authCred = localStorage.getItem("creds");
+        let headers:Headers = new Headers();
+        headers.append('Authorization','Basic'+this.authCred);
+        return this.http.get(USER_URL +'/'+id.toString(),{headers:headers})
+        .map(response=>{
+            this.user= response.json();
+            return response.json();
+
+        })
+        .catch(error =>Observable.throw('Server error'))
+    }
+    deleteUser(id:number){
+        this.authCred = localStorage.getItem("creds");
+        let headers: Headers = new Headers();
+        headers.append('Content-Type','application.json');
+        headers.append('X.Requested-With','XMLHttpRequest');
+        headers.append('Authorizacion','Basic'+this.authCred);
+        return this.http.delete(USER_URL+'/'+id,{headers:headers})
+        .map(response => response.json())
+        .catch(error => Observable.throw('Server error'))
+    }
+
+    createUser(user:User){
+        this.authCred= localStorage.getItem("creds");
+        let body = JSON.stringify(user);
+        let headers:Headers = new Headers();
+        headers.append('Content-Type','application/json');
+        headers.append('X-Requested-With','XMLHttpRequest');
+        headers.append('Authorizacion','Basic'+ this.authCred);
+        return this.http.post(USER_URL,body,{headers:headers})
+        .map(response=>response.json())
+        .catch(error =>Observable.throw('Server error'))
+    }
 
 
 }
