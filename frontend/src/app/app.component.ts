@@ -8,6 +8,7 @@ import { Component, OnDestroy } from '@angular/core';
 export class AppComponent implements OnDestroy {
 
   constructor() {
+    localStorage.clear();
   }
 
   ngOnDestroy() {

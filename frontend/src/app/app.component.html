@@ -1,1 +1,10 @@
-<router-outlet></router-outlet>
+<!-- HEADER -->
+<app-header (openModalLogin)="openLogin()"></app-header>
+
+<!-- CONTENT -->
+<div class="container content">
+  <router-outlet></router-outlet>
+</div>
+
+<!-- FOOTER -->
+<app-footer></app-footer>
