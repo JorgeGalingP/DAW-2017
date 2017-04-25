@@ -4,7 +4,7 @@ import'rxjs/Rx';
 import{Observable}from 'rxjs/Observable'
 import{BASE_URL,LOGIN_URL} from"../util";
 
-import{User} from'../model/user.model';
+import{User} from'../models/user.model';
 
 import{OfertaService}from '../service/oferta.service';
 import{OfertaDescuentoService}from'../service/ofertaDescuento.service';

@@ -1,42 +1,25 @@
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpModule, JsonpModule } from '@angular/http';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { DropdownModule } from "app/service/ng-bootstrap features/ngx-dropdown/general.feature";
 import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
-import { OfertaService } from "app/service/oferta.service";
-import { ResourceService } from "app/service/resource.service";
-import { UserService } from "app/service/user.service";
-import { HeaderComponent } from "app/component/header/header.component";
-import { FooterComponent } from "app/component/footer/footer.component";
-import { CommonModule } from "@angular/common/common";
-import { NgModule } from "@angular/core/src/metadata";
-
-
+import { FooterComponent } from './component/footer/footer.component';
+import{HeaderComponent} from './component/header/header.component';
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
-    HeaderComponent,
+    HeaderComponent
   ],
   imports: [
-    CommonModule,
-    BrowserModule,
-    DropdownModule,
-    FormsModule,
-    HttpModule,
-    JsonpModule,
     NgbModule.forRoot(),
-    ReactiveFormsModule,
-    AppRoutingModule
+    BrowserModule,
+    FormsModule,
+    HttpModule
   ],
-  providers: [
-    OfertaService,
-    ResourceService,
-    UserService,
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule { }

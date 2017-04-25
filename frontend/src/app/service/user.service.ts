@@ -4,7 +4,7 @@ import{Observable} from'rxjs/Observable';
 import'rxjs/Rx';
 import{USER_URL}from "../util";
 
-import{User} from '../model/user.model';
+import{User} from '../models/user.model';
 
 @Injectable()
 export class UserService{
