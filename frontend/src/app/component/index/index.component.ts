@@ -1,12 +1,11 @@
-import { Component } from '@angular/core';
+import{Component} from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: 'app.component.html',
-  styleUrls: ['./app.component.css']
+    selector:'app-index',
+    templateUrl:'index.component.html'
 })
-export class AppComponent {
 
+export class IndexComponent{
   imagen1 = "src/assets/img/img7.jpg";
   imagen2 = "src/assets/img/img8.jpg";
   imagen3 = "src/assets/img/img9.jpg";
