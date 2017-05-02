@@ -5,4 +5,4 @@ import{Component}from'@angular/core';
     templateUrl:'carrito.component.html'
 })
 
-export class FooterComponent{ }
+export class CarritoComponent{ }
