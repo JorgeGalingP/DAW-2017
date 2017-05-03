@@ -9,13 +9,7 @@ import { HeaderComponent } from './component/header/header.component';
 import { IndexComponent } from './component/index/index.component';
 import { LoginComponent } from "app/component/login/login.component";
 import {ArticuloComponent} from "./component/articulo/articulo.component";
-import { AdminComponent } from "./component/administrador/admin.component";
-import { CarritoComponent } from "app/component/carrito/carrito.component";
-import { MetodopagoComponent } from "app/component/metodopago/metodopago.component";
-import { MiperfilComponent } from "app/component/miperfil/miperfil.component";
-import { OfertasComponent } from "app/component/ofertas/ofertas";
-import { SomosComponent } from "app/component/somos/somos";
-import { ValidacionpedidosComponent } from "app/component/validacionpedidos/validacionpedidos";
+import {AdminComponent} from "./component/administrador/admin.component";
 
 
 @NgModule({
@@ -27,12 +21,6 @@ import { ValidacionpedidosComponent } from "app/component/validacionpedidos/vali
     LoginComponent,
     ArticuloComponent,
     AdminComponent,
-    CarritoComponent,
-    MetodopagoComponent,
-    MiperfilComponent,
-    OfertasComponent,
-    SomosComponent,
-    ValidacionpedidosComponent
     
     
   ],
