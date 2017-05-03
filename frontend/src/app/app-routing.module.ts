@@ -7,6 +7,7 @@ import { RegistroComponent } from "app/component/registro/registro.component";
 import { ArticuloComponent} from "app/component/articulo/articulo.component";
 import { AdminComponent} from "app/component/administrador/admin.component";
 import {OfertaComponent} from "app/component/oferta/oferta.component";
+import {SomosComponent} from "app/component/somos/somos.component";
 
 import {Routes,RouterModule} from'@angular/router';
 
@@ -21,6 +22,7 @@ const appRoutes:Routes = [
     {path:'articulo',component:ArticuloComponent},
     {path:'admin', component:AdminComponent},
     {path:'ofertas', component:OfertaComponent},
+    {path:'somos',component:SomosComponent},
     
     
     

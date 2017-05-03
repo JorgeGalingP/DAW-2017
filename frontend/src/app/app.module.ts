@@ -13,6 +13,7 @@ import {AdminComponent} from "./component/administrador/admin.component";
 import {routing} from 'app/app-routing.module';
 import {RegistroComponent} from'./component/registro/registro.component';
 import {OfertaComponent} from'app/component/oferta/oferta.component';
+import {SomosComponent} from 'app/component/somos/somos.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import {OfertaComponent} from'app/component/oferta/oferta.component';
     AdminComponent,
     RegistroComponent,
     OfertaComponent,
+    SomosComponent,
     
     
     
@@ -38,6 +40,6 @@ import {OfertaComponent} from'app/component/oferta/oferta.component';
     routing
   ],
   providers: [],
-  bootstrap: [AppComponent, FooterComponent,HeaderComponent, LoginComponent,ArticuloComponent,AdminComponent,OfertaComponent]
+  bootstrap: [AppComponent, FooterComponent,HeaderComponent, LoginComponent,ArticuloComponent,AdminComponent,OfertaComponent,SomosComponent]
 })
 export class AppModule { }
