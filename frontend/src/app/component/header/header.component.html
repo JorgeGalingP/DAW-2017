@@ -18,16 +18,20 @@
                         </form>
                     </li>
                     <li>
-                        <a href="/ofertas">OFERTAS</a>
+                        <a routerLink="/index" routerLinkActive="active"> PáginaPrincipal </a>
+                    </li>
+                    <li>
+                        <a routerLink="/ofertas" routerLinkActive="active">OFERTAS</a>
                     </li>
                     
                     <!--{{#unlogged}}-->
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">{{user}} <span class="caret"></span></a>
                         <ul class="dropdown-menu" aria-labelledby="download">
-                            <li><a href="/login">Iniciar Sesión</a></li>
+                    <li> <a routerLink="/login" routerLinkActive="active"> IniciarSesion </a></li>
+
                             <li class="divider"></li>
-                            <li><a href="/registro">Registrarse</a></li>
+                            <li><a routerLink="/registro" routerLinkActive ="active">Registrarse</a></li>
                         </ul>
                     </li>
                     <!--{{/unlogged}}

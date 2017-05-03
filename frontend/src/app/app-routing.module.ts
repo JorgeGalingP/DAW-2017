@@ -6,20 +6,24 @@ import { LoginComponent } from "app/component/login/login.component";
 import { RegistroComponent } from "app/component/registro/registro.component";
 import { ArticuloComponent} from "app/component/articulo/articulo.component";
 import { AdminComponent} from "app/component/administrador/admin.component";
+import {OfertaComponent} from "app/component/oferta/oferta.component";
+
+import {Routes,RouterModule} from'@angular/router';
 
 
-const appRoutes = [
+const appRoutes:Routes = [
     {path:'app',component: AppComponent},
     {path:'index',component: IndexComponent},
     {path:'header',component: HeaderComponent},
     {path:'footer',component: FooterComponent},
     {path:'login',component: LoginComponent},
-    {path:'registro',component: FooterComponent},
+    {path:'registro',component: RegistroComponent},
     {path:'articulo',component:ArticuloComponent},
-    {path:'admin', component:AdminComponent}
+    {path:'admin', component:AdminComponent},
+    {path:'ofertas', component:OfertaComponent},
+    
     
     
 ]
-export class AppRoutingModule{
+export const routing = RouterModule.forRoot(appRoutes);
     
-}

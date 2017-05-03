@@ -10,6 +10,9 @@ import { IndexComponent } from './component/index/index.component';
 import { LoginComponent } from "app/component/login/login.component";
 import {ArticuloComponent} from "./component/articulo/articulo.component";
 import {AdminComponent} from "./component/administrador/admin.component";
+import {routing} from 'app/app-routing.module';
+import {RegistroComponent} from'./component/registro/registro.component';
+import {OfertaComponent} from'app/component/oferta/oferta.component';
 
 
 @NgModule({
@@ -21,6 +24,9 @@ import {AdminComponent} from "./component/administrador/admin.component";
     LoginComponent,
     ArticuloComponent,
     AdminComponent,
+    RegistroComponent,
+    OfertaComponent,
+    
     
     
   ],
@@ -28,9 +34,10 @@ import {AdminComponent} from "./component/administrador/admin.component";
     //NgbModule.forRoot(),
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    routing
   ],
   providers: [],
-  bootstrap: [AppComponent, FooterComponent,HeaderComponent, LoginComponent,ArticuloComponent,AdminComponent]
+  bootstrap: [AppComponent, FooterComponent,HeaderComponent, LoginComponent,ArticuloComponent,AdminComponent,OfertaComponent]
 })
 export class AppModule { }
