@@ -59,6 +59,27 @@ export class SessionService implements OnDestroy {
             
 
         }
+        logOut(){
+            let headers:Headers = new Headers();
+            headers.append('Authorization','Basic'+this.authCreds);
+            return this.http.get(BASE_URL+'logOut',{headers:headers})
+            .map(response =>{
+                localStorage.clear();
+                this.isLogged = false;
+                this.user = null;
+                return true;
+            })
+            ._catch(error => Observable.throw('Server error'))
+        }
+        checkCredentials(){
+            return(localStorage.getItem("user")!== null);
+
+        }
+        register(name:string,surname:string,email:string,pais:string,descripcion:string,telefono:string,password:string,postalCode:number){
+            let newUser:User;
+            newUser={name:name,surname:surname,email:email,pais:pais,descripcion:descripcion,telephone:telefono,password:password,postalCode:postalCode};
+            return this.http.post(BASE_URL+'register',newUser);
+        }
                 
  }
             
