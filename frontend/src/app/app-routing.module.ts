@@ -8,6 +8,7 @@ import { ArticuloComponent} from "app/component/articulo/articulo.component";
 import { AdminComponent} from "app/component/administrador/admin.component";
 import {OfertaComponent} from "app/component/oferta/oferta.component";
 import {CarritoComponent} from "app/component/carrito/carrito.component";
+import {SomosComponent} from "app/component/somos/somos.component";
 
 import {Routes,RouterModule} from'@angular/router';
 
@@ -23,6 +24,7 @@ const appRoutes:Routes = [
     {path:'admin', component:AdminComponent},
     {path:'ofertas', component:OfertaComponent},
     {path:'carrito', component:CarritoComponent},
+    {path:'somos',component:SomosComponent},
     
     
     
