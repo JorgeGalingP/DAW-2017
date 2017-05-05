@@ -13,6 +13,7 @@ import {AdminComponent} from "./component/administrador/admin.component";
 import {routing} from 'app/app-routing.module';
 import {RegistroComponent} from'./component/registro/registro.component';
 import {OfertaComponent} from'app/component/oferta/oferta.component';
+import {CarritoComponent} from'app/component/carrito/carrito.component';
 
 
 @NgModule({
@@ -26,7 +27,7 @@ import {OfertaComponent} from'app/component/oferta/oferta.component';
     AdminComponent,
     RegistroComponent,
     OfertaComponent,
-    
+    CarritoComponent,
     
     
   ],
