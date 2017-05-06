@@ -15,6 +15,8 @@ import {RegistroComponent} from'./component/registro/registro.component';
 import {OfertaComponent} from'app/component/oferta/oferta.component';
 import {CarritoComponent} from'app/component/carrito/carrito.component';
 import {SomosComponent} from 'app/component/somos/somos.component';
+import {LoginService} from 'app/service/login.service';
+import {SessionService} from 'app/service/session.service';
 
 
 @NgModule({
@@ -40,7 +42,7 @@ import {SomosComponent} from 'app/component/somos/somos.component';
     HttpModule,
     routing
   ],
-  providers: [],
+  providers: [LoginService,SessionService],
   bootstrap: [AppComponent, FooterComponent,HeaderComponent, LoginComponent,ArticuloComponent,AdminComponent,OfertaComponent,SomosComponent]
 })
 export class AppModule { }

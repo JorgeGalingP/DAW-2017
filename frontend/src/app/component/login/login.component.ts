@@ -1,7 +1,10 @@
 import{Component} from '@angular/core';
 import {Router} from'@angular/router';
 import{User} from 'app/models/user.model';
-import {SessionService} from'../../service/session.service';
+import {LoginService} from'app/service/login.service';
+import {UserService} from 'app/service/user.service';
+
+
 
 @Component({
     selector:'app-login',
@@ -9,25 +12,27 @@ import {SessionService} from'../../service/session.service';
 })
 
 export class LoginComponent{
-
     user:User;
-    id:number;
-     
-    constructor(private sessionService:SessionService, private router:Router){
+    tUser:string;
+
+    constructor (private loginService:LoginService){
 
     }
-    logIn(username:string,password:string){
-        this.sessionService.logIn(username,password).subscribe(
-            user =>{
-                this.user = user;
-                this.router.navigate(['/']);
-            },
-            error => console.log("Fail trying to login")
+    logIn(event:any, user:string,pass:string){
+        event.preventDefault();
+        this.loginService.logIn(user,pass).subscribe(
+            u => console.log(u),
+            error => alert('Invalid user or password')
         );
     }
-  
+    logOut(){
+        this.loginService.logOut().subscribe(
+            response =>{},
+            error => console.log('Error when trying to log out'+ error)
+        );
+    }
 
-
+ 
 
 
 }
