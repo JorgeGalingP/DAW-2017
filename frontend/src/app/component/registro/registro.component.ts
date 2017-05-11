@@ -10,23 +10,7 @@ import {SessionService} from '../../service/session.service';
 
 export class RegistroComponent{
 
-    constructor(private sessionService:SessionService,private router:Router){
-
-    }
-    register(name:string,surname:string,pais:string,descripcion:string,telefono:string,password:string,postalCode:number,email:string){
-
-
-        this.sessionService.register(name,surname,email,pais,descripcion,telefono,password,postalCode).subscribe(
-            user =>{this.router.navigate(['/index'])},
-            error => console.log("Fail trying to register new account")
-
-
-
-            
-        );
-
-
-    }
+   
 }
     
 

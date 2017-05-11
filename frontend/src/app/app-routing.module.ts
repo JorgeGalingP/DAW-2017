@@ -9,6 +9,10 @@ import { AdminComponent} from "app/component/administrador/admin.component";
 import {OfertaComponent} from "app/component/oferta/oferta.component";
 import {CarritoComponent} from "app/component/carrito/carrito.component";
 import {SomosComponent} from "app/component/somos/somos.component";
+import {ValidacionPedidosComponent} from "app/component/validacionPedidos/validacionPedidos.component";
+import {UserComponent} from"app/component/user/user.component";
+import{MetodoPagoComponent} from"app/component/metodoPago/metodoPago.component";
+import {AnaliticasComponent} from"app/component/analiticas/analiticas.component";
 
 import {Routes,RouterModule} from'@angular/router';
 
@@ -25,6 +29,11 @@ const appRoutes:Routes = [
     {path:'ofertas', component:OfertaComponent},
     {path:'carrito', component:CarritoComponent},
     {path:'somos',component:SomosComponent},
+    {path:'validacionPedidos',component:ValidacionPedidosComponent},
+    {path:'user',component:UserComponent},
+    {path:'metodoPago',component:MetodoPagoComponent},
+    {path:'analiticas',component:AnaliticasComponent}
+
     
     
     

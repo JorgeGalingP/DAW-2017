@@ -15,6 +15,10 @@ import {RegistroComponent} from'./component/registro/registro.component';
 import {OfertaComponent} from'app/component/oferta/oferta.component';
 import {CarritoComponent} from'app/component/carrito/carrito.component';
 import {SomosComponent} from 'app/component/somos/somos.component';
+import {ValidacionPedidosComponent} from 'app/component/validacionPedidos/validacionPedidos.component';
+import {UserComponent} from'app/component/user/user.component';
+import{MetodoPagoComponent} from'app/component/metodoPago/metodoPago.component';
+import{AnaliticasComponent} from'app/component/analiticas/analiticas.component';
 
 
 @NgModule({
@@ -30,6 +34,10 @@ import {SomosComponent} from 'app/component/somos/somos.component';
     OfertaComponent,
     CarritoComponent,
     SomosComponent,
+    ValidacionPedidosComponent,
+    UserComponent,
+    MetodoPagoComponent,
+    AnaliticasComponent
     
     
   ],
@@ -41,6 +49,6 @@ import {SomosComponent} from 'app/component/somos/somos.component';
     routing
   ],
   providers: [],
-  bootstrap: [AppComponent, FooterComponent,HeaderComponent, LoginComponent,ArticuloComponent,AdminComponent,OfertaComponent,SomosComponent]
+  bootstrap: [AppComponent, FooterComponent,HeaderComponent, LoginComponent,ArticuloComponent,AdminComponent,OfertaComponent,SomosComponent,ValidacionPedidosComponent,AnaliticasComponent]
 })
 export class AppModule { }
