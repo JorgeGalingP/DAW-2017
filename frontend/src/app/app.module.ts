@@ -19,6 +19,10 @@ import {ValidacionPedidosComponent} from 'app/component/validacionPedidos/valida
 import {UserComponent} from'app/component/user/user.component';
 import{MetodoPagoComponent} from'app/component/metodoPago/metodoPago.component';
 import{AnaliticasComponent} from'app/component/analiticas/analiticas.component';
+import {UserService} from 'app/service/user.service';
+import {ResourceService} from 'app/service/resource.service';
+import {LoginService} from 'app/service/login.service';
+import{SessionService} from'app/service/session.service';
 
 
 @NgModule({
@@ -37,7 +41,8 @@ import{AnaliticasComponent} from'app/component/analiticas/analiticas.component';
     ValidacionPedidosComponent,
     UserComponent,
     MetodoPagoComponent,
-    AnaliticasComponent
+    AnaliticasComponent,
+    
     
     
   ],
@@ -48,7 +53,7 @@ import{AnaliticasComponent} from'app/component/analiticas/analiticas.component';
     HttpModule,
     routing
   ],
-  providers: [],
-  bootstrap: [AppComponent, FooterComponent,HeaderComponent, LoginComponent,ArticuloComponent,AdminComponent,OfertaComponent,SomosComponent,ValidacionPedidosComponent,AnaliticasComponent]
+  providers: [UserService, ResourceService,LoginService,SessionService],
+  bootstrap: [AppComponent, FooterComponent,HeaderComponent, LoginComponent,ArticuloComponent,AdminComponent,OfertaComponent,SomosComponent,ValidacionPedidosComponent,AnaliticasComponent,RegistroComponent]
 })
 export class AppModule { }

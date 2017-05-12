@@ -10,6 +10,9 @@ import {SessionService} from '../../service/session.service';
 
 export class RegistroComponent{
 
+ 
+   
+
    
 }
     
