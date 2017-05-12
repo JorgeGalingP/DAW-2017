@@ -9,21 +9,36 @@ import{ResourceService} from 'app/service/resource.service';
 })
 
 export class IndexComponent implements OnInit{
-  resources:Resource[] =[];
+  resource:Resource;
+  resources:Resource[];
+
   private actualPage=0;
   private nResources=0;
   private loadMore=false;
-  imagen1 = "src/assets/img/img7.jpg";
+  title = "";
+  /*imagen1 = "src/assets/img/img7.jpg";
   imagen2 = "src/assets/img/img8.jpg";
   imagen3 = "src/assets/img/img9.jpg";
 
   precio="23.5";
   interprete="Michael Jackson";
   title="Thriller";
-  subtitle="El mejor de todos los tiempos";
+  subtitle="El mejor de todos los tiempos";*/
 
   constructor(private resourceService:ResourceService){
+    this.resourceService.getAmountResources().subscribe(
+      resources => {
+        this.resources = resources;
+        console.log(resources);
+      },
+      error => console.error(error)
+    )
 
+    for (let myResource of this.resources) {
+      console.log(myResource.title); 
+
+      this.title = myResource.title;
+    }
   }
 
 
