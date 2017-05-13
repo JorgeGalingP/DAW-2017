@@ -96,7 +96,7 @@
                 <br>
                 <div class="panel panel-default">
             <div class="panel-heading">
-                <div class="text-muted bootstrap-admin-box-title">Añade un comentario y valoración del producto</div>
+                <div class="text-muted bootstrap-admin-box-title">Añade un comentario</div>
             </div>
             <br>
             <br>
@@ -132,7 +132,12 @@
                 <div class="col-md-12">
                     
                    <ul>
-                       <li *ngFor="let elem of elems">{{elem}}<br/></li>
+                        
+                       <li *ngFor="let elem of elems">
+                         <span class="pull-left">
+                           {{elem}}<br/>
+                        </span>
+                       </li>
                     </ul>     
                          
                 </div>
