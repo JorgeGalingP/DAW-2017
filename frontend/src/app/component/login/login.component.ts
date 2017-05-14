@@ -12,8 +12,7 @@ import {UserService} from'../../service/user.service';
 
 export class LoginComponent{
     user:User;
-    users:User[];
-    typeUser:string;
+    users:User[]
 
     constructor(private loginService:LoginService,private userService:UserService,private router:Router){
         this.userService.getUsers().subscribe(
@@ -40,29 +39,6 @@ export class LoginComponent{
             error => console.log('Error when trying to log out:' + error )
         );
     }
-
-    registry(name:string, username:string,email:string,description:string,pais:string,telefono:string,password:string,postalCode:number){
-    
-        if(this.typeUser="ADMIN"){
-            this.user={name:'',email:'',pais:'',surname:'',descripcion:'',telephone:'',password:'',postalCode:0,}
-
-        }else if(this.typeUser=="USER"){
-            this.user={name:'',email:'',pais:'',surname:'',descripcion:'',telephone:'',password:'',postalCode:0,}
-        }
-
-        this.userService.createUser(this.user).subscribe(
-            response =>{
-                alert('cuenta creada')
-            },
-            error=> console.error('error')
-        )
-
-
-
-        }
-        
-
-    
 
         
 }
