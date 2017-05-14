@@ -22,7 +22,6 @@ import{AnaliticasComponent} from'app/component/analiticas/analiticas.component';
 import {UserService} from 'app/service/user.service';
 import {ResourceService} from 'app/service/resource.service';
 import {LoginService} from 'app/service/login.service';
-import{SessionService} from'app/service/session.service';
 
 
 @NgModule({
@@ -53,7 +52,7 @@ import{SessionService} from'app/service/session.service';
     HttpModule,
     routing
   ],
-  providers: [UserService, ResourceService,LoginService,SessionService],
+  providers: [UserService, ResourceService,LoginService],
   bootstrap: [AppComponent, FooterComponent,HeaderComponent, LoginComponent,ArticuloComponent,AdminComponent,OfertaComponent,SomosComponent,ValidacionPedidosComponent,AnaliticasComponent,RegistroComponent]
 })
 export class AppModule { }

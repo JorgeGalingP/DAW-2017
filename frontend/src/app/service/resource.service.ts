@@ -3,6 +3,7 @@ import{Http,Response}from'@angular/http'
 import{Observable} from 'rxjs/Observable'
 import'rxjs/Rx';
 import{RESOURCE_URL}from "../util";
+import {Resource} from"app/models/resource.model";
 
 @Injectable()
 export class ResourceService{
@@ -21,6 +22,9 @@ export class ResourceService{
         .map(response => response.json())
         .catch(error=> Observable.throw('Sever error'))
     }
+
+
+    
     getResourcesPag(page?:String){
         return this.http.get(RESOURCE_URL +page).map(
             response => response.json().content
@@ -43,6 +47,9 @@ export class ResourceService{
         return this.http.get(RESOURCE_URL +'?name='+name+'&page='+page)
         .map(response => response.json().content)
         .catch(error => Observable.throw('Server error'))
+    }
+    createResource(resource:Resource){
+
     }
 
 

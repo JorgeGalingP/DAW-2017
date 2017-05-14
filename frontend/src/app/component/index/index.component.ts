@@ -2,13 +2,15 @@ import{Component} from '@angular/core';
 import{OnInit} from'@angular/core';
 import{Resource}  from'app/models/resource.model';
 import{ResourceService} from 'app/service/resource.service';
+import{UserService} from 'app/service/user.service';
+import{User}from'../../models/user.model'
 
 @Component({
     selector:'app-index',
     templateUrl:'index.component.html'
 })
 
-export class IndexComponent implements OnInit{
+export class IndexComponent{
   resources:Resource[] =[];
   private actualPage=0;
   private nResources=0;
@@ -21,42 +23,37 @@ export class IndexComponent implements OnInit{
   interprete="Michael Jackson";
   title="Thriller";
   subtitle="El mejor de todos los tiempos";
+  vinilos:Resource[];
+  vinilosPage:number;
+  moreBooksActive:boolean;
+  user:User;
 
-  constructor(private resourceService:ResourceService){
+
+
+  constructor(private resourceService:ResourceService,private userService:UserService){
+    this.vinilos =[];
+    this.vinilosPage=0;
+    this.moreBooksActive= false;
+    this.addVinilos(true);
 
   }
 
-
-  ngOnInit(){
-    this.resourceService.getResources().subscribe(
-      resources =>{
-        this.resources = resources.content;
-        console.log(this.resources);
-      },
-      error => console.log(error)
-
-    );
-    this.resourceService.getAmountResources().subscribe(
-      nResources => this.nResources = nResources,
-      error => console.error(error)
-    );
-    
-  }
-  loadMoreResources(){
-    this.actualPage +=1;
-    this.resourceService.getResourcesPag('?page='+ this.actualPage+'&size=10').subscribe(
-      resources =>{
-        let newResources = resources;
-        for(let resource of newResources){
-          this.resources.push(resource);
-
+  addVinilos(userReq:boolean){
+    this.resourceService.getAllResources('Vinilo',this.vinilosPage).subscribe(
+      vinilos =>{
+        if(Object.keys(vinilos).length===0){
+          this.moreBooksActive = false;
+        } else if(userReq){
+          this.moreBooksActive = true;
+          this.vinilosPage++;
+          this.vinilos = this.vinilos.concat(vinilos);
+          this.addVinilos(false);
         }
-        if(this.resources.length== this.nResources){
-          this.loadMore = true;
-        }
-
       },
-      error => console.log(error)
+      error => console.log('Fail')
     )
   }
+
+
+ 
 }

@@ -165,6 +165,8 @@
                                 <h5>{{title}}</h5>
                                 <p>{{subtitle}}</p>
                             </div>
+                            <div *ngIf="moreVinilosActive">
+                                <button (click)="addVinilos(true)"type="button" >Ver mas </button>
                      
                         </div>
                         <br>
