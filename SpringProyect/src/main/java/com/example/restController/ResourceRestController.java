@@ -32,7 +32,7 @@ public class ResourceRestController {
 	
 	//Creamos un nuevo recurso
 	
-	@RequestMapping(value="/add",method= RequestMethod.POST)
+	@RequestMapping(value="/",method= RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
 	public Resource postResource(@RequestBody Resource resource){
 		
@@ -42,7 +42,7 @@ public class ResourceRestController {
 	}
 	//Obtenemos una lista
 	@JsonView(ResourceDetail.class)
-	@RequestMapping(value="/", method= RequestMethod.GET)
+	@RequestMapping(value="/all", method= RequestMethod.GET)
 	public ResponseEntity<List<Resource>>getAllResource(){
 		List<Resource>resources = resourceService.findAll();
 		if(resources!=null){
