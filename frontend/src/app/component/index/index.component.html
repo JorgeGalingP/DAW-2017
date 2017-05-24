@@ -79,9 +79,7 @@
             </div>
             
             <div class="col-md-9">
-                <li *ngFor ="let resource of resources" >
-
-                <div class="col-sm-4 col-lg-4 col-md-4">
+                <div class="col-sm-4 col-lg-4 col-md-4" *ngFor ="let resource of resources">
                          <div class="thumbnail">
                             <a href="{{resource.id}}" ><img src="" style="width: 320px; height: 280px" alt=""></a>
                             <div class="caption">
@@ -97,8 +95,6 @@
                         </div>
                      
                     </div>
-                </li>
-                
 
         </div>
         
