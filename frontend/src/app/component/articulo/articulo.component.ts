@@ -10,14 +10,25 @@ import{ResourceService,Resources} from'app/service/resource.service';
 export class ArticuloComponent{
 
     resource:Resources;
+    inputContent1:string;
+    inputContent2:string;
+    asunto:string[]=[];
+    comentarios:string[]=[];
 
     constructor(private router:Router,activatedRoute:ActivatedRoute,service:ResourceService){
       let id = activatedRoute.snapshot.params['id'];
       this.resource= service.getResource(id);
 
     }
+    addContent(){
+        this.asunto.push(this.inputContent1);
+        this.comentarios.push(this.inputContent2);
+        this.inputContent1="";
+        this.inputContent2="";
+    }
 
-    
+
+
 
 
 }
