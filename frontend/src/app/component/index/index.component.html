@@ -86,7 +86,7 @@
                             <a href="{{resource.id}}" ><img src="" style="width: 320px; height: 280px" alt=""></a>
                             <div class="caption">
                                 <h4 class="pull-right">{{resource.precio}} €</h4>
-                                <h4> <a routerLink="/articulo" routerLinkActive="active"> {{resource.interprete}}</a></h4>
+                                <h4> <a [routerLink]="['/resource',resource.id]"> {{resource.id}}</a></h4>
                                 
                                <!-- <h4><a href="{{id}}">{{interprete}}</a>
                                 </h4>-->

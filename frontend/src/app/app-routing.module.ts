@@ -3,6 +3,7 @@ import { FooterComponent } from "app/component/footer/footer.component";
 import { AppComponent } from "app/component/app.component";
 import { IndexComponent } from "app/component/index/index.component";
 import {Routes,RouterModule} from'@angular/router';
+import {ArticuloComponent} from"app/component/articulo/articulo.component";
 
 
 const appRoutes:Routes = [
@@ -10,7 +11,8 @@ const appRoutes:Routes = [
     {path:'',component: IndexComponent},
     {path:'header',component: HeaderComponent},
     {path:'footer',component: FooterComponent},
-    
+    //{path:'resource',component:ArticuloComponent},
+    {path:'resource/:id',component:ArticuloComponent}
     
     
     
