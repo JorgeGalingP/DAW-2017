@@ -9,13 +9,14 @@ import { HeaderComponent } from './component/header/header.component';
 import { IndexComponent } from './component/index/index.component';
 import {ArticuloComponent} from'./component/articulo/articulo.component';
 import { LoginComponent } from './component/login/login.component';
-import { LoginService } from './component/login/login.service';
+import { LoginService } from 'app/service/login.service';
 import {routing} from 'app/app-routing.module';
 import {RegistroComponent} from'./component/registro/registro.component';
 import {OfertasComponent} from './component/ofertas/ofertas.component';
 import {OfertaService} from'app/service/ofertas.service';
 import {OfertaDescuentoService} from'app/service/ofertaDescuento.service';
 import {ResourceService} from 'app/service/resource.service';
+import{RegistroService} from 'app/service/registro.service';
 
 
 @NgModule({
@@ -40,7 +41,7 @@ import {ResourceService} from 'app/service/resource.service';
     JsonpModule,
     routing
   ],
-  providers: [ ResourceService, LoginService,OfertaService,OfertaDescuentoService],
+  providers: [ ResourceService, LoginService,OfertaService,OfertaDescuentoService,RegistroService],
   bootstrap: [AppComponent, FooterComponent,HeaderComponent,ArticuloComponent,RegistroComponent,OfertasComponent]
 })
 export class AppModule { }
