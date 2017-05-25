@@ -11,12 +11,14 @@
         <!-- /.row -->
 
         <!-- Project One -->
+        <div class="row">
        <div role ="tabpanel"class="tab-pane"id="ofertas">
 
        <ul>
            <li *ngFor ="let oferta  of ofertas">
                <div class="col-md-7">
                    <img src ="../assets/img/2x1.jpg">
+                   <br/>
                </div>
                <div class="col-md-5">
                    <h3>{{oferta.name}}</h3>
@@ -31,20 +33,41 @@
       
        
        </div>
+        </div>
+       <br/>
        <br/>
        <br/>
        
        
         <!-- /.row -->
+        <div class="row">
         <div role="tabpanel"class="tab-pane"id="ofertasDescuento">
-        <div class="listItems3">
+            <br/>
+           <ul>
+           <li *ngFor ="let ofertaDescuento  of ofertasDescuento">
+               <div class="col-md-7">
+                   <img src ="../assets/img/10.png">
+                   <br/>
+               </div>
+               <div class="col-md-5">
+                   <h3>{{ofertaDescuento.name}}</h3>
+                   <h4>CODIGO:{{ofertaDescuento.code}}</h4>
+                   <p>{{ofertaDescuento.description}}</p>
+               </div>
+              
+            
+            </li>
+            <br/>
+            
+       </ul>
         
+        </div>
         </div>
         
         
         </div>
 		 
         <!-- /.row -->
-       </div>
+      
        <br/>
     

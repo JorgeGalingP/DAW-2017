@@ -14,7 +14,7 @@ import {routing} from 'app/app-routing.module';
 import {RegistroComponent} from'./component/registro/registro.component';
 import {OfertasComponent} from './component/ofertas/ofertas.component';
 import {OfertaService} from'app/service/ofertas.service';
-
+import {OfertaDescuentoService} from'app/service/ofertaDescuento.service';
 import {ResourceService} from 'app/service/resource.service';
 
 
@@ -40,7 +40,7 @@ import {ResourceService} from 'app/service/resource.service';
     JsonpModule,
     routing
   ],
-  providers: [ ResourceService, LoginService,OfertaService],
+  providers: [ ResourceService, LoginService,OfertaService,OfertaDescuentoService],
   bootstrap: [AppComponent, FooterComponent,HeaderComponent,ArticuloComponent,RegistroComponent,OfertasComponent]
 })
 export class AppModule { }
