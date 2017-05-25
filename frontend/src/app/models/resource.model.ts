@@ -4,7 +4,7 @@ export interface Resource {
   id: number;
   title: string;
   subtitle: string;
-  inerprete: string;
+  interprete: string;
   fecha: string;
   estado: string;
   album: string;

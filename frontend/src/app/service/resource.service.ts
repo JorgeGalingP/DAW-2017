@@ -1,6 +1,7 @@
 import{Injectable}from '@angular/core'
 import{Http,Response}from'@angular/http'
 import{Observable} from 'rxjs/Observable'
+import{Resource} from'app/models/resource.model';
 import'rxjs/Rx';
 
 //import {Resource} from"app/models/resource.model";
@@ -13,13 +14,13 @@ export class Resources{
 @Injectable()
 export class ResourceService{
 
-    Resources=[
-        new Resources(8,"hola","fjfjf","Ffff","fffff","dddd",88999,999,""),
-        new Resources(9,"dddfj","fjfjf","Ffff","fffff","dddd",88999,999,""),
-        new Resources(10,"dhfhfd","fjfjf","Ffff","fffff","dddd",88999,999,""),
-        new Resources(11,"dddd","fjfjf","Ffff","fffff","dddd",88999,999,""),
-        new Resources(12,"dddd","fjfjf","Ffff","fffff","dddd",88999,999,""),
-        new Resources(13,"dddd","fjfjf","Ffff","fffff","dddd",88999,999,""),
+   /* private Resources=[
+        new Resources(8,"La vida es bella","fjfjf","Bob marley","fffff","dddd",88999,999,""),
+        new Resources(9,"Living","jgjg","QUEEN","Queen","dddd",88999,999,""),
+        new Resources(10,"Luces de Bohemia","fjfjf","THE BEATLES","fffff","dddd",88999,999,""),
+        new Resources(11,"Corazones","fjfjf","SERRAT","fffff","dddd",88999,999,""),
+        new Resources(12,"Luces","fjfjf","Ffff","fffff","dddd",88999,999,""),
+        new Resources(13,"Colores","fjfjf","Ffff","fffff","dddd",88999,999,""),
         new Resources(14,"dddd","fjfjf","Ffff","fffff","dddd",88999,999,"")
     
 
@@ -28,8 +29,11 @@ export class ResourceService{
     getResources(){
         return this.Resources;
     }
+    getResource(id:number|string){
+        return this.Resources.find(resource => resource.id === +id);
+    }*/
 
-  /*  constructor (private http:Http){
+    constructor (private http:Http){
 
     }
 
@@ -38,11 +42,16 @@ export class ResourceService{
            .map(response => response.json())
            .catch(error => this.handleError(error));
     }
+    getResource(id:number){
+        return this.http.get(BASE_URL+id)
+           .map(response=> response.json())
+           .catch(error=> this.handleError(error));
+    }
 
     private handleError(error: any) {
 		console.error(error);
 		return Observable.throw("Server error (" + error.status + "): " + error.text())
-	}*/
+	}
 
     
 

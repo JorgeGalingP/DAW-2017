@@ -11,20 +11,20 @@ import{User}from'../../models/user.model'
     templateUrl:'index.component.html'
 })
 
-export class IndexComponent /*implements OnInit*/{
+export class IndexComponent implements OnInit{
 
   resources:Resources[];
 
   constructor(private router:Router, private service:ResourceService){
-    this.resources = service.getResources();
+   // this.resources = service.getResources();
   }
  
-  /* ngOnInit(){
+   ngOnInit(){
      this.service.getResources().subscribe(
        resources => this.resources = resources,
        error => console.log(error)
      )
-   }*/
+   }
 
   
 
