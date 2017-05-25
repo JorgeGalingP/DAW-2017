@@ -26,7 +26,7 @@
                                             <label for="inputUser" class="col-lg-12 control-label"> ¡VIRTUAL VINILO!</label>
                                             <div class="col-lg-12">
                                                 <p class="news">Bienvenido a Virtual vinilo la web de vinilos mas top del panorama español.Tenemos los último en vinilos a precios inreibles.Si ya formas parte de nuestra comunidad inicia sesion sino registrate haciendo click <a href="/registro"><kbd>aqui</kbd></a></p>
-                                                <p><img width="500"></p>
+                                                <p><img src="imagenes/VIrtualViniloLogo.png" width="500"></p>
                                                
                                             </div>
                                         </div>
@@ -48,7 +48,7 @@
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                             <div class="well bs-component">
-                                <form class="form" *ngIf="!loginService.isLogged" role="search">
+                                <form class="form" action="/login" method="post">
                                     <fieldset>
                                         <legend>Inicio Sesion</legend>
 
@@ -56,7 +56,7 @@
 
                                             <label for="inputEmail" class="col-lg-12">Introduzca su nombre de usuario</label>
                                             <div class="col-lg-12">
-                                                <input #user type="text" class="form-control" placeholder="Usuario" name="username">
+                                                <input type="text" class="form-control" id="inputPassword" placeholder="Usuario" name="username">
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
@@ -65,10 +65,10 @@
                                         <div class="form-group">
                                             <label for="inputPassword" class="col-lg-12">Introduzca su password</label>
                                             <div class="col-lg-12">
-                                                <input #pass type="password" class="form-control" placeholder="Password" name="password">
-                                                <!--{{#loginError}}
+                                                <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="password">
+                                                
                        								 <div class="errorLogin">Datos erróneos. Por favor, inténtelo otra vez.</div>
-                        							{{/loginError}}-->
+                        							
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
@@ -80,11 +80,10 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <div class="col-lg-12">
-                                             <button type="submit"  (click)="logIn($event,user.value,pass.value)" class="btn btn-default center-block">Inicia Sesion </button>
-                                            </div>
+                                            <label class="col-lg-12">
+                                            <button type ="submit" (click)="login($event,user.value,pass.value)" class="btn btn-default">Sign In</button>
+                                        </label>
                                         </div>
-                                        
 
                                     </fieldset>
                                 </form>
@@ -92,3 +91,6 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>

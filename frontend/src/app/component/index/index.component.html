@@ -57,13 +57,9 @@
                 <p class="lead">Filtrar Productos</p>
                 <div class="list-group">
                     <p class="list-group-item">Por interprete</p>
-                    <a href="#" class="list-group-item">interprete1 <span class="badge">10</span></a>
-                    <a href="#" class="list-group-item">interprete2 <span class="badge">10</span></a>
-                    <a href="#" class="list-group-item">interprete3 <span class="badge">10</span></a>
-                    <a href="#" class="list-group-item">interprete4 <span class="badge">10</span></a>
-                    <a href="#" class="list-group-item">interprete5 <span class="badge">10</span></a>
-                    <a href="#" class="list-group-item">interprete6 <span class="badge">10</span></a>
-                    <a href="#" class="list-group-item">interprete7 <span class="badge">10</span></a>
+                    <li *ngFor = "let elem of resources">
+                    <a href="#" class="list-group-item">{{elem.interprete}} <span class="badge">10</span></a>
+                    </li>
                 </div>
                 <div class="list-group">
                     <p class="list-group-item">Por estado</p>
@@ -79,11 +75,10 @@
             </div>
             
             <div class="col-md-9">
-                <li *ngFor ="let resource of resources" >
-
+                <div *ngFor ="let resource of resources" >
                 <div class="col-sm-4 col-lg-4 col-md-4">
                          <div class="thumbnail">
-                            <a href="{{resource.id}}" ><img src="" style="width: 320px; height: 280px" alt=""></a>
+                            <a href="{{resource.id}}" ><img src="../assets/img/avatar.png" style="width: 320px; height: 280px" alt=""></a>
                             <div class="caption">
                                 <h4 class="pull-right">{{resource.precio}} €</h4>
                                 <h4> <a [routerLink]="['/resource',resource.id]"> {{resource.id}}</a></h4>
@@ -97,7 +92,7 @@
                         </div>
                      
                     </div>
-                </li>
+                </div>
                 
 
         </div>

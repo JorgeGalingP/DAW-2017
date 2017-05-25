@@ -16,9 +16,13 @@ export class ArticuloComponent{
     comentarios:string[]=[];
 
     constructor(private router:Router,activatedRoute:ActivatedRoute,service:ResourceService){
-      let id = activatedRoute.snapshot.params['id'];
-      this.resource= service.getResource(id);
-
+    //  let id = activatedRoute.snapshot.params['id'];
+    //  this.resource= service.getResource(id);
+        let id = activatedRoute.snapshot.params['id'];
+        service.getResource(id).subscribe(
+            resource=> this.resource = resource,
+            error => console.error(error)
+        );
     }
     addContent(){
         this.asunto.push(this.inputContent1);
