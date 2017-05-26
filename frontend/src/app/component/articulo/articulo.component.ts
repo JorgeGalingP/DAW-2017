@@ -7,7 +7,7 @@ import{ResourceService,Resources} from'app/service/resource.service';
     templateUrl:'articulo.component.html'
 })
 
-export class ArticuloComponent{
+export class ArticuloComponent {
 
     resource:Resources;
     inputContent1:string;
@@ -30,6 +30,8 @@ export class ArticuloComponent{
         this.inputContent1="";
         this.inputContent2="";
     }
+
+
 
 
 

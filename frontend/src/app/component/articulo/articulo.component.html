@@ -40,13 +40,19 @@
                             <h3>Precio</h3>
                             <p>{{resource.precio}}</p>
                         </div>
+                        
                         <div class="col-sm-4">
                             <h3>Código</h3>
                             <p>{{resource.codigo}}</p>
                         </div>
-                    </div>
+                        <div class="col-sm-4">
+                            <h3>Código</h3>
+                            <p><a [routerLink]="['/carrito',resource.id]"><h4>Comprar Producto</h4></a> </p>
+                        </div>
+                        
                     <br>
                 </div>
+               
                 <br>
 <div class="row">
                 <div class="col-lg-9">
