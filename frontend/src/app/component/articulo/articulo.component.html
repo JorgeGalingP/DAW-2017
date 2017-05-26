@@ -1,13 +1,53 @@
 
 
 <div>
-<h2>{{resource.title}}</h2>
-<div>
-    <label>Id:</label>{{resource.id}}
-</div>
-<div>
-    <label>Interprete:</label>{{resource.interprete}}
-</div>
+
+ <div class="col-md-9 user-wrapper">
+                <div class="alert alert-info">
+                	<h3>{{resource.interprete}}  </h3>
+                    <h3>{{resource.title}}  </h3>
+                    <p>
+                       {{resource.subtitle}}
+                    </p>
+                </div>
+                <hr />
+                <br>
+                <!-- <div class="description"> -->
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="text-muted bootstrap-admin-box-title">Datos del Vinilo</div>
+                    </div>
+                    <div class="clearfix">
+                        <div class="col-sm-4">
+                            <h3>Intérprete</h3>
+                            <p>{{resource.interprete}}</p>
+                        </div>
+                        <div class="col-sm-4">
+                            <h3>Fecha</h3>
+                            <p>{{resource.fecha}}</p>
+                        </div>
+                        <div class="col-sm-4">
+                            <h3>Estado</h3>
+                            <p>{{resource.estado}}</p>
+                        </div>
+                    </div>
+                    <div class="clearfix">
+                        <div class="col-sm-4">
+                            <h3 class="text-left">Album</h3>
+                            <p>{{resource.album}}</p>
+                        </div>
+                        <div class="col-sm-4">
+                            <h3>Precio</h3>
+                            <p>{{resource.precio}}</p>
+                        </div>
+                        <div class="col-sm-4">
+                            <h3>Código</h3>
+                            <p>{{resource.codigo}}</p>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+                <br>
 <div class="row">
                 <div class="col-lg-9">
                     <form class="form-horizontal" action="{{id}}/addComment" method="post">
