@@ -14,25 +14,6 @@ export class Resources{
 @Injectable()
 export class ResourceService{
 
-   /* private Resources=[
-        new Resources(8,"La vida es bella","fjfjf","Bob marley","fffff","dddd",88999,999,""),
-        new Resources(9,"Living","jgjg","QUEEN","Queen","dddd",88999,999,""),
-        new Resources(10,"Luces de Bohemia","fjfjf","THE BEATLES","fffff","dddd",88999,999,""),
-        new Resources(11,"Corazones","fjfjf","SERRAT","fffff","dddd",88999,999,""),
-        new Resources(12,"Luces","fjfjf","Ffff","fffff","dddd",88999,999,""),
-        new Resources(13,"Colores","fjfjf","Ffff","fffff","dddd",88999,999,""),
-        new Resources(14,"dddd","fjfjf","Ffff","fffff","dddd",88999,999,"")
-    
-
-    ];
-
-    getResources(){
-        return this.Resources;
-    }
-    getResource(id:number|string){
-        return this.Resources.find(resource => resource.id === +id);
-    }*/
-
     constructor (private http:Http){
 
     }
