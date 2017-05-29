@@ -48,6 +48,13 @@ export class ResourceService{
            .catch(error=> this.handleError(error));
     }
 
+    removeResource(resource:Resource){
+        return this.http.delete(BASE_URL +resource.id)
+           .map(response => response.json())
+           .catch(error => this.handleError(error));
+    }
+
+
     private handleError(error: any) {
 		console.error(error);
 		return Observable.throw("Server error (" + error.status + "): " + error.text())

@@ -12,12 +12,23 @@ export class CarritoComponent{
 
     resource:Resource;
 
-    constructor(private router:Router,activatedRouter:ActivatedRoute,service:ResourceService){
+    constructor(private router:Router,activatedRouter:ActivatedRoute, private service:ResourceService){
 
         let id = activatedRouter.snapshot.params['id'];
         service.getResource(id).subscribe(
             resource => this.resource = resource,
             error => console.error(error)
         );
+
+    }
+    removeResource(){
+        let okResponse = window.confirm("¿Esta seguro de eliminar el articulo?");
+        if(okResponse){
+            this.service.removeResource(this.resource).subscribe(
+                resource => this.router.navigate(['/articulo']),
+                error => console.error(error)
+            )
+            
+        }
     }
  }

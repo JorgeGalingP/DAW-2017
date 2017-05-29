@@ -18,8 +18,8 @@ const appRoutes:Routes = [
     {path:'resource/:id',component:ArticuloComponent},
     {path:'ofertas',component:OfertasComponent},
     {path:'registro',component:RegistroComponent},
-    {path:'carrito/:id',component:CarritoComponent}
-    
+    {path:'carrito/:id',component:CarritoComponent},
+    {path:'carrito',component:CarritoComponent}
     
 ]
 export const routing = RouterModule.forRoot(appRoutes);
