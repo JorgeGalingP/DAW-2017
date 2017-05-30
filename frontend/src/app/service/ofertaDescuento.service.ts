@@ -13,13 +13,13 @@ export class OfertaDescuentoService{
    constructor(private http:Http){}
 
    getOfertasDescuento(){
-       return this.http.get(URL)
+       return this.http.get(URL,{withCredentials:true})
        .map(response => response.json())
        .catch(error => this.handleError(error));
 
     }
     getOfertaDescuento(id:number){
-        return this.http.get(URL +id)
+        return this.http.get(URL +id,{withCredentials:true})
         .map(response => response.json())
         .catch(error => this.handleError(error))
 

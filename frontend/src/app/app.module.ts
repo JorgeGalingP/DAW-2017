@@ -18,7 +18,7 @@ import {OfertaDescuentoService} from'app/service/ofertaDescuento.service';
 import {ResourceService} from 'app/service/resource.service';
 import{RegistroService} from 'app/service/registro.service';
 import{CarritoComponent} from'app/component/carrito/carrito.component';
-
+import{UserService} from'app/service/user.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +42,7 @@ import{CarritoComponent} from'app/component/carrito/carrito.component';
     JsonpModule,
     routing
   ],
-  providers: [ ResourceService, LoginService,OfertaService,OfertaDescuentoService,RegistroService],
+  providers: [ ResourceService, LoginService,OfertaService,OfertaDescuentoService,RegistroService,UserService],
   bootstrap: [AppComponent, FooterComponent,HeaderComponent,ArticuloComponent,RegistroComponent,OfertasComponent,CarritoComponent]
 })
 export class AppModule { }

@@ -10,7 +10,7 @@ export class LoginComponent {
 
   constructor(private loginService: LoginService,private router:Router) { }
 
-  login(event: any, user: string, pass: string) {
+  logIn(event: any, user: string, pass: string) {
 
     event.preventDefault();
 

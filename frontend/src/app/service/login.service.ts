@@ -2,7 +2,7 @@ import { Injectable, OnInit } from '@angular/core';
 import { Http, RequestOptions, Headers } from '@angular/http';
 import 'rxjs/Rx';
 
-const URL = 'http://localhost:8080/api/';
+const URL = 'https://localhost:8443/api';
 
 export interface User {
     id?: number;
@@ -29,7 +29,7 @@ export class LoginService {
 
         const options = new RequestOptions({ withCredentials: true, headers });
 
-        this.http.get(URL + '/login', options).subscribe(
+        this.http.get(URL + '/logIn', options).subscribe(
             response => this.processLogInResponse(response),
             error => {
                 if (error.status !== 401) {
@@ -57,7 +57,7 @@ export class LoginService {
 
         const options = new RequestOptions({ withCredentials: true, headers });
 
-        return this.http.get(URL + '/login', options).map(
+        return this.http.get(URL + '/logIn', options).map(
             response => {
                 this.processLogInResponse(response);
                 return this.user;

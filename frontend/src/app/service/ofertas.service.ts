@@ -12,13 +12,13 @@ export class OfertaService{
     }
 
     getOfertas(){
-        return this.http.get(BASE_URL)
+        return this.http.get(BASE_URL,{withCredentials:true})
         .map(response => response.json())
         .catch(error => this.handleError(error));
     }
 
     getOferta(id:number){
-        return this.http.get(BASE_URL+ id)
+        return this.http.get(BASE_URL+ id,{withCredentials:true})
         .map(response => response.json())
         .catch(error => this.handleError(error));
     }
