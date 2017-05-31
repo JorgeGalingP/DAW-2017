@@ -14,7 +14,7 @@ const appRoutes:Routes = [
     {path:'header',component: HeaderComponent},
     {path:'footer',component: FooterComponent},
     {path:'login',component: LoginComponent},
-    //{path:'resource',component:ArticuloComponent},
+    {path:'resource',component:ArticuloComponent},
     {path:'resource/:id',component:ArticuloComponent},
     {path:'ofertas',component:OfertasComponent},
     {path:'registro',component:RegistroComponent},
