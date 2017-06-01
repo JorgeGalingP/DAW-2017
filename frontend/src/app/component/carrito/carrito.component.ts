@@ -1,18 +1,22 @@
-import{Component}from'@angular/core';
+import{Component,OnInit}from'@angular/core';
 import{Router,ActivatedRoute} from'@angular/router';
 import{ResourceService} from'app/service/resource.service';
 import{Resource} from'app/models/resource.model';
+import {PurchaseService} from'app/service/purchase.service';
+import{PurchaseOrder} from'app/models/purchaseOrder.model';
+
 
 @Component({
     selector:'app-carrito',
     templateUrl:'carrito.component.html'
 })
 
-export class CarritoComponent{
+export class CarritoComponent implements OnInit{
+    purchases:PurchaseOrder[]
 
     resource:Resource;
 
-    constructor(private router:Router,activatedRouter:ActivatedRoute, private service:ResourceService){
+    constructor(private router:Router,activatedRouter:ActivatedRoute, private service:ResourceService,private purchaseService:PurchaseService){
 
         let id = activatedRouter.snapshot.params['id'];
         service.getResource(id).subscribe(
@@ -21,6 +25,15 @@ export class CarritoComponent{
         );
 
     }
+
+    ngOnInit(){
+        this.purchaseService.getPurchases().subscribe(
+            purchases => this.purchases = purchases,
+            error => console.log(error)
+        );
+    }
+
+
     removeResource(){
         let okResponse = window.confirm("¿Esta seguro de eliminar el articulo?");
         if(okResponse){
