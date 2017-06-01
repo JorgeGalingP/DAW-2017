@@ -18,7 +18,7 @@ export class RegistroComponent{
 
 
         this.registroService.register(name,surname,email,pais,descripcion,telephone,passwordHash,postalCode).subscribe(
-            user =>{ this.router.navigate(['']);},
+            user =>{ this.router.navigate(['/']);},
             error => console.log("Fail trying to register new account")
 
         );

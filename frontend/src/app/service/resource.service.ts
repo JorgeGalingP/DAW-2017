@@ -53,6 +53,12 @@ export class ResourceService{
            .map(response => response.json())
            .catch(error => this.handleError(error));
     }
+    gettAllResources(type?:string, page?:number){
+        let url= BASE_URL +'?type='+type+'&page=' +page;
+        return this.http.get(url)
+        .map(response => response.json().content)
+        .catch(error =>Observable.throw('Server error'));
+    }
 
 
     private handleError(error: any) {

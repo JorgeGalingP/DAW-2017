@@ -21,7 +21,7 @@
                         <a routerLink="/ofertas" routerLinkActive="active">OFERTAS</a>
                     </li>
                     <li>
-                        <a routerLink="/admin" routerLinkActive="active">ADMIN</a>
+                        <a [routerLink]="['/admin', user.name]" routerLinkActive="active">ADMIN</a>
                     </li>
                     
                     <!--{{#unlogged}}-->

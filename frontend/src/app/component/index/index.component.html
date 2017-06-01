@@ -90,11 +90,13 @@
                             </div>
                              
                         </div>
+                         </div>
+               
+              
                      
                     </div>
-                </div>
-                
-
-        </div>
-        
+           
     </div>
+    <div *ngIf="moreResourcesActive">
+                   <button (click)="addResources(true)" type="button" class="btn btn-lg btn-block btn-view-more">Ver mas vinilos </button>
+             </div>

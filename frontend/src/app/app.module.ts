@@ -19,6 +19,7 @@ import {ResourceService} from 'app/service/resource.service';
 import{RegistroService} from 'app/service/registro.service';
 import{CarritoComponent} from'app/component/carrito/carrito.component';
 import{UserService} from'app/service/user.service';
+import {AdministradorComponent} from 'app/component/administrador/administrador.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +30,8 @@ import{UserService} from'app/service/user.service';
     LoginComponent,
     RegistroComponent,
     OfertasComponent,
-    CarritoComponent
+    CarritoComponent,
+    AdministradorComponent,
     
     
     
@@ -43,6 +45,6 @@ import{UserService} from'app/service/user.service';
     routing
   ],
   providers: [ ResourceService, LoginService,OfertaService,OfertaDescuentoService,RegistroService,UserService],
-  bootstrap: [AppComponent, FooterComponent,HeaderComponent,ArticuloComponent,RegistroComponent,OfertasComponent,CarritoComponent]
+  bootstrap: [AppComponent, FooterComponent,HeaderComponent,ArticuloComponent,RegistroComponent,OfertasComponent,CarritoComponent,AdministradorComponent]
 })
 export class AppModule { }

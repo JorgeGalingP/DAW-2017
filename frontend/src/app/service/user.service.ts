@@ -16,6 +16,11 @@ export class UserService{
         .map(response => response.json())
         .catch(error => this.handleError(error));
     }
+    getUser(name:string){
+        return this.http.get(BASE_URL+name)
+        .map(response => response.json())
+        .catch(error =>this.handleError(error))
+    }
 
 
 
