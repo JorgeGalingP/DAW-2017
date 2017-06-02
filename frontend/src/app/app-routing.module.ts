@@ -9,6 +9,7 @@ import {RegistroComponent} from"app/component/registro/registro.component";
 import {OfertasComponent} from "app/component/ofertas/ofertas.component";
 import {CarritoComponent} from "app/component/carrito/carrito.component";
 import {AdministradorComponent} from "app/component/administrador/administrador.component";
+import {PerfilComponent} from "app/component/perfil/perfil.component"
 const appRoutes:Routes = [
     {path:'app',component: AppComponent},
     {path:'',component: IndexComponent},
@@ -22,7 +23,8 @@ const appRoutes:Routes = [
     {path:'carrito/:id',component:CarritoComponent},
     {path:'carrito',component:CarritoComponent},
     {path:'admin',component:AdministradorComponent},
-    {path:'admin/:name',component:AdministradorComponent}
+    {path:'admin/:name',component:AdministradorComponent},
+    {path:'perfil',component:PerfilComponent}
 ]
 export const routing = RouterModule.forRoot(appRoutes);
     

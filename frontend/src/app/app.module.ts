@@ -21,6 +21,7 @@ import{CarritoComponent} from'app/component/carrito/carrito.component';
 import{UserService} from'app/service/user.service';
 import {AdministradorComponent} from 'app/component/administrador/administrador.component';
 import {PurchaseService} from 'app/service/purchase.service';
+import {PerfilComponent} from 'app/component/perfil/perfil.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +34,7 @@ import {PurchaseService} from 'app/service/purchase.service';
     OfertasComponent,
     CarritoComponent,
     AdministradorComponent,
+    PerfilComponent,
     
     
     
@@ -46,6 +48,6 @@ import {PurchaseService} from 'app/service/purchase.service';
     routing
   ],
   providers: [ ResourceService, LoginService,OfertaService,OfertaDescuentoService,RegistroService,UserService,PurchaseService],
-  bootstrap: [AppComponent, FooterComponent,HeaderComponent,ArticuloComponent,RegistroComponent,OfertasComponent,CarritoComponent,AdministradorComponent]
+  bootstrap: [AppComponent, FooterComponent,HeaderComponent,ArticuloComponent,RegistroComponent,OfertasComponent,CarritoComponent,AdministradorComponent,PerfilComponent]
 })
 export class AppModule { }

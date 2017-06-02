@@ -49,7 +49,7 @@ export class ResourceService{
     }
 
     removeResource(resource:Resource){
-        return this.http.delete(BASE_URL +resource.id,{withCredentials:true})
+        return this.http.delete(BASE_URL +resource.id)
            .map(response => response.json())
            .catch(error => this.handleError(error));
     }
@@ -59,6 +59,7 @@ export class ResourceService{
         .map(response => response.json().content)
         .catch(error =>Observable.throw('Server error'));
     }
+    
 
 
     private handleError(error: any) {

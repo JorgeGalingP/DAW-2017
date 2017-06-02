@@ -18,7 +18,7 @@ export class CarritoComponent implements OnInit{
 
     constructor(private router:Router,activatedRouter:ActivatedRoute, private service:ResourceService,private purchaseService:PurchaseService){
 
-        let id = activatedRouter.snapshot.params['id'];
+        const id = activatedRouter.snapshot.params['id'];
         service.getResource(id).subscribe(
             resource => this.resource = resource,
             error => console.error(error)
@@ -38,7 +38,7 @@ export class CarritoComponent implements OnInit{
         let okResponse = window.confirm("¿Esta seguro de eliminar el articulo?");
         if(okResponse){
             this.service.removeResource(this.resource).subscribe(
-                resource => this.router.navigate(['/articulo']),
+                _ => this.router.navigate(['/articulo']),
                 error => console.error(error)
             )
             
