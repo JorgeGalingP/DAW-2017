@@ -37,27 +37,203 @@
             <div class="col-lg-9 col-md-9" id="miPerfil">
                 <p class="lead">Información de usuario</p>
                 <div class="list-group">
-                    <p class="list-group-item">{{user.name}}</p>
-                    <p class="list-group-item">{{user.surname}}</p>
-                    <p class="list-group-item">{{user.email}}</p>
-                    <p class="list-group-item">{{user.telephone}}</p>
-                    <p class="list-group-item">{{user.pais}}</p>
-                    <p class="list-group-item">{{user.postalCode}}</p>
+                    <p class="list-group-item"></p>
+                    <p class="list-group-item"></p>
+                    <p class="list-group-item"></p>
+                    <p class="list-group-item"></p>
+                    <p class="list-group-item"></p>
+                    <p class="list-group-item"></p>
                 </div>
                 <hr />
                 
                 <p class="lead">Información de contacto</p>
                 <div class="list-group">
-                    <p class="list-group-item">{{user.email}}</p>
-                    <p class="list-group-item">{{user.telephone}}</p>
+                    <p class="list-group-item"></p>
+                    <p class="list-group-item"></p>
                 </div>
                 <hr />
                 <p class="lead">Dirección de envío</p>
                 <div class="list-group">
-                    <p class="list-group-item">{{user.descripcion}}</p>
+                    <p class="list-group-item"></p>
                     
                 </div>
             </div>
+
+
+            
+
+
+
+
+             <div class="col-md-12 col-sm-12" id="editarvinilos">
+                <h3>Añadir Vinilos</h3>
+                <div *ngIf="resource">
+                     <h2>vinilos "{{resource.title}}"</h2>
+    <div *ngIf="resource.id">
+      <label>Id: </label>{{resource.id}}
+    </div>
+    <div>
+      <label>Titulo </label>
+      <input [(ngModel)]="resource.title"class="form-control" placeholder="title"/>
+    </div>
+    <div>
+      <label>Subtitulo </label>
+      <input [(ngModel)]="resource.subtitle"class="form-control" placeholder="subtitle"/>
+    </div>
+    <div>
+      <label>Interprete </label>
+      <input [(ngModel)]="resource.interprete"class="form-control" placeholder="interprete"/>
+    </div>
+    <div>
+      <label>fecha </label>
+      <input [(ngModel)]="resource.fecha"class="form-control" placeholder="fecha"/>
+    </div>
+    <div>
+      <label>Estado </label>
+      <input [(ngModel)]="resource.estado"class="form-control" placeholder="estado"/>
+    </div>
+    <div>
+      <label>Album </label>
+      <input [(ngModel)]="resource.album"class="form-control" placeholder="album"/>
+    </div>
+    <div>
+      <label>Precio </label>
+      <input [(ngModel)]="resource.precio" class="form-control" placeholder="precio"/>
+    </div>
+    <div>
+      <label>Codigo </label>
+      <input [(ngModel)]="resource.codigo"  class="form-control"  placeholder="codigo"/>
+    </div>
+    
+    <p>
+        <br/>
+      <button (click)="cancel()">Cancel</button>
+      <button (click)="save()">Save</button>
+    </p>
+
+            </div>
+        <div class="col-md-12 col-sm-12" id="editarvinilos">
+                <h3>Añadir Ofertas</h3>
+                <div *ngIf="resource">
+                     <h2>ofertas "{{oferta.name}}"</h2>
+    <div *ngIf="oferta.id">
+      <label>Id: </label>{{oferta.id}}
+    </div>
+    <div>
+      <label>Nombre </label>
+      <input [(ngModel)]="oferta.name"class="form-control" placeholder="name"/>
+    </div>
+    <div>
+      <label>Codigo </label>
+      <input [(ngModel)]="oferta.code"class="form-control" placeholder="code"/>
+    </div>
+    <div>
+      <label>Descripcion</label>
+      <input [(ngModel)]="oferta.description"class="form-control" placeholder="description"/>
+    </div>
+    <div>
+      <label>llevas </label>
+      <input [(ngModel)]="oferta.llevas"class="form-control" placeholder="llevas "/>
+    </div>
+    <div>
+      <label>pagas </label>
+      <input [(ngModel)]="oferta.pagas"class="form-control" placeholder="pagas"/>
+    </div>
+    <div>
+      
+    <p>
+        <br/>
+      <button (click)="cancel()">Cancel</button>
+      <button (click)="saveOferta()">Save</button>
+    </p>
+
+            </div>
+
+
+
+    <div class="col-md-12 col-sm-12" id="editarvinilos">
+                <h3>Añadir OfertasDescuento</h3>
+                <div *ngIf="resource">
+                     <h2>ofertas "{{ofertaDescuento.name}}"</h2>
+    <div *ngIf="ofertaDescuento.id">
+      <label>Id: </label>{{ofertaDescuento.id}}
+    </div>
+    <div>
+      <label>Nombre </label>
+      <input [(ngModel)]="ofertaDescuento.name"class="form-control" placeholder="name"/>
+    </div>
+    <div>
+      <label>Codigo </label>
+      <input [(ngModel)]="ofertaDescuento.code"class="form-control" placeholder="code"/>
+    </div>
+    <div>
+      <label>Descripcion</label>
+      <input [(ngModel)]="ofertaDescuento.description"class="form-control" placeholder="description"/>
+    </div>
+    <div>
+      <label>porcentaje </label>
+      <input [(ngModel)]="ofertaDescuento.porcentaje"class="form-control" placeholder="porcentaje "/>
+    </div>
+    
+    <div>
+      
+    <p>
+        <br/>
+      <button (click)="cancel()">Cancel</button>
+      <button (click)="saveOfertaDescuento()">Save</button>
+    </p>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             <div class="col-md-9 col-sm-9" id="editarPerfil">
                 <!-- Editar opciones del perfil -->
                 <h3> Administrar perfil </h3>

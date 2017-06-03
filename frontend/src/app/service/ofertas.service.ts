@@ -22,6 +22,11 @@ export class OfertaService{
         .map(response => response.json())
         .catch(error => this.handleError(error));
     }
+    addOferta(oferta:Oferta){
+        return this.http.post(BASE_URL,oferta)
+            .map(response => response.json())
+            .catch(error => this.handleError(error))
+    }
 
 
 

@@ -59,6 +59,12 @@ export class ResourceService{
         .map(response => response.json().content)
         .catch(error =>Observable.throw('Server error'));
     }
+    addResource(resource:Resource){
+        return this.http.post(BASE_URL, resource)
+            .map(response => response.json())
+            ._catch(error => this.handleError(error))
+    
+    }
     
 
 

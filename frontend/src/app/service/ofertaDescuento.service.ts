@@ -24,6 +24,11 @@ export class OfertaDescuentoService{
         .catch(error => this.handleError(error))
 
     }
+    addOfertaDescuento(ofertaDescuento:OfertaDescuento){
+        return this.http.post(URL,ofertaDescuento)
+           .map(response => response.json())
+           .catch(error => this.handleError(error))
+    }
 
 
     private handleError(error: any) {
