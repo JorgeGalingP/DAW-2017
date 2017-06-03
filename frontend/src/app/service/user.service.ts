@@ -5,7 +5,7 @@ import 'rxjs/Rx';
 
 import {User} from'app/models/user.model';
 
-const BASE_URL ="https://localhost:8443/api/users/user1"
+const BASE_URL ="https://localhost:8443/api/users/"
 
 @Injectable()
 export class UserService{
@@ -20,6 +20,11 @@ export class UserService{
         return this.http.get(BASE_URL+name)
         .map(response => response.json())
         .catch(error =>this.handleError(error))
+    }
+    addUser(user:User){
+        return this.http.post(BASE_URL,user)
+            .map(response => response.json())
+            .catch(error => this.handleError(error));
     }
 
 

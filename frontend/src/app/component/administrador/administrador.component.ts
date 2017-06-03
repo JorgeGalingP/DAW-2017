@@ -15,6 +15,7 @@ import{OfertaDescuentoService} from'app/service/ofertaDescuento.service';
 })
 
 export class AdministradorComponent {
+    newUser: boolean;
     newOfertaDescuento:boolean;
     ofertaDescuento:OfertaDescuento;
     newOferta:boolean;
@@ -23,7 +24,7 @@ export class AdministradorComponent {
     resource:Resource;
     user:User;
 
-    constructor(private router:Router,activatedRoute:ActivatedRoute,private service:UserService,private resourceService:ResourceService,private ofertaService:OfertaService,private ofertaDescuentoService:OfertaDescuentoService){
+    constructor(private router:Router,activatedRoute:ActivatedRoute,private userService:UserService,private resourceService:ResourceService,private ofertaService:OfertaService,private ofertaDescuentoService:OfertaDescuentoService){
 
         let id= activatedRoute.snapshot.params['id'];
         if(id){
@@ -60,6 +61,21 @@ export class AdministradorComponent {
             this.newOfertaDescuento = true;
         }
 
+        let idUser = activatedRoute.snapshot.params['id'];
+        if(idUser){
+            userService.getUser(id).subscribe(
+                user => this.user = user,
+                error => console.error(error)
+            );
+            this.newUser= true;
+        }else{
+            this.user= {id:0,name:"",surname:"",pais:"",descripcion:"",telephone:"",password:"",postalCode:0};
+            this.newUser= true;
+        }
+
+
+
+
 
 
       /*  let name = activatedRoute.snapshot.params['id'];
@@ -95,6 +111,13 @@ export class AdministradorComponent {
         );
         window.history.back();
 
+    }
+    saveUser(){
+        this.userService.addUser(this.user).subscribe(
+            user =>{},
+            error =>console.error('Error creating user')
+        );
+        window.history.back();
     }
    
 

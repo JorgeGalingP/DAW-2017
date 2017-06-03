@@ -1,6 +1,7 @@
 import{Component,EventEmitter,Output} from '@angular/core';
 import {Router,ActivatedRoute} from '@angular/router';
 import{ResourceService,Resources} from'app/service/resource.service';
+import{Resource} from 'app/models/resource.model';
 
 @Component({
     selector:'app-articulo',
@@ -9,13 +10,13 @@ import{ResourceService,Resources} from'app/service/resource.service';
 
 export class ArticuloComponent {
 
-    resource:Resources;
+    resource:Resource;
     inputContent1:string;
     inputContent2:string;
     asunto:string[]=[];
     comentarios:string[]=[];
 
-    constructor(private router:Router,activatedRoute:ActivatedRoute,service:ResourceService){
+    constructor(private router:Router,activatedRoute:ActivatedRoute,private service:ResourceService){
     //  let id = activatedRoute.snapshot.params['id'];
     //  this.resource= service.getResource(id);
         let id = activatedRoute.snapshot.params['id'];
@@ -29,6 +30,15 @@ export class ArticuloComponent {
         this.comentarios.push(this.inputContent2);
         this.inputContent1="";
         this.inputContent2="";
+    }
+    removeResource(){
+        let okResponse =window.confirm("Quieres eliminar el vinilo");
+        if(okResponse){
+            this.service.removeResource(this.resource).subscribe(
+                resource => this.router.navigate(['/index']),
+                error => console.error(error)
+            )
+        }
     }
 
 

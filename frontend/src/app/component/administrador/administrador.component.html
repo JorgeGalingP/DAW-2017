@@ -192,6 +192,61 @@
 
 
 
+             <div class="col-md-12 col-sm-12" id="editarvinilos">
+                <h3>Añadir Usuarios</h3>
+                <div *ngIf="resource">
+                     <h2>vinilos "{{user.name}}"</h2>
+    <div *ngIf="user.id">
+      <label>Id: </label>{{user.id}}
+    </div>
+    <div>
+      <label>name </label>
+      <input [(ngModel)]="user.name"class="form-control" placeholder="name"/>
+    </div>
+    <div>
+      <label>Surname </label>
+      <input [(ngModel)]="user.surname"class="form-control" placeholder="surname"/>
+    </div>
+    <div>
+      <label>email </label>
+      <input [(ngModel)]="user.email"class="form-control" placeholder="email"/>
+    </div>
+    <div>
+      <label>pais </label>
+      <input [(ngModel)]="user.pais"class="form-control" placeholder="pais"/>
+    </div>
+    <div>
+      <label>descripcion </label>
+      <input [(ngModel)]="user.descripcion"class="form-control" placeholder="descripcion"/>
+    </div>
+    <div>
+      <label>telephone </label>
+      <input [(ngModel)]="user.telephone"class="form-control" placeholder="telephone"/>
+    </div>
+    <div>
+      <label>password </label>
+      <input [(ngModel)]="user.password" class="form-control" placeholder="password"/>
+    </div>
+    <div>
+      <label>postalCode </label>
+      <input [(ngModel)]="user.postalCode"  class="form-control"  placeholder="postalCode"/>
+    </div>
+    
+    <p>
+        <br/>
+      <button (click)="cancel()">Cancel</button>
+      <button (click)="saveUser()">Save</button>
+    </p>
+
+            </div>
+
+
+
+
+
+
+
+
 
 
 
