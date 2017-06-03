@@ -1,6 +1,6 @@
 import{Component,OnInit}from'@angular/core';
 import{Router,ActivatedRoute} from'@angular/router';
-import {OfertaService} from 'app/service/ofertas.service';
+import {OfertaService} from 'app/service/oferta.service';
 import {Oferta} from 'app/models/oferta.model';
 import {OfertaDescuentoService} from'app/service/ofertaDescuento.service';
 import {OfertaDescuento} from'app/models/ofertaDescuento.model';
@@ -14,8 +14,14 @@ import {OfertaDescuento} from'app/models/ofertaDescuento.model';
 export class OfertasComponent implements OnInit { 
   ofertas: Oferta[];
   ofertasDescuento:OfertaDescuento[];
+  oferta:Oferta;
 
-  constructor(private router:Router,private service:OfertaService,private ofertaDescuentoService:OfertaDescuentoService){
+  constructor(private router:Router,private service:OfertaService,private ofertaDescuentoService:OfertaDescuentoService,activatedRoute:ActivatedRoute){
+      let id = activatedRoute.snapshot.params['id'];
+      service.getOferta(id).subscribe(
+          oferta => this.oferta = oferta,
+          error => console.error(error)
+      );
  }
 
   ngOnInit(){
@@ -28,6 +34,16 @@ export class OfertasComponent implements OnInit {
            error => console.log(error)
       )
       
+  }
+  removeOferta(){
+      let okResponse =window.confirm("Quieres eliminar la oferta");
+      if(okResponse){
+          this.service.removeOferta(this.oferta).subscribe(
+              oferta => this.router.navigate(['/ofertas']),
+              error => console.error(error)
+
+          )
+      }
   }
 
 

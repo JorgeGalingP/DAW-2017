@@ -13,7 +13,7 @@ import { LoginService } from 'app/service/login.service';
 import {routing} from 'app/app-routing.module';
 import {RegistroComponent} from'./component/registro/registro.component';
 import {OfertasComponent} from './component/ofertas/ofertas.component';
-import {OfertaService} from'app/service/ofertas.service';
+import {OfertaService} from'app/service/oferta.service';
 import {OfertaDescuentoService} from'app/service/ofertaDescuento.service';
 import {ResourceService} from 'app/service/resource.service';
 import{RegistroService} from 'app/service/registro.service';

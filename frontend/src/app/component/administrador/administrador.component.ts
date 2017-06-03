@@ -5,7 +5,7 @@ import{User} from 'app/models/user.model';
 import{Resource} from'app/models/resource.model';
 import{ResourceService} from'app/service/resource.service';
 import{Oferta} from'app/models/oferta.model';
-import{OfertaService} from'app/service/ofertas.service';
+import{OfertaService} from'app/service/oferta.service';
 import{OfertaDescuento} from'app/models/ofertaDescuento.model';
 import{OfertaDescuentoService} from'app/service/ofertaDescuento.service';
 

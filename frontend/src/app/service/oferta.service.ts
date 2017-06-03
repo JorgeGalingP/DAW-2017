@@ -27,6 +27,11 @@ export class OfertaService{
             .map(response => response.json())
             .catch(error => this.handleError(error))
     }
+    removeOferta(oferta: Oferta){
+        return this.http.delete(BASE_URL + oferta.id)
+             .map(response => response.json())
+             .catch(error => this.handleError(error));
+    }
 
 
 
