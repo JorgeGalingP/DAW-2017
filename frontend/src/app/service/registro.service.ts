@@ -4,7 +4,7 @@ import{Observable} from'rxjs/Observable';
 import'rxjs/Rx';
 import{User} from'app/models/user.model';
 
-const BASE_URL ="https://localhost:8443/api/register";
+const BASE_URL ="https://localhost:8443/api/users/";
 
 
 @Injectable()
