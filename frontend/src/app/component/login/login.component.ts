@@ -11,14 +11,14 @@ export class LoginComponent {
   user:User;
   users:User[];
 
-  constructor(private loginService: LoginService,private router:Router,private userService:UserService) {
-    this.userService.getUsers().subscribe(
-      users =>{
-        this.users= users;
-        console.log(this.users);
-      },
-      error => console.error(error)
-    )
+  constructor(private loginService: LoginService,private router:Router,private userService:UserService)/*,private router:Router,private userService:UserService)*/ {
+   this.userService.getUsers().subscribe(
+     users =>{
+       this.users = users;
+       console.log(this.users);
+     },
+     error => console.error(error)
+   )
    }
 
   logIn(event: any, user: string, pass: string) {
@@ -26,8 +26,8 @@ export class LoginComponent {
     event.preventDefault();
 
     this.loginService.logIn(user, pass).subscribe(
-      u => {console.log(u);
-        this.router.navigate(['']);
+      u => {console.log(u),
+        this.router.navigate(['/index']);
       },
       error => alert('Invalid user or password')
     );

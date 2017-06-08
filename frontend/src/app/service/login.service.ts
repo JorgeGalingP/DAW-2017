@@ -1,14 +1,9 @@
 import { Injectable, OnInit } from '@angular/core';
 import { Http, RequestOptions, Headers } from '@angular/http';
 import 'rxjs/Rx';
-
+import{User} from'app/models/user.model'
 const URL = 'https://localhost:8443/api';
 
-export interface User {
-    id?: number;
-    name: string;
-    roles: string[];
-}
 
 @Injectable()
 export class LoginService {
@@ -27,7 +22,7 @@ export class LoginService {
             'X-Requested-With': 'XMLHttpRequest'
         });
 
-        const options = new RequestOptions({ withCredentials: true, headers });
+        const options = new RequestOptions({  });
 
         this.http.get(URL + '/logIn', options).subscribe(
             response => this.processLogInResponse(response),
@@ -55,7 +50,7 @@ export class LoginService {
             'X-Requested-With': 'XMLHttpRequest'
         });
 
-        const options = new RequestOptions({ withCredentials: true, headers });
+        const options = new RequestOptions({headers });
 
         return this.http.get(URL + '/logIn', options).map(
             response => {

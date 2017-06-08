@@ -14,7 +14,7 @@ import{OfertaDescuentoService} from'app/service/ofertaDescuento.service';
     templateUrl:'administrador.component.html'
 })
 
-export class AdministradorComponent {
+export class AdministradorComponent implements OnInit {
     newUser: boolean;
     newOfertaDescuento:boolean;
     ofertaDescuento:OfertaDescuento;
@@ -23,6 +23,10 @@ export class AdministradorComponent {
     newResource:boolean;
     resource:Resource;
     user:User;
+    users:User[];
+
+
+
 
     constructor(private router:Router,activatedRoute:ActivatedRoute,private userService:UserService,private resourceService:ResourceService,private ofertaService:OfertaService,private ofertaDescuentoService:OfertaDescuentoService){
 
@@ -84,6 +88,12 @@ export class AdministradorComponent {
             error => console.error(error)
         )*/
 
+    }
+    ngOnInit(){
+        this.userService.getUsers().subscribe(
+            users => this.users = users,
+            error => console.log(error)
+        );
     }
 
     cancel(){

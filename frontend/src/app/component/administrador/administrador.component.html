@@ -24,7 +24,7 @@
                 <div class="user-wrapper">
                     <div class="description">
                         <br>
-                        <h3> user.name</h3>
+                        <h3> </h3>
                         <hr />
                         <div class="list-group">
                             <a id="miPerfilMenu" href="#" class="list-group-item"><span class="glyphicon glyphicon-user"></span> Mi Perfil </a>
@@ -34,15 +34,21 @@
                 </div>
             </div>
             <br>
+            
             <div class="col-lg-9 col-md-9" id="miPerfil">
                 <p class="lead">Información de usuario</p>
                 <div class="list-group">
+                    <ul class="items">
+            <li *ngFor ="let user of users">
+                    <p class="list-group-item">{{user.name}}</p>
+                    <p class="list-group-item">{{user.surname}}</p>
+                    <p class="list-group-item">{{user.email}}</p>
                     <p class="list-group-item"></p>
                     <p class="list-group-item"></p>
                     <p class="list-group-item"></p>
-                    <p class="list-group-item"></p>
-                    <p class="list-group-item"></p>
-                    <p class="list-group-item"></p>
+                    </li>
+            </ul>
+
                 </div>
                 <hr />
                 
@@ -58,6 +64,7 @@
                     
                 </div>
             </div>
+            
 
 
             

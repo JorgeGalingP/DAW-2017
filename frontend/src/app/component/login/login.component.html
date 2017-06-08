@@ -84,6 +84,18 @@
                                            
                                         </label>
                                         </div>
+                                        <div *ngIf="loginService.isLogged" class="nav navbar-nav navbar-right">
+
+	<ul class="nav navbar-nav">
+		<li>
+			<a href="#">{{loginService.user.name}}</a>
+		</li>
+		<li>
+			<button class="btn btn-default navbar-btn" (click)="logOut()" type="button">Log Out</button>
+		</li>
+	</ul>
+
+</div>
 
                                     </fieldset>
                                 </form>

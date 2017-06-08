@@ -38,7 +38,7 @@ export class ResourceService{
     }
 
     getResources(){
-        return this.http.get(BASE_URL,{withCredentials:true})
+        return this.http.get(BASE_URL,{})
            .map(response => response.json())
            .catch(error => this.handleError(error));
     }
