@@ -9,7 +9,9 @@ import {RegistroComponent} from"app/component/registro/registro.component";
 import {OfertasComponent} from "app/component/ofertas/ofertas.component";
 import {CarritoComponent} from "app/component/carrito/carrito.component";
 import {AdministradorComponent} from "app/component/administrador/administrador.component";
-import {PerfilComponent} from "app/component/perfil/perfil.component"
+import {PerfilComponent} from "app/component/perfil/perfil.component";
+import {SomosComponent} from"app/component/somos/somos.component";
+
 const appRoutes:Routes = [
     {path:'app',component: AppComponent},
     {path:'',component: IndexComponent},
@@ -24,8 +26,9 @@ const appRoutes:Routes = [
     {path:'carrito',component:CarritoComponent},
     {path:'admin',component:AdministradorComponent},
     {path:'admin/:name',component:AdministradorComponent},
-    {path:'perfil',component:PerfilComponent}
-    
+    {path:'perfil',component:PerfilComponent},
+    {path:'somos',component:SomosComponent}
+
 ]
 export const routing = RouterModule.forRoot(appRoutes);
     

@@ -86,7 +86,7 @@
                                 
                                <!-- <h4><a href="{{id}}">{{interprete}}</a>
                                 </h4>-->
-                                <h5>{{resource.title}}</h5>
+                                <h5 class><a [routerLink]="['/resource',resource.id]">{{resource.title}}</a></h5>
                                 <p>{{resource.subtitle}}</p>
                             </div>
                             <button *ngIf="loginService.isAdmin" (click)="removeResource()">Remove</button>

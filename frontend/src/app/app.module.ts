@@ -22,6 +22,7 @@ import{UserService} from'app/service/user.service';
 import {AdministradorComponent} from 'app/component/administrador/administrador.component';
 import {PurchaseService} from 'app/service/purchase.service';
 import {PerfilComponent} from 'app/component/perfil/perfil.component';
+import {SomosComponent}from'app/component/somos/somos.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +36,7 @@ import {PerfilComponent} from 'app/component/perfil/perfil.component';
     CarritoComponent,
     AdministradorComponent,
     PerfilComponent,
+    SomosComponent,
     
     
     
@@ -48,6 +50,6 @@ import {PerfilComponent} from 'app/component/perfil/perfil.component';
     routing
   ],
   providers: [ ResourceService, LoginService,OfertaService,OfertaDescuentoService,RegistroService,UserService,PurchaseService],
-  bootstrap: [AppComponent, FooterComponent,HeaderComponent,ArticuloComponent,RegistroComponent,OfertasComponent,CarritoComponent,AdministradorComponent,PerfilComponent]
+  bootstrap: [AppComponent, FooterComponent,HeaderComponent,ArticuloComponent,RegistroComponent,OfertasComponent,CarritoComponent,AdministradorComponent,PerfilComponent,SomosComponent,SomosComponent]
 })
 export class AppModule { }
