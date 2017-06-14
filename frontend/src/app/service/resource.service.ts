@@ -43,13 +43,13 @@ export class ResourceService{
            .catch(error => this.handleError(error));
     }
     getResource(id:number){
-        return this.http.get(BASE_URL+id,{withCredentials:true})
+        return this.http.get(BASE_URL+id,{})
            .map(response=> response.json())
            .catch(error=> this.handleError(error));
     }
 
     removeResource(resource:Resource){
-        return this.http.delete(BASE_URL +resource.id)
+        return this.http.delete(BASE_URL + resource.id)
            .map(response => response.json())
            .catch(error => this.handleError(error));
     }

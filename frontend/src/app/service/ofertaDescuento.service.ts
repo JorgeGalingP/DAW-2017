@@ -25,7 +25,7 @@ export class OfertaDescuentoService{
 
     }
     addOfertaDescuento(ofertaDescuento:OfertaDescuento){
-        return this.http.post(URL,ofertaDescuento)
+        return this.http.post(URL,ofertaDescuento,{withCredentials:true})
            .map(response => response.json())
            .catch(error => this.handleError(error))
     }

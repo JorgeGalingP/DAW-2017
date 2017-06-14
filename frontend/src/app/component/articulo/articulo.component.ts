@@ -2,6 +2,7 @@ import{Component,EventEmitter,Output} from '@angular/core';
 import {Router,ActivatedRoute} from '@angular/router';
 import{ResourceService,Resources} from'app/service/resource.service';
 import{Resource} from 'app/models/resource.model';
+import{LoginService} from'app/service/login.service';
 
 @Component({
     selector:'app-articulo',
@@ -16,7 +17,7 @@ export class ArticuloComponent {
     asunto:string[]=[];
     comentarios:string[]=[];
 
-    constructor(private router:Router,activatedRoute:ActivatedRoute,private service:ResourceService){
+    constructor(private router:Router,activatedRoute:ActivatedRoute,private service:ResourceService,private loginService:LoginService){
     //  let id = activatedRoute.snapshot.params['id'];
     //  this.resource= service.getResource(id);
         let id = activatedRoute.snapshot.params['id'];

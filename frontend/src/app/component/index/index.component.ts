@@ -3,7 +3,8 @@ import{OnInit} from'@angular/core';
 import{Router,ActivatedRoute} from'@angular/router';
 import{Resource}  from'app/models/resource.model';
 import{ResourceService,Resources} from 'app/service/resource.service';
-import{User}from'../../models/user.model'
+import{User}from'../../models/user.model';
+import{LoginService}from'app/service/login.service';
 
 
 @Component({
@@ -12,18 +13,24 @@ import{User}from'../../models/user.model'
 })
 
 export class IndexComponent implements OnInit{
-
+  resource:Resource;
   resourcePage:number;
   resources:Resources[];
   moreResourcesActive:boolean;
 
-  constructor(private router:Router, private service:ResourceService){
+  constructor(private router:Router, private service:ResourceService,private loginService:LoginService, activatedRoute:ActivatedRoute){
     this.resources=[];
     this.resourcePage=0;
     this.moreResourcesActive=false;
 
     this.addResources(true);
-    
+
+    let id = activatedRoute.snapshot.params['id'];
+    service.getResource(id).subscribe(
+      resource => this.resource = resource,
+      error => console.error(error)
+    );
+     
 
    // this.resources = service.getResources();
   }
@@ -50,6 +57,15 @@ export class IndexComponent implements OnInit{
      );
 
      
+   }
+   removeResource(){
+     let okResponse = window.confirm("¿Quieres eliminar el vinilo?");
+     if(okResponse){
+       this.service.removeResource(this.resource).subscribe(
+         resource => this.router.navigate(['']),
+         error=> console.error(error)
+       )
+     }
    }
 
   

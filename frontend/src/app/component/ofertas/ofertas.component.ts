@@ -4,6 +4,7 @@ import {OfertaService} from 'app/service/oferta.service';
 import {Oferta} from 'app/models/oferta.model';
 import {OfertaDescuentoService} from'app/service/ofertaDescuento.service';
 import {OfertaDescuento} from'app/models/ofertaDescuento.model';
+import {LoginService} from 'app/service/login.service';
 
 
 @Component({
@@ -16,7 +17,7 @@ export class OfertasComponent implements OnInit {
   ofertasDescuento:OfertaDescuento[];
   oferta:Oferta;
 
-  constructor(private router:Router,private service:OfertaService,private ofertaDescuentoService:OfertaDescuentoService,activatedRoute:ActivatedRoute){
+  constructor(private router:Router,private service:OfertaService,private ofertaDescuentoService:OfertaDescuentoService,activatedRoute:ActivatedRoute,private loginService:LoginService){
       let id = activatedRoute.snapshot.params['id'];
       service.getOferta(id).subscribe(
           oferta => this.oferta = oferta,

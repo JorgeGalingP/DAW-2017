@@ -25,6 +25,7 @@ const appRoutes:Routes = [
     {path:'admin',component:AdministradorComponent},
     {path:'admin/:name',component:AdministradorComponent},
     {path:'perfil',component:PerfilComponent}
+    
 ]
 export const routing = RouterModule.forRoot(appRoutes);
     

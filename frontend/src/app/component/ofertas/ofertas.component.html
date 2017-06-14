@@ -24,7 +24,8 @@
                    <h3>{{oferta.name}}</h3>
                    <h4>CODIGO:{{oferta.code}}</h4>
                    <p>{{oferta.description}}</p>
-                   <button (click)="removeOferta()">Remove</button>
+                   
+                   <button *ngIf="loginService.isAdmin" (click)="removeOferta()">Remove</button>
                </div>
               
             

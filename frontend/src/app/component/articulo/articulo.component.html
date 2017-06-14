@@ -45,11 +45,12 @@
                             <h3>Código</h3>
                             <p>{{resource.codigo}}</p>
                         </div>
-                        <div class="col-sm-4">
+                        <div *ngIf="loginService.isLogged" class="col-sm-4">
                             <h3>Código</h3>
                             <p><a [routerLink]="['/carrito',resource.id]"><h4>Comprar Producto</h4></a> </p>
                         </div>
-                        
+
+                        <p><a routerLink="/registro">Si quieres comprar registrate</a></p>
                     <br>
                 </div>
                 <br>

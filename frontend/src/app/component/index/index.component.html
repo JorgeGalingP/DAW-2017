@@ -31,6 +31,7 @@
                             <h3>Tu web por naturaleza</h3>
                         </div>
                     </div>
+                    
                 </div>
 
                 <!-- Controls -->
@@ -88,6 +89,7 @@
                                 <h5>{{resource.title}}</h5>
                                 <p>{{resource.subtitle}}</p>
                             </div>
+                            <button *ngIf="loginService.isAdmin" (click)="removeResource()">Remove</button>
                              
                         </div>
                          </div>

@@ -10,6 +10,7 @@ export class LoginService {
 
     isLogged = false;
     isAdmin = false;
+    isUser = false;
     user: User;
 
     constructor(private http: Http) {
@@ -39,6 +40,7 @@ export class LoginService {
         this.isLogged = true;
         this.user = response.json();
         this.isAdmin = this.user.roles.indexOf('ROLE_ADMIN') !== -1;
+        this.isUser = this.user.roles.indexOf('ROLE_USER') !== -1;
     }
 
     logIn(user: string, pass: string) {
@@ -66,6 +68,7 @@ export class LoginService {
             response => {
                 this.isLogged = false;
                 this.isAdmin = false;
+                this.isUser = false;
                 return response;
             }
         );

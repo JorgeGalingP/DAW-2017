@@ -10,18 +10,34 @@
     <div class="container">
             <div class="navbar-collapse collapse" id="navbar-main">
                 <ul class="nav navbar-nav navbar-right">
+                    
                     <li>
                         <form class="navbar-form">
+                            <div *ngIf ="loginService.isUser">
+                            
                             <button type="button" class="btn btn-default">
                                 <a class="glyphicon glyphicon-shopping-cart" routerLink="/carrito" routerLinkActive="active"></a>
                             </button>
+                            </div>
+                            
                         </form>
                     </li>
+                    
                     <li>
-                        <a routerLink="/ofertas" routerLinkActive="active">OFERTAS</a>
+                       
+                        
+                        <a routerLink="/ofertas" >OFERTAS</a>
+                        
+                       
                     </li>
                     <li>
+                        <a *ngIf="loginService.isAdmin">admin</a>
+                        
+                    </li>
+                    <li>
+                        <a *ngIf ="loginService.isAdmin">
                         <a [routerLink]="['/admin', user.name]" routerLinkActive="active">ADMIN</a>
+                        </a>
                     </li>
                     
                     <!--{{#unlogged}}-->
