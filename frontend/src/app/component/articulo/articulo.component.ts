@@ -34,6 +34,10 @@ export class ArticuloComponent {
         this.inputContent1="";
         this.inputContent2="";
     }
+    goToLogin(){
+        this.router.navigate(['/login']);
+
+    }
     /*removeResource(){
         let okResponse =window.confirm("Quieres eliminar el vinilo");
         if(okResponse){

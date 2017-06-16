@@ -16,7 +16,7 @@ export class UserService{
         .map(response => response.json())
         .catch(error => this.handleError(error));
     }
-    getUserId(id:number){
+    getUserId(id:number|string){
         return this.http.get(BASE_URL +id)
            .map(response => response.json)
            .catch(error => this.handleError(error));

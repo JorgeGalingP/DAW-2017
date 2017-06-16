@@ -90,7 +90,7 @@
                                 <p>{{resource.subtitle}}</p>
                             </div>
                             <button (click)='removeResource()'*ngIf="loginService.isAdmin" type="submit">Remove</button>
-                            <button (click)="anadir()">Añadir a favoritos</button>
+                            <button (click)="anadir()"*ngIf="loginService.isUser">Añadir a favoritos</button>
                         </div>
                          </div>
                

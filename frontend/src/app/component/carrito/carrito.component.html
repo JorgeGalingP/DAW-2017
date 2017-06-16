@@ -101,6 +101,7 @@
 		</div>
 		
 <div class="row">
+	<li *ngFor ="let purchase of purchases">
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 				<div class="panel panel-info">
 					<div class="panel-heading">
@@ -127,7 +128,7 @@
 									<strong>{{purchase.code}}</strong>
 								</h4>
 								<h4>
-									<small>{{purchase.name}}</small>
+									<small>{{purchase.description}}</small>
 								</h4>
 							</div>
 							<div class="col-xs-6">
@@ -184,7 +185,9 @@
 					</div>
 				</div>
 			</div>
+	</li>
 		</div>
+
 
 
 		

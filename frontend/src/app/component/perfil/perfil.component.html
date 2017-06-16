@@ -38,23 +38,35 @@
             <div class="col-lg-9 col-md-9" id="miPerfil">
                 <p class="lead">Información de usuario</p>
                 <div class="list-group">
-                    
-                    <p class="list-group-item"> </p>
+                   <li *ngFor ="let user of users">
+                       <div *ngIf="!loginService.isAdmin">
+                       
+                           <div class="row">
+                    <p class="list-group-item">{{user.name}}</p>
+                    <p class="list-group-item">{{user.surname}}</p>
+                    <p class="list-group-item">{{user.pais}}</p>
+                    <p class="list-group-item">{{user.descripcion}}</p>
+                    <p class="list-group-item">{{user.postalCode}}</p>
                     <p class="list-group-item"></p>
-                    <p class="list-group-item"></p>
-                    <p class="list-group-item"></p>
-                    <p class="list-group-item"></p>
-                    <p class="list-group-item"></p>
+                       </div>
+                       </div>
+                   
+                   </li>
+
+                      
+                      
+                   
                     
                 </div>
             </div>
                 
-                
-                <p class="lead">Información de contacto</p>
+                <li *ngFor ="let purchase of purchases">
+                <p class="lead">Información de Pedido</p>
                 <div class="list-group">
-                    <p class="list-group-item"></p>
-                    <p class="list-group-item"></p>
+                    <p class="list-group-item">{{purchase.code}}</p>
+                    <p class="list-group-item">{{purchase.description}}</p>
                 </div>
+                </li>
                 
                 <p class="lead">Dirección de envío</p>
                 <div class="list-group">

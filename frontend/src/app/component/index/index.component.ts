@@ -15,6 +15,7 @@ import{LoginService}from'app/service/login.service';
 
 export class IndexComponent implements OnInit{
   user:User;
+  users:User[];
   resource:Resource;
   resourcePage:number;
   resources:Resources[];
@@ -25,7 +26,7 @@ export class IndexComponent implements OnInit{
     this.resourcePage=0;
     this.moreResourcesActive=false;
 
-    this.addResources(true);
+    //this.addResources(true);
 
     let id = activatedRoute.snapshot.params['id'];
     resourceService.getResource(id).subscribe(
@@ -45,8 +46,9 @@ export class IndexComponent implements OnInit{
        error => console.log(error)
      )
      
+     
    }
-   addResources(userReq:boolean){
+ /* addResources(userReq:boolean){
      this.resourceService.gettAllResources('Resource',this.resourcePage).subscribe(
        resources =>{
          if(Object.keys(resources).length===0){
@@ -59,15 +61,15 @@ export class IndexComponent implements OnInit{
          }
        },
        error => console.log('Fail trying to get resources')
-     );
+     );*/
 
      
-   }
+
    removeResource(id:number){
      const okResponse = window.confirm("¿Quieres eliminar el vinilo?");
      if(okResponse){
        this.resourceService.removeResource(id).subscribe(
-         _ => this.router.navigate(['']),
+         resource=> this.router.navigate(['']),
          error=> console.error("error al eliminar el vinilo"+error)
        )
      }
