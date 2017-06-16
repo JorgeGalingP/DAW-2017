@@ -48,9 +48,9 @@ export class ResourceService{
            .catch(error=> this.handleError(error));
     }
 
-    removeResource(resource:Resource){
-        return this.http.delete(BASE_URL + resource.id)
-           .map(response => response.json())
+    removeResource(id:number){
+        return this.http.delete(BASE_URL +id,{})
+           .map(response => response.json)
            .catch(error => this.handleError(error));
     }
     gettAllResources(type?:string, page?:number){
@@ -63,11 +63,15 @@ export class ResourceService{
         return this.http.post(BASE_URL, resource)
             .map(response => response.json())
             ._catch(error => this.handleError(error))
+
+    }
+    updateResource(resource:Resource){
+        return this.http.put(BASE_URL + resource.id, resource)
+              .map(response => response.json())
+              .catch(error => this.handleError(error));
+      
     
     }
-   
-    
-
 
     private handleError(error: any) {
 		console.error(error);

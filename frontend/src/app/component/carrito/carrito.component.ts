@@ -34,7 +34,7 @@ export class CarritoComponent implements OnInit{
     }
 
 
-    removeResource(){
+   /* removeResource(){
         let okResponse = window.confirm("¿Esta seguro de eliminar el articulo?");
         if(okResponse){
             this.service.removeResource(this.resource).subscribe(
@@ -43,5 +43,5 @@ export class CarritoComponent implements OnInit{
             )
             
         }
-    }
+    }*/
  }

@@ -1,5 +1,5 @@
 import{Injectable}from'@angular/core';
-import {Http} from '@angular/http';
+import {Http, Headers,RequestOptions} from '@angular/http';
 import{Observable} from'rxjs/Observable';
 import'rxjs/Rx';
 
@@ -27,10 +27,11 @@ export class OfertaService{
             .map(response => response.json())
             .catch(error => this.handleError(error))
     }
-    removeOferta(oferta: Oferta){
-        return this.http.delete(BASE_URL + oferta.id)
-             .map(response => response.json())
-             .catch(error => this.handleError(error));
+    removeOferta(oferta:Oferta){
+        return this.http.delete(BASE_URL +oferta.id)
+            .map(response => response.json())
+            .catch( error => this.handleError(error));
+
     }
 
 

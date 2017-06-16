@@ -19,13 +19,13 @@ export class OfertaDescuentoService{
 
     }
     getOfertaDescuento(id:number){
-        return this.http.get(URL +id,{withCredentials:true})
+        return this.http.get(URL +id,{})
         .map(response => response.json())
         .catch(error => this.handleError(error))
 
     }
     addOfertaDescuento(ofertaDescuento:OfertaDescuento){
-        return this.http.post(URL,ofertaDescuento,{withCredentials:true})
+        return this.http.post(URL,ofertaDescuento,{})
            .map(response => response.json())
            .catch(error => this.handleError(error))
     }
