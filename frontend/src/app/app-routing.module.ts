@@ -11,6 +11,7 @@ import {CarritoComponent} from "app/component/carrito/carrito.component";
 import {AdministradorComponent} from "app/component/administrador/administrador.component";
 import {PerfilComponent} from "app/component/perfil/perfil.component";
 import {SomosComponent} from"app/component/somos/somos.component";
+import{PerfilUserComponent} from"app/component/private/perfilUser.component";
 
 const appRoutes:Routes = [
     {path:'app',component: AppComponent},
@@ -28,7 +29,8 @@ const appRoutes:Routes = [
     {path:'admin/:name',component:AdministradorComponent},
     {path:'perfil',component:PerfilComponent},
     {path:'perfil/:id',component:PerfilComponent},
-    {path:'somos',component:SomosComponent}
+    {path:'somos',component:SomosComponent},
+    {path:'perfilUser',component:PerfilUserComponent}
 
 ]
 export const routing = RouterModule.forRoot(appRoutes);

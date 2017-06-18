@@ -23,6 +23,8 @@ import {AdministradorComponent} from 'app/component/administrador/administrador.
 import {PurchaseService} from 'app/service/purchase.service';
 import {PerfilComponent} from 'app/component/perfil/perfil.component';
 import {SomosComponent}from'app/component/somos/somos.component';
+import {ResourceFavoritoService} from'app/service/resourceFavorito.service';
+import {PerfilUserComponent} from 'app/component/private/perfilUser.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +39,7 @@ import {SomosComponent}from'app/component/somos/somos.component';
     AdministradorComponent,
     PerfilComponent,
     SomosComponent,
+    PerfilUserComponent,
     
     
     
@@ -49,7 +52,7 @@ import {SomosComponent}from'app/component/somos/somos.component';
     JsonpModule,
     routing
   ],
-  providers: [ ResourceService, LoginService,OfertaService,OfertaDescuentoService,RegistroService,UserService,PurchaseService],
-  bootstrap: [AppComponent, FooterComponent,HeaderComponent,ArticuloComponent,RegistroComponent,OfertasComponent,CarritoComponent,AdministradorComponent,PerfilComponent,SomosComponent,SomosComponent]
+  providers: [ ResourceService, LoginService,OfertaService,OfertaDescuentoService,RegistroService,UserService,PurchaseService,ResourceFavoritoService],
+  bootstrap: [AppComponent, FooterComponent,HeaderComponent,ArticuloComponent,RegistroComponent,OfertasComponent,CarritoComponent,AdministradorComponent,PerfilComponent,SomosComponent,SomosComponent,PerfilUserComponent]
 })
 export class AppModule { }

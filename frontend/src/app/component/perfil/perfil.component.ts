@@ -7,6 +7,8 @@ import {ResourceService} from'app/service/resource.service';
 import {LoginService} from'app/service/login.service';
 import {PurchaseService} from'app/service/purchase.service';
 import {PurchaseOrder}from'app/models/purchaseOrder.model';
+import {Resource} from 'app/models/Resource.model';
+import {ResourceFavoritoService} from 'app/service/resourceFavorito.service';
 @Component({
     selector:'app-perfil',
     templateUrl:'perfil.component.html'
@@ -14,11 +16,13 @@ import {PurchaseOrder}from'app/models/purchaseOrder.model';
 
 export class PerfilComponent{
     purchases:PurchaseOrder[];
-    purhase:PurchaseOrder;
+    purchase:PurchaseOrder;
+    resourceFavorito:Resource;
+    resourcesFavoritos:Resource[];
     user:User;
     users:User[];
    
-    constructor(private router:Router, activatedRoute:ActivatedRoute, private userService:UserService,private loginService:LoginService, private purchaseService: PurchaseService){
+    constructor(private router:Router, activatedRoute:ActivatedRoute, private userService:UserService,private loginService:LoginService, private purchaseService: PurchaseService, private resourceFavoritoService:ResourceFavoritoService){
 
         let id = activatedRoute.params.subscribe(params =>{
 
@@ -44,6 +48,11 @@ export class PerfilComponent{
         );
         this.purchaseService.getPurchases().subscribe(
             purchases => this.purchases = purchases,
+            error => console.log(error)
+        );
+
+        this.resourceFavoritoService.getResourcesFavoritos().subscribe(
+            resourcesFavoritos => this.resourceFavorito =resourcesFavoritos,
             error => console.log(error)
         )
 

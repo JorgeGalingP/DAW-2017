@@ -12,4 +12,33 @@ import {PurchaseService} from'app/service/purchase.service'
 })
 
 export class PerfilUserComponent{
+    user:User;
+    users:User[];
+
+
+    constructor(private router:Router, activatedRoute:ActivatedRoute, private userService:UserService,private loginService:LoginService, private purchaseService: PurchaseService){
+
+        let id = activatedRoute.params.subscribe(params =>{
+
+            let id = activatedRoute.snapshot.params['id'];
+            this.userService.getUserId(id).subscribe(
+                user => {
+                    this.user = user;
+                    console.log(this.user);
+                },
+                error => console.error(error)
+            );
+        });
+       
+    }
+
+
+
+
+     ngOnInit(){
+        this.userService.getUsers().subscribe(
+            users => this.users = users,
+            error => console.log(error)
+        );
+}
 }

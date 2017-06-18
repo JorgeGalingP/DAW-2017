@@ -69,10 +69,12 @@
                 </li>
                 
                 <p class="lead">Dirección de envío</p>
+                <li *ngFor ="let resourceFavorito of resourcesFavoritos">
                 <div class="list-group">
-                    <p class="list-group-item"></p>
+                    <p class="list-group-item">{{resourceFavorito.name}}</p>
                     
                 </div>
+                </li>
             </div>
             <div class="col-md-9 col-sm-9" id="editarPerfil">
                 <!-- Editar opciones del perfil -->
