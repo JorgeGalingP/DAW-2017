@@ -12,6 +12,8 @@ import {AdministradorComponent} from "app/component/administrador/administrador.
 import {PerfilComponent} from "app/component/perfil/perfil.component";
 import {SomosComponent} from"app/component/somos/somos.component";
 import{PerfilUserComponent} from"app/component/private/perfilUser.component";
+import {FavoritosComponent} from"app/component/favoritos/favoritos.component";
+
 
 const appRoutes:Routes = [
     {path:'app',component: AppComponent},
@@ -30,7 +32,8 @@ const appRoutes:Routes = [
     {path:'perfil',component:PerfilComponent},
     {path:'perfil/:id',component:PerfilComponent},
     {path:'somos',component:SomosComponent},
-    {path:'perfilUser',component:PerfilUserComponent}
+    {path:'perfilUser',component:PerfilUserComponent},
+    {path:'favoritos',component:FavoritosComponent}
 
 ]
 export const routing = RouterModule.forRoot(appRoutes);

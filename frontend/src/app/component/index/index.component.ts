@@ -18,6 +18,7 @@ export class IndexComponent implements OnInit{
   users:User[];
   resource:Resource;
   resourcePage:number;
+  resources2:Resources[]=[];
   resources:Resources[]=[];
   private actualPage =0;
   private nResources =0;
@@ -34,6 +35,10 @@ export class IndexComponent implements OnInit{
       resource => this.resource = resource,
       error => console.error(error)
 
+    );
+    this.resourceService.getRecommended().subscribe(
+        resources2 => this.resources2 = resources2,
+        error => console.error(error)
     );
    
      

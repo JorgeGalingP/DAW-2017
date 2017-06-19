@@ -25,6 +25,7 @@ import {PerfilComponent} from 'app/component/perfil/perfil.component';
 import {SomosComponent}from'app/component/somos/somos.component';
 import {ResourceFavoritoService} from'app/service/resourceFavorito.service';
 import {PerfilUserComponent} from 'app/component/private/perfilUser.component';
+import {FavoritosComponent} from 'app/component/favoritos/favoritos.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +41,7 @@ import {PerfilUserComponent} from 'app/component/private/perfilUser.component';
     PerfilComponent,
     SomosComponent,
     PerfilUserComponent,
+    FavoritosComponent
     
     
     
@@ -53,6 +55,6 @@ import {PerfilUserComponent} from 'app/component/private/perfilUser.component';
     routing
   ],
   providers: [ ResourceService, LoginService,OfertaService,OfertaDescuentoService,RegistroService,UserService,PurchaseService,ResourceFavoritoService],
-  bootstrap: [AppComponent, FooterComponent,HeaderComponent,ArticuloComponent,RegistroComponent,OfertasComponent,CarritoComponent,AdministradorComponent,PerfilComponent,SomosComponent,SomosComponent,PerfilUserComponent]
+  bootstrap: [AppComponent, FooterComponent,HeaderComponent,ArticuloComponent,RegistroComponent,OfertasComponent,CarritoComponent,AdministradorComponent,PerfilComponent,SomosComponent,SomosComponent,PerfilUserComponent,FavoritosComponent]
 })
 export class AppModule { }

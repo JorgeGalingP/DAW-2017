@@ -63,15 +63,19 @@
                     </li>
                 </div>
                 <div class="list-group">
-                    <p class="list-group-item">Por estado</p>
-                    <a href="#" class="list-group-item">estado1 <span class="badge">10</span></a>
-                    <a href="#" class="list-group-item">estado2 <span class="badge">10</span></a>
+                    <p class="list-group-item">Recomendados</p>
+                    <li *ngFor = "let resource of resources2">
+                    <a href="#" class="list-group-item">{{resource.title}} <span class="badge">10</span></a>
+                    </li>
+                    
                 </div>
                 <div class="list-group">
                     <p class="list-group-item">Por precio</p>
-                    <a href="#" class="list-group-item">rango1 <span class="badge">10</span></a>
-                    <a href="#" class="list-group-item">rango2 <span class="badge">10</span></a>
-                    <a href="#" class="list-group-item">rango3 <span class="badge">10</span></a>
+                    <li *ngFor ="let resource of resources2">
+                          <a href="#" class="list-group-item">{{resource.precio}} <span class="badge">10</span></a>
+                  
+                    
+                    </li>
                 </div>
             </div>
             

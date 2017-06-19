@@ -57,6 +57,17 @@ export class ResourceService{
            .map(response=> response.json())
            .catch(error=> this.handleError(error));
     }
+    getRecommended(){
+        return this.http.get(BASE_URL+'recommended',{})
+            .map(response => response.json())
+            .catch(error => this.handleError(error));
+            
+    }
+    getFavoritos(){
+        return this.http.get(BASE_URL+'favoritos',{})
+             .map(response => response.json())
+             .catch(error => this.handleError(error));
+    }
     newResource(resource:Resource){
         return this.http.post(BASE_URL,resource)
             .map(response => response.json())

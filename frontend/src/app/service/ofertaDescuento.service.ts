@@ -13,7 +13,7 @@ export class OfertaDescuentoService{
    constructor(private http:Http){}
 
    getOfertasDescuento(){
-       return this.http.get(URL,{withCredentials:true})
+       return this.http.get(URL,{})
        .map(response => response.json())
        .catch(error => this.handleError(error));
 

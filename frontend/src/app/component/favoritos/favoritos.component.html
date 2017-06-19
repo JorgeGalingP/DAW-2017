@@ -1,0 +1,32 @@
+
+
+<div class="container">
+    <h3>MIS FAVORITOS</h3>
+    <br/>
+ <div class="col-md-9">
+                <div *ngFor ="let resource of resources" >
+                <div class="col-sm-4 col-lg-4 col-md-4">
+                         <div class="thumbnail">
+                            <a href="{{resource.id}}" ><img src="../assets/img/avatar.png" style="width: 320px; height: 280px" alt=""></a>
+                            <div class="caption">
+                                <h4 class="pull-right">{{resource.precio}} €</h4>
+                                <h4> <a [routerLink]="['/resource',resource.id]"> {{resource.id}}</a></h4>
+                                
+                               <!-- <h4><a href="{{id}}">{{interprete}}</a>
+                                </h4>-->
+                                <h5 class><a [routerLink]="['/resource',resource.id]">{{resource.title}}</a></h5>
+                                <p>{{resource.subtitle}}</p>
+                            </div>
+                            <button (click)='removeResource()'*ngIf="loginService.isAdmin" type="submit">Remove</button>
+                            <button (click)="anadir()"*ngIf="loginService.isUser">Añadir a favoritos</button>
+                        </div>
+                         </div>
+               
+              
+                     
+                    </div>
+        
+                    
+           
+    </div>
+</div>
