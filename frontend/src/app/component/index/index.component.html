@@ -100,9 +100,11 @@
                     
            
     </div>
-    <div *ngIf="moreResourcesActive">
-                   <button (click)="addResources(true)" type="button" class="btn btn-lg btn-block btn-view-more">Ver mas vinilos </button>
+    <br/>
+    <div >
+                   <button  [class.btn-disabled]="loadMore"id="moreResources" (click)="loadMoreResources()" type="button" class="btn btn-primary btn-lg btn-block btn-view-more">Ver mas vinilos </button>
              </div>
+    <br/>
    
    
    

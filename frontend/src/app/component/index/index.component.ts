@@ -18,14 +18,15 @@ export class IndexComponent implements OnInit{
   users:User[];
   resource:Resource;
   resourcePage:number;
-  resources:Resources[];
-  moreResourcesActive:boolean;
+  resources:Resources[]=[];
+  private actualPage =0;
+  private nResources =0;
+  private loadMore = false;
+ 
 
   constructor(private router:Router, private resourceService:ResourceService,private loginService:LoginService, activatedRoute:ActivatedRoute, private userService:UserService){
-    this.resources=[];
-    this.resourcePage=0;
-    this.moreResourcesActive=false;
-
+   
+   
     //this.addResources(true);
 
     let id = activatedRoute.snapshot.params['id'];
@@ -42,27 +43,34 @@ export class IndexComponent implements OnInit{
  
    ngOnInit(){
      this.resourceService.getResources().subscribe(
-       resources => this.resources = resources,
-       error => console.log(error)
+       resources => {
+         this.resources = resources.content,
+         console.log(this.resources)
+   },
+   error => console.log(error)
+     );
+     this.resourceService.getAmountResources().subscribe(
+       nResources => this.nResources = nResources,
+       error => console.error(error)
      )
-     
-     
    }
- /* addResources(userReq:boolean){
-     this.resourceService.gettAllResources('Resource',this.resourcePage).subscribe(
-       resources =>{
-         if(Object.keys(resources).length===0){
-           this.moreResourcesActive = false;
-         }else if(userReq){
-           this.moreResourcesActive=true;
-           this.resourcePage++;
-           this.resources = this.resources.concat(resources);
-           this.addResources(false);
-         }
-       },
-       error => console.log('Fail trying to get resources')
-     );*/
 
+   loadMoreResources(){
+     this.actualPage +=1;
+     this.resourceService.getResourcesPag('?page='+ this.actualPage +'&size=10').subscribe(
+       resources =>{
+         let newResources = resources;
+           for(let resource of newResources){
+             this.resources.push(resource);
+           }
+           if(this.resources.length == this.nResources){
+             this.loadMore = true;
+           }
+       },
+       error=> console.log(error)
+     );
+   }
+ 
      
 
    removeResource(id:number){

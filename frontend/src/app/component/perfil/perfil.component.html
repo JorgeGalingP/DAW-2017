@@ -39,7 +39,8 @@
                 <p class="lead">Información de usuario</p>
                 <div class="list-group">
                    <li *ngFor ="let user of users">
-                       <div *ngIf="!loginService.isAdmin">
+                       
+                      
                        
                            <div class="row">
                     <p class="list-group-item">{{user.name}}</p>
@@ -47,11 +48,12 @@
                     <p class="list-group-item">{{user.pais}}</p>
                     <p class="list-group-item">{{user.descripcion}}</p>
                     <p class="list-group-item">{{user.postalCode}}</p>
-                    <p class="list-group-item"></p>
+                    <p class="list-group-item">{{user.telephone}}</p>
+                      
                        </div>
-                       </div>
+                      
                    
-                   </li>
+                   </li> 
 
                       
                       

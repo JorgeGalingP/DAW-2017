@@ -38,14 +38,29 @@ export class ResourceService{
     }
 
     getResources(){
-        return this.http.get(BASE_URL,{})
+        return this.http.get(BASE_URL)
            .map(response => response.json())
            .catch(error => this.handleError(error));
+    }
+    getResourcesPag(page?: String){
+        return this.http.get(BASE_URL + page).map(
+            response=> response.json().content
+        ).catch(error => this.handleError(error));
+    }
+    getAmountResources(){
+        return this.http.get(BASE_URL+'').map(
+            response => response.json().totalElements
+        ).catch(error => Observable.throw('Error:resource not found'))
     }
     getResource(id:number){
         return this.http.get(BASE_URL+id,{})
            .map(response=> response.json())
            .catch(error=> this.handleError(error));
+    }
+    newResource(resource:Resource){
+        return this.http.post(BASE_URL,resource)
+            .map(response => response.json())
+            .catch(error => Observable.throw('Server error'))
     }
 
     removeResource(id:number){
