@@ -95,11 +95,11 @@
                             </div>
                             <div>
                                 <p>
-                            <button *ngIf="loginService.isAdmin" (click)="delete()">Remove</button>
+                            <button *ngIf="loginService.isAdmin" (click)="delete()"  class="btn btn-default">Remove</button>
                                 </p>
                             </div>
                          <div>
-                             <button *ngIf="loginService.isLogged && loginService.isAdmin" (click)="editResource()">Edit</button>
+                             <button *ngIf="loginService.isLogged && loginService.isAdmin" (click)="editResource()"  class="btn btn-default">Edit</button>
                          </div>
                         </div>
                          </div>

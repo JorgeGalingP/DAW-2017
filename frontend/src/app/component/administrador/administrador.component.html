@@ -8,8 +8,8 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="page-header">
-                            <h1 id="forms"> Mi Perfil 
-                              <small>  Visualice sus datos</small>
+                            <h1 id="forms"> Administrador 
+                              <small>Herramientas de control y configuración</small>
                           </h1>
                         </div>
                     </div>
@@ -20,38 +20,27 @@
 
         <!-- USER PROFILE ROW STARTS-->
         <div class="row">
-            <div class="col-md-3 col-sm-3">
-                <div class="user-wrapper">
-                    <div class="description">
-                        <br>
-                        <h3> </h3>
-                        <hr />
-                        <div class="list-group">
-                            <a id="miPerfilMenu" href="#" class="list-group-item"><span class="glyphicon glyphicon-user"></span> Mi Perfil </a>
-                            <a id="editarPerfilMenu" href="#" class="list-group-item"><span class="glyphicon glyphicon-folder-open"></span> Administrar perfil</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <br>
             
-            <div class="col-lg-9 col-md-9" id="miPerfil">
-                <p class="lead">Información de usuario</p>
+            
+            <div class="col-lg-12" id="miPerfil">
+                <p class="lead">Información de usuarios</p>
                 <div class="list-group">
                     <ul class="items">
-            <li *ngFor ="let user of users">
-                    <p class="list-group-item">{{user.name}}</p>
-                    <p class="list-group-item">{{user.surname}}</p>
-                    <p class="list-group-item">{{user.email}}</p>
-                    <p class="list-group-item"></p>
-                    <p class="list-group-item"></p>
-                    <p class="list-group-item"></p>
-                    </li>
-            </ul>
+                      <li *ngFor ="let user of users">
+                        <p class="list-group-item">{{user.name}}</p>
+                        <p class="list-group-item">{{user.surname}}</p>
+                        <p class="list-group-item">{{user.email}}</p>
+                        <p class="list-group-item"></p>
+                        <p class="list-group-item"></p>
+                        <p class="list-group-item"></p>
+                        <br>
+                      </li>
+                    </ul>
 
                 </div>
-                <hr />
-                
+                <hr/>
+            </div> 
+            <!--<div class="col-lg-6" id="miPerfil">
                 <p class="lead">Información de contacto</p>
                 <div class="list-group">
                     <p class="list-group-item"></p>
@@ -63,7 +52,7 @@
                     <p class="list-group-item"></p>
                     
                 </div>
-            </div>
+            </div>-->
             
 
 
@@ -72,183 +61,180 @@
 
 
 
-             <div class="col-md-12 col-sm-12" id="editarvinilos">
+             <div class="col-lg-6" id="editarvinilos">
                 <h3>Añadir Vinilos</h3>
                 <div *ngIf="resource">
-                     <h2>vinilos "{{resource.title}}"</h2>
-    <div *ngIf="resource.id">
-      <label>Id: </label>{{resource.id}}
-    </div>
-    <div>
-      <label>Titulo </label>
-      <input [(ngModel)]="resource.title"class="form-control" placeholder="title"/>
-    </div>
-    <div>
-      <label>Subtitulo </label>
-      <input [(ngModel)]="resource.subtitle"class="form-control" placeholder="subtitle"/>
-    </div>
-    <div>
-      <label>Interprete </label>
-      <input [(ngModel)]="resource.interprete"class="form-control" placeholder="interprete"/>
-    </div>
-    <div>
-      <label>fecha </label>
-      <input [(ngModel)]="resource.fecha"class="form-control" placeholder="fecha"/>
-    </div>
-    <div>
-      <label>Estado </label>
-      <input [(ngModel)]="resource.estado"class="form-control" placeholder="estado"/>
-    </div>
-    <div>
-      <label>Album </label>
-      <input [(ngModel)]="resource.album"class="form-control" placeholder="album"/>
-    </div>
-    <div>
-      <label>Precio </label>
-      <input [(ngModel)]="resource.precio" class="form-control" placeholder="precio"/>
-    </div>
-    <div>
-      <label>Codigo </label>
-      <input [(ngModel)]="resource.codigo"  class="form-control"  placeholder="codigo"/>
-    </div>
+                     <!--<h2>vinilos "{{resource.title}}"</h2>-->
+
+                  <div *ngIf="resource.id">
+                    <label>Id: </label>{{resource.id}}
+                  </div>
+                  <div>
+                    <label>Titulo </label>
+                    <input [(ngModel)]="resource.title"class="form-control" placeholder="title"/>
+                  </div>
+                  <div>
+                    <label>Subtitulo </label>
+                    <input [(ngModel)]="resource.subtitle"class="form-control" placeholder="subtitle"/>
+                  </div>
+                  <div>
+                    <label>Interprete </label>
+                    <input [(ngModel)]="resource.interprete"class="form-control" placeholder="interprete"/>
+                  </div>
+                  <div>
+                    <label>fecha </label>
+                    <input [(ngModel)]="resource.fecha"class="form-control" placeholder="fecha"/>
+                  </div>
+                  <div>
+                    <label>Estado </label>
+                    <input [(ngModel)]="resource.estado"class="form-control" placeholder="estado"/>
+                  </div>
+                  <div>
+                    <label>Album </label>
+                    <input [(ngModel)]="resource.album"class="form-control" placeholder="album"/>
+                  </div>
+                  <div>
+                    <label>Precio </label>
+                    <input [(ngModel)]="resource.precio" class="form-control" placeholder="precio"/>
+                  </div>
+                  <div>
+                    <label>Codigo </label>
+                    <input [(ngModel)]="resource.codigo"  class="form-control"  placeholder="codigo"/>
+                  </div>
     
-    <p>
-        <br/>
-      <button (click)="cancel()">Cancel</button>
-      <button (click)="save()">Save</button>
-    </p>
+                  <p>
+                      <br/>
+                    <button (click)="cancel()" class="btn btn-default">Cancel</button>
+                    <button (click)="save()" class="btn btn-default">Save</button>
+                  </p>
 
-            </div>
-        <div class="col-md-12 col-sm-12" id="editarvinilos">
-                <h3>Añadir Ofertas</h3>
-                <div *ngIf="resource">
-                     <h2>ofertas "{{oferta.name}}"</h2>
-    <div *ngIf="oferta.id">
-      <label>Id: </label>{{oferta.id}}
-    </div>
-    <div>
-      <label>Nombre </label>
-      <input [(ngModel)]="oferta.name"class="form-control" placeholder="name"/>
-    </div>
-    <div>
-      <label>Codigo </label>
-      <input [(ngModel)]="oferta.code"class="form-control" placeholder="code"/>
-    </div>
-    <div>
-      <label>Descripcion</label>
-      <input [(ngModel)]="oferta.description"class="form-control" placeholder="description"/>
-    </div>
-    <div>
-      <label>llevas </label>
-      <input [(ngModel)]="oferta.llevas"class="form-control" placeholder="llevas "/>
-    </div>
-    <div>
-      <label>pagas </label>
-      <input [(ngModel)]="oferta.pagas"class="form-control" placeholder="pagas"/>
-    </div>
-    <div>
-      
-    <p>
-        <br/>
-      <button (click)="cancel()">Cancel</button>
-      <button (click)="saveOferta()">Save</button>
-    </p>
-
+                </div>
             </div>
 
-
-
-    <div class="col-md-12 col-sm-12" id="editarvinilos">
-                <h3>Añadir OfertasDescuento</h3>
-                <div *ngIf="resource">
-                     <h2>ofertas "{{ofertaDescuento.name}}"</h2>
-    <div *ngIf="ofertaDescuento.id">
-      <label>Id: </label>{{ofertaDescuento.id}}
-    </div>
-    <div>
-      <label>Nombre </label>
-      <input [(ngModel)]="ofertaDescuento.name"class="form-control" placeholder="name"/>
-    </div>
-    <div>
-      <label>Codigo </label>
-      <input [(ngModel)]="ofertaDescuento.code"class="form-control" placeholder="code"/>
-    </div>
-    <div>
-      <label>Descripcion</label>
-      <input [(ngModel)]="ofertaDescuento.description"class="form-control" placeholder="description"/>
-    </div>
-    <div>
-      <label>porcentaje </label>
-      <input [(ngModel)]="ofertaDescuento.porcentaje"class="form-control" placeholder="porcentaje "/>
-    </div>
-    
-    <div>
-      
-    <p>
-        <br/>
-      <button (click)="cancel()">Cancel</button>
-      <button (click)="saveOfertaDescuento()">Save</button>
-    </p>
-
-            </div>
-
-
-
-
-
-
-
-
-             <div class="col-md-12 col-sm-12" id="editarvinilos">
+            <div class="col-lg-6" id="editarvinilos">
                 <h3>Añadir Usuarios</h3>
                 <div *ngIf="resource">
-                     <h2>vinilos "{{user.name}}"</h2>
-    <div *ngIf="user.id">
-      <label>Id: </label>{{user.id}}
-    </div>
-    <div>
-      <label>name </label>
-      <input [(ngModel)]="user.name"class="form-control" placeholder="name"/>
-    </div>
-    <div>
-      <label>Surname </label>
-      <input [(ngModel)]="user.surname"class="form-control" placeholder="surname"/>
-    </div>
-    <div>
-      <label>email </label>
-      <input [(ngModel)]="user.email"class="form-control" placeholder="email"/>
-    </div>
-    <div>
-      <label>pais </label>
-      <input [(ngModel)]="user.pais"class="form-control" placeholder="pais"/>
-    </div>
-    <div>
-      <label>descripcion </label>
-      <input [(ngModel)]="user.descripcion"class="form-control" placeholder="descripcion"/>
-    </div>
-    <div>
-      <label>telephone </label>
-      <input [(ngModel)]="user.telephone"class="form-control" placeholder="telephone"/>
-    </div>
-    <div>
-      <label>password </label>
-      <input [(ngModel)]="user.password" class="form-control" placeholder="password"/>
-    </div>
-    <div>
-      <label>postalCode </label>
-      <input [(ngModel)]="user.postalCode"  class="form-control"  placeholder="postalCode"/>
-    </div>
+                     <!--<h2>vinilos "{{user.name}}"</h2>-->
+                  <div *ngIf="user.id">
+                    <label>Id: </label>{{user.id}}
+                  </div>
+                  <div>
+                    <label>name </label>
+                    <input [(ngModel)]="user.name"class="form-control" placeholder="name"/>
+                  </div>
+                  <div>
+                    <label>Surname </label>
+                    <input [(ngModel)]="user.surname"class="form-control" placeholder="surname"/>
+                  </div>
+                  <div>
+                    <label>email </label>
+                    <input [(ngModel)]="user.email"class="form-control" placeholder="email"/>
+                  </div>
+                  <div>
+                    <label>pais </label>
+                    <input [(ngModel)]="user.pais"class="form-control" placeholder="pais"/>
+                  </div>
+                  <div>
+                    <label>descripcion </label>
+                    <input [(ngModel)]="user.descripcion"class="form-control" placeholder="descripcion"/>
+                  </div>
+                  <div>
+                    <label>telephone </label>
+                    <input [(ngModel)]="user.telephone"class="form-control" placeholder="telephone"/>
+                  </div>
+                  <div>
+                    <label>password </label>
+                    <input [(ngModel)]="user.password" class="form-control" placeholder="password"/>
+                  </div>
+                  <div>
+                    <label>postalCode </label>
+                    <input [(ngModel)]="user.postalCode"  class="form-control"  placeholder="postalCode"/>
+                  </div>
+                </div>
     
-    <p>
-        <br/>
-      <button (click)="cancel()">Cancel</button>
-      <button (click)="saveUser()">Save</button>
-    </p>
+                <p>
+                    <br/>
+                  <button (click)="cancel()" class="btn btn-default">Cancel</button>
+                  <button (click)="saveUser()" class="btn btn-default">Save</button>
+                </p>
+
+            </div>
+
+
+            <div class="col-md-6" id="editarvinilos">
+                <h3>Añadir Ofertas</h3>
+                <div *ngIf="resource">
+                     <!--<h2>ofertas "{{oferta.name}}"</h2>-->
+                  <div *ngIf="oferta.id">
+                    <label>Id: </label>{{oferta.id}}
+                  </div>
+                  <div>
+                    <label>Nombre </label>
+                    <input [(ngModel)]="oferta.name"class="form-control" placeholder="name"/>
+                  </div>
+                  <div>
+                    <label>Codigo </label>
+                    <input [(ngModel)]="oferta.code"class="form-control" placeholder="code"/>
+                  </div>
+                  <div>
+                    <label>Descripcion</label>
+                    <input [(ngModel)]="oferta.description"class="form-control" placeholder="description"/>
+                  </div>
+                  <div>
+                    <label>llevas </label>
+                    <input [(ngModel)]="oferta.llevas"class="form-control" placeholder="llevas "/>
+                  </div>
+                  <div>
+                    <label>pagas </label>
+                    <input [(ngModel)]="oferta.pagas"class="form-control" placeholder="pagas"/>
+                  </div>
+                </div>
+                    
+                  <p>
+                      <br/>
+                    <button (click)="cancel()" class="btn btn-default">Cancel</button>
+                    <button (click)="saveOferta()" class="btn btn-default">Save</button>
+                  </p>
 
             </div>
 
 
 
+            <div class="col-lg-6" id="editarvinilos">
+                <h3>Añadir OfertasDescuento</h3>
+                <div *ngIf="resource">
+                     <!--<h2>ofertas "{{ofertaDescuento.name}}"</h2>-->
+                  <div *ngIf="ofertaDescuento.id">
+                    <label>Id: </label>{{ofertaDescuento.id}}
+                  </div>
+                  <div>
+                    <label>Nombre </label>
+                    <input [(ngModel)]="ofertaDescuento.name"class="form-control" placeholder="name"/>
+                  </div>
+                  <div>
+                    <label>Codigo </label>
+                    <input [(ngModel)]="ofertaDescuento.code"class="form-control" placeholder="code"/>
+                  </div>
+                  <div>
+                    <label>Descripcion</label>
+                    <input [(ngModel)]="ofertaDescuento.description"class="form-control" placeholder="description"/>
+                  </div>
+                  <div>
+                    <label>porcentaje </label>
+                    <input [(ngModel)]="ofertaDescuento.porcentaje"class="form-control" placeholder="porcentaje "/>
+                  </div>
+    
+                </div>
+      
+                <p>
+                    <br/>
+                  <button (click)="cancel()" class="btn btn-default">Cancel</button>
+                  <button (click)="saveOfertaDescuento()" class="btn btn-default">Save</button>
+                </p>
+
+            </div>
+
+            
 
 
 
@@ -257,57 +243,17 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <div class="col-md-9 col-sm-9" id="editarPerfil">
+            <!--<div class="col-md-9 col-sm-9" id="editarPerfil">
                 <!-- Editar opciones del perfil -->
-                <h3> Administrar perfil </h3>
+                <!--<h3> Administrar perfil </h3>
                 <br>
                 <!-- <div class="description"> -->
-              
-                <br>
+          
           
                 
                 
                 <!-- Eliminar cuenta  -->
-                <div class="panel panel-danger text-center">
+                <!--<div class="panel panel-danger text-center">
                     <div class="panel-heading">
                         Borrar cuenta
                     </div>
@@ -322,6 +268,6 @@
                     </form>
                 </div>
             </div>
-        </div>
+        </div>-->
         <!-- USER PROFILE ROW END-->
     </div>
