@@ -25,7 +25,7 @@
                    <h4>CODIGO:{{oferta.code}}</h4>
                    <p>{{oferta.description}}</p>
                 
-                   <button (click)="removeOferta()">Remove</button>
+                   <button *ngIf="loginService.isLogged" (click) ="removeOferta()">Remove</button>
                    
                </div>
               
