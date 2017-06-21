@@ -93,8 +93,14 @@
                                 <h5 class><a [routerLink]="['/resource',resource.id]">{{resource.title}}</a></h5>
                                 <p>{{resource.subtitle}}</p>
                             </div>
-                            <button (click)='removeResource()'*ngIf="loginService.isAdmin" type="submit">Remove</button>
-                            <button (click)="anadir()"*ngIf="loginService.isUser">Añadir a favoritos</button>
+                            <div>
+                                <p>
+                            <button *ngIf="loginService.isAdmin" (click)="delete()">Remove</button>
+                                </p>
+                            </div>
+                         <div>
+                             <button *ngIf="loginService.isLogged && loginService.isAdmin" (click)="editResource()">Edit</button>
+                         </div>
                         </div>
                          </div>
                

@@ -1,5 +1,5 @@
 import{Injectable}from '@angular/core'
-import{Http,Response}from'@angular/http'
+import{Http,Response,Headers,RequestOptions}from'@angular/http'
 import{Observable} from 'rxjs/Observable'
 import{Resource} from'app/models/resource.model';
 import'rxjs/Rx';
@@ -74,9 +74,9 @@ export class ResourceService{
             .catch(error => Observable.throw('Server error'))
     }
 
-    removeResource(id:number){
-        return this.http.delete(BASE_URL +id,{})
-           .map(response => response.json)
+    removeResource(resource:Resource){
+        return this.http.delete(BASE_URL + resource.id)
+           .map(response => undefined)
            .catch(error => this.handleError(error));
     }
     gettAllResources(type?:string, page?:number){
@@ -98,6 +98,26 @@ export class ResourceService{
       
     
     }
+    saveBook(resource: Resource) {
+
+    const body = JSON.stringify(resource);
+    const headers = new Headers({
+      'Content-Type': 'application/json',
+      'X-Requested-With': 'XMLHttpRequest'
+    });
+    const options = new RequestOptions({  headers });
+
+    if (!resource.id) {
+      return this.http.post(BASE_URL, body, options)
+        .map(response => response.json())
+        .catch(error => this.handleError(error));
+    } else {
+      return this.http.put(BASE_URL + resource.id, body, options)
+        .map(response => response.json())
+        .catch(error => this.handleError(error));
+    }
+  }
+
 
     private handleError(error: any) {
 		console.error(error);

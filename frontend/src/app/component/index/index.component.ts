@@ -29,8 +29,15 @@ export class IndexComponent implements OnInit{
    
    
     //this.addResources(true);
+    let id = activatedRoute.params.subscribe(params =>{
+      this.resourceService.getResource(params['id']).subscribe(
+        resource => {this.resource = resource;
+        },
+        error => console.error(error)
+      );
+    })
 
-    let id = activatedRoute.snapshot.params['id'];
+   /* let id = activatedRoute.snapshot.params['id'];
     resourceService.getResource(id).subscribe(
       resource => this.resource = resource,
       error => console.error(error)
@@ -39,7 +46,7 @@ export class IndexComponent implements OnInit{
     this.resourceService.getRecommended().subscribe(
         resources2 => this.resources2 = resources2,
         error => console.error(error)
-    );
+    );*/
    
      
 
@@ -78,17 +85,21 @@ export class IndexComponent implements OnInit{
  
      
 
-   removeResource(id:number){
+   delete(){
      const okResponse = window.confirm("¿Quieres eliminar el vinilo?");
      if(okResponse){
-       this.resourceService.removeResource(id).subscribe(
-         resource=> this.router.navigate(['']),
-         error=> console.error("error al eliminar el vinilo"+error)
+       this.resourceService.removeResource(this.resource).subscribe(
+         _=> this.router.navigate(['']),
+         error=> console.error("error al eliminar el vinilo"+ error)
        )
      }
    }
    anadir(){
      this.router.navigate(['/perfil', this.resource.id])
+   }
+
+   editResource(){
+     this.router.navigate(['/resource/editar', this.resource.id])
    }
 
   

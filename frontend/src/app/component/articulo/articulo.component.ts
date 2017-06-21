@@ -74,7 +74,7 @@ export class ArticuloComponent {
         );
          
     }*/
-   /* addContent(){
+    addContent(){
         this.asunto.push(this.inputContent1);
         this.comentarios.push(this.inputContent2);
         this.inputContent1="";
@@ -83,7 +83,7 @@ export class ArticuloComponent {
     goToLogin(){
         this.router.navigate(['/login']);
 
-    }*/
+    }
     /*removeResource(){
         let okResponse =window.confirm("Quieres eliminar el vinilo");
         if(okResponse){
