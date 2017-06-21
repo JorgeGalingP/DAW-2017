@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.entity.Oferta;
 import com.example.entity.PurchaseOrder;
 
 import com.example.entity.Resource;
@@ -38,6 +39,37 @@ public class PurchaseOrderRestController {
 		
 		
 	}
+	@RequestMapping(value="/",method = RequestMethod.GET)
+	public ResponseEntity<List<PurchaseOrder>> getPurchaseOrder(){
+		List<PurchaseOrder>purchaseOrder = purchaseService.findAll();
+		if(purchaseOrder!= null){
+			return new ResponseEntity<>(purchaseOrder,HttpStatus.OK);
+		}else{
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
+		
+		
+	}
+	
+		
+		
+	
+	
+		
+		
+	
+	
+	/*@RequestMapping(value="/{id}",method=RequestMethod.GET)
+	public ResponseEntity<PurchaseOrder> getPurchase(@PathVariable Integer id){
+		PurchaseOrder purchase = purchaseService.findOne(id);
+		if(purchase!=null){
+			return new ResponseEntity<>(purchase,HttpStatus.OK);
+		}else{
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
+	}*/
+	
+	
 	
 	
 	@RequestMapping(value="/{code}",method= RequestMethod.GET)
@@ -56,7 +88,7 @@ public class PurchaseOrderRestController {
 
 	
 	
-	@RequestMapping(value="/purchase/{code}",method = RequestMethod.DELETE)
+	@RequestMapping(value="/{code}",method = RequestMethod.DELETE)
 	public ResponseEntity<PurchaseOrder>deleteResource(@PathVariable String code){
 		PurchaseOrder resource = purchaseService.findByCode(code);
 		if(resource!= null){

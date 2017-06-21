@@ -31,7 +31,7 @@ public class OfertaRestController {
 	}
 	
 	
-	@RequestMapping(value="/all",method = RequestMethod.GET)
+	@RequestMapping(value="/",method = RequestMethod.GET)
 	public ResponseEntity<List<Oferta>> getOfertas(){
 		List<Oferta>ofertas = ofertaRepository.findAll();
 		if(ofertas!= null){

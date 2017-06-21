@@ -30,7 +30,7 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@JsonView(Basic.class)
-	private Integer id;
+	private int id;
 	
 	@JsonView(Basic.class)
 	private String name;
@@ -64,12 +64,15 @@ public class User {
 	private List<String> roles;
 	
 	
-	@JsonView(Resource.class)
-	@OneToMany(cascade = CascadeType.ALL)
-	private List<Resource> carrito;
+//	@JsonView(Resource.class)
+	//@OneToMany(cascade = CascadeType.ALL)
+	//private List<Resource> carrito;
+	
 	
 	@JsonView(Basic.class)
 	private int precioCarrito;
+	
+	
 	
 	
 	
@@ -90,7 +93,8 @@ public class User {
 		this.passwordHash = new BCryptPasswordEncoder().encode(password);
 		this.postalCode = postalCode;
 		this.roles = new ArrayList <> (Arrays.asList(roles));
-		this.carrito = new ArrayList<Resource>();
+		
+		//this.carrito = new ArrayList<Resource>();
 		this.precioCarrito = 0;
 		
 	}
@@ -125,7 +129,7 @@ public class User {
 
 
 
-	public Integer getId() {
+	public int getId() {
 		return id;
 	}
 
@@ -230,7 +234,7 @@ public class User {
 
 
 
-	public List<Resource> getCarrito() {
+/*	public List<Resource> getCarrito() {
 		return carrito;
 	}
 
@@ -241,7 +245,7 @@ public class User {
 		this.carrito = carrito;
 	}
 
-
+*/
 
 
 	public int getPrecioCarrito() {
@@ -268,6 +272,11 @@ public class User {
 	public void setAvaiableCredits(int avaiableLoans) {
 		this.avaiableLoans = avaiableLoans;
 	}
+
+
+
+
+	
 	
 
 

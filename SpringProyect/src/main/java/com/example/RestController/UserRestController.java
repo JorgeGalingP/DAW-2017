@@ -2,7 +2,11 @@ package com.example.RestController;
 
 
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
+
+import javax.annotation.Resource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -21,15 +25,47 @@ import com.example.services.UserService;
 import com.fasterxml.jackson.annotation.JsonView;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("api/users")
 public class UserRestController {
 	
     //Las url he suspuesto que lo añadidos en inicio sesion
 	
-   public  interface UserDetail extends User.Carrito,User.Roles{}
+	
+   public  interface UserDetail extends User.Roles{}
 	
 	
 	@Autowired UserService userRepository;
+	
+	
+	//@JsonView(UserDetail.class)
+	@RequestMapping(value="/", method = RequestMethod.GET)
+	public Collection<User> getUsers(){
+		return userRepository.findAll();
+	}
+	
+	@RequestMapping(value="/newUser",method=RequestMethod.POST)
+	public ResponseEntity<User> newUser(@RequestBody User u)throws Exception{
+		u.setName("");
+		u.setSurname("");
+		u.setEmail("");
+		u.setPais("");
+		u.setTelephone("");
+		u.setDescripcion("");
+		u.setPasswordHash("");
+		u.setPostalCode(0);
+	//	u.setPrecioCarrito(0);
+	   // u.setRoles(new ArrayList<>());
+	    return new ResponseEntity<>(u,HttpStatus.OK);
+		
+		
+		
+	}
+	
+	
+	
+	
+	
+	
 	
 	
 	
@@ -42,9 +78,11 @@ public class UserRestController {
 		
 	}
 	
-	//Obtiene los usuarios de una lista de usuarios
+	
+	
+	/*//Obtiene los usuarios de una lista de usuarios
 	@JsonView(UserDetail.class)
-	@RequestMapping(value="/all",method=RequestMethod.GET)
+	@RequestMapping(value="/",method=RequestMethod.GET)
 	public ResponseEntity<List<User>>getUsers(){
 		List<User>users = (List<User>) userRepository.findAll();
 		if(users!=null){
@@ -53,12 +91,12 @@ public class UserRestController {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 		
-	}
+	}*/
 	
 	// Obtiene un usuario a partir de su id
-	@JsonView(UserDetail.class)
-	@RequestMapping(value="/user/{id}", method= RequestMethod.GET)
-	public ResponseEntity<User>getUser(@PathVariable Integer id){
+	//@JsonView(UserDetail.class)
+	@RequestMapping(value="/{id}", method= RequestMethod.GET)
+	public ResponseEntity<User>getUser(@PathVariable  int id){
 		User user = userRepository.findOne(id);
 		if(user!= null){
 			return new ResponseEntity<>(user,HttpStatus.OK);
@@ -66,7 +104,7 @@ public class UserRestController {
 			return new ResponseEntity<>(user,HttpStatus.NOT_FOUND);
 		}
 	}
-	@JsonView(UserDetail.class)
+	/*@JsonView(UserDetail.class)
 	@RequestMapping(value="/{name}", method= RequestMethod.GET)
 	public ResponseEntity<User>getUserName(@PathVariable String name){
 		User user = userRepository.findByName(name);
@@ -75,7 +113,7 @@ public class UserRestController {
 		}else{
 			return new ResponseEntity<>(user,HttpStatus.NOT_FOUND);
 		}
-	}
+	}*/
 	//borra un usuario a partir de su id
 	@JsonView(UserDetail.class)
 	@RequestMapping(value="/{name}", method=RequestMethod.DELETE)
@@ -103,6 +141,14 @@ public class UserRestController {
 			return new ResponseEntity<>(user,HttpStatus.NOT_FOUND);
 			
 		}
+	}
+	
+	@RequestMapping(value ="/registry", method= RequestMethod.POST)
+	@ResponseStatus(HttpStatus.CREATED)
+	public User createUser(@RequestBody User user){
+	    User us = new User(user.getName(),user.getSurname(),user.getEmail(),user.getPais(),user.getTelephone(),user.getDescripcion(),user.getPasswordHash(),user.getPostalCode());
+	     userRepository.save(us);
+	     return us;
 	}
 	
 }

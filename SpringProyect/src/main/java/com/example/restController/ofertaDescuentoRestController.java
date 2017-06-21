@@ -33,7 +33,7 @@ public class ofertaDescuentoRestController {
 	}
 	
 	@JsonView(OfertaDescuentoDetail.class)
-	@RequestMapping(value="/all", method = RequestMethod.GET)
+	@RequestMapping(value="/", method = RequestMethod.GET)
 	public ResponseEntity<List<OfertaDescuento>> getOfertasDescuento(){
 		
 		List<OfertaDescuento> ofertas = ofertaDescuentoRepository.findAll();

@@ -1,17 +1,22 @@
 package com.example.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.component.UserComponent;
 import com.example.entity.Resource;
 import com.example.entity.User;
 import com.example.repository.ResourceRepository;
@@ -28,21 +33,79 @@ public class ResourceRestController {
 	
 	
 	
-	@Autowired ResourceService resourceService;
+	@Autowired
+	private ResourceService resourceService;
+	@Autowired 
+	private UserComponent userComponent;
 	
+	
+	
+	
+	@JsonView(Resource.Basic.class)
+	@RequestMapping(value="/", method=RequestMethod.GET)
+	public Page<Resource> getResources(@RequestParam(required=false) String page){
+		if(page== null){
+			return resourceService.findAll(new PageRequest(0,9));
+		}
+		else{
+			int numPage = Integer.parseInt(page);
+			return resourceService.findAll(new PageRequest(numPage,9));
+		}
+	}
+	@JsonView(Resource.Basic.class)
+	@RequestMapping(value="/recommended", method = RequestMethod.GET)
+	public List<Resource> getRecommended(){
+		List<Resource> recomendadas = new ArrayList<Resource>();
+		int j=0;
+		for(Resource res : resourceService.findAll()){
+			j++;
+			recomendadas.add(res);
+			if(j==3){
+				   break;
+			}
+		}
+		return recomendadas;
+	}
+	@JsonView(Resource.Basic.class)
+	@RequestMapping(value="/favoritos", method = RequestMethod.GET)
+	public List<Resource> getFavourites(){
+		List<Resource> favoritos = new ArrayList<Resource>();
+		int j=0;
+		for(Resource res :resourceService.findAll()){
+			j++;
+			favoritos.add(res);
+			if(j==2){
+				break;
+			}
+			
+		}
+		return favoritos;
+	}
 	//Creamos un nuevo recurso
 	
-	@RequestMapping(value="/",method= RequestMethod.POST)
+	/*@RequestMapping(value="/",method= RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
 	public Resource postResource(@RequestBody Resource resource){
 		
 		resourceService.save(resource);
 		return resource;
 		
+	}*/
+	
+	@RequestMapping(value ="/", method = RequestMethod.POST)
+	@ResponseStatus(HttpStatus.CREATED)
+	public ResponseEntity<Resource> createResource(@RequestBody Resource resource){
+		if(userComponent.isLoggedUser()){
+			
+			resourceService.save(resource);
+			return new ResponseEntity<>(resource, HttpStatus.OK);
+		}else{
+			return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+		}
 	}
 	//Obtenemos una lista
-	@JsonView(ResourceDetail.class)
-	@RequestMapping(value="/all", method= RequestMethod.GET)
+	/*@JsonView(ResourceDetail.class)
+	@RequestMapping(value="/", method= RequestMethod.GET)
 	public ResponseEntity<List<Resource>>getAllResource(){
 		List<Resource>resources = resourceService.findAll();
 		if(resources!=null){
@@ -53,7 +116,7 @@ public class ResourceRestController {
 		
 	
 		
-	}//obtenemos un recurso
+	}*///obtenemos un recurso
 	@JsonView(ResourceDetail.class)
 	@RequestMapping(value="/{id}", method= RequestMethod.GET)
 	public ResponseEntity<Resource>getResource(@PathVariable int id){

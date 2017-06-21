@@ -14,9 +14,12 @@ public class UserService {
 	@Autowired
 	private UserRepository userRepository;
 	
-	public User findOne(Integer id){
+	public User findOne(int id){
 		return userRepository.findOne(id);
 		
+	}
+	public List<User>findAll(){
+		return userRepository.findAll();
 	}
 	
 	
@@ -36,7 +39,7 @@ public class UserService {
 		userRepository.delete(user);
 		
 	}
-	public void delete(Integer id){
+	public void delete(int id){
 		userRepository.delete(id);
 		
 	}
@@ -46,10 +49,7 @@ public class UserService {
 
 
 
-	public Object findAll() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 	
 
 }

@@ -261,7 +261,7 @@ public class WebController {
 		return "articulo";
 	}
 
-	@RequestMapping("/{id}/addCarrito")
+	/*@RequestMapping("/{id}/addCarrito")
 	public String addCarrito(HttpServletRequest request, @PathVariable int id, RedirectAttributes redirectAttrs) {
 		
 		if (request.isUserInRole("ADMIN") || request.isUserInRole("USER")) {
@@ -271,18 +271,18 @@ public class WebController {
 			User loggedUser = userRepository.findByName(request.getUserPrincipal().getName());
 			Resource vinilo = repository.findOne(id);
 			
-			if (loggedUser.getCarrito().contains(vinilo)){
+			//if (loggedUser.getCarrito().contains(vinilo)){
 				 redirectAttrs.addFlashAttribute("error", "Este vinilo ya está añadido a tu carrito de compra");
 					
 				 return "redirect:/{id}";
 				
 			} else {
 				
-				List<Resource> carro = loggedUser.getCarrito();
+				//List<Resource> carro = loggedUser.getCarrito();
 
 				carro.add(vinilo);
 				
-				loggedUser.setCarrito(carro);
+				//loggedUser.setCarrito(carro);
 				
 				
 				int precioTotal = loggedUser.getPrecioCarrito();
@@ -307,12 +307,12 @@ public class WebController {
 		
 		User loggedUser = userRepository.findByName(request.getUserPrincipal().getName());
 		
-		if (loggedUser.getCarrito().size()>0) {
+		//if (loggedUser.getCarrito().size()>0) {
 
 		
 			List<Resource> carrito = new ArrayList<>();
 			
-			carrito = loggedUser.getCarrito();
+			//carrito = loggedUser.getCarrito();
 			
 			List<String> array = new ArrayList<String>();
 
@@ -340,6 +340,8 @@ public class WebController {
 		 return "redirect:/carrito";
 	}
 	}
+	
+	*/
 	
 	@RequestMapping("/login")
 	public String inicioSesion(Model model, HttpServletRequest request) {
@@ -371,7 +373,7 @@ public class WebController {
 		return ("articulo");
 	}
 
-	@RequestMapping("/carrito")
+	/*@RequestMapping("/carrito")
 	public String carrito(Model model, HttpServletRequest request) {
 
 		if (request.isUserInRole("ADMIN") || request.isUserInRole("USER")) {
@@ -385,13 +387,13 @@ public class WebController {
 
 		User loggedUser = userRepository.findByName(request.getUserPrincipal().getName());
 		
-		List<Resource> productos = loggedUser.getCarrito();
+		//List<Resource> productos = loggedUser.getCarrito();
 		
 		model.addAttribute("productos", productos);
 		model.addAttribute("precioTotal", loggedUser.getPrecioCarrito());
 		
 		return ("carrito");
-	}
+	}*/
 
 
 	@RequestMapping("/metodo-pago")
@@ -557,7 +559,7 @@ public class WebController {
 			return "redirect:/login";
 	}
 	
-	@RequestMapping("/aplicarCodigo")
+	/*@RequestMapping("/aplicarCodigo")
 	public String AplicarCodigo(Model model, HttpServletRequest request, @RequestParam String code,
 			RedirectAttributes redirectAttrs) {
 		
@@ -686,7 +688,7 @@ public class WebController {
 		
 		
 		
-	}
+	}*/
 	
 	@RequestMapping("/loginError")
 	public String loginError(Model model){
