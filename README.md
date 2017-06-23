@@ -66,4 +66,6 @@ Página web de compra y venta de vinilos. En esta web podrás encontrar ofertas 
 ![alt tag](https://raw.githubusercontent.com/JorgeGalingP/DAW-2017/master/capturas/diagramafase4.png)
 
 ### Diagrama UML Fase 5
-![alt tag](https://raw.githubusercontent.com/JorgeGalingP/DAW-2017/master/capturas/diagramafase5.png)
+![alt tag](https://raw.githubusercontent.com/JorgeGalingP/DAW-2017/master/capturas/diagramafase5parte1.png)
+![alt tag](https://raw.githubusercontent.com/JorgeGalingP/DAW-2017/master/capturas/diagramafase5parte2.png)
+![alt tag](https://raw.githubusercontent.com/JorgeGalingP/DAW-2017/master/capturas/diagramafase5parte3.png)
