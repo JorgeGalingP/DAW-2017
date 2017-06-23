@@ -1,0 +1,30 @@
+version: "2.0"
+
+services: 
+  cookcinandohost:
+    image: pabloasekas/cookcinando-mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=virtualvinilo
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=root
+  webapp:
+    image: virtualvinilo
+    depends_on:
+      - virtualvinilohost
+    ports:
+      - 8443:8443
+    environment:
+      - DATABASE_HOST=virtualvinilohost
+      - DATABASE_USER=root
+      - DATABASE_PASSWORD=root
+      - DATABASE_NAME=virtualvinilo
+      - DATABASE_PORT=3306
+  cookcinandoAngular:
+    image: d.camacho/virtualvinilo-angular
+    depends_on:
+      - webapp
+    ports:
+      - 4200:80
+    environment:
+      - API_URL=webapp
