@@ -32,10 +32,16 @@ Página web de compra y venta de vinilos. En esta web podrás encontrar ofertas 
 *https://trello.com/daw2017*
 
 ### Diagrama UML Fase 2
-![alt tag](https://raw.githubusercontent.com/JorgeGalingP/DAW-2017/master/capturas/diagrama de navegación.png)
+![alt tag](https://raw.githubusercontent.com/JorgeGalingP/DAW-2017/master/capturas/diagramafase2.png)
 
 ### Diagrama UML Fase 3
-![alt tag](https://raw.githubusercontent.com/JorgeGalingP/DAW-2017/master/capturas/diagrama de navegación2.png)
+![alt tag](https://raw.githubusercontent.com/JorgeGalingP/DAW-2017/master/capturas/diagramafase3.png)
+
+### Diagrama UML Fase 4
+![alt tag](https://raw.githubusercontent.com/JorgeGalingP/DAW-2017/master/capturas/diagramafase4.png)
+
+### Diagrama UML Fase 5
+![alt tag](https://raw.githubusercontent.com/JorgeGalingP/DAW-2017/master/capturas/diagramafase5.png)
 
 ### Documentación API
 * [API Reference](https://github.com/JorgeGalingP/DAW-2017/blob/master/API.md)
