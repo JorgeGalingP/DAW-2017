@@ -31,18 +31,6 @@ Página web de compra y venta de vinilos. En esta web podrás encontrar ofertas 
 ### Tablero Trello
 *https://trello.com/daw2017*
 
-### Diagrama UML Fase 2
-![alt tag](https://raw.githubusercontent.com/JorgeGalingP/DAW-2017/master/capturas/diagramafase2.png)
-
-### Diagrama UML Fase 3
-![alt tag](https://raw.githubusercontent.com/JorgeGalingP/DAW-2017/master/capturas/diagramafase3.png)
-
-### Diagrama UML Fase 4
-![alt tag](https://raw.githubusercontent.com/JorgeGalingP/DAW-2017/master/capturas/diagramafase4.png)
-
-### Diagrama UML Fase 5
-![alt tag](https://raw.githubusercontent.com/JorgeGalingP/DAW-2017/master/capturas/diagramafase5.png)
-
 ### Documentación API
 * [API Reference](https://github.com/JorgeGalingP/DAW-2017/blob/master/API.md)
 
@@ -67,3 +55,15 @@ Página web de compra y venta de vinilos. En esta web podrás encontrar ofertas 
 ![alt tag](https://raw.githubusercontent.com/JorgeGalingP/DAW-2017/master/capturas/registro.PNG)
 ![alt tag](https://raw.githubusercontent.com/JorgeGalingP/DAW-2017/master/capturas/somos1.PNG)
 ![alt tag](https://raw.githubusercontent.com/JorgeGalingP/DAW-2017/master/capturas/somos2.PNG)
+
+### Diagrama UML Fase 2
+![alt tag](https://raw.githubusercontent.com/JorgeGalingP/DAW-2017/master/capturas/diagramafase2.png)
+
+### Diagrama UML Fase 3
+![alt tag](https://raw.githubusercontent.com/JorgeGalingP/DAW-2017/master/capturas/diagramafase3.png)
+
+### Diagrama UML Fase 4
+![alt tag](https://raw.githubusercontent.com/JorgeGalingP/DAW-2017/master/capturas/diagramafase4.png)
+
+### Diagrama UML Fase 5
+![alt tag](https://raw.githubusercontent.com/JorgeGalingP/DAW-2017/master/capturas/diagramafase5.png)
