@@ -37,13 +37,18 @@
                        <!-- <li>
                             <a *ngIf="loginService.isUser" [routerLink]="['/perfil',user.name]" routerLinkActive ="active">Perfil</a>
                         </li>-->
+                        <li>
+                            <a *ngIf ="loginService.isLogged"><a routerLink = '/perfilUser'>perfil</a></a>
+
+                        </li>
                         
                     <li>
                    
                         <a *ngIf ="loginService.isAdmin">
                         <a [routerLink]="['/admin', user.name]" routerLinkActive="active">ADMIN</a>
-                      <!--  <a routerLink = '/perfilUser'>perfil</a>-->
                         </a>
+                       
+                       
                     </li>
                    <li>
                   <div *ngIf="loginService.isLogged" >
