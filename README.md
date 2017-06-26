@@ -7,6 +7,9 @@ Virtual Vinilo VV
 ### Descripción de la Tematica
 Página web de compra y venta de vinilos. En esta web podrás encontrar ofertas de vinilos nuevos, segunda mano e importaciones.
 
+### Link del video demo
+https://www.youtube.com/watch?v=RRYoDjSZe2A&feature=youtu.be
+
 ### Entidades Principales
 * Árticulo: en esta entidad se encuenta una descripción detallada del producto, comentarios y valoraciones así como un botón que permite añadir al carrito.
 * Usuario: en este componente un potencial cliente podrá darse de alta en la web para poder comprar productos, modificar su cuenta, realizar valoraciones, comentarios y favoritos. 
