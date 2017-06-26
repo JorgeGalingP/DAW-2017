@@ -83,7 +83,7 @@
                 <div *ngFor ="let resource of resources" >
                 <div class="col-sm-4 col-lg-4 col-md-4">
                          <div class="thumbnail">
-                            <a href="{{resource.id}}" ><img src="../assets/img/avatar.png" style="width: 320px; height: 280px" alt=""></a>
+                            <a href="{{resource.id}}" ><img src="../assets/img/{{resource.img}}" style="width: 320px; height: 280px" alt=""></a>
                             <div class="caption">
                                 <h4 class="pull-right">{{resource.precio}} €</h4>
                                 <h4> <a [routerLink]="['/resource',resource.id]"> {{resource.id}}</a></h4>

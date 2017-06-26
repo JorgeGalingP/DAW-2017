@@ -32,6 +32,9 @@ export class CarritoComponent implements OnInit{
             error => console.log(error)
         );
     }
+     terminarCompra() {
+    this.router.navigate(['/perfil']);
+  }
 
 
    /* removeResource(){

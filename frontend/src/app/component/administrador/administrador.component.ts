@@ -101,14 +101,14 @@ export class AdministradorComponent implements OnInit {
     }
     save(){
         this.resourceService.addResource(this.resource).subscribe(
-            resource =>{},
+            resource =>{ },
             error => console.error('Error creating new resource'+error)
         );
         window.history.back();
     }
     saveOferta(){
         this.ofertaService.addOferta(this.oferta).subscribe(
-             oferta =>{},
+             oferta =>{ },
              error => console.error('Error  creating new oferta'+error)
         );
         window.history.back();

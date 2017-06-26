@@ -21,12 +21,13 @@
             <div class="col-md-3 col-sm-3">
                 <div class="user-wrapper">
                     <div class="description">
-                        <br>
-                        <h3> </h3>
+                       
                        
                         <div class="list-group">
+                            <a routerLink="/favoritos" class="list-group-item"><span class="glyphicon glyphicon-folder-open"></span> Favoritos</a>
                             <a id="miPerfilMenu" href="#" class="list-group-item"><span class="glyphicon glyphicon-user"></span> Mi Perfil </a>
-                            <a id="editarPerfilMenu" href="#" class="list-group-item"><span class="glyphicon glyphicon-folder-open"></span> Administrar perfil</a>
+                            
+                            
                         </div>
                     </div>
                 </div>
@@ -36,8 +37,10 @@
             <div class="col-lg-9 col-md-9" id="miPerfil">
                 <p class="lead">Información de usuario</p>
                 <div class="list-group">
-                   <li *ngFor ="let user of users">
-                       <div *ngIf="loginService.isAdmin">
+                    <template ngFor let-user [ngForOf]="users">
+                   
+                       <li *ngIf="loginService">
+                       
                        
                            <div class="row">
                     <p class="list-group-item">{{user.name}}</p>
@@ -47,9 +50,10 @@
                     <p class="list-group-item">{{user.postalCode}}</p>
                     <p class="list-group-item"></p>
                        </div>
-                       </div>
-                   
-                   </li>
+                       </li>
+                    </template>
+                       
+                 
 
                       
                       
