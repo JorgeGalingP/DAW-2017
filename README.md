@@ -18,9 +18,6 @@ https://www.youtube.com/watch?v=RRYoDjSZe2A&feature=youtu.be
 * Carrito: componente de la página web donde el usuario podra guardar el carrito con los vinilos que quiera comprar. Si inicia la sesión el usuario podrá validar la compra proporcionando un método válido de pago y datos personales.
 
 ### Integrantes
-* *Guillermo Urbano Azagra*
-  * Correo: guilleurbano95@gmail.com
-  * Github: https://github.com/urbanz
 * *Jorge Galindo Peña*
   * Correo: jorgape225@gmail.com
   * Github: https://github.com/JorgeGalingP
